@@ -1,22 +1,30 @@
-# sistematico dotfiles
-
-![screenshot](https://i.imgur.com/0xflBsT.png)
-
-## Requisitos
-
-- Sistema Operacional: `Arch Linux` [link](https://www.archlinux.org)
-- Gerenciador de Janelas: `i3-gaps` [link](https://www.archlinux.org)
-- Barra: `polybar` [link](https://www.archlinux.org)
-- Shell: `bash` [link](https://www.archlinux.org)
-- Terminal: `termite` [link](https://www.archlinux.org)
-- Editor: `vim` [link](https://www.archlinux.org)
-- Web Browser: `chromium` [link](https://www.archlinux.org)
+#!/usr/bin/env bash
+#
+# Instala os dotfiles usando o GNU Stow
+#
+# Por Lucas Saliés Brum, a.k.a. sistematico, <lucas@archlinux.com.br>
 
 
-## Instalação
+ajuda() {
+	echo
+	echo "Uso: $(basename $0) [pacote1] [pacote2] [pacote3]"
+	echo
+	echo "Exemplo: $(basename $0) i3 polybar rofi"
+	echo
+	echo "Pacotes disponíveis: bash compton dunst fontes gtk home i3 mpd polybar qutebrowser ranger rofi startpage systemd termite tmux thunar"
+	echo
+	exit 0
+}
 
-1. Instale o `stow`
-2. `cd ~`
-3. `git clone https://github.com/sistematico/dotfiles .dotfiles`
-4. `cd .dotfiles`
-5. `./install.sh`
+[ ! $1 ] && ajuda
+
+pacotes=("$@")
+
+for p in "${pacotes[@]}"; do
+	if [ -d $p ]; then
+		stow $p
+		echo "Pacote: ${p} instalado."
+	else
+		echo "Pacote: $p não encontrado."
+	fi
+done
