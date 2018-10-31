@@ -1,4 +1,11 @@
-#!/bin/sh
+#!/usr/bin/env sh
+#
+# Arquivo: ~/.local/bin/screenshot
+#
+# Feito por Lucas Saliés Brum a.k.a. sistematico, <lucas@archlinux.com.br>
+#
+# Criado em: 16/03/2018 16:35:20
+# Última alteração: 31/10/2018 12:37:04
 
 if [ -f ~/.config/user-dirs.dirs ]; then
 	source ~/.config/user-dirs.dirs

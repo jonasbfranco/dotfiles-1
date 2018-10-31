@@ -1,11 +1,13 @@
 #!/usr/bin/env sh
 #
+# Arquivo: ~/.local/bin/screenshot
+#
 # Script para criar screencasts(vídeos da captura de tela) usando o ffmpeg.
 #
 # Desenvolvido por Lucas Saliés Brum <lucas@archlinux.com.br>
 #
 # Criado em: 09/06/2017 23:26:41
-# Última Atualização: 16/01/2018 01:20:47
+# Última Atualização: 31/10/2018 12:35:15
 
 preset="ultrafast" # ultrafast,superfast,veryfast,faster,fast,medium,slow,slower,veryslow,placebo
 #cor=$(awk -F# '/destaque/{print $2;exit}' ${HOME}/.config/polybar/config)

@@ -1,8 +1,18 @@
-#!/bin/bash
+#!/usr/bin/env bash
+#
+# Arquivo: beats.sh
+#
+# Devolve a hora atual em beats.
+#
+# Desenvolvido por Lucas Saliés Brum <lucas@archlinux.com.br>
+#
 # Swatch Internet Time
 # http://www.timeanddate.com/time/internettime.html
 # https://www.swatch.com/en/internettime/
 # https://en.wikipedia.org/wiki/Swatch_Internet_Time#Calculation_from_UTC.2B1
+#
+# Criado em: 20/12/2017 19:27:31
+# Última Atualização: 31/10/2018 12:36:38
 
 if [ "$DESKTOP_SESSION" == "mate" ]; then
 	icone="@"
