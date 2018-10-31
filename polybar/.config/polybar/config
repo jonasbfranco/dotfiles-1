@@ -93,6 +93,8 @@ label-urgent-padding = 2
 ; Separator in between workspaces
 ; label-separator = |
 
+;tray-position = right
+
 ;----------------------------------------------------------
 ;		        M P D
 ;----------------------------------------------------------
@@ -232,10 +234,19 @@ label-separator-foreground = ${colors.foreground-alt}
 
 menu-0-0 = 
 menu-0-0-exec = firefox &
+
 menu-0-1 = 
 menu-0-1-exec = termite &
+
 menu-0-2 = 
 menu-0-2-exec = thunar &
+
+menu-0-3 = 
+menu-0-3-exec = telegram-desktop &
+
+menu-0-4 = 
+menu-0-4-exec = whatsdesk &
+
 
 ;menu-1-0 = voltar
 ;menu-1-0-exec = menu-open-0

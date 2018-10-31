@@ -233,7 +233,7 @@ assign [class="^(Chromium|qutebrowser|Epiphany|Firefox|firefox-developer)"] $ws1
 assign [class="(Termite|Tilix|st-256color)"] $ws2
 assign [class="^(^Code*|Pluma|Sublime_text|Atom)"] $ws3
 assign [class="(Thunar|Pcmanfm)"] $ws4
-assign [class="(Lxappearance|^Pamac*|Notes|Lxtask|^Mate-disk-usage-analyzer|Filezilla)"] $ws5
+assign [class="(Lxappearance|^Pamac*|Notes|Lxtask|^Mate-disk-usage-analyzer|Filezilla|JDownloader)"] $ws5
 assign [class="(^Steam|Atril)"] $ws6
 assign [class="(Thunderbird)"] $ws7
 assign [class="(^Telegram|^Hexchat)"] $ws9
@@ -315,5 +315,6 @@ exec_always --no-startup-id xrdb -merge ~/.Xresources
 exec_always --no-startup-id pulseaudio --start
 exec --no-startup-id compton -b --respect-prop-shadow
 exec --no-startup-id dunst
+exec --no-startup-id parcellite
 exec_always --no-startup-id $HOME/bin/gradientes.sh
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
