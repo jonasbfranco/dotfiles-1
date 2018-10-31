@@ -34,7 +34,7 @@ module-margin-right = 2
 font-0 = fixed:pixelsize=10;2
 font-1 = feather:size=10;2
 
-modules-left = i3 sep browser terminal thunar
+modules-left = i3 sep browser terminal thunar telegram whatsapp
 modules-center = xwindow
 modules-right = filesystem cpu memory temperature alsa date powermenu
 
@@ -258,7 +258,7 @@ type = custom/text
 content = 
 click-left = telegram-desktop &
 
-[module/whatsie]
+[module/whatsapp]
 type = custom/text
 content = 
 click-left = whatsdesk &
