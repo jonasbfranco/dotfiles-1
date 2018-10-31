@@ -62,6 +62,7 @@ client.background       $bg
 # Numpad
 set $KP_Add 86
 set $KP_Sub 82
+set $KP_Multi 63
 set $KP_1 87
 set $KP_2 88
 set $KP_3 89
@@ -153,7 +154,11 @@ bindsym --release Mod1+Sys_Req exec --no-startup-id $HOME/.local/bin/screenshot 
 bindsym $mod+Print exec --no-startup-id $HOME/.local/bin/screenshot -d
 bindsym $mod+Shift+Print exec --no-startup-id $HOME/.local/bin/screenshot -e
 
+# ScreenCast
+bindsym --release Control+Mod1+Sys_Req exec --no-startup-id $HOME/.local/bin/screencast
+
 # MPC
+bindcode Mod2+$KP_0 exec --no-startup-id mpc del 0
 bindcode Mod2+$KP_6 exec --no-startup-id mpc next
 bindcode Mod2+$KP_4 exec --no-startup-id mpc prev
 bindcode Mod2+$KP_5 exec --no-startup-id mpc toggle
@@ -161,22 +166,22 @@ bindcode Mod2+$KP_3 exec --no-startup-id mpc seek +10
 bindcode Mod2+$KP_1 exec --no-startup-id mpc seek -10
 bindcode Mod2+$KP_Add exec --no-startup-id amixer -q -D pulse sset Master 5%+ unmute
 bindcode Mod2+$KP_Sub exec --no-startup-id amixer -q -D pulse sset Master 5%- unmute
+bindcode Mod2+$KP_Multi exec --no-startup-id mpc ls | mpc add
+#bindcode Mod2+$KP_Multi exec --no-startup-id DISPLAY=:0 notify-send oi
 
 ####################################################################
 ################ A R E A S #########################################
 ####################################################################
-# Define names for default workspaces for which we configure key bindings later on.
-# We use variables to avoid repeating the names in multiple places.
-set $ws1 ""
-set $ws2 ""
-set $ws3 ""
-set $ws4 ""
-set $ws5 ""
-set $ws6 ""
-set $ws7 ""
-set $ws8 ""
-set $ws9 ""
-set $ws10 ""
+set $ws1 "1:"
+set $ws2 "2:"
+set $ws3 "3:"
+set $ws4 "4:"
+set $ws5 "5:"
+set $ws6 "6:"
+set $ws7 "7:"
+set $ws8 "8:"
+set $ws9 "9:"
+set $ws10 "10:"
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -307,6 +312,7 @@ mode "$mode_gaps_outer" {
 ################ I N I T ###########################################
 ####################################################################
 exec_always --no-startup-id xrdb -merge ~/.Xresources
+exec_always --no-startup-id pulseaudio --start
 exec --no-startup-id compton -b --respect-prop-shadow
 exec --no-startup-id dunst
 exec_always --no-startup-id $HOME/bin/gradientes.sh

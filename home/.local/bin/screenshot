@@ -12,7 +12,7 @@ params="-u"
 data=$(date +%Y-%m-%d_%H-%M-%S)
 nome="ss-${data}"
 extensao=".png"
-atraso=10
+atraso=5
 icone="/usr/share/icons/Arc/devices/24@2x/video-display.png"
 tipo="image/png"
 lixeira="${HOME}/.local/share/Trash"
@@ -21,7 +21,7 @@ lixeira="${HOME}/.local/share/Trash"
 [ ! -d $lixeira ] && mkdir -p $lixeira
 
 command -v $app >/dev/null 2>&1 || {
-	msg="O aplicativo $app não está instalado. Abortando." 
+	msg="O aplicativo $app não está instalado. Abortando."
 
 	command -v notify-send >/dev/null 2>&1 && {
 		notify-send "ERRO" "$msg";

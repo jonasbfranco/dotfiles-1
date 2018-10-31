@@ -1,9 +1,9 @@
 sw_volume: 100
 audio_device_state:1:MPD Pulse
 audio_device_state:1:MPD FIFO
-state: pause
-current: 81
-time: 54.325000
+state: play
+current: 94
+time: 4.213000
 random: 0
 repeat: 0
 single: 0
@@ -105,11 +105,9 @@ playlist_begin
 90:Sertanejo/Edson e Hudson Escandalo de Amor.mp3
 91:Varios/danger_zone.mp3
 92:Varios/Errou.ogg
-93:Varios/fuego.mp3
-94:Varios/highway.mp3
-95:Varios/ironman.mp3
-96:Varios/lullaby.mp3
-97:Varios/stolen_dance.mp3
-98:Varios/unforgiven.mp3
-99:Varios/wonder.mp3
+93:Varios/ironman.mp3
+94:Varios/lullaby.mp3
+95:Varios/stolen_dance.mp3
+96:Varios/unforgiven.mp3
+97:Varios/wonder.mp3
 playlist_end
