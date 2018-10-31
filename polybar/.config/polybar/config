@@ -1,3 +1,6 @@
+;----------------------------------------------------------
+;		        C O R E S
+;----------------------------------------------------------
 [colors]
 background = ${xrdb:background:#222}
 background-alt = #444
@@ -7,6 +10,9 @@ primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
 
+;----------------------------------------------------------
+;		        B A R R A
+;----------------------------------------------------------
 [bar/majestic]
 monitor = ${env:MONITOR:DVI-I-0}
 width = 100%
@@ -34,9 +40,9 @@ module-margin-right = 2
 font-0 = fixed:pixelsize=10;2
 font-1 = feather:size=10;2
 
-modules-left = i3 sep browser terminal thunar telegram whatsapp
-modules-center = xwindow
-modules-right = filesystem cpu memory temperature alsa date powermenu
+modules-left = i3 sep apps sep mpd
+modules-center = window
+modules-right = filesystem cpu memory temperature alsa date power
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -85,9 +91,35 @@ label-urgent-padding = 2
 ; Separator in between workspaces
 ; label-separator = |
 
-[module/xwindow]
-type = internal/xwindow
-label =  %title:0:30:...%
+;----------------------------------------------------------
+;		        M P D
+;----------------------------------------------------------
+[module/mpd]
+type = internal/mpd
+format-online =  <label-song> <icon-prev> <icon-stop> <toggle> <icon-next>
+
+icon-prev = 
+icon-stop = 
+icon-play = 
+icon-pause = 
+icon-next = 
+
+label-song-maxlen = 50
+label-song-ellipsis = true
+
+;----------------------------------------------------------
+;		        W I N D O W
+;----------------------------------------------------------
+[module/window]
+type = custom/script
+interval = 1
+format-prefix = " "
+;label = %output:0:45:...%  %{B- -o -u}
+label = %output:0:40:...%
+click-left = ~/.config/polybar/scripts/janela.sh -i
+click-middle = ~/.config/polybar/scripts/janela.sh -c
+click-right = ~/.config/polybar/scripts/janela.sh -w
+exec = ~/.config/polybar/scripts/janela.sh
 
 [module/filesystem]
 type = internal/fs
@@ -112,27 +144,27 @@ icon-next = next
 label-song-maxlen = 25
 label-song-ellipsis = true
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;; C P U ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;-------------------------------------------------------------------------
+;					C P U
+;-------------------------------------------------------------------------
 [module/cpu]
 type = internal/cpu
 interval = 2
 format-prefix = " "
 label = %percentage:2%%
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;; M E M O R I A ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;-------------------------------------------------------------------------
+;					M E M O R I A
+;-------------------------------------------------------------------------
 [module/memory]
 type = internal/memory
 interval = 2
 format-prefix = " "
 label = %percentage_used%%
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;; R E D E ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;-------------------------------------------------------------------------
+;					R E D E
+;-------------------------------------------------------------------------
 [module/eth]
 type = internal/network
 interface = eno1
@@ -147,9 +179,9 @@ format-disconnected =
 ;label-disconnected = %ifname% disconnected
 ;label-disconnected-foreground = ${colors.foreground-alt}
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;; T E M P ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;-------------------------------------------------------------------------
+;					T E M P
+;-------------------------------------------------------------------------
 [module/temperature]
 type = internal/temperature
 thermal-zone = 0
@@ -162,9 +194,9 @@ label =  %temperature-c%
 label-warn =  %temperature-c%
 label-warn-foreground = ${colors.secondary}
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;; P U L S E ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;-------------------------------------------------------------------------
+;					P U L S E
+;-------------------------------------------------------------------------
 [module/alsa]
 type = internal/alsa
 
@@ -175,9 +207,9 @@ label-volume-foreground = ${root.foreground}
 label-muted = mudo
 label-muted-foreground = #666
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;; D A T A ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;-------------------------------------------------------------------------
+;					D A T A
+;-------------------------------------------------------------------------
 [module/date]
 type = internal/date
 interval = 5
@@ -192,9 +224,39 @@ format-prefix = 
 
 label = %date% %time%
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;; P O W E R M E N U ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;-------------------------------------------------------------------------
+;					A P P S M E N U
+;-------------------------------------------------------------------------
+[module/apps]
+type = custom/menu
+
+format-spacing = 1
+
+label-open = 
+label-open-foreground = ${colors.secondary}
+label-close = voltar
+label-close-foreground = ${colors.secondary}
+label-separator = |
+label-separator-foreground = ${colors.foreground-alt}
+
+menu-0-0 = reboot
+menu-0-0-exec = menu-open-1
+menu-0-1 = power off
+menu-0-1-exec = menu-open-2
+
+menu-1-0 = voltar
+menu-1-0-exec = menu-open-0
+menu-1-1 = reboot
+menu-1-1-exec = sudo reboot
+
+menu-2-0 = power off
+menu-2-0-exec = sudo poweroff
+menu-2-1 = voltar
+menu-2-1-exec = menu-open-0
+
+;-------------------------------------------------------------------------
+;					P O W E R M E N U
+;-------------------------------------------------------------------------
 [module/powermenu]
 type = custom/menu
 
@@ -224,9 +286,17 @@ menu-2-0-exec = sudo poweroff
 menu-2-1 = cancelar
 menu-2-1-exec = menu-open-0
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;; O U T R O S ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;-------------------------------------------------------------------------
+;					P O W E R
+;-------------------------------------------------------------------------
+[module/power]
+type = custom/text
+content = 
+click-left = ~/.config/rofi/scripts/power
+
+;-------------------------------------------------------------------------
+;					O U T R O S
+;-------------------------------------------------------------------------
 [module/sep]
 type = custom/text
 content = 
