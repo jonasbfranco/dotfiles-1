@@ -124,11 +124,12 @@ bindsym $mod+Shift+space floating toggle
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
 
-# focus the parent container
-#bindsym $mod+a focus parent
+# Restart
+bindsym $mod+Shift+r restart
 
-# focus the child container
-#bindsym $mod+d focus child
+# Scratchpad
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show
 
 # Rofi
 bindsym $mod+g exec --no-startup-id echo "" | rofi -dmenu -p "Google: " -bw 0 -lines 1 -separator-style none -location 0 -width 250 -hide-scrollbar -padding 5 | xargs -I{} $BROWSER https://www.google.com.br/search?q={}
@@ -200,13 +201,6 @@ bindsym $mod+Shift+7 move container to workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
-
-# reload the configuration file
-bindsym $mod+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
-#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 
 ####################################################################
