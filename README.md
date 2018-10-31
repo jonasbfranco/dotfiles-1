@@ -1,22 +1,27 @@
 # sistematico dotfiles
 
-![screenshot](https://i.imgur.com/0xflBsT.png)
+![screenshot](https://raw.githubusercontent.com/sistematico/dotfiles/master/screenshot.png)
 
 ## Requisitos
 
 - Sistema Operacional: `Arch Linux` [link](https://www.archlinux.org)
-- Gerenciador de Janelas: `i3-gaps` [link](https://www.archlinux.org)
-- Barra: `polybar` [link](https://www.archlinux.org)
-- Shell: `bash` [link](https://www.archlinux.org)
-- Terminal: `termite` [link](https://www.archlinux.org)
-- Editor: `vim` [link](https://www.archlinux.org)
-- Web Browser: `chromium` [link](https://www.archlinux.org)
+- Gerenciador de Janelas: `i3-gaps` [link](https://github.com/Airblader/i3)
+- Barra: `polybar` [link](https://github.com/jaagr/polybar)
+- Shell: `bash` [link](https://www.gnu.org/software/bash/)
+- Terminal: `termite` [link](https://github.com/thestinger/termite)
+- Editor: `vim` [link](https://www.vim.org/)
+- Web Browser: `chromium` [link](http://www.chromium.org/Home)
+- Dotfiles: `stow` [link](https://www.gnu.org/software/stow/)
 
-
-## Instalação
+## Instalação Manual
 
 1. Instale o `stow`
 2. `cd ~`
 3. `git clone https://github.com/sistematico/dotfiles .dotfiles`
 4. `cd .dotfiles`
-5. `./install.sh`
+5. `stow i3`
+5. `stow polybar`
+
+## Instalação Automática
+
+`bash <(curl -s https://raw.githubusercontent.com/sistematico/dotfiles/master/install.sh)`
