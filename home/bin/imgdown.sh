@@ -28,4 +28,4 @@ done
 rm -rf $pasta/robots.txt*
 
 notify-send -i $icone "IMGdown" "Transferencia $$ finalizada."
-canberra-gtk-play -i phone-incoming-call
+canberra-gtk-play -i camera-shutter
