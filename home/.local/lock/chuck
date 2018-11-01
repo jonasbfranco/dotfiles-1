@@ -26,9 +26,10 @@ SCR_WIDTH=$(xrandr --current | grep '*' | uniq | awk '{print $1}' | cut -d 'x' -
 # Set joke to be less than the screen width or to the default one
 {
   joke=$(curl -s 'https://api.chucknorris.io/jokes/random' | jq -r '.value')
-  joke_len=$((${#joke} * 12))
+  joke_clear=$(echo $joke | sed "s/[\"|\']//g")
+  joke_len=$((${#joke_clear} * 12))
 
-  if [[ "$SCR_WIDTH" -le "$joke_len" ]] || [[ "$joke" -eq "" ]]; then
+  if [[ "$SCR_WIDTH" -le "$joke_len" ]] || [[ "$joke_clear" -eq "" ]]; then
     joke="Chuck Norris is watching you..."
     joke_len=$((${#joke} * 12))
   fi
