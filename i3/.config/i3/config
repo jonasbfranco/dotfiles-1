@@ -145,7 +145,7 @@ bindsym $mod+Shift+e exec --no-startup-id ~/.config/rofi/scripts/power
 bindsym $mod+b exec --no-startup-id ~/.config/rofi/scripts/ebook
 
 # Lock
-bindsym $mod+Shift+x exec --no-startup-id ~/.local/bin/lockscreen
+bindsym $mod+Shift+x exec --no-startup-id ~/.local/lock/fortune
 
 # Screenshot & Screencast
 bindsym Print exec --no-startup-id $HOME/.local/bin/screenshot
