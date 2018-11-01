@@ -4,8 +4,9 @@
 
 dir="${XDG_PICTURES_DIR:-${HOME}/img}/wallpapers"
 unsplash_dir="${XDG_PICTURES_DIR:-${HOME}/img}/wallpapers/unsplash"
-default="$dir/alex-block-354270-unsplash.jpg"
-ultima="/home/lucas/img/wallpapers/unsplash/ian-froome-362138-unsplash.jpg"
+#default="$dir/alex-block-354270-unsplash.jpg"
+default="$dir/i3.png"
+ultima="/home/lucas/img/wallpapers/unsplash/unsplash-31487.jpg"
 modo="--bg-fill"
 indice=0
 i=0
@@ -15,28 +16,20 @@ y=$(xdpyinfo | grep dimensions | awk '{print $2}' | awk -F'x' '{print $2}')
 ajustar() {
 	if [ -f "$1" ]; then
 		sed -i "s|^ultima=.*|ultima=\"${1}\"|g" $0
-		# PyWal
-		#wal -n -g -i "${1}"
 		feh --bg-fill ${1}
 		echo "$1" > ~/.wall
 	fi
 }
 
 if [ "$2" ]; then
-	if [ -d $2 ]; then
-		dir=$2
-	fi
+	[ -d $2 ] && dir=$2
 else
-	if [ ! -d $dir ]; then
-		mkdir -p $dir
-	fi
+	[ ! -d $dir ] && mkdir -p $dir
 fi
 
-if [ ! -d $unsplash_dir ]; then
-	mkdir -p $unsplash_dir
-fi
-
-[ ! -f $default ] && curl -s -L 'https://unsplash.com/photos/mEV-IXdk5Zc/download?force=true' > $dir/alex-block-354270-unsplash.jpg
+[ ! -d $unsplash_dir ] && mkdir -p $unsplash_dir
+[ ! -f $default ] && curl -s -L 'http://i.imgur.com/BwOh5Z5.png' > $default
+#[ ! -f $default ] && curl -s -L 'https://unsplash.com/photos/mEV-IXdk5Zc/download?force=true' > $default
 
 while read linha; do
     imagens[$i]="$linha"
@@ -73,7 +66,6 @@ elif [ "$1" == "rr" ]; then
 	if [ ! -f $HOME/.wall ] || [ ! -f $(cat $HOME/.wall) ]; then
 		echo $default > $HOME/.wall
 	fi
-	#img="$(cat $HOME/.wall)"
 	img=$default
 elif [ "$1" == "x" ]; then
 	hsetroot -solid "#2e3440"
