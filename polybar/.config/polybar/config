@@ -235,17 +235,20 @@ label-separator-foreground = ${colors.foreground-alt}
 menu-0-0 = 
 menu-0-0-exec = firefox &
 
-menu-0-1 = 
-menu-0-1-exec = termite &
+menu-0-1 = 
+menu-0-1-exec = chromium &
 
-menu-0-2 = 
-menu-0-2-exec = thunar &
+menu-0-2 = 
+menu-0-2-exec = termite &
 
-menu-0-3 = 
-menu-0-3-exec = telegram-desktop &
+menu-0-3 = 
+menu-0-3-exec = thunar &
 
-menu-0-4 = 
-menu-0-4-exec = whatsdesk &
+menu-0-4 = 
+menu-0-4-exec = telegram-desktop &
+
+menu-0-5 = 
+menu-0-5-exec = whatsdesk &
 
 
 ;menu-1-0 = voltar
