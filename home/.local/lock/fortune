@@ -2,11 +2,10 @@
 
 scr='/tmp/screenshot.png'
 icon="$HOME/.local/share/i3lock/rocket.png"
-#font="/usr/share/fonts/TTF/DejaVuSansCondensed-Bold.ttf"
-font="$HOME/.local/share/fonts/TuesdayNight-Regular.otf"
+font="$HOME/.local/share/fonts/Chlakh.otf"
 
 [ ! -d $HOME/.local/share/fonts ] && mkdir -p $HOME/.local/share/fonts
-[ ! -f $font ] && curl -s -L 'https://i.imgur.com/XbxRMX7.png' > $font
+[ ! -f $font ] && curl -s -L 'https://www.dropbox.com/s/5mj9zf92drg4fbv/Chlakh.ttf?dl=1' > $font && fc-cache -v -f
 
 [ ! -d $HOME/.local/share/i3lock/ ] && mkdir -p $HOME/.local/share/i3lock/
 [ ! -f $icon ] && curl -s -L 'https://i.imgur.com/XbxRMX7.png' > $icon
