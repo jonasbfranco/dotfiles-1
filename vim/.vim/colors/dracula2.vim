@@ -115,9 +115,9 @@ if !exists('g:dracula_inverse')
   let g:dracula_inverse = 1
 endif
 
-if !exists('g:dracula_colorterm')
-  let g:dracula_colorterm = 1
-endif
+"if !exists('g:dracula_colorterm')
+  let g:dracula_colorterm = 0
+"endif
 
 "}}}2
 " Script Helpers: {{{2
