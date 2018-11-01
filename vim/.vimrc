@@ -8,8 +8,8 @@ set rtp+=~/.vim/bundle/Vundle.vim
 
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
-" Plugin 'vim-airline/vim-airline'
-" Plugin 'vim-airline/vim-airline-themes'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 " Plugin 'scrooloose/nerdtree'
 " Plugin 'arcticicestudio/nord-vim'
 Plugin 'dracula/vim'
@@ -31,10 +31,12 @@ filetype plugin indent on    " required
 set t_Co=256
 " colorscheme minimalist
 " colorscheme nord
+colorscheme dracula2
 " let g:airline_theme='minimalist'
 " let g:airline_theme='nord'
-" let g:airline_powerline_fonts = 1
-" let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme='dracula'
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
 
 set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
 " set laststatus=2 " Always display the statusline in all windows
