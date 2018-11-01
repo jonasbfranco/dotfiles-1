@@ -13,6 +13,7 @@ editor="subl"
 configs=(
 'i3'
 'Polybar'
+'i3lock'
 'Conky'
 'LX Appearance'
 'Dunst'
@@ -59,6 +60,7 @@ if [ "$res" ]; then
 				i3-msg exec $editor ${HOME}/.config/polybar/config
 			fi
 		;;
+		'i3lock') i3-msg exec $editor $(grep xautolock ~/.config/i3/config | awk '{print $8}') ;;
 		'Conky') i3-msg exec $editor ~/.config/conky/conky.conf ;;
 		'LX Appearance') i3-msg exec lxappearance ;;
 		'Dunst')
