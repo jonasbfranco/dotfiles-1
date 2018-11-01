@@ -50,6 +50,3 @@ convert $IMAGE $LANG -gravity NorthEast -geometry +0+1 -composite $IMAGE
 convert $IMAGE $ICON -gravity center -composite -matte $IMAGE
 
 i3lock -n -u -i $IMAGE
-
-# Restart compton
-#compton --shadow --clear-shadow --shadow-opacity=0.75 --shadow-radius=12 --shadow-red 0.105 --shadow-green 0.392 --shadow-blue 0.611 -b -f --fade-in-step=0.08 --fade-out-step=0.08 -i 0.7 --shadow-exclude 'class_g = "Polybar"' --shadow-exclude 'class_g = "Firefox"' --focus-exclude 'class_g = "Firefox"' --focus-exclude 'class_g = "Rofi"' --shadow-exclude '!focused'
