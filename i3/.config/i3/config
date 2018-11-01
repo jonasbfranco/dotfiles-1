@@ -231,7 +231,7 @@ for_window [title="(ncmpcpp)"] move to workspace $ws8, floating enable, move pos
 
 assign [class="^(Chromium|qutebrowser|Epiphany|Firefox|firefox-developer)"] $ws1
 assign [class="(Termite|Tilix|st-256color)"] $ws2
-assign [class="^(^Code*|Pluma|Sublime_text|Atom)"] $ws3
+assign [class="^(code|Pluma|Sublime_text|Atom)"] $ws3
 assign [class="(Thunar|Pcmanfm)"] $ws4
 assign [class="(Lxappearance|^Pamac*|Notes|Lxtask|^Mate-disk-usage-analyzer|Filezilla|JDownloader)"] $ws5
 assign [class="(^Steam|Atril)"] $ws6
