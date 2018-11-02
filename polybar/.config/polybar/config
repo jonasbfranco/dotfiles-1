@@ -34,7 +34,7 @@ module-margin-right = 2
 font-0 = fixed:pixelsize=10;2
 font-1 = feather:size=10;2
 
-modules-left = i3 sep apps
+modules-left = i3 sep apps sep ping
 modules-center = window
 modules-right = filesystem cpu memory temperature pulse data wallpaper power
 
@@ -85,6 +85,17 @@ label-urgent-background = ${colors.alert}
 label-urgent-padding = 2
 
 ;tray-position = right
+
+;----------------------------------------------------------
+;		        P I N G
+;----------------------------------------------------------
+[module/ping]
+type = custom/script
+interval = 10
+label = %output%
+click-left = ~/bin/ping.sh -v &
+exec = ~/bin/ping.sh -v &
+tail = true
 
 ;----------------------------------------------------------
 ;		        M P D

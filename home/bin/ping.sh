@@ -18,7 +18,8 @@ function pingar {
 	ping -q -c$r $h > /dev/null 2> /dev/null
 	if [ $? -eq 0 ]; then
 		if [ "$1" == "-v" ]; then
-			echo -e "\033[0;32monline\033[0m"
+			echo "%{F#8fbcbb}%{F-}"
+
 		fi
 		if [ ! -f /tmp/online.lock ]; then
 			export DISPLAY=:0 ; canberra-gtk-play -i $online 2>&1
@@ -26,7 +27,7 @@ function pingar {
 		fi
 	else
 		if [ "$1" == "-v" ]; then
-			echo -e "\033[0;31moffline\033[0m"
+			echo "%{F#bf616a}%{F-}"
 		fi
 		export DISPLAY=:0 ; canberra-gtk-play -i $offline 2>&1
 		[ -f /tmp/online.lock ] && rm /tmp/online.lock
