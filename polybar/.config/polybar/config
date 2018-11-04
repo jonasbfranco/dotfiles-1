@@ -34,7 +34,7 @@ module-margin-right = 2
 font-0 = fixed:pixelsize=10;2
 font-1 = feather:size=10;2
 
-modules-left = i3 sep apps sep ping
+modules-left = i3 sep apps
 modules-center = window
 modules-right = filesystem cpu memory temperature pulse data wallpaper power
 
