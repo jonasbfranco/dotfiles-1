@@ -63,7 +63,6 @@ client.background       $bg
 set $KP_Add 86
 set $KP_Sub 82
 set $KP_Multi 63
-set $KP_Dot 37
 set $KP_1 87
 set $KP_2 88
 set $KP_3 89
@@ -168,8 +167,6 @@ bindcode Mod2+$KP_1 exec --no-startup-id mpc seek -10
 bindcode Mod2+$KP_Add exec --no-startup-id amixer -q -D pulse sset Master 5%+ unmute
 bindcode Mod2+$KP_Sub exec --no-startup-id amixer -q -D pulse sset Master 5%- unmute
 bindcode Mod2+$KP_Multi exec --no-startup-id mpc ls | mpc add
-bindcode Mod2+$KP_Dot exec --no-startup-id mpc clear
-#bindcode Mod2+$KP_Multi exec --no-startup-id DISPLAY=:0 notify-send oi
 
 ####################################################################
 ################ A R E A S #########################################
