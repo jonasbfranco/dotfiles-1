@@ -91,10 +91,9 @@ label-urgent-padding = 2
 ;----------------------------------------------------------
 [module/ping]
 type = custom/script
-interval = 10
+interval = 60
 label = %output%
-click-left = ~/bin/ping.sh -v &
-exec = ~/bin/ping.sh -v &
+exec = ~/.config/polybar/scripts/ping.sh -v
 tail = true
 
 ;----------------------------------------------------------
