@@ -254,15 +254,17 @@ menu-0-1-exec = chromium &
 menu-0-2 = 
 menu-0-2-exec = termite &
 
-menu-0-3 = 
-menu-0-3-exec = thunar &
+menu-0-3 = 
+menu-0-3-exec = subl &
 
-menu-0-4 = 
-menu-0-4-exec = telegram-desktop &
+menu-0-4 = 
+menu-0-4-exec = thunar &
 
-menu-0-5 = 
-menu-0-5-exec = whatsdesk &
+menu-0-5 = 
+menu-0-5-exec = telegram-desktop &
 
+menu-0-6 = 
+menu-0-6-exec = whatsdesk &
 
 ;menu-1-0 = voltar
 ;menu-1-0-exec = menu-open-0
