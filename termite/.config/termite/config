@@ -18,7 +18,7 @@ clickable_url = true
 dynamic_title = true
 #fullscreen = true
 #geometry = 640x480
-#icon_name = terminal
+icon_name = terminal
 #mouse_autohide = false
 #scroll_on_output = false
 #scroll_on_keystroke = true
@@ -35,7 +35,7 @@ browser = firefox
 cursor_blink = system
 
 # "block", "underline" or "ibeam"
-cursor_shape = block
+cursor_shape = ibeam
 
 # Hide links that are no longer valid in url select overlay mode
 #filter_unmatched_urls = true
@@ -48,13 +48,15 @@ cursor_shape = block
 
 [colors]
 foreground = #D8DEE9
+#background = #282a36
 #background = rgba(46, 52, 64, 0.9)
-background = #282a36
+background = rgba(40, 42, 54, 0.9)
 foreground_bold = #D8DEE9
 cursor = #D8DEE9
 cursor_foreground = #2E3440
 highlight = #4C566A
 
+# Nord (https://github.com/arcticicestudio/nord-termite)
 #color0  = #3B4252
 #color1  = #BF616A
 #color2  = #A3BE8C
@@ -72,6 +74,7 @@ highlight = #4C566A
 #color14 = #8FBCBB
 #color15 = #ECEFF4
 
+# Dracula (https://draculatheme.com)
 color0 = #6272a4
 color1 = #ff5555
 color2 = #50fa7b
