@@ -223,10 +223,11 @@ for_window [class="(Mate-font-viewer|Notes|Pavucontrol|YAD)"] move to workspace 
 for_window [class="Lxtask" title="Gerenciador de tarefas"] floating enable, resize set 800 px 600 px, move position center
 for_window [class="^VirtualBox" title="*Executando*"] floating enable
 for_window [title="(.*Reiniciar dispositivo.*|Preferências do Thunderbird|Engrampa|Galculator|Catfish)"] floating enable, move position center
-for_window [title="(Engrampa|File-roller|Agave|mpv|Biblioteca|Library|About|Amigos|Sobre o Mozilla Firefox|VideoCut|dagor2)"] floating enable, move position center
+for_window [title="(Agave|mpv|Biblioteca|Library|About|Amigos|Sobre o Mozilla Firefox|VideoCut|dagor2)"] floating enable, move position center
+for_window [class="(Engrampa|File-roller)"] floating enable, move position center
 for_window [class="dagor2" title="(War Thunder|War Thunder (Configurações))"] move to workspace $ws10, floating enable, move position center, border pixel 1
 for_window [title="(screencast$|^DownThemAll|MEGAsync|DownThemAll|!$)"] move window to scratchpad
-for_window [title="(ncmpcpp)"] move to workspace $ws8, floating enable, move position center
+for_window [title="^ncmpcpp"] move to workspace $ws8, floating enable, move position center
 
 assign [class="^(Chromium|qutebrowser|Epiphany|Firefox|firefox-developer)"] $ws1
 assign [class="(Termite|Tilix|st-256color)"] $ws2

@@ -1,9 +1,9 @@
-sw_volume: 90
+sw_volume: 92
 audio_device_state:1:MPD Pulse
 audio_device_state:1:MPD FIFO
 state: play
-current: 36
-time: 4.120000
+current: 40
+time: 2.896000
 random: 0
 repeat: 0
 single: 0
@@ -50,63 +50,60 @@ playlist_begin
 35:Sertanejo/Diego e Arnaldo - Se Eu Te Procurar.mp3
 36:Sertanejo/Diego e Arnaldo - Sofri Em Dobro.mp3
 37:Sertanejo/Felipe Araujo - A Mala E Falsa.mp3
-38:Sertanejo/Felipe Araujo - Amor da Sua Cama.mp3
-39:Sertanejo/Felipe Araujo - Chave Copia.mp3
-40:Sertanejo/Garth Brooks - Callin Baton Rouge.mp3
-41:Sertanejo/Gusttavo Lima - Apelido Carinhoso.mp3
-42:Sertanejo/Joao Bosco e Vinicius - Promete.mp3
-43:Sertanejo/Joao Lucas e Marcelo - Eu Quero Tchu Tcha Tcha.mp3
-44:Sertanejo/Joao Neto e Frederico - Nao Vou Mais Chorar.mp3
-45:Sertanejo/Joao Neto e Frederico - Rapariga Nao.mp3
-46:Sertanejo/Jorge e Mateus - Paredes.mp3
-47:Sertanejo/Jorge e Mateus - Propaganda.mp3
-48:Sertanejo/Julia e Rafaela - Na Mesma Moeda.mp3
-49:Sertanejo/Julia e Rafaela - Paredes Pintadas.mp3
-50:Sertanejo/Leo e Raphael - Sai do Mato Veiaco.mp3
-51:Sertanejo/Leo e Raphael - Tchau Brigado.mp3
-52:Sertanejo/Leo Magalhaes - Meu Amor Voltou.mp3
-53:Sertanejo/Leo Magalhaes - Oi.mp3
-54:Sertanejo/Leo Magalhaes - Onde Anda Meu Amor.mp3
-55:Sertanejo/Loubet - Naturalmente _ Clipe Oficial-1OnO6yOtcPk.mp3
-56:Sertanejo/Loubet - OLX.mp3
-57:Sertanejo/Maiara e Maraisa - 10 Por Cento.mp3
-58:Sertanejo/Maiara e Maraisa - Medo Bobo.mp3
-59:Sertanejo/Maiara e Maraisa - Quem Ensinou Fui Eu.mp3
-60:Sertanejo/Maiara e Maraisa – Disk Sexy.mp3
-61:Sertanejo/Marilia Mendonca - Ausencia.mp3
-62:Sertanejo/Marília Mendonça - Como faz com ela - Vídeo Oficial do DVD.mp3
-63:Sertanejo/Marília Mendonça - Essas Nossas Brigas - Vídeo Oficial do DVD.mp3
-64:Sertanejo/Marília Mendonça - O Que Falta Em Você Sou Eu - Vídeo Oficial do DVD.mp3
-65:Sertanejo/Matheus e Kauan - Incerteza.mp3
-66:Sertanejo/Matheus e Kauan - Me Amar Amanha.mp3
-67:Sertanejo/Michel Telo - Não Tem Pra Ninguem.mp3
-68:Sertanejo/Naiara Azevedo - Ex do Seu Atual.mp3
-69:Sertanejo/Naiara Azevedo - Pegada Que Desgrama.mp3
-70:Sertanejo/Paula Mattos - Coisa de Ex.mp3
-71:Sertanejo/Rayane e Rafaela - Tinha Que Ter Feito Nao.mp3
-72:Sertanejo/Rodrigo e Thayane - Nem A Pau Juvenal.mp3
-73:Sertanejo/Rogerio Ferrari - Vizinho Abaixa o Som.mp3
-74:Sertanejo/Simone e Simaria - 126 Cabides.mp3
-75:Sertanejo/Simone e Simaria - Chora Nao Coleguinha.mp3
-76:Sertanejo/Simone e Simaria - Regime Fechado.mp3
-77:Sertanejo/Thayna Bitencourt - Chinelo e Pijama.mp3
-78:Sertanejo/Tradicao - Se Nao Vai Eu Vou.mp3
-79:Sertanejo/Trio Parada Dura - Aceita Que Doi Menos.mp3
-80:Sertanejo/Ze Neto e Cristiano -  Seu Policia.mp3
-81:Sertanejo/Ze Neto e Cristiano - Cadeira de Aco.mp3
-82:Sertanejo/Ze Neto e Cristiano - Dito e Feito.mp3
-83:Sertanejo/Ze Neto e Cristiano - Largado As Tracas.mp3
-84:Sertanejo/Simone e Simaria - Quando o Mel e Bom.mp3
-85:Sertanejo/Stefano e Leonardo - Doce Lar.mp3
-86:Sertanejo/Diego _ Arnaldo - 01 Sofri em Dobro.mp3
-87:Sertanejo/Edson e Hudson Escandalo de Amor.mp3
-88:Varios/danger_zone.mp3
-89:Varios/Errou.ogg
-90:Varios/fuego.mp3
-91:Varios/highway.mp3
-92:Varios/ironman.mp3
-93:Varios/lullaby.mp3
-94:Varios/stolen_dance.mp3
-95:Varios/unforgiven.mp3
-96:Varios/wonder.mp3
+38:Sertanejo/Gusttavo Lima - Apelido Carinhoso.mp3
+39:Sertanejo/Joao Lucas e Marcelo - Eu Quero Tchu Tcha Tcha.mp3
+40:Sertanejo/Joao Bosco e Vinicius - Promete.mp3
+41:Sertanejo/Joao Neto e Frederico - Nao Vou Mais Chorar.mp3
+42:Sertanejo/Joao Neto e Frederico - Rapariga Nao.mp3
+43:Sertanejo/Jorge e Mateus - Paredes.mp3
+44:Sertanejo/Jorge e Mateus - Propaganda.mp3
+45:Sertanejo/Julia e Rafaela - Na Mesma Moeda.mp3
+46:Sertanejo/Julia e Rafaela - Paredes Pintadas.mp3
+47:Sertanejo/Leo e Raphael - Sai do Mato Veiaco.mp3
+48:Sertanejo/Leo e Raphael - Tchau Brigado.mp3
+49:Sertanejo/Leo Magalhaes - Meu Amor Voltou.mp3
+50:Sertanejo/Leo Magalhaes - Oi.mp3
+51:Sertanejo/Leo Magalhaes - Onde Anda Meu Amor.mp3
+52:Sertanejo/Loubet - Naturalmente _ Clipe Oficial-1OnO6yOtcPk.mp3
+53:Sertanejo/Loubet - OLX.mp3
+54:Sertanejo/Maiara e Maraisa - 10 Por Cento.mp3
+55:Sertanejo/Maiara e Maraisa - Medo Bobo.mp3
+56:Sertanejo/Maiara e Maraisa - Quem Ensinou Fui Eu.mp3
+57:Sertanejo/Maiara e Maraisa – Disk Sexy.mp3
+58:Sertanejo/Marilia Mendonca - Ausencia.mp3
+59:Sertanejo/Marília Mendonça - Como faz com ela - Vídeo Oficial do DVD.mp3
+60:Sertanejo/Marília Mendonça - Essas Nossas Brigas - Vídeo Oficial do DVD.mp3
+61:Sertanejo/Marília Mendonça - O Que Falta Em Você Sou Eu - Vídeo Oficial do DVD.mp3
+62:Sertanejo/Matheus e Kauan - Incerteza.mp3
+63:Sertanejo/Matheus e Kauan - Me Amar Amanha.mp3
+64:Sertanejo/Michel Telo - Não Tem Pra Ninguem.mp3
+65:Sertanejo/Naiara Azevedo - Ex do Seu Atual.mp3
+66:Sertanejo/Naiara Azevedo - Pegada Que Desgrama.mp3
+67:Sertanejo/Paula Mattos - Coisa de Ex.mp3
+68:Sertanejo/Rayane e Rafaela - Tinha Que Ter Feito Nao.mp3
+69:Sertanejo/Rodrigo e Thayane - Nem A Pau Juvenal.mp3
+70:Sertanejo/Rogerio Ferrari - Vizinho Abaixa o Som.mp3
+71:Sertanejo/Simone e Simaria - 126 Cabides.mp3
+72:Sertanejo/Simone e Simaria - Chora Nao Coleguinha.mp3
+73:Sertanejo/Simone e Simaria - Regime Fechado.mp3
+74:Sertanejo/Thayna Bitencourt - Chinelo e Pijama.mp3
+75:Sertanejo/Tradicao - Se Nao Vai Eu Vou.mp3
+76:Sertanejo/Trio Parada Dura - Aceita Que Doi Menos.mp3
+77:Sertanejo/Ze Neto e Cristiano -  Seu Policia.mp3
+78:Sertanejo/Ze Neto e Cristiano - Cadeira de Aco.mp3
+79:Sertanejo/Ze Neto e Cristiano - Dito e Feito.mp3
+80:Sertanejo/Ze Neto e Cristiano - Largado As Tracas.mp3
+81:Sertanejo/Simone e Simaria - Quando o Mel e Bom.mp3
+82:Sertanejo/Stefano e Leonardo - Doce Lar.mp3
+83:Sertanejo/Diego _ Arnaldo - 01 Sofri em Dobro.mp3
+84:Sertanejo/Edson e Hudson Escandalo de Amor.mp3
+85:Varios/danger_zone.mp3
+86:Varios/Errou.ogg
+87:Varios/fuego.mp3
+88:Varios/highway.mp3
+89:Varios/ironman.mp3
+90:Varios/lullaby.mp3
+91:Varios/stolen_dance.mp3
+92:Varios/unforgiven.mp3
+93:Varios/wonder.mp3
 playlist_end
