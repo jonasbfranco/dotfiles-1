@@ -178,7 +178,7 @@ set $ws2 "2:"
 set $ws3 "3:"
 set $ws4 "4:"
 set $ws5 "5:"
-set $ws6 "6:"
+set $ws6 "6:"
 set $ws7 "7:"
 set $ws8 "8:"
 set $ws9 "9:"
@@ -229,17 +229,19 @@ for_window [title="(Agave|mpv|Biblioteca|Library|About|Amigos|Sobre o Mozilla Fi
 for_window [class="(Engrampa|File-roller)"] floating enable, move position center
 for_window [class="dagor2" title="(War Thunder|War Thunder (Configurações))"] move to workspace $ws10, floating enable, move position center, border pixel 1
 for_window [title="(screencast$|^DownThemAll|MEGAsync|DownThemAll|!$)"] move window to scratchpad
-for_window [title="^ncmpcpp"] move to workspace $ws8, floating enable, move position center
+for_window [class="Termite" title="^ncmpcpp"] move to workspace $ws6, floating enable, move position center
+for_window [title="(^DeaDBeeF)"] move to workspace $ws6, floating enable, move position center
 
 assign [class="^(Chromium|qutebrowser|Epiphany|Firefox|firefox-developer)"] $ws1
 assign [class="(Termite|Tilix|st-256color)"] $ws2
 assign [class="^(code|Pluma|Sublime_text|Atom)"] $ws3
 assign [class="(Thunar|Pcmanfm)"] $ws4
 assign [class="(Lxappearance|^Pamac*|Notes|Lxtask|^Mate-disk-usage-analyzer|Filezilla|JDownloader)"] $ws5
-assign [class="(^Steam|Atril)"] $ws6
+assign [class="(^Steam)"] $ws6
 assign [class="(Thunderbird)"] $ws7
+assign [class="(whatsdesk|Whatsie|Whatsapp|whatsapp-desktop)"] $ws8
 assign [class="(^Telegram|^Hexchat)"] $ws9
-assign [class="(whatsdesk|Whatsie|Whatsapp|whatsapp-desktop)"] $ws10
+assign [class="(^Atril)"] $ws10
 
 ####################################################################
 ################ G R U P O S #######################################
@@ -300,6 +302,7 @@ mode "$mode_gaps_inner" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
+
 mode "$mode_gaps_outer" {
         bindsym plus  gaps outer current plus 5
         bindsym minus gaps outer current minus 5
