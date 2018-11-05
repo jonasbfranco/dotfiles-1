@@ -2,8 +2,8 @@ sw_volume: 92
 audio_device_state:1:MPD Pulse
 audio_device_state:1:MPD FIFO
 state: play
-current: 50
-time: 3.938000
+current: 54
+time: 4.078000
 random: 0
 repeat: 1
 single: 0
@@ -63,32 +63,31 @@ playlist_begin
 48:Sertanejo/Marília Mendonça - Essas Nossas Brigas - Vídeo Oficial do DVD.mp3
 49:Sertanejo/Matheus e Kauan - Incerteza.mp3
 50:Sertanejo/Matheus e Kauan - Me Amar Amanha.mp3
-51:Sertanejo/Michel Telo - Não Tem Pra Ninguem.mp3
-52:Sertanejo/Naiara Azevedo - Ex do Seu Atual.mp3
-53:Sertanejo/Naiara Azevedo - Pegada Que Desgrama.mp3
-54:Sertanejo/Paula Mattos - Coisa de Ex.mp3
-55:Sertanejo/Rayane e Rafaela - Tinha Que Ter Feito Nao.mp3
-56:Sertanejo/Rodrigo e Thayane - Nem A Pau Juvenal.mp3
-57:Sertanejo/Rogerio Ferrari - Vizinho Abaixa o Som.mp3
-58:Sertanejo/Simone e Simaria - 126 Cabides.mp3
-59:Sertanejo/Simone e Simaria - Chora Nao Coleguinha.mp3
-60:Sertanejo/Simone e Simaria - Regime Fechado.mp3
-61:Sertanejo/Thayna Bitencourt - Chinelo e Pijama.mp3
-62:Sertanejo/Tradicao - Se Nao Vai Eu Vou.mp3
-63:Sertanejo/Trio Parada Dura - Aceita Que Doi Menos.mp3
-64:Sertanejo/Ze Neto e Cristiano -  Seu Policia.mp3
-65:Sertanejo/Ze Neto e Cristiano - Cadeira de Aco.mp3
-66:Sertanejo/Ze Neto e Cristiano - Dito e Feito.mp3
-67:Sertanejo/Ze Neto e Cristiano - Largado As Tracas.mp3
-68:Sertanejo/Simone e Simaria - Quando o Mel e Bom.mp3
-69:Sertanejo/Stefano e Leonardo - Doce Lar.mp3
-70:Sertanejo/Diego _ Arnaldo - 01 Sofri em Dobro.mp3
-71:Sertanejo/Edson e Hudson Escandalo de Amor.mp3
-72:Varios/danger_zone.mp3
-73:Varios/Errou.ogg
-74:Varios/fuego.mp3
-75:Varios/highway.mp3
-76:Varios/ironman.mp3
-77:Varios/lullaby.mp3
-78:Varios/stolen_dance.mp3
+51:Sertanejo/Naiara Azevedo - Ex do Seu Atual.mp3
+52:Sertanejo/Naiara Azevedo - Pegada Que Desgrama.mp3
+53:Sertanejo/Paula Mattos - Coisa de Ex.mp3
+54:Sertanejo/Rayane e Rafaela - Tinha Que Ter Feito Nao.mp3
+55:Sertanejo/Rodrigo e Thayane - Nem A Pau Juvenal.mp3
+56:Sertanejo/Rogerio Ferrari - Vizinho Abaixa o Som.mp3
+57:Sertanejo/Simone e Simaria - 126 Cabides.mp3
+58:Sertanejo/Simone e Simaria - Chora Nao Coleguinha.mp3
+59:Sertanejo/Simone e Simaria - Regime Fechado.mp3
+60:Sertanejo/Thayna Bitencourt - Chinelo e Pijama.mp3
+61:Sertanejo/Tradicao - Se Nao Vai Eu Vou.mp3
+62:Sertanejo/Trio Parada Dura - Aceita Que Doi Menos.mp3
+63:Sertanejo/Ze Neto e Cristiano -  Seu Policia.mp3
+64:Sertanejo/Ze Neto e Cristiano - Cadeira de Aco.mp3
+65:Sertanejo/Ze Neto e Cristiano - Dito e Feito.mp3
+66:Sertanejo/Ze Neto e Cristiano - Largado As Tracas.mp3
+67:Sertanejo/Simone e Simaria - Quando o Mel e Bom.mp3
+68:Sertanejo/Stefano e Leonardo - Doce Lar.mp3
+69:Sertanejo/Diego _ Arnaldo - 01 Sofri em Dobro.mp3
+70:Sertanejo/Edson e Hudson Escandalo de Amor.mp3
+71:Varios/danger_zone.mp3
+72:Varios/Errou.ogg
+73:Varios/fuego.mp3
+74:Varios/highway.mp3
+75:Varios/ironman.mp3
+76:Varios/lullaby.mp3
+77:Varios/stolen_dance.mp3
 playlist_end
