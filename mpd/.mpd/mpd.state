@@ -1,9 +1,9 @@
 sw_volume: 100
 audio_device_state:1:MPD Pulse
 audio_device_state:1:MPD FIFO
-state: pause
-current: 61
-time: 94.647000
+state: play
+current: 63
+time: 3.972000
 random: 0
 repeat: 0
 single: 0
@@ -73,50 +73,46 @@ playlist_begin
 58:Sertanejo/Maiara e Maraisa - Medo Bobo.mp3
 59:Sertanejo/Maiara e Maraisa - Quem Ensinou Fui Eu.mp3
 60:Sertanejo/Maiara e Maraisa – Disk Sexy.mp3
-61:Sertanejo/Maiara e Maraisa – Sorte Que Ce Beija Bem.mp3
-62:Sertanejo/Manu ft. Simone  - Nao Tem Essa Que Nao Chora.mp3
-63:Sertanejo/Marcelo Lima e Alessandro - Cuidado Com a Pinga.mp3
-64:Sertanejo/Marília Mendonça - Amante Não Tem Lar.mp3
-65:Sertanejo/Marilia Mendonca - Ausencia.mp3
-66:Sertanejo/Marília Mendonça - Como faz com ela - Vídeo Oficial do DVD.mp3
-67:Sertanejo/Marília Mendonça - Essas Nossas Brigas - Vídeo Oficial do DVD.mp3
-68:Sertanejo/Marília Mendonça - Eu Sei De Cor - DVD Realidade-sS2yCCi2Mek.mp3
-69:Sertanejo/Marília Mendonça - Folgado - Vídeo Oficial do DVD.mp3
-70:Sertanejo/Marília Mendonça - Me Desculpe Mas Eu Sou Fiel - Vídeo Oficial do DVD.mp3
-71:Sertanejo/Marília Mendonça - O Que Falta Em Você Sou Eu - Vídeo Oficial do DVD.mp3
-72:Sertanejo/Marília Mendonça - Quatro e quinze - Vídeo Oficial do DVD.mp3
-73:Sertanejo/Matheus e Kauan - Decide Ai.mp3
-74:Sertanejo/Matheus e Kauan - Incerteza.mp3
-75:Sertanejo/Matheus e Kauan - Me Amar Amanha.mp3
-76:Sertanejo/Michel Telo - Não Tem Pra Ninguem.mp3
-77:Sertanejo/Naiara Azevedo - Ex do Seu Atual.mp3
-78:Sertanejo/Naiara Azevedo - Pegada Que Desgrama.mp3
-79:Sertanejo/Naiara Azevedo - Vou te Trair.mp3
-80:Sertanejo/Paula Mattos - Coisa de Ex.mp3
-81:Sertanejo/Rayane e Rafaela - Tinha Que Ter Feito Nao.mp3
-82:Sertanejo/Rodrigo e Thayane - Nem A Pau Juvenal.mp3
-83:Sertanejo/Rogerio Ferrari - Vizinho Abaixa o Som.mp3
-84:Sertanejo/Simone e Simaria - 126 Cabides.mp3
-85:Sertanejo/Simone e Simaria - Chora Nao Coleguinha.mp3
-86:Sertanejo/Simone e Simaria - Regime Fechado.mp3
-87:Sertanejo/Thayna Bitencourt - Chinelo e Pijama.mp3
-88:Sertanejo/Tradicao - Se Nao Vai Eu Vou.mp3
-89:Sertanejo/Trio Parada Dura - Aceita Que Doi Menos.mp3
-90:Sertanejo/Ze Neto e Cristiano -  Seu Policia.mp3
-91:Sertanejo/Ze Neto e Cristiano - Cadeira de Aco.mp3
-92:Sertanejo/Ze Neto e Cristiano - Dito e Feito.mp3
-93:Sertanejo/Ze Neto e Cristiano - Largado As Tracas.mp3
-94:Sertanejo/Simone e Simaria - Quando o Mel e Bom.mp3
-95:Sertanejo/Stefano e Leonardo - Doce Lar.mp3
-96:Sertanejo/Diego _ Arnaldo - 01 Sofri em Dobro.mp3
-97:Sertanejo/Edson e Hudson Escandalo de Amor.mp3
-98:Varios/danger_zone.mp3
-99:Varios/Errou.ogg
-100:Varios/fuego.mp3
-101:Varios/highway.mp3
-102:Varios/ironman.mp3
-103:Varios/lullaby.mp3
-104:Varios/stolen_dance.mp3
-105:Varios/unforgiven.mp3
-106:Varios/wonder.mp3
+61:Sertanejo/Marilia Mendonca - Ausencia.mp3
+62:Sertanejo/Marília Mendonça - Como faz com ela - Vídeo Oficial do DVD.mp3
+63:Sertanejo/Marília Mendonça - Essas Nossas Brigas - Vídeo Oficial do DVD.mp3
+64:Sertanejo/Marília Mendonça - Eu Sei De Cor - DVD Realidade-sS2yCCi2Mek.mp3
+65:Sertanejo/Marília Mendonça - Folgado - Vídeo Oficial do DVD.mp3
+66:Sertanejo/Marília Mendonça - Me Desculpe Mas Eu Sou Fiel - Vídeo Oficial do DVD.mp3
+67:Sertanejo/Marília Mendonça - O Que Falta Em Você Sou Eu - Vídeo Oficial do DVD.mp3
+68:Sertanejo/Marília Mendonça - Quatro e quinze - Vídeo Oficial do DVD.mp3
+69:Sertanejo/Matheus e Kauan - Decide Ai.mp3
+70:Sertanejo/Matheus e Kauan - Incerteza.mp3
+71:Sertanejo/Matheus e Kauan - Me Amar Amanha.mp3
+72:Sertanejo/Michel Telo - Não Tem Pra Ninguem.mp3
+73:Sertanejo/Naiara Azevedo - Ex do Seu Atual.mp3
+74:Sertanejo/Naiara Azevedo - Pegada Que Desgrama.mp3
+75:Sertanejo/Naiara Azevedo - Vou te Trair.mp3
+76:Sertanejo/Paula Mattos - Coisa de Ex.mp3
+77:Sertanejo/Rayane e Rafaela - Tinha Que Ter Feito Nao.mp3
+78:Sertanejo/Rodrigo e Thayane - Nem A Pau Juvenal.mp3
+79:Sertanejo/Rogerio Ferrari - Vizinho Abaixa o Som.mp3
+80:Sertanejo/Simone e Simaria - 126 Cabides.mp3
+81:Sertanejo/Simone e Simaria - Chora Nao Coleguinha.mp3
+82:Sertanejo/Simone e Simaria - Regime Fechado.mp3
+83:Sertanejo/Thayna Bitencourt - Chinelo e Pijama.mp3
+84:Sertanejo/Tradicao - Se Nao Vai Eu Vou.mp3
+85:Sertanejo/Trio Parada Dura - Aceita Que Doi Menos.mp3
+86:Sertanejo/Ze Neto e Cristiano -  Seu Policia.mp3
+87:Sertanejo/Ze Neto e Cristiano - Cadeira de Aco.mp3
+88:Sertanejo/Ze Neto e Cristiano - Dito e Feito.mp3
+89:Sertanejo/Ze Neto e Cristiano - Largado As Tracas.mp3
+90:Sertanejo/Simone e Simaria - Quando o Mel e Bom.mp3
+91:Sertanejo/Stefano e Leonardo - Doce Lar.mp3
+92:Sertanejo/Diego _ Arnaldo - 01 Sofri em Dobro.mp3
+93:Sertanejo/Edson e Hudson Escandalo de Amor.mp3
+94:Varios/danger_zone.mp3
+95:Varios/Errou.ogg
+96:Varios/fuego.mp3
+97:Varios/highway.mp3
+98:Varios/ironman.mp3
+99:Varios/lullaby.mp3
+100:Varios/stolen_dance.mp3
+101:Varios/unforgiven.mp3
+102:Varios/wonder.mp3
 playlist_end
