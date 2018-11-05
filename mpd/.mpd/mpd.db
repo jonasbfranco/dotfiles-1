@@ -341,13 +341,6 @@ Title: 40 Graus de Amor
 Format: 44100:24:2
 mtime: 1525411576
 song_end
-song_begin: Diego e Arnaldo - Se Eu Te Procurar.mp3
-Time: 163.632000
-Artist: Se Eu Te Procurar
-Title: Diego & Arnaldo
-Format: 48000:24:2
-mtime: 1537361841
-song_end
 song_begin: Diego e Arnaldo - Sofri Em Dobro.mp3
 Time: 196.656000
 Artist: Sofri em Dobro
@@ -770,6 +763,14 @@ Album: Acústico 2017
 Track: 6
 Format: 44100:24:2
 mtime: 1537020618
+song_end
+song_begin: Diego e Arnaldo - Se Eu Te Procurar.mp3
+Time: 163.632000
+Artist: Se Eu Te Procurar
+Title: Diego & Arnaldo
+Album: Diego & Arnaldo
+Format: 48000:24:2
+mtime: 1541425153
 song_end
 song_begin: Diego _ Arnaldo - 01 Sofri em Dobro.mp3
 Time: 205.097000
