@@ -279,8 +279,10 @@ mtime: 1540463179
 begin: Pagode
 song_begin: Raca Negra - Cheia De Manias.mp3
 Time: 251.141000
+Artist: Raça Negra
+Title: Cheia de Manias
 Format: 44100:24:2
-mtime: 1526777546
+mtime: 1541418338
 song_end
 end: Pagode
 directory: Rock
@@ -495,26 +497,30 @@ song_end
 song_begin: Loubet - Naturalmente _ Clipe Oficial-1OnO6yOtcPk.mp3
 Time: 396.096000
 Artist: Loubet
+Title: Naturalmente
 Format: 48000:24:2
-mtime: 1540463267
+mtime: 1541418358
 song_end
 song_begin: Loubet - OLX.mp3
 Time: 194.472000
 Artist: Loubet
+Title: OLX
 Format: 48000:24:2
-mtime: 1540463267
+mtime: 1541418378
 song_end
 song_begin: Maiara e Maraisa - 10 Por Cento.mp3
 Time: 173.453000
 Artist: Maiara & Maraísa
+Title: 10%
 Format: 44100:24:2
-mtime: 1540463306
+mtime: 1541418401
 song_end
 song_begin: Maiara e Maraisa - Medo Bobo.mp3
 Time: 174.524000
 Artist: Maiara & Maraísa
+Title: Medo Bobo
 Format: 44100:24:2
-mtime: 1540463306
+mtime: 1541418415
 song_end
 song_begin: Maiara e Maraisa - Quem Ensinou Fui Eu.mp3
 Time: 151.180000
