@@ -29,8 +29,10 @@
 ####################################################################
 set $mod Mod4
 
-gaps inner 10
-gaps outer 0
+set $gaps_inner_default 10
+set $gaps_outer_default 0
+gaps inner $gaps_inner_default
+gaps outer $gaps_outer_default
 
 font pango:DejaVu Sans Mono 8
 
@@ -272,8 +274,8 @@ bindsym $mod+r mode "resize"
 ################ G A P S ###########################################
 ####################################################################
 set $mode_gaps Gaps: (o) outer, (i) inner
-set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
-set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
+set $mode_gaps_outer Outer Gaps: +|-|0|d (local), Shift + +|-|0|d (global)
+set $mode_gaps_inner Inner Gaps: +|-|0|d (local), Shift + +|-|0|d (global)
 bindsym $mod+Shift+g mode "$mode_gaps"
 
 mode "$mode_gaps" {
@@ -292,6 +294,9 @@ mode "$mode_gaps_inner" {
         bindsym Shift+minus gaps inner all minus 5
         bindsym Shift+0     gaps inner all set 0
 
+        bindsym d gaps inner current set $gaps_inner_default, mode "default"
+        bindsym Shift+d gaps inner all set $gaps_inner_default, mode "default"
+
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
@@ -303,6 +308,9 @@ mode "$mode_gaps_outer" {
         bindsym Shift+plus  gaps outer all plus 5
         bindsym Shift+minus gaps outer all minus 5
         bindsym Shift+0     gaps outer all set 0
+
+        bindsym d gaps outer current set $gaps_outer_default, mode "default"
+        bindsym Shift+d gaps outer all set $gaps_outer_default, mode "default"
 
         bindsym Return mode "default"
         bindsym Escape mode "default"
