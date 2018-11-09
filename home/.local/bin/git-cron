@@ -13,6 +13,7 @@
 
 dir="${HOME}/github"
 repos=('majestic' 'sistematico.github.io' 'oc-cli' 'cabron-bot' 'pollen' 'agressive' 'spamsentrybot')
+remoto="nginx@hera"
 
 atualiza() {
 	if [ -d $1 ]; then
@@ -40,6 +41,10 @@ if [ ! $1 ]; then
 	done
 
 	atualiza "${HOME}/.dotfiles"
+elif [ "$1" == "-a" ]; then
+    caminho="$@"
+    atualiza "$caminho"
+	ssh $remoto "/usr/local/scripts/git-http"
 else
 	caminho="$@"
 	atualiza "$caminho"
