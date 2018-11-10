@@ -70,8 +70,10 @@ else
         listagem=(${caminho}*)
         if [ ${#listagem[@]} -gt 1 ]; then
             mv ${caminho}* ${lixeira}/files/
+	    export DISPLAY=:0 ; canberra-gtk-play -i trash-empty 2>&1
             notify-send -i $icone "ScreenCast" "Pasta de screencasts limpa!"
         else
+	    export DISPLAY=:0 ; canberra-gtk-play -i trash-empty 2>&1
             notify-send -i $icone "ScreenCast" "Pasta de screencasts já está limpa!"
         fi
         exit 0
