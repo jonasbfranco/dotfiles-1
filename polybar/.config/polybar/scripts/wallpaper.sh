@@ -2,11 +2,11 @@
 
 [ -f ~/.config/user-dirs.dirs ] && source ~/.config/user-dirs.dirs
 
-dir="${XDG_PICTURES_DIR:-${HOME}/img}/wallpapers"
-unsplash_dir="${XDG_PICTURES_DIR:-${HOME}/img}/wallpapers/unsplash"
+dir="${XDG_PICTURES_DIR:-${HOME}/img}/unsplash"
+unsplash_dir="${XDG_PICTURES_DIR:-${HOME}/img}/unsplash"
 #default="$dir/alex-block-354270-unsplash.jpg"
 default="$dir/i3.png"
-ultima="/home/lucas/img/wallpapers/unsplash/patrick-hendry-357978-unsplash.jpg"
+ultima="/home/lucas/img/unsplash/janko-ferlic-1149358-unsplash.jpg"
 modo="--bg-fill"
 indice=0
 i=0

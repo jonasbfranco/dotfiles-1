@@ -19,7 +19,7 @@ export TERMINAL=xfce4-terminal
 export EDITOR=nano
 export BROWSER=firefox
 
-session=${1:-xfce}
+session=${1:-i3}
 
 case $session in
     xfce)
