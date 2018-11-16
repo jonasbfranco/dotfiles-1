@@ -15,6 +15,7 @@ fi
 [ -d ${HOME}/apps ] && export PATH=${PATH}:${HOME}/apps
 [ ! -d "${XDG_DATA_HOME:-$HOME/.local/share}/dbus-1/services" ] && mkdir -p "${XDG_DATA_HOME:-$HOME/.local/share}/dbus-1/services"
 
+export DESKTOP_SESSION=i3
 export TERMINAL=xfce4-terminal
 export EDITOR=nano
 export BROWSER=firefox
