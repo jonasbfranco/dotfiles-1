@@ -2,8 +2,8 @@ sw_volume: 92
 audio_device_state:1:MPD Pulse
 audio_device_state:1:MPD FIFO
 state: play
-current: 9
-time: 4.026000
+current: 3
+time: 3.942000
 random: 0
 repeat: 1
 single: 0
@@ -18,10 +18,4 @@ playlist_begin
 3:Ivy Levan - 27 Club.mp3
 4:Martin Felix Kaczmarski - House Bounce.mp3
 5:Matheus e Kauan - Me Amar Amanha.mp3
-6:Cat Dealers & Evokings feat Magga - Gravity (Official Lyric Video).mp3
-7:Cat Dealers, LOthief, Santti - Sunshine.mp3
-8:Dynoro & Gigi D'Agostino - In My Mind.mp3
-9:Ivy Levan - 27 Club.mp3
-10:Martin Felix Kaczmarski - House Bounce.mp3
-11:Matheus e Kauan - Me Amar Amanha.mp3
 playlist_end
