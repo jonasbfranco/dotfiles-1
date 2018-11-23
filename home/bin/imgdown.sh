@@ -10,6 +10,9 @@ pasta="${HOME}/tmp/$$"
 turl="$(xclip -o)"
 icone='/usr/share/icons/Arc/places/24@2x/folder-pictures.png'
 
+#xclip -o | xclip -selection clipboard -i
+#xclip -o | espeak
+
 if [ ! -f $pasta ]; then
 	mkdir -p $pasta
 else
