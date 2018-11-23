@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+[ ! -f $HOME/.envs ] && echo "WALLPAPERS=${HOME}/img" > $HOME/.envs
+source $HOME/.envs
+wallpaper=$(find "$WALLPAPERS" -type f | shuf -n 1)
+
+desks=('i3' 'xfce4-session')
+for desk in "${desks[@]}"; do
+	# $(ps -ef | grep "i3" | grep -v "grep" | wc -l)
+	[ $(pgrep $desk) ] && desktop=$desk || desktop='outro'
+done
+
+if [ "$desktop" == "outro" ]; then
+	feh --bg-fill "$wallpaper"
+elif [ "$desktop" == "xfce4-session" ]; then
+	#DISPLAY=:0 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$(id -u)/bus /usr/bin/xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitor0/workspace0/last-image -s "$wallpaper"
+	/usr/bin/xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitor0/workspace0/last-image -s "$wallpaper"
+fi
+

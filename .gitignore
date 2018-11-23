@@ -12,6 +12,5 @@
 pkg/
 src/
 
-mpd.state
-
-wallpaper
+mpd/.mpd/mpd.pid
+mpd/.mpd/mpd.state
