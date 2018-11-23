@@ -9,9 +9,8 @@ lixeira="${HOME}/.local/share/Trash"
 pasta="${HOME}/tmp/$$"
 turl="$(xclip -o)"
 icone='/usr/share/icons/Arc/places/24@2x/folder-pictures.png'
-
-#xclip -o | xclip -selection clipboard -i
-#xclip -o | espeak
+# /usr/share/sounds/freedesktop/stereo/
+som='complete'
 
 if [ ! -f $pasta ]; then
 	mkdir -p $pasta
@@ -31,4 +30,4 @@ done
 rm -rf $pasta/robots.txt*
 
 notify-send -i $icone "IMGdown" "Transferencia $$ finalizada."
-canberra-gtk-play -i camera-shutter
+canberra-gtk-play -i $som
