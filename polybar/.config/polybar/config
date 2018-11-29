@@ -286,7 +286,7 @@ label-separator = |
 label-separator-foreground = ${colors.foreground-alt}
 
 menu-0-0 = 
-menu-0-0-exec = firefox &
+menu-0-0-exec = qutebrowser &
 
 menu-0-1 = 
 menu-0-1-exec = termite &
@@ -353,8 +353,8 @@ content = 
 [module/browser]
 type = custom/text
 content = 
-click-left = chromium &
-click-middle = qutebrowser &
+click-left = qutebrowser &
+click-middle = chromium &
 click-right = firefox &
 
 [module/thunderbird]
