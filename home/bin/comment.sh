@@ -2,11 +2,13 @@
 
 string="$1"
 
-case $3 in
+case $2 in
 comentar)
-	sed -i "s/^#\($string\)\$/\1/" $2
+	sed -e "/$string/ s/^#*/#/" -i $3
+	#sed -i "s/^#\($string\)\$/\1/" $3
     ;;
 descomentar)
-    sed -i "s/^$string\$/#&/" $2
+	sed -e "/$string/ s/^#*//" -i $3
+    #sed -i "s/^$string\$/#&/" $3
     ;;
 esac
