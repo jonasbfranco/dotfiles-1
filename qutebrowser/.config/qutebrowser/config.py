@@ -1066,7 +1066,7 @@ c.input.insert_mode.auto_load = True
 
 ## Show a scrollbar.
 ## Type: Bool
-c.scrolling.bar = True
+c.scrolling.bar = 'when-searching'
 
 ## Enable smooth scrolling for web pages. Note smooth scrolling does not
 ## work with the `:scroll-px` command.
