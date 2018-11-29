@@ -12,5 +12,6 @@
 pkg/
 src/
 
-mpd/.mpd/mpd.pid
-mpd/.mpd/mpd.state
+mpd.pid
+mpd.state
+
