@@ -12,7 +12,7 @@
 # Última Atualização: 31/10/2018 12:36:47
 
 dir="${HOME}/github"
-repos=('majestic' 'sistematico.github.io' 'oc-cli' 'cabron-bot' 'pollen' 'agressive' 'spamsentrybot')
+repos=('majestic' 'sistematico.github.io' 'oc-cli' 'cabron-bot' 'pollen' 'agressive' 'spamsentrybot' 'docker-arma3-exile')
 remoto="nginx@hera"
 
 atualiza() {
