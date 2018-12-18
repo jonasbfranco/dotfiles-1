@@ -19,7 +19,7 @@ else
 	wallpaper=$(/usr/bin/xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitor0/workspace0/last-image)
 	yad --image dialog-question --title 'Atenção' --button=gtk-yes:0 --button=gtk-no:1 --text "Deseja apagar $(basename $wallpaper)?"
 	if [ $? = 0 ]; then
-		mv $wallpaper $lixeira
+		mv $wallpaper ~/.local/share/Trash/
 	fi
 fi
 
