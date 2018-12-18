@@ -6,16 +6,21 @@ wallpaper=$(find "$WALLPAPERS" -type f | shuf -n 1)
 
 desks=('i3' 'xfce4-session')
 for desk in "${desks[@]}"; do
-	# $(ps -ef | grep "i3" | grep -v "grep" | wc -l)
-	#[ $(pgrep $desk) ] && desktop=$desk || desktop='outro'
 	[ $(ps -eo comm | grep $desk) ] && desktop=$desk || desktop='outro'
 done
 
-if [ "$desktop" == "outro" ]; then
-	feh --bg-fill "$wallpaper"
-elif [ "$desktop" == "xfce4-session" ]; then
-	#DISPLAY=:0 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$(id -u)/bus /usr/bin/xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitor0/workspace0/last-image -s "$wallpaper"
-	/usr/bin/xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitor0/workspace0/last-image -s "$wallpaper"
+if [ ! $1 ]; then
+	if [ "$desktop" == "outro" ]; then
+		feh --bg-fill "$wallpaper"
+	elif [ "$desktop" == "xfce4-session" ]; then
+		/usr/bin/xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitor0/workspace0/last-image -s "$wallpaper"
+	fi
+else
+	wallpaper=$(/usr/bin/xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitor0/workspace0/last-image)
+	yad --image dialog-question --title 'Atenção' --button=gtk-yes:0 --button=gtk-no:1 --text "Deseja apagar $(basename $wallpaper)?"
+	if [ $? = 0 ]; then
+		mv $wallpaper $lixeira
+	fi
 fi
 
-echo $desktop
+#echo $desktop
