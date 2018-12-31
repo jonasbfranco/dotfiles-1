@@ -34,20 +34,6 @@ res=$(printf "%s\n" "${configs[@]}" | rofi $tema -dmenu -p "Rofi Config" -bw 0 -
 if [ "$res" ]; then
 	case $res in
 		'i3') i3-msg exec $editor ~/.config/i3/config ;;
-		'i3blocks')
-			i3blocks=$(echo "Config;Apps" | rofi $tema -sep ";" -dmenu -p "i3blocks" -bw 0 -lines 2 -separator-style none -location 0 -width 180 -hide-scrollbar -padding 5)
-			if [ $i3blocks ]; then
-				case $i3blocks in
-					'Config') i3-msg exec $editor "${HOME}/.config/i3blocks/config" ;;
-					'Apps')
-						i3blocksapps=$(ls "${HOME}/.config/i3blocks/scripts/" | rofi $tema -dmenu -p "i3 Blocks Apps" -bw 0 -lines 16 -separator-style none -location 0 -width 150 -hide-scrollbar -padding 5)	
-						if [ $i3blocksapps ]; then
-							i3-msg exec $editor ~/.config/i3blocks/scripts/${i3blocksapps}
-						fi
-					;;
-				esac
-			fi
-		;;
 		'Polybar')
 			polyconfig=$(echo "Config;Apps;Reload" | rofi $tema -sep ";" -dmenu -p "Polybar" -bw 0 -lines 3 -separator-style none -location 0 -width 160 -hide-scrollbar -padding 5)
 			if [ "$polyconfig" = "Reload" ]; then
@@ -58,7 +44,7 @@ if [ "$res" ]; then
 					i3-msg exec $editor "${HOME}/.config/polybar/scripts/${app}"
 				fi
 			elif [ "$polyconfig" == "Config" ]; then
-				i3-msg exec $editor ${HOME}/.config/polybar/config
+				i3-msg exec $editor ${HOME}/.config/polybar/branco ${HOME}/.config/polybar/preto ${HOME}/.config/polybar/principal
 			fi
 		;;
 		'i3lock') i3-msg exec $editor $(grep xautolock ~/.config/i3/config | awk '{print $8}') ;;
