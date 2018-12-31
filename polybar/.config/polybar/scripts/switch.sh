@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-grep -Fx "Preto" ${HOME}/.config/polybar/config
+grep -Fx "Tema Preto" ${HOME}/.config/polybar/config
 
 if [ $? = 1 ]; then 
     SW=""

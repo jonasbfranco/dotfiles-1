@@ -24,11 +24,11 @@ strip-wsnumbers = true
 label-mode = %mode%
 label-mode-padding = 2
 label-mode-foreground = #000
-label-mode-background = ${colors.primary}
+;label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
 label-focused = %name%
-; label-focused-background = ${colors.background-alt}
+;label-focused-background = ${colors.background-alt}
 label-focused-foreground = ${colors.alert}
 label-focused-padding = 2
 
