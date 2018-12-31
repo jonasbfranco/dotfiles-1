@@ -1,8 +1,8 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
-grep -Fxq "Preto" ${HOME}/.config/polybar/config 2> /dev/null
+grep -Fx "Preto" ${HOME}/.config/polybar/config
 
-if [ $? = 0 ]; then 
+if [ $? = 1 ]; then 
     SW=""
     if [ $1 ]; then
     	cat ${HOME}/.config/polybar/preto > ${HOME}/.config/polybar/config
