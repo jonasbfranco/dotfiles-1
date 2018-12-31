@@ -10,7 +10,8 @@ if grep -q "Tema Branco" "$conf"; then
 else
 	#COR=$(awk -F# '/alert/{print $2;exit}' ${HOME}/.config/polybar/config)
 	#SW="%{F#${COR}}%{F-}"
-	SW="%{F#000000}%{F-}"
+	#SW="%{F#000000}%{F-}"
+	SW=""
     if [ $1 ]; then
     	cat ${HOME}/.config/polybar/branco > ${HOME}/.config/polybar/config
 	fi
