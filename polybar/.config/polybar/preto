@@ -59,7 +59,8 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = fixed:pixelsize=12;2
+;font-0 = fixed:pixelsize=12;2
+font-0 = Source Code Pro:style=Regular:pixelsize=12;2
 font-1 = feather:size=12;2
 
 modules-left = i3 sep apps
@@ -95,7 +96,8 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = fixed:pixelsize=12;2
+;font-0 = fixed:pixelsize=12;2
+font-0 = Source Code Pro:style=Regular:pixelsize=12;2
 font-1 = feather:size=12;2
 
 modules-left = 
