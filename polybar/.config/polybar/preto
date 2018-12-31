@@ -31,7 +31,7 @@
 [colors]
 background = ${xrdb:background:#222}
 background-alt = #444
-foreground = ${xrdb:foreground:#222}
+foreground = ${xrdb:foreground-alt:#222}
 foreground-alt = #555
 primary = #ffb52a
 secondary = #e60053
@@ -59,8 +59,8 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = fixed:pixelsize=10;2
-font-1 = feather:size=10;2
+font-0 = fixed:pixelsize=12;2
+font-1 = feather:size=12;2
 
 modules-left = i3 sep apps
 modules-center = window
@@ -95,8 +95,8 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = fixed:pixelsize=10;2
-font-1 = feather:size=10;2
+font-0 = fixed:pixelsize=12;2
+font-1 = feather:size=12;2
 
 modules-left = 
 modules-center = 
