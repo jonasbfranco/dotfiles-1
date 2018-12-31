@@ -301,6 +301,14 @@ content = 
 click-left = ~/.config/rofi/scripts/power &
 
 ;----------------------------------------------------------
+;		       W E A T H E R
+;----------------------------------------------------------
+[module/weather]
+type = custom/script
+interval = 60
+exec = ~/.config/polybar/scripts/weather.py
+
+;----------------------------------------------------------
 ;			S W I T C H
 ;----------------------------------------------------------
 [module/switch]

@@ -93,15 +93,15 @@ line-color = #f00
 padding-left = 0
 padding-right = 2
 
-module-margin-left = 0
+module-margin-left = 1
 module-margin-right = 1
 
 ;font-0 = fixed:pixelsize=12;2
 font-0 = Hack:style=Regular:pixelsize=11;2
 font-1 = feather:size=11;2
 
-modules-left = 
-modules-center = 
+modules-left = weather
+modules-center = browser thunar terminal
 modules-right = switch
 
 cursor-click = pointer
