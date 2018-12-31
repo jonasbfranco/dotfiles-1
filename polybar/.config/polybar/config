@@ -11,9 +11,9 @@ secondary = #e60053
 alert = #bd2c40
 
 ;----------------------------------------------------------
-;		        B A R R A
+;		        B A R R A ( T O P )
 ;----------------------------------------------------------
-[bar/majestic]
+[bar/top]
 monitor = ${env:MONITOR:DVI-I-0}
 width = 100%
 height = 29
@@ -41,10 +41,44 @@ modules-right = filesystem cpu memory temperature pulse data wallpaper screencas
 cursor-click = pointer
 cursor-scroll = ns-resize
 
-tray-position = right
+;tray-position = right
 ;tray-padding = 1
 ;tray-detached = true
 
+;----------------------------------------------------------
+;		        B A R R A ( B O T T O M )
+;----------------------------------------------------------
+[bar/bottom]
+monitor = ${env:MONITOR:DVI-I-0}
+width = 100%
+height = 29
+fixed-center = true
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 3
+line-color = #f00
+
+padding-left = 0
+padding-right = 2
+
+module-margin-left = 1
+module-margin-right = 2
+
+font-0 = fixed:pixelsize=10;2
+font-1 = feather:size=10;2
+
+modules-left = 
+modules-center = 
+modules-right = switch
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+;----------------------------------------------------------
+;		        I 3
+;----------------------------------------------------------
 [module/i3]
 type = internal/i3
 format = <label-state> <label-mode>
@@ -87,8 +121,6 @@ label-visible-padding = 2
 label-urgent = %name%
 label-urgent-background = ${colors.alert}
 label-urgent-padding = 2
-
-;tray-position = right
 
 ;----------------------------------------------------------
 ;		        P I N G
@@ -342,6 +374,16 @@ menu-2-1-exec = menu-open-0
 type = custom/text
 content = 
 click-left = ~/.config/rofi/scripts/power &
+
+;----------------------------------------------------------
+;			S W I T C H
+;----------------------------------------------------------
+[module/switch]
+type = custom/script
+;interval = 1
+label = %output%
+click-left = ~/.config/polybar/scripts/switch c &
+exec = ~/.config/polybar/scripts/switch
 
 ;-------------------------------------------------------------------------
 ;					O U T R O S

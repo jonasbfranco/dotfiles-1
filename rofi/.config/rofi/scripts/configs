@@ -144,7 +144,7 @@ if [ "$res" ]; then
 		'st') i3-msg exec $editor ~/aur/st-scrollback-git/config.h ;;
 		'crontab') 
 			crontab -l > /tmp/cron.txt
-			(i3-msg exec $editor /tmp/cron.txt ; crontab /tmp/cron.txt)
+			i3-msg exec $editor /var/spool/cron/$(whoami)
 		;;
 	esac
 fi

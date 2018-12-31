@@ -1,6 +1,6 @@
 #!/bin/bash
 
-COR=$(awk -F# '/destaque/{print $2;exit}' ${HOME}/.config/polybar/config)
+COR=$(awk -F# '/alert/{print $2;exit}' ${HOME}/.config/polybar/config)
 TRASH_DIRECTORY="${HOME}/.local/share/Trash"
 TRASH_TEMP="/tmp/lixo"
 
@@ -22,7 +22,11 @@ if [[ "${1}" == "-x" ]]; then
 	mkdir ${TRASH_DIRECTORY}/files
 	mkdir ${TRASH_DIRECTORY}/info
 
-	export DISPLAY=:0 ; canberra-gtk-play -i trash-empty 2>&1
+	if xset q &>/dev/null; then
+		# ls /usr/share/sounds/freedesktop/stereo/
+		export DISPLAY=:0 ; canberra-gtk-play -i trash-empty 2>&1
+		export DISPLAY=:0 ; notify-send "Lixeira" "Lixeira limpa!"
+	fi
 elif [[ "${1}" == "-o" ]]; then
 	xdg-open $TRASH_DIRECTORY/files
 fi
