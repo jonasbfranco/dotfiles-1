@@ -1,6 +1,8 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
-if [ ! -z $(grep -q "Preto" ${HOME}/.config/polybar/config) ]; then 
+grep -Fxq "Preto" ${HOME}/.config/polybar/config 2> /dev/null
+
+if [ $? = 0 ]; then 
     SW=""
     if [ $1 ]; then
     	cat ${HOME}/.config/polybar/preto > ${HOME}/.config/polybar/config
@@ -15,8 +17,7 @@ fi
 
 if [ $1 ]; then
 	cat ${HOME}/.config/polybar/principal >> ${HOME}/.config/polybar/config
-	${HOME}/.config/polybar/launch.sh
-	#export DISPLAY=:0 ; canberra-gtk-play -i trash-empty 2>&1
+	i3-msg restart
 fi
 
 echo "${SW}"
