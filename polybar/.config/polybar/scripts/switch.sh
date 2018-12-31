@@ -16,7 +16,7 @@ fi
 
 if [ $1 ]; then
 	cat ${HOME}/.config/polybar/principal >> ${HOME}/.config/polybar/config
-	~/.config/polybar/launch.sh
+	${HOME}/.config/polybar/launch.sh 2>&1
 	export DISPLAY=:0 ; canberra-gtk-play -i trash-empty 2>&1
 fi
 
