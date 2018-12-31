@@ -1,9 +1,9 @@
 sw_volume: 92
 audio_device_state:1:MPD Pulse
 audio_device_state:1:MPD FIFO
-state: pause
-current: 0
-time: 102.915000
+state: play
+current: 2
+time: 4.036000
 random: 0
 repeat: 1
 single: 0
@@ -17,4 +17,5 @@ playlist_begin
 2:Ivy Levan - 27 Club.mp3
 3:Martin Felix Kaczmarski - House Bounce.mp3
 4:Matheus e Kauan - Me Amar Amanha.mp3
+5:Gaucha/Grupo Reponte - Cacador de Tatu.mp3
 playlist_end
