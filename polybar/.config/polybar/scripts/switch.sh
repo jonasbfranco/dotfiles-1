@@ -1,14 +1,13 @@
 #!/usr/bin/env bash
 
-if [ ! $(grep -Fxq "Preto" "${HOME}/.config/polybar/config") ]; then 
-#if grep -Fxq "Tema Branco" ${HOME}/.config/polybar/config then
-    switch=""
+if [ ! -z $(grep -q "Preto" ${HOME}/.config/polybar/config) ]; then 
+    SW=""
     if [ $1 ]; then
     	cat ${HOME}/.config/polybar/preto > ${HOME}/.config/polybar/config
     fi
 else
 	COR=$(awk -F# '/alert/{print $2;exit}' ${HOME}/.config/polybar/config)
-	switch="%{F#${COR}}%{F-}"
+	SW="%{F#${COR}}%{F-}"
     if [ $1 ]; then
     	cat ${HOME}/.config/polybar/branco > ${HOME}/.config/polybar/config
 	fi
@@ -20,4 +19,4 @@ if [ $1 ]; then
 	export DISPLAY=:0 ; canberra-gtk-play -i trash-empty 2>&1
 fi
 
-echo "${switch}"
+echo "${SW}"
