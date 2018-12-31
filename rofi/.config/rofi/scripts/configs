@@ -26,6 +26,7 @@ configs=(
 'Home'
 'Termite'
 'st'
+'crontab'
 )
 
 res=$(printf "%s\n" "${configs[@]}" | rofi $tema -dmenu -p "Rofi Config" -bw 0 -lines "${#configs[@]}" -separator-style none -location 0 -width 180 -hide-scrollbar -padding 5)
@@ -141,5 +142,9 @@ if [ "$res" ]; then
 		;;
 		'Termite') i3-msg exec $editor ~/.config/termite/config ;;
 		'st') i3-msg exec $editor ~/aur/st-scrollback-git/config.h ;;
+		'crontab') 
+			crontab -l > /tmp/cron.txt
+			(i3-msg exec $editor /tmp/cron.txt ; crontab /tmp/cron.txt)
+		;;
 	esac
 fi
