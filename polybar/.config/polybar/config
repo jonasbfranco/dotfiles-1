@@ -1,4 +1,8 @@
 ;----------------------------------------------------------
+;		        Tema Branco
+;----------------------------------------------------------
+
+;----------------------------------------------------------
 ;		        I C O N E S
 ;----------------------------------------------------------
 ;                    
@@ -32,6 +36,7 @@ foreground-alt = #555
 primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
+transparente = #00000000
 
 ;----------------------------------------------------------
 ;		        B A R R A ( T O P )
@@ -42,7 +47,7 @@ width = 100%
 height = 29
 fixed-center = true
 
-background = ${colors.background}
+background = ${colors.transparente}
 foreground = ${colors.foreground}
 
 line-size = 3
@@ -78,7 +83,7 @@ height = 29
 fixed-center = true
 bottom = true
 
-background = ${colors.background}
+background = ${colors.transparente}
 foreground = ${colors.foreground}
 
 line-size = 3
@@ -98,9 +103,7 @@ modules-center =
 modules-right = switch
 
 cursor-click = pointer
-cursor-scroll = ns-resize
-
-;----------------------------------------------------------
+cursor-scroll = ns-resize;----------------------------------------------------------
 ;		        I 3
 ;----------------------------------------------------------
 [module/i3]
@@ -406,8 +409,8 @@ click-left = ~/.config/rofi/scripts/power &
 type = custom/script
 ;interval = 1
 label = %output%
-click-left = ~/.config/polybar/scripts/switch c &
-exec = ~/.config/polybar/scripts/switch
+click-left = ~/.config/polybar/scripts/switch.sh c &
+exec = ~/.config/polybar/scripts/switch.sh
 
 ;-------------------------------------------------------------------------
 ;					O U T R O S
