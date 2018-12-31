@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-if [ ! -z $(grep "Tema Branco" "${HOME}/.config/polybar/config") ]; then 
+if [ ! $(grep -Fxq "Preto" "${HOME}/.config/polybar/config") ]; then 
 #if grep -Fxq "Tema Branco" ${HOME}/.config/polybar/config then
     switch=""
     if [ $1 ]; then
