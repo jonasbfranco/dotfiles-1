@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+#  
+
 COR=$(awk -F# '/alert/{print $2;exit}' ${HOME}/.config/polybar/config)
 TRASH_DIRECTORY="${HOME}/.local/share/Trash"
 TRASH_TEMP="/tmp/lixo"
