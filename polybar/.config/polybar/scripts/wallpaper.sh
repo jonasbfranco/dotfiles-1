@@ -41,7 +41,7 @@ find "$dir" -type f \( -iname \*.jpg -o -iname \*.png -o -iname \*.jpeg \) -prin
 done
 
 cont=${#imagens[@]}
-total=$(($cont-1))
+total=$((cont-1))
 
 if [ $total -gt 0 ]; then
 	for i in "${!imagens[@]}"; do
