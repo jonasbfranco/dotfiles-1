@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 [ -f ~/.config/user-dirs.dirs ] && source ~/.config/user-dirs.dirs
 
@@ -33,7 +33,7 @@ fi
 while read linha; do
     imagens[$i]="$linha"
     ((i++))
-done <<(find "$dir" -type f \(-iname \*.jpg -o -iname \*.png -o -iname \*.jpeg\))
+done < <(find "$dir" -type f -iname \*.jpg -o -iname \*.png -o -iname \*.jpeg )
 
 cont=${#imagens[@]}
 total=$(($cont-1))
