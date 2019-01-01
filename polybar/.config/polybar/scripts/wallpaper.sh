@@ -30,10 +30,15 @@ fi
 [ ! -f $default ] && curl -s -L 'http://i.imgur.com/BwOh5Z5.png' > $default
 #[ ! -f $default ] && curl -s -L 'https://unsplash.com/photos/mEV-IXdk5Zc/download?force=true' > $default
 
-while read linha; do
+#while read linha; do
+#    imagens[$i]="$linha"
+#    ((i++))
+#done <<(find "$dir" -type f \( -iname \*.jpg -o -iname \*.png -o -iname \*.jpeg \) )
+
+find "$dir" -type f \( -iname \*.jpg -o -iname \*.png -o -iname \*.jpeg \) -print0 | while IFS= read -r -d $'\0' linha; do
     imagens[$i]="$linha"
     ((i++))
-done <<(find "$dir" -type f \( -iname \*.jpg -o -iname \*.png -o -iname \*.jpeg \) )
+done
 
 cont=${#imagens[@]}
 total=$(($cont-1))
