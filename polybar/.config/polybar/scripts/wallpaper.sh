@@ -5,7 +5,7 @@
 dir="${XDG_PICTURES_DIR:-${HOME}/img}"
 unsplash_dir="${XDG_PICTURES_DIR:-${HOME}/img}/unsplash"
 default="$dir/wallpapers/linux/iptables.jpg"
-ultima="/home/lucas/img/porn/ts/Paula Melo/23426/46222_1.jpg"
+ultima="/home/lucas/img/porn/ts/Paula Melo/23446/44186_15.jpg"
 modo="--bg-fill"
 indice=0
 i=0
