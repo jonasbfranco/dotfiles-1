@@ -59,8 +59,8 @@ padding-right = 1
 module-margin-left = 0
 module-margin-right = 1
 
-;font-0 = fixed:pixelsize=11;2
-font-0 = Hack:style=Regular:pixelsize=11;2
+; fixed:pixelsize=11 / Hack:style=Regular:pixelsize=11 / Iosevka:style=Regular:pixelsize=11
+font-0 = Iosevka:pixelsize=10;2
 font-1 = feather:size=11;2
 
 modules-left = i3 sep apps
@@ -96,8 +96,8 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 1
 
-;font-0 = fixed:pixelsize=12;2
-font-0 = Hack:style=Regular:pixelsize=11;2
+; fixed:pixelsize=11 / Hack:style=Regular:pixelsize=11 / Iosevka:style=Regular:pixelsize=11
+font-0 = Iosevka:pixelsize=10;2
 font-1 = feather:size=11;2
 
 modules-left = weather
