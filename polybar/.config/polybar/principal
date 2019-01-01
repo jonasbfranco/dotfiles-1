@@ -318,6 +318,17 @@ label = %output%
 click-left = ~/.config/polybar/scripts/switch.sh c &
 exec = ~/.config/polybar/scripts/switch.sh
 
+;----------------------------------------------------------
+;		       L I X E I R A
+;----------------------------------------------------------
+[module/lixo]
+type = custom/script
+;interval = 1
+tail = true
+click-middle = ~/.config/polybar/scripts/trash.sh -o &
+click-right = ~/.config/polybar/scripts/trash.sh -x &
+exec = ~/.config/polybar/scripts/trash.sh
+
 ;-------------------------------------------------------------------------
 ;					O U T R O S
 ;-------------------------------------------------------------------------

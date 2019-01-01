@@ -6,7 +6,7 @@
 dir="${HOME}/gitlab/lnxpcs"
 unsplash_dir="${XDG_PICTURES_DIR:-${HOME}/img}/unsplash"
 default="$dir/wallpapers/linux/iptables.jpg"
-ultima="/home/lucas/gitlab/lnxpcs/non-distro/emotions-of-linux.png"
+ultima="/home/lucas/gitlab/lnxpcs/arch-formula-1920x1080.png"
 modo="--bg-fill"
 indice=0
 i=0
