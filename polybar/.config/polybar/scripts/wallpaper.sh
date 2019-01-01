@@ -5,7 +5,7 @@
 dir="${XDG_PICTURES_DIR:-${HOME}/img}"
 unsplash_dir="${XDG_PICTURES_DIR:-${HOME}/img}/unsplash"
 default="$dir/wallpapers/linux/iptables.jpg"
-ultima="/home/lucas/img/unsplash/unsplash-12506.jpg"
+ultima="/home/lucas/img/porn/ts/Holly Summers/11104/114562_8.jpg"
 modo="--bg-fill"
 indice=0
 i=0
@@ -91,4 +91,4 @@ elif [ "$1" == "r" ]; then
 	img=$(cat $HOME/.wall)
 fi
 
-ajustar $img
+ajustar "$img"
