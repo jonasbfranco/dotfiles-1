@@ -5,7 +5,7 @@
 dir="${XDG_PICTURES_DIR:-${HOME}/img}"
 unsplash_dir="${XDG_PICTURES_DIR:-${HOME}/img}/unsplash"
 default="$dir/wallpapers/linux/iptables.jpg"
-ultima="/home/lucas/img/porn/ts/Holly Summers/11104/114562_8.jpg"
+ultima="/home/lucas/img/porn/ts/Paula Melo/23426/46222_1.jpg"
 modo="--bg-fill"
 indice=0
 i=0
@@ -15,7 +15,7 @@ y=$(xdpyinfo | grep dimensions | awk '{print $2}' | awk -F'x' '{print $2}')
 ajustar() {
 	if [ -f "$1" ]; then
 		sed -i "s|^ultima=.*|ultima=\"${1}\"|g" $0
-		feh --bg-fill ${1}
+		feh --bg-fill "$1"
 		echo "$1" > ~/.wall
 	fi
 }
