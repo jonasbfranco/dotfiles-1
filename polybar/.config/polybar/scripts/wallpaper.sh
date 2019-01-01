@@ -2,10 +2,11 @@
 
 [ -f ~/.config/user-dirs.dirs ] && source ~/.config/user-dirs.dirs
 
-dir="${XDG_PICTURES_DIR:-${HOME}/img}"
+#dir="${XDG_PICTURES_DIR:-${HOME}/img}"
+dir="${HOME}/gitlab/lnxpcs"
 unsplash_dir="${XDG_PICTURES_DIR:-${HOME}/img}/unsplash"
 default="$dir/wallpapers/linux/iptables.jpg"
-ultima="/home/lucas/img/porn/ts/Paula Melo/23446/44186_8.jpg"
+ultima="/home/lucas/gitlab/lnxpcs/non-distro/tux-sudo.png"
 modo="--bg-fill"
 indice=0
 i=0
