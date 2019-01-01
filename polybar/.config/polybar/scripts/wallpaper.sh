@@ -1,11 +1,11 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 [ -f ~/.config/user-dirs.dirs ] && source ~/.config/user-dirs.dirs
 
 dir="${XDG_PICTURES_DIR:-${HOME}/img}"
 unsplash_dir="${XDG_PICTURES_DIR:-${HOME}/img}/unsplash"
 default="$dir/wallpapers/linux/iptables.jpg"
-ultima="/home/lucas/img/porn/ts/Holly Summers/11104/114562_4.jpg"
+ultima="/home/lucas/img/wallpapers/linux/iptables.jpg"
 modo="--bg-fill"
 indice=0
 i=0
