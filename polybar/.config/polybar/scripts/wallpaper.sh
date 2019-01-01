@@ -5,7 +5,7 @@
 dir="${XDG_PICTURES_DIR:-${HOME}/img}"
 unsplash_dir="${XDG_PICTURES_DIR:-${HOME}/img}/unsplash"
 default="$dir/wallpapers/linux/iptables.jpg"
-ultima="/home/lucas/img/porn/ts/Bruna Butterfly/26530/83884_20.jpg"
+ultima="/home/lucas/img/unsplash/unsplash-12506.jpg"
 modo="--bg-fill"
 indice=0
 i=0
@@ -49,7 +49,9 @@ else
 	exit 1
 fi
 
-if [ "$1" == "d" ]; then
+if [ ! $1 ]; then
+	img=${imagens[$RANDOM % ${#imagens[@]}]}
+elif [ "$1" == "d" ]; then
 	img="$unsplash_dir/unsplash-$$.jpg"
 	curl -L -s "https://unsplash.it/${x}/${y}?random" > $img
 	notify-send "Sucesso" "Imagem <b>$img</b> baixada."
@@ -87,8 +89,6 @@ elif [ "$1" == "r" ]; then
 		echo $default > $HOME/.wall
 	fi
 	img=$(cat $HOME/.wall)
-elif [ "$1" != "d" ]; then
-	img=${imagens[$RANDOM % ${#imagens[@]}]}
 fi
 
-ajustar "$img"
+ajustar $img
