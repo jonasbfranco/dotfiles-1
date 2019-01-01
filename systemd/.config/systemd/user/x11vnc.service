@@ -8,7 +8,6 @@ Type=forking
 ExecStart=/usr/bin/x11vnc -rfbauth %h/.vnc/passwd -forever -shared -bg -display :0 
 Restart=on-failure 
 RestartSec=10 
-User=%I 
 
 [Install]
 WantedBy=multi-user.target
