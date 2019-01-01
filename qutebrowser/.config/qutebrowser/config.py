@@ -953,7 +953,7 @@ c.fonts.statusbar = '10pt "Noto Sans"'
 
 ## Leave insert mode if a non-editable element is clicked.
 ## Type: Bool
-# c.input.insert_mode.auto_leave = True
+c.input.insert_mode.auto_leave = True
 
 ## Automatically enter insert mode if an editable element is focused
 ## after loading the page.
