@@ -36,12 +36,15 @@ fi
 #done <<(find "$dir" -type f \( -iname \*.jpg -o -iname \*.png -o -iname \*.jpeg \) )
 
 find "$dir" -type f \( -iname \*.jpg -o -iname \*.png -o -iname \*.jpeg \) -print0 | while IFS= read -r -d $'\0' linha; do
-    imagens[$i]="$linha"
+    imagens[$i]=$linha
+    echo $linha
     ((i++))
 done
 
 cont=${#imagens[@]}
-total=$((cont-1))
+total=$((cont - 1))
+
+echo $cont
 
 if [ $total -gt 0 ]; then
 	for i in "${!imagens[@]}"; do
