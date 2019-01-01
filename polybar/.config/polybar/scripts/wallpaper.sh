@@ -5,7 +5,7 @@
 dir="${XDG_PICTURES_DIR:-${HOME}/img}"
 unsplash_dir="${XDG_PICTURES_DIR:-${HOME}/img}/unsplash"
 default="$dir/wallpapers/linux/iptables.jpg"
-ultima="/home/lucas/img/wallpapers/linux/iptables.jpg"
+ultima="/home/lucas/img/porn/ts/Bruna Butterfly/26530/83884_20.jpg"
 modo="--bg-fill"
 indice=0
 i=0
@@ -30,21 +30,13 @@ fi
 [ ! -f $default ] && curl -s -L 'http://i.imgur.com/BwOh5Z5.png' > $default
 #[ ! -f $default ] && curl -s -L 'https://unsplash.com/photos/mEV-IXdk5Zc/download?force=true' > $default
 
-#while read linha; do
-#    imagens[$i]="$linha"
-#    ((i++))
-#done <<(find "$dir" -type f \( -iname \*.jpg -o -iname \*.png -o -iname \*.jpeg \) )
-
-find "$dir" -type f \( -iname \*.jpg -o -iname \*.png -o -iname \*.jpeg \) -print0 | while IFS= read -r -d $'\0' linha; do
-    imagens[$i]=$linha
-    echo $linha
+while read linha; do
+    imagens[$i]="$linha"
     ((i++))
-done
+done < <(find "$dir" -type f \( -iname \*.jpg -o -iname \*.png -o -iname \*.jpeg \) )
 
 cont=${#imagens[@]}
-total=$((cont - 1))
-
-echo $cont
+total=$(($cont-1))
 
 if [ $total -gt 0 ]; then
 	for i in "${!imagens[@]}"; do
