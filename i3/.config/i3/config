@@ -229,7 +229,7 @@ for_window [class="(Mate-font-viewer|Notes|Pavucontrol|YAD)"] move to workspace 
 for_window [class="Lxtask" title="Gerenciador de tarefas"] floating enable, resize set 800 px 600 px, move position center
 for_window [class="^VirtualBox" title="*Executando*"] floating enable
 
-for_window [title="(.*Reiniciar dispositivo.*|Preferências do Thunderbird)"] floating enable, move position center
+for_window [title="(.*Reiniciar dispositivo.*|Preferências do Thunderbird|Video Cut|Video Resize)"] floating enable, move position center
 for_window [class="(Engrampa|Galculator|Catfish|Viewnior|File-roller|mpv)"] floating enable, move position center
 
 for_window [title="(Agave|Biblioteca|Library|About|Amigos|Sobre o Mozilla Firefox|VideoCut|dagor2)"] floating enable, move position center
@@ -340,9 +340,9 @@ exec --no-startup-id compton -b --respect-prop-shadow
 exec --no-startup-id dunst
 exec --no-startup-id parcellite
 exec --no-startup-id numlockx on
+exec --no-startup-id megasync
 exec_always --no-startup-id $HOME/.config/polybar/scripts/wallpaper.sh r
 exec --no-startup-id xautolock -time 3 -detectsleep -locker $HOME/.local/lock/fortune &
 exec --no-startup-id $HOME/bin/ntfsmount.sh
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-# Auto-Montagem de Volumes Windows
 exec --no-startup-id $HOME/bin/ntfsmount.sh
