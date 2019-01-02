@@ -1,11 +1,11 @@
 [Unit] 
 Description=VNC Server for X11 
-Requires=graphical.target
+#Requires=graphical.target
 After=graphical.target
 
 [Service] 
 Type=forking 
-ExecStart=/usr/bin/x11vnc -rfbauth %h/.vnc/passwd -forever -shared -bg -display :0 
+ExecStart=/usr/bin/x11vnc -ncache 10 -rfbauth %h/.vnc/passwd -forever -shared -bg -display :0 
 Restart=on-failure 
 RestartSec=10 
 
