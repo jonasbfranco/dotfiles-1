@@ -44,7 +44,7 @@ if [ "$res" ]; then
 					i3-msg exec $editor "${HOME}/.config/polybar/scripts/${app}"
 				fi
 			elif [ "$polyconfig" == "Config" ]; then
-				i3-msg exec $editor ${HOME}/.config/polybar/branco ${HOME}/.config/polybar/preto ${HOME}/.config/polybar/principal
+				i3-msg exec $editor "${HOME}/.config/polybar/config"
 			fi
 		;;
 		'i3lock') i3-msg exec $editor $(grep xautolock ~/.config/i3/config | awk '{print $8}') ;;
