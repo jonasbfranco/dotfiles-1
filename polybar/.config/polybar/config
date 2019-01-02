@@ -196,16 +196,15 @@ mount-0 = /
 mount-1 = /home
 
 ;fixed-values = true
-;spacing = 4
+spacing = 1
 
-format-mounted-prefix = " "
+;format-mounted-prefix = 
 ;format = <label>
 
 format-mounted = <label-mounted>
 
-;label = %percentage_used%%
-label-mounted = %percentage_used%%
-;label-unmounted = %mountpoint% não montado
+label-mounted = %mountpoint% %percentage_used%%
+label-unmounted = %mountpoint% não montado
 ;label-unmounted-foreground = ${colors.foreground-alt}
 
 ;-------------------------------------------------------------------------
