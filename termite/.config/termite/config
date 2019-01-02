@@ -10,7 +10,8 @@
 
 [options]
 transparency = 1.0
-font = Source Code Pro 10
+#font = Source Code Pro 10
+font = Fantasque Sans Mono 10
 use_xft = true
 allow_bold = true
 audible_bell = false
