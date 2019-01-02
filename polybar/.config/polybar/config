@@ -87,9 +87,9 @@ line-size = 3
 line-color = #f00
 
 padding-left = 0
-padding-right = 2
+padding-right = 1
 
-module-margin-left = 1
+module-margin-left = 0
 module-margin-right = 1
 
 ; fixed:pixelsize=11 / Hack:style=Regular:pixelsize=11 / Iosevka:style=Regular:pixelsize=11
