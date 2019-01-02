@@ -57,11 +57,11 @@ module-margin-right = 1
 
 ; fixed:pixelsize=11 / Hack:style=Regular:pixelsize=11 / Iosevka:style=Regular:pixelsize=11
 font-0 = Fantasque Sans Mono:style=Regular:pixelsize=11;2
-font-1 = feather:size=11;2
+font-1 = feather:size=11;3
 
 modules-left = i3
 modules-center = window
-modules-right = filesystem cpu memory temperature pulse data wallpaper screencast screenshot powermenu
+modules-right = filesystem cpu memory temperature pulse data beats wallpaper screencast screenshot powermenu
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -94,8 +94,8 @@ module-margin-right = 1
 
 ; fixed:pixelsize=11 / Hack:style=Regular:pixelsize=11 / Iosevka:style=Regular:pixelsize=11
 font-0 = Fantasque Sans Mono:style=Regular:pixelsize=11;2
-font-1 = feather:size=11;2
-font-2 = Moon Phases:size=10;2
+font-1 = feather:size=11;3
+font-2 = Moon Phases:size=10;3
 
 modules-left = moon weather
 modules-center = browser sep terminal sep subl sep thunar sep telegram sep whatsapp sep steam 
@@ -292,6 +292,18 @@ format-prefix = 
 label = %date% %time%
 
 ;----------------------------------------------------------
+;			    B E A T S
+;----------------------------------------------------------
+[module/beats]
+type = custom/script
+exec =  ~/.config/polybar/scripts/beats.sh
+click-left = ~/.config/rofi/scripts/alarme &
+label = %output%
+format = <label>
+format-prefix = 
+;format-prefix-foreground = ${colors.destaque}
+
+;----------------------------------------------------------
 ;		        W A L L P A P E R
 ;----------------------------------------------------------
 [module/wallpaper]
@@ -326,6 +338,45 @@ click-left = ~/.local/bin/screenshot &
 click-middle = ~/.local/bin/screenshot -w &
 click-right = ~/.local/bin/screenshot -c &
 scroll-down = ~/.local/bin/screenshot -e &
+
+;-------------------------------------------------------------------------
+;					P O W E R
+;-------------------------------------------------------------------------
+[module/power]
+type = custom/text
+content = 
+click-left = ~/.config/rofi/scripts/power &
+
+;----------------------------------------------------------
+;			 M O O N P H A S E
+;----------------------------------------------------------
+[module/moon]
+type = custom/script
+interval = 60.0
+label-font = 3
+exec =  ~/.config/polybar/scripts/moonphase.py
+click-left = notify-send -i ~/.config/dunst/icons/moon.svg "Fases da Lua" "$(python2 ~/.config/polybar/scripts/moonphase.py desc)" &
+label = %output%
+format = <label>
+
+;----------------------------------------------------------
+;		       W E A T H E R
+;----------------------------------------------------------
+[module/weather]
+type = custom/script
+interval = 60
+exec = ~/.config/polybar/scripts/weather.py
+
+;----------------------------------------------------------
+;		       L I X E I R A
+;----------------------------------------------------------
+[module/lixo]
+type = custom/script
+;interval = 1
+tail = true
+click-middle = ~/.config/polybar/scripts/trash.sh -o &
+click-right = ~/.config/polybar/scripts/trash.sh -x &
+exec = ~/.config/polybar/scripts/trash.sh
 
 ;-------------------------------------------------------------------------
 ;					A P P S M E N U
@@ -390,55 +441,6 @@ menu-2-0 = cancelar
 menu-2-0-exec = menu-open-0
 menu-2-1 = power off
 menu-2-1-exec = systemctl poweroff
-
-;-------------------------------------------------------------------------
-;					P O W E R
-;-------------------------------------------------------------------------
-[module/power]
-type = custom/text
-content = 
-click-left = ~/.config/rofi/scripts/power &
-
-;----------------------------------------------------------
-;			 M O O N P H A S E
-;----------------------------------------------------------
-[module/moon]
-type = custom/script
-interval = 60.0
-label-font = 3
-exec =  ~/.config/polybar/scripts/moonphase.py
-click-left = notify-send -i ~/.config/dunst/icons/moon.svg "Fases da Lua" "$(python2 ~/.config/polybar/scripts/moonphase.py desc)" &
-label = %output%
-format = <label>
-
-;----------------------------------------------------------
-;		       W E A T H E R
-;----------------------------------------------------------
-[module/weather]
-type = custom/script
-interval = 60
-exec = ~/.config/polybar/scripts/weather.py
-
-;----------------------------------------------------------
-;			S W I T C H
-;----------------------------------------------------------
-[module/switch]
-type = custom/script
-;interval = 1
-label = %output%
-click-left = ~/.config/polybar/scripts/switch.sh c &
-exec = ~/.config/polybar/scripts/switch.sh
-
-;----------------------------------------------------------
-;		       L I X E I R A
-;----------------------------------------------------------
-[module/lixo]
-type = custom/script
-;interval = 1
-tail = true
-click-middle = ~/.config/polybar/scripts/trash.sh -o &
-click-right = ~/.config/polybar/scripts/trash.sh -x &
-exec = ~/.config/polybar/scripts/trash.sh
 
 ;-------------------------------------------------------------------------
 ;					O U T R O S
