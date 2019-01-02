@@ -86,7 +86,7 @@ foreground = ${colors.foreground}
 line-size = 3
 line-color = #f00
 
-padding-left = 0
+padding-left = 1
 padding-right = 1
 
 module-margin-left = 0
@@ -95,8 +95,9 @@ module-margin-right = 1
 ; fixed:pixelsize=11 / Hack:style=Regular:pixelsize=11 / Iosevka:style=Regular:pixelsize=11
 font-0 = Fantasque Sans Mono:style=Regular:pixelsize=11;2
 font-1 = feather:size=11;2
+font-2 = Moon Phases:size=10;2
 
-modules-left = weather
+modules-left = moon weather
 modules-center = browser sep terminal sep subl sep thunar sep telegram sep whatsapp sep steam 
 modules-right = mpd lixo
 
@@ -397,6 +398,18 @@ menu-2-1-exec = systemctl poweroff
 type = custom/text
 content = 
 click-left = ~/.config/rofi/scripts/power &
+
+;----------------------------------------------------------
+;			 M O O N P H A S E
+;----------------------------------------------------------
+[module/moon]
+type = custom/script
+interval = 60.0
+label-font = 3
+exec =  ~/.config/polybar/scripts/moonphase.py
+click-left = notify-send -i ~/.config/dunst/icons/moon.svg "Fases da Lua" "$(python2 ~/.config/polybar/scripts/moonphase.py desc)" &
+label = %output%
+format = <label>
 
 ;----------------------------------------------------------
 ;		       W E A T H E R
