@@ -34,7 +34,8 @@ set $gaps_outer_default 0
 gaps inner $gaps_inner_default
 gaps outer $gaps_outer_default
 
-font pango:DejaVu Sans Mono 8
+#font pango:DejaVu Sans Mono 8
+font pango:Fantasque Sans Mono 9
 
 floating_modifier $mod
 
