@@ -2,8 +2,8 @@ sw_volume: 92
 audio_device_state:1:MPD Pulse
 audio_device_state:1:MPD FIFO
 state: play
-current: 1
-time: 3.974000
+current: 0
+time: 4.052000
 random: 0
 repeat: 1
 single: 0
