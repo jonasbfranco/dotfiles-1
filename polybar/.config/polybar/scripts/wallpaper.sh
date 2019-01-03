@@ -6,7 +6,7 @@
 dir="${HOME}/gitlab/lnxpcs"
 unsplash_dir="${XDG_PICTURES_DIR:-${HOME}/img}/unsplash"
 default="$dir/wallpapers/linux/iptables.jpg"
-ultima="/home/lucas/img/unsplash/unsplash-30692.jpg"
+ultima="/home/lucas/img/unsplash/unsplash-10131.jpg"
 modo="--bg-fill"
 indice=0
 i=0
