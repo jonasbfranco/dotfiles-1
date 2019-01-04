@@ -2,8 +2,8 @@ sw_volume: 92
 audio_device_state:1:MPD Pulse
 audio_device_state:1:MPD FIFO
 state: play
-current: 6
-time: 2.614000
+current: 0
+time: 2.823000
 random: 0
 repeat: 1
 single: 0
@@ -12,11 +12,6 @@ crossfade: 0
 mixrampdb: 0.000000
 mixrampdelay: -1.000000
 playlist_begin
-0:Cat Dealers & Evokings feat Magga - Gravity (Official Lyric Video).mp3
-1:Cat Dealers, LOthief, Santti - Sunshine.mp3
-2:Dynoro & Gigi D'Agostino - In My Mind.mp3
-3:Ivy Levan - 27 Club.mp3
-4:Martin Felix Kaczmarski - House Bounce.mp3
-5:Outros/Alok - Big Jet Plane.mp3
-6:Marvin Gaye - Sexual Healing (Kygo Remix).mp3
+0:Outros/Alok - Big Jet Plane.mp3
+1:Marvin Gaye - Sexual Healing (Kygo Remix).mp3
 playlist_end
