@@ -183,7 +183,7 @@ set $ws3 "3:"
 set $ws4 "4:"
 set $ws5 "5:"
 set $ws6 "6:"
-set $ws7 "7:"
+set $ws7 "7:"
 set $ws8 "8:"
 set $ws9 "9:"
 set $ws10 "10:"
@@ -251,7 +251,7 @@ assign [class="^(code|Pluma|Sublime_text|Atom)"] $ws3
 assign [class="(Thunar|Pcmanfm)"] $ws4
 assign [class="(Lxappearance|^Pamac*|Notes|Lxtask|^Mate-disk-usage-analyzer|Dconf-editor|Filezilla|JDownloader)"] $ws5
 assign [class="(^Steam)"] $ws6
-assign [class="(Thunderbird)"] $ws7
+assign [class="(Thunderbird|Deluge)"] $ws7
 assign [class="(whatsdesk|Whatsie|Whatsapp|whatsapp-desktop)"] $ws8
 assign [class="(^Telegram|^Hexchat)"] $ws9
 assign [class="(^Atril)"] $ws10

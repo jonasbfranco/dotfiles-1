@@ -3,7 +3,7 @@ audio_device_state:1:MPD Pulse
 audio_device_state:1:MPD FIFO
 state: play
 current: 6
-time: 56.579000
+time: 0.198000
 random: 0
 repeat: 1
 single: 0
