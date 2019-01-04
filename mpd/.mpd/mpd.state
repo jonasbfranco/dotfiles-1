@@ -2,8 +2,8 @@ sw_volume: 92
 audio_device_state:1:MPD Pulse
 audio_device_state:1:MPD FIFO
 state: pause
-current: 5
-time: 113.331000
+current: 6
+time: 52.500000
 random: 0
 repeat: 1
 single: 0
@@ -18,4 +18,5 @@ playlist_begin
 3:Ivy Levan - 27 Club.mp3
 4:Martin Felix Kaczmarski - House Bounce.mp3
 5:Outros/Alok - Big Jet Plane.mp3
+6:Marvin Gaye - Sexual Healing (Kygo Remix).mp3
 playlist_end
