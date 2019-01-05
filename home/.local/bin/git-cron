@@ -38,14 +38,14 @@ atualiza() {
 	fi
 }
 
-if [ ! $1 ] || [ $1 == "-a" ]; then
+if [ ! $1 ] || [ "$1" == "-a" ]; then
 	for r in "${repos[@]}";	do
 		caminho="${dir}/${r}"
 		atualiza "$caminho"
 	done
 
 	[ $dotfiles == 1 ] && atualiza "${HOME}/.dotfiles"
-	[ $1 == "-a" ] && ssh $remoto "/usr/local/scripts/git-http"
+	[ "$1" == "-a" ] && ssh $remoto "/usr/local/scripts/git-http"
 elif [ ! $2 ]; then
 	atualiza "$1"
 else
