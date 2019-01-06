@@ -23,6 +23,7 @@ atraso=10
 icone="/usr/share/icons/Arc/devices/24@2x/video-display.png"
 tipo="image/png"
 lixeira="${HOME}/.local/share/Trash"
+borda="10"
 
 [ ! -d $dir ] && mkdir -p $dir
 [ ! -d $lixeira ] && mkdir -p $lixeira
@@ -53,7 +54,7 @@ if [ "$1" == "-c" ]; then
 	exit 0
 
 elif [ "$1" == "-w" ]; then
-	params="$params -w"
+	[ "$app" == "maim" ] && params="$params -i $(xdotool getactivewindow) -p $borda" || params="$params -w"
 	arquivo="${nome}-window${extensao}"
 	$app $params ${arquivo}
 	msg="A screenshot <b>$arquivo</b> salva em <b>$dir</b>..."
