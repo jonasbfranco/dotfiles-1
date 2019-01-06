@@ -8,7 +8,7 @@ set shortmess=F
 nnoremap <F5> "=strftime("%c")<CR>P
 inoremap <F5> <C-R>=strftime("%c")<CR>
 cabbrev q q!
-imap <C-x> <esc>, q!
+nmap <C-x> <esc><return>q!
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
