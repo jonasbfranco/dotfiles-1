@@ -9,8 +9,8 @@ nnoremap <F5> "=strftime("%c")<CR>P
 inoremap <F5> <C-R>=strftime("%c")<CR>
 cabbrev q q!
 " unmap <C-x>
-nnoremap <C-x> <esc><return>;q!
-inoremap <C-x> <esc><return>;q!
+nnoremap <C-x> <esc><return>:qa!
+inoremap <C-x> <esc><return>:qa!
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
