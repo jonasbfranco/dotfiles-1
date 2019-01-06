@@ -4,6 +4,12 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 set shortmess=F
 
+" Remaps
+nnoremap <F5> "=strftime("%c")<CR>P
+inoremap <F5> <C-R>=strftime("%c")<CR>
+cabbrev q q!
+imap <C-x> <esc>, q!
+
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 
