@@ -16,6 +16,10 @@ repos=('majestic' 'sistematico.github.io' 'oc-cli' 'cabron-bot' 'pollen' 'agress
 remoto="nginx@hera"
 dotfiles=1
 
+if [ "$(readlink -- ${XDG_DATA_HOME:-$HOME/.local/share}/dbus-1/services/org.freedesktop.Notifications.service)" = /some/where ]; then
+	icon=""
+fi
+
 atualiza() {
 	if [ -d $1 ]; then
 		if [ ! -f $1/.noup ]; then
