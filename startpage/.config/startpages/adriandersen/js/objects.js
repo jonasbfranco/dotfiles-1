@@ -1,11 +1,11 @@
 objects = [
-
     Google = {
         links: [ 
-            link1 = {name:"Fotos",url:"https://www.google.com/photos/"},
-            link2 = {name:"Gmail",url:"https://www.google.com/gmail/"},
-            link3 = {name:"Drive",url:"https://www.google.com/drive/"}, 
-            link4 = {name:"Maps",url:"https://www.google.no/maps"},  
+            link1 = {name:"Google",url:"https://www.google.com.br"},
+            link2 = {name:"Fotos",url:"https://www.google.com/photos/"},
+            link3 = {name:"Gmail",url:"https://www.google.com/gmail/"},
+            link4 = {name:"Drive",url:"https://www.google.com/drive/"}, 
+            link5 = {name:"Maps",url:"https://www.google.com/maps"},  
         ],
         icon:"fa-google",
         url:"https://google.com.br/search",
@@ -15,28 +15,11 @@ objects = [
         method:"post",
         color:"#555" //Not used yet
     },
-
-    Skole = {
-        links: [ 
-            link1 = {name:"Innsida",url:"https://innsida.ntnu.no/start"}, 
-            link2 = {name:"Timeplan",url:"https://innsida.ntnu.no/user/adriande/student/timeplan"},
-        ],
-        icon:"fa-microsoft",
-        url:"https://google.com/search",
-        query:"?q=ntnu ",
-        ph:"ntnu>",
-        name:"skole",
-        method:"post",
-        color:"#555" //Not used yet
-    },
-        
     Reddit = {
         links: [ 
-            link1 = {name:"MK",url:"https://reddit.com/r/mechanicalkeyboards"}, 
-            link2 = {name:"Norge",url:"https://reddit.com/r/norge"},  
-            link3 = {name:"Frontpage",url:"https://reddit.com"}, 
-            link4 = {name:"Startpages",url:"https://www.reddit.com/r/startpages"},
-            link4 = {name:"Unixporn",url:"https://www.reddit.com/r/unixporn"}, 
+            link1 = {name:"Reddit",url:"https://reddit.com"}, 
+            link2 = {name:"Startpages",url:"https://www.reddit.com/r/startpages"},
+            link3 = {name:"Unixporn",url:"https://www.reddit.com/r/unixporn"}, 
         ],
         icon:"fa-reddit",
         url:"https://reddit.com/r/",
@@ -46,37 +29,35 @@ objects = [
         method:"post",
         color:"#555" //Not used yet
     },
-
     Youtube = {
         links: [ 
-            link1 = {name:"Subscriptions",url:"https://www.youtube.com/feed/subscriptions"}, 
+            link1 = {name:"Youtube",url:"https://www.youtube.com"}, 
+            link2 = {name:"Inscrições",url:"https://www.youtube.com/feed/subscriptions"}, 
         ],
         icon:"fa-youtube",
         url:"https://www.youtube.com/results",
         query:"?search_query=",
-        ph:"Youtube Search",
+        ph:"Pesquisa Youtube",
         name:"youtube",
         method:"post",
         color:"#555" //Not used yet
     },
-
     Twitch = {
         links: [ 
-            link1 = {name:"Frontpage",url:"https://www.twitch.tv/"}, 
-            link2 = {name:"Following",url:"https://www.twitch.tv/directory/following"}, 
+            link1 = {name:"Twitch",url:"https://www.twitch.tv/"}, 
+            link2 = {name:"Seguindo",url:"https://www.twitch.tv/directory/following"}, 
         ],
         icon:"fa-twitch",
         url:"https://www.twitch.tv/",
         query:"",
-        ph:"Channel",
+        ph:"Canal",
         name:"twitch",
         method:"post",
         color:"#555" //Not used yet
     },
-
     Facebook = {
         links: [ 
-            link1 = {name:"Frontpage",url:"https://www.facebook.com/"}, 
+            link1 = {name:"Facebook",url:"https://www.facebook.com/"}, 
             link2 = {name:"Messenger",url:"https://www.messenger.com/"},  
         ],
         icon:"fa-facebook",
@@ -90,14 +71,27 @@ objects = [
     },
     Github = {
         links: [ 
-            link1 = {name:"adriandersen",url:"https://github.com/adriandersen"}, 
-            link2 = {name:"github",url:"https://github.com/"},  
+            link1 = {name:"Github",url:"https://github.com/"},  
+            link2 = {name:"Sistematico",url:"https://github.com/sistematico"},
+            link3 = {name:"Arch Dev BR",url:"https://github.com/sistematico"},
         ],
         icon:"fa-github-alt",
-        url:"https://github.com//search",
+        url:"https://github.com/search",
         query:"?q=",
-        ph:"Github Search",
+        ph:"Pesquisa Github",
         name:"github",
+        method:"post",
+        color:"#555" //Not used yet
+    },
+    Gitlab = {
+        links: [ 
+            link1 = {name:"Gitlab",url:"https://gitlab.com"}, 
+        ],
+        icon:"fa-gitlab",
+        url:"https://github.com/search",
+        query:"?q=",
+        ph:"Pesquisa Gitlab",
+        name:"gitlab",
         method:"post",
         color:"#555" //Not used yet
     },
@@ -105,9 +99,9 @@ objects = [
         links: [ 
             link1 = {name:"Arch Wiki",url:"https://wiki.archlinux.org"}, 
         ],
-        icon:"fa-github-alt",
-        url:"https://github.com//search",
-        query:"?q=",
+        icon:"fa-linux",
+        url:"https://wiki.archlinux.org/index.php",
+        query:"?search=",
         ph:"Arch Wiki",
         name:"archwiki",
         method:"post",
