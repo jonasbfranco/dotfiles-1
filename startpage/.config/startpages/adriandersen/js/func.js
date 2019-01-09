@@ -74,16 +74,20 @@ function css( element, property ) {
     return window.getComputedStyle( element, null ).getPropertyValue( property );
 }
 
-
-var font = css(document.getElementById('corpo'), 'font-family'); // returns '16px' for instance
-
 // Change font
-//function changemysize(myvalue) {
-  //var font = window.getComputedStyle('corpo', null).getPropertyValue('font-family');
-  //var font = document.getElementById("corpo").style.fontFamily;
-  console.log('Fonte: ' + font);
-  //document.getElementById("myP").style.fontFamily = "Impact,Charcoal,sans-serif";  
-//}
+function changeFont() {
+  var elem = document.getElementById('corpo');
+  var font = css(elem, 'font-family'); // returns '16px' for instance
+  font = font.split(",");
+  var fonte = font[0].replace(/['"]+/g, '');
+  //font.replace(/"/g,"")
+  //console.log('Fonte: ' + font[0]);
+  if (fonte == "Ubuntu") {
+    elem.style.fontFamily = "Dosis, sans-serif";
+  } else if (fonte == "Dosis") {
+    elem.style.fontFamily = "Ubuntu, sans-serif";
+  }
+}
 
 //Button-function
 function howTo() {
