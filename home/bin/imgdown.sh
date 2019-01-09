@@ -1,5 +1,12 @@
 #!/usr/bin/env bash
 #
+# Arquivo: imgdown.sh
+#
+# Feito por Lucas Saliés Brum a.k.a. sistematico, <lucas@archlinux.com.br>
+#
+# Criado em: 16-03-2018 16:35:20
+# Última alteração: 16-03-2018 16:35:55
+#
 # https://gist.github.com/tayfie/6dad43f1a452440fba7ea1c06d1b603a
 
 ext="jpg"  		# Separadas por virgula.
