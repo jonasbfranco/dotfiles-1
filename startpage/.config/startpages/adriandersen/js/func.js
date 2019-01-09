@@ -87,6 +87,9 @@ function changeFont() {
   } else if (fonte == "Dosis") {
     elem.style.fontFamily = "Ubuntu, sans-serif";
   }
+
+  var text = document.getElementById('fonte').firstChild;
+  text.data = text.data == "Ubuntu" ? "Dosis" : "Ubuntu";
 }
 
 //Button-function
@@ -112,10 +115,6 @@ function nextSearchEngine() {
     //We should first check the current engine here
     
   */ 
-
-
-
-
   
   //Sets engine to the next object in objects.js
   if(curr<objects.length){
@@ -132,6 +131,9 @@ function nextSearchEngine() {
   }
 }
 function darkMode(mode) {
+
+  var text = document.getElementById('modo').firstChild;
+  text.data = text.data == "Darkmode" ? "Lightmode" : "Darkmode";
 
 
   var pref = document.body.classList;
