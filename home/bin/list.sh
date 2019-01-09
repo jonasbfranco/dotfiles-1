@@ -16,7 +16,7 @@ pasta="${XDG_DESKTOP_DIR:-${HOME}/desk}" 	# Diretório para salvar os arquivos.
 [ ! -d $pasta ] && mkdir -p $pasta
 lixeira="${HOME}/.local/share/Trash"
 url="$(xclip -o)"
-icone='/usr/share/icons/Arc/places/24@2x/folder-pictures.png'
+icone="${HOME}/.local/share/icons/elementary/camera-photo.png"
 # /usr/share/sounds/freedesktop/stereo/
 som="complete"
 lista="/tmp/lista.txt"

@@ -11,7 +11,7 @@
 preset="superfast" # ultrafast,superfast,veryfast,faster,fast,medium,slow,slower,veryslow,placebo
 caminho="${HOME}/video/screencast"
 data=$(date +%Y-%m-%d_%H-%M-%S)
-icone="/usr/share/icons/Arc/devices/24@2x/video-display.png"
+icone="${HOME}/.local/share/icons/elementary/video-display.png"
 arquivo="${caminho}/screencast-${data}.mp4"
 resolucao=$(xrandr | grep '*' | awk 'NR==1{print $1}')
 audio=$(pacmd list-sinks | grep -A 1 'index: 1' | awk 'NR==2{print $2}' | awk '{print substr($0,2,length($0)-2)}') # list-sources, list-sinks

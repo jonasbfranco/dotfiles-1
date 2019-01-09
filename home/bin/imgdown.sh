@@ -15,7 +15,7 @@ min='300' 		# Em pixels verticais
 lixeira="${HOME}/.local/share/Trash"
 pasta="${HOME}/tmp/$$"
 turl="$(xclip -o)"
-icone='/usr/share/icons/Arc/places/24@2x/folder-pictures.png'
+icone="${HOME}/.local/share/icons/elementary/camera-photo.png"
 # /usr/share/sounds/freedesktop/stereo/
 som='complete'
 

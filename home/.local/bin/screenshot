@@ -20,7 +20,7 @@ data=$(date +%Y-%m-%d_%H-%M-%S)
 nome="ss-${data}"
 extensao=".png"
 atraso=10
-icone="/usr/share/icons/Arc/devices/24@2x/video-display.png"
+icone="${HOME}/.local/share/icons/elementary/video-display.png"
 tipo="image/png"
 lixeira="${HOME}/.local/share/Trash"
 borda="10"
@@ -41,7 +41,7 @@ command -v $app >/dev/null 2>&1 || {
 }
 
 if [ "$1" == "-c" ]; then
-	icone="/usr/share/icons/Arc/places/24@2x/user-trash.png"
+	icone="${HOME}/.local/share/icons/elementary/user-trash.png"
 	listagem=(${dir}*)
 	if [ ${#listagem[@]} -gt 0 ]; then
 		mv ${dir}* ${lixeira}/files/
