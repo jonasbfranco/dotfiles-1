@@ -1,8 +1,8 @@
 #!/bin/sh
 
 profile="lucas"
-success="/usr/share/icons/elementary/categories/32/preferences-system-network.svg"
-error="/usr/share/icons/elementary/status/32/network-error.svg"
+success="${HOME}/.local/share/icons/elementary/preferences-system-network.svg"
+error="${HOME}/.local/share/icons/elementary/network-error.svg"
 secs=5000
 dspl="DISPLAY=:0"
 
