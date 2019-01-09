@@ -9,7 +9,7 @@
 # */15 * * * * sh -c "~/.local/bin/git-cron" > /dev/null 2>&1
 #
 # Criado em: 20/12/2017 19:27:31
-# Última Atualização: 31/10/2018 12:36:47
+# Última Atualização: 08/01/2019 21:15:51
 
 dir="${HOME}/github"
 repos=('majestic' 'sistematico.github.io' 'oc-cli' 'cabron-bot' 'pollen' 'agressive' 'spamsentrybot' 'docker-arma3-exile')

@@ -5,7 +5,7 @@
 # Feito por Lucas Saliés Brum a.k.a. sistematico, <lucas@archlinux.com.br>
 #
 # Criado em: 16-03-2018 16:35:20
-# Última alteração: 16-03-2018 16:35:55
+# Última alteração: 08/01/2019 21:15:57
 #
 # https://gist.github.com/tayfie/6dad43f1a452440fba7ea1c06d1b603a
 

@@ -8,8 +8,8 @@
 #
 # Feito por Lucas Saliés Brum a.k.a. sistematico, <lucas@archlinux.com.br>
 #
-# Criado em: 16-03-2018 16:35:20
-# Última alteração: 16-03-2018 16:35:55
+# Criado em: 08/01/2019 21:15:36
+# Última alteração: 08/01/2019 21:15:41
 
 [ -f ${HOME}/.config/user-dirs.dirs ] && . ${HOME}/.config/user-dirs.dirs
 pasta="${XDG_DESKTOP_DIR:-${HOME}/desk}" 	# Diretório para salvar os arquivos.
