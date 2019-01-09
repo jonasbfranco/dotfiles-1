@@ -9,7 +9,7 @@
 # Feito por Lucas Saliés Brum a.k.a. sistematico, <lucas@archlinux.com.br>
 #
 # Criado em: 08/01/2019 21:15:36
-# Última alteração: 08/01/2019 21:15:41
+# Última alteração: 09/01/2019 05:16:36
 
 [ -f ${HOME}/.config/user-dirs.dirs ] && . ${HOME}/.config/user-dirs.dirs
 
@@ -34,13 +34,14 @@ elif [ "$1" == "-d" ]; then
 	dbus-launch notify-send -i $icone "Batch Downloader" "/tmp/lista.txt apagada."
 elif [ "$1" == "-x" ]; then
 	[ ! -f /tmp/lista.txt ] && exit 1
+	cd $pasta
 	dbus-launch notify-send -i $icone "Batch Downloader" "O download de $(cat /tmp/lista.txt | wc -l) ítens da /tmp/lista.txt foi iniciado."
 	for i in "${lista[@]}"; do
 		[ "$2" == "-a" ] && youtube-dl --extract-audio --audio-format mp3 $i || youtube-dl $i
-		mv $i $pasta/
 		DISPLAY=:0 canberra-gtk-play -i $som 2>&1
 		dbus-launch notify-send -i $icone "Batch Downloader" "Transfêrencias de $i finalizada."
 	done
 	DISPLAY=:0 canberra-gtk-play -i $som 2>&1
 	dbus-launch notify-send -i $icone "Batch Downloader" "Todas as transfêrencias de /tmp/lista.txt foram finalizadas."
+	rm /tmp/lista.txt
 fi
