@@ -25,9 +25,13 @@ if [ "$1" == "-a" ]; then
 	[[ ! -z "$url" ]] && echo $url >> $lista
 elif [ "$1" == "-d" ]; then
 	[ -f $lista ] && rm $lista
-elif [ "$1" == "-x" ]; then
+elif [ "$1" == "-xv" ]; then
 	youtube-dl -a $lista
 	DISPLAY=:0 canberra-gtk-play -i $som 2>&1
+	dbus-launch notify-send -i $icone "Batch Downloader" "Transfêrencias finalizadas."
+elif [ "$1" == "-xa" ]; then
+	youtube-dl --extract-audio --audio-format mp3 -a $lista
+        DISPLAY=:0 canberra-gtk-play -i $som 2>&1
 	dbus-launch notify-send -i $icone "Batch Downloader" "Transfêrencias finalizadas."
 fi
 
