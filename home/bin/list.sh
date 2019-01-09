@@ -25,18 +25,21 @@ readarray lista < /tmp/lista.txt
 [ ! -d $pasta ] && mkdir -p $pasta
 
 if [ "$1" == "-a" ]; then
-	[[ ! -z "$url" ]] && echo $url >> $lista
+	[[ ! -z "$url" ]] && echo $url >> /tmp/lista.txt
 	DISPLAY=:0 canberra-gtk-play -i $som 2>&1
-	dbus-launch notify-send -i $icone "Batch Downloader" "Transfêrencias de $url adicionada a $lista"
+	dbus-launch notify-send -i $icone "Batch Downloader" "$url adicionada a /tmp/lista.txt"
 elif [ "$1" == "-d" ]; then
 	[ -f $lista ] && rm $lista
 	DISPLAY=:0 canberra-gtk-play -i 'trash-empty' 2>&1
 	dbus-launch notify-send -i $icone "Batch Downloader" "/tmp/lista.txt apagada."
 elif [ "$1" == "-x" ]; then
+	dbus-launch notify-send -i $icone "Batch Downloader" "O download de $(cat /tmp/lista.txt | wc -l) ítens da /tmp/lista.txt foi iniciado."
 	for i in "${lista[@]}"; do
 		[ "$2" == "-a" ] && youtube-dl --extract-audio --audio-format mp3 $i || youtube-dl $i
 		mv $i $pasta/
 		DISPLAY=:0 canberra-gtk-play -i $som 2>&1
 		dbus-launch notify-send -i $icone "Batch Downloader" "Transfêrencias de $i finalizada."
 	done
+	DISPLAY=:0 canberra-gtk-play -i $som 2>&1
+	dbus-launch notify-send -i $icone "Batch Downloader" "Todas as transfêrencias de /tmp/lista.txt foram finalizadas."
 fi
