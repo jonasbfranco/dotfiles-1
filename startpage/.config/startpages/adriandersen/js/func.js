@@ -41,7 +41,11 @@ function setEngine(obj) {
 
 //Runs when form is submitted
 function doSearch(){
-  window.location = (currEng.url+currEng.query+input.value);
+  if (currEng == Facebook) {
+    window.location = (currEng.url+currEng.query+input.value+'/keywords_search?epa=SEARCH_BOX');
+  } else {
+    window.location = (currEng.url+currEng.query+input.value);
+  }
   return false;
 }
 

@@ -2,13 +2,15 @@ objects = [
 
     Google = {
         links: [ 
-        link1 = {name:"Drive",url:"https://www.google.com/drive/"}, 
-        link2 = {name:"Maps",url:"https://www.google.no/maps"},  
+            link1 = {name:"Fotos",url:"https://www.google.com/photos/"},
+            link2 = {name:"Gmail",url:"https://www.google.com/gmail/"},
+            link3 = {name:"Drive",url:"https://www.google.com/drive/"}, 
+            link4 = {name:"Maps",url:"https://www.google.no/maps"},  
         ],
         icon:"fa-google",
-        url:"https://google.com/search",
+        url:"https://google.com.br/search",
         query:"?q=",
-        ph:"Google Search",
+        ph:"Pesquisa Google",
         name:"google",
         method:"post",
         color:"#555" //Not used yet
@@ -17,9 +19,7 @@ objects = [
     Skole = {
         links: [ 
             link1 = {name:"Innsida",url:"https://innsida.ntnu.no/start"}, 
-            link2 = {name:"Timeplan",url:"https://innsida.ntnu.no/user/adriande/student/timeplan"},  
-
-
+            link2 = {name:"Timeplan",url:"https://innsida.ntnu.no/user/adriande/student/timeplan"},
         ],
         icon:"fa-microsoft",
         url:"https://google.com/search",
@@ -36,12 +36,7 @@ objects = [
             link2 = {name:"Norge",url:"https://reddit.com/r/norge"},  
             link3 = {name:"Frontpage",url:"https://reddit.com"}, 
             link4 = {name:"Startpages",url:"https://www.reddit.com/r/startpages"},
-            link4 = {name:"Unixporn",url:"https://www.reddit.com/r/unixporn"},  
-
-            
-
-
-
+            link4 = {name:"Unixporn",url:"https://www.reddit.com/r/unixporn"}, 
         ],
         icon:"fa-reddit",
         url:"https://reddit.com/r/",
@@ -85,14 +80,14 @@ objects = [
             link2 = {name:"Messenger",url:"https://www.messenger.com/"},  
         ],
         icon:"fa-facebook",
-        url:"https://facebook.com/search?",
-        query:"q",
-        ph:"Facebook Search",
+        //url:"https://facebook.com/search?",
+        url:"https://www.facebook.com/search/str/",
+        query:"",
+        ph:"Pesquisa Facebook",
         name:"facebook",
         method:"post",
         color:"#555" //Not used yet
     },
-
     Github = {
         links: [ 
             link1 = {name:"adriandersen",url:"https://github.com/adriandersen"}, 
@@ -106,8 +101,16 @@ objects = [
         method:"post",
         color:"#555" //Not used yet
     },
-    
-    
-
-
+    Archwiki = {
+        links: [ 
+            link1 = {name:"Arch Wiki",url:"https://wiki.archlinux.org"}, 
+        ],
+        icon:"fa-github-alt",
+        url:"https://github.com//search",
+        query:"?q=",
+        ph:"Arch Wiki",
+        name:"archwiki",
+        method:"post",
+        color:"#555" //Not used yet
+    },
 ];
