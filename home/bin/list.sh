@@ -43,5 +43,8 @@ elif [ "$1" == "-x" ]; then
 	done
 	DISPLAY=:0 canberra-gtk-play -i $som 2>&1
 	dbus-launch notify-send -i $icone "Batch Downloader" "Todas as transfêrencias de /tmp/lista.txt foram finalizadas."
+	echo '-----------------------' >> /tmp/batchdownloader.log
+	cat /tmp/lista.txt >> /tmp/batchdownloader.log
+	echo '-----------------------' >> /tmp/batchdownloader.log
 	rm /tmp/lista.txt
 fi
