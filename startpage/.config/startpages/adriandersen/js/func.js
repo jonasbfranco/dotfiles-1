@@ -28,7 +28,7 @@ function setEngine(obj) {
   logo.remove(oldEng.icon);
   logo.add(currEng.icon);
   //DEBUG
-  console.log("OBJ SET: " + oldEng.name + " -> " + currEng.name + " ~~ " + i + "/" + currEng.links.length + " buttons added.");
+  //console.log("OBJ SET: " + oldEng.name + " -> " + currEng.name + " ~~ " + i + "/" + currEng.links.length + " buttons added.");
   //DEBUG
 
   for(var i = 0; i<objects.length; i++){
@@ -68,9 +68,22 @@ function initialize(){
   }else{
     setEngine(defaultEng);
   }
-    
-
 }
+
+function css( element, property ) {
+    return window.getComputedStyle( element, null ).getPropertyValue( property );
+}
+
+
+var font = css(document.getElementById('corpo'), 'font-family'); // returns '16px' for instance
+
+// Change font
+//function changemysize(myvalue) {
+  //var font = window.getComputedStyle('corpo', null).getPropertyValue('font-family');
+  //var font = document.getElementById("corpo").style.fontFamily;
+  console.log('Fonte: ' + font);
+  //document.getElementById("myP").style.fontFamily = "Impact,Charcoal,sans-serif";  
+//}
 
 //Button-function
 function howTo() {
@@ -176,7 +189,7 @@ function lookupEngine(){
   return lookup[eng];
 
   //DEBUG
-  console.log("HASH: " + hash.name);
+  //console.log("HASH: " + hash.name);
   //DEBUG
 
 }

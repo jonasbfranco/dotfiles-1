@@ -73,7 +73,7 @@ objects = [
         links: [ 
             link1 = {name:"Github",url:"https://github.com/"},  
             link2 = {name:"Sistematico",url:"https://github.com/sistematico"},
-            link3 = {name:"Arch Dev BR",url:"https://github.com/sistematico"},
+            link3 = {name:"Arch Linux BR Dev",url:"https://github.com/archlinux-br-dev"},
         ],
         icon:"fa-github-alt",
         url:"https://github.com/search",
@@ -86,6 +86,7 @@ objects = [
     Gitlab = {
         links: [ 
             link1 = {name:"Gitlab",url:"https://gitlab.com"}, 
+            link2 = {name:"Sistematico",url:"https://gitlab.com/sistematico"}, 
         ],
         icon:"fa-gitlab",
         url:"https://github.com/search",
