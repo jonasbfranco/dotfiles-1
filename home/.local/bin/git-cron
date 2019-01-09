@@ -15,6 +15,7 @@ dir="${HOME}/github"
 repos=('majestic' 'sistematico.github.io' 'oc-cli' 'cabron-bot' 'pollen' 'agressive' 'spamsentrybot' 'docker-arma3-exile')
 remoto="nginx@hera"
 dotfiles=1
+icone="${HOME}/.local/share/icons/elementary/preferences-system-network.png"
 
 if [ "$(readlink -- ${XDG_DATA_HOME:-$HOME/.local/share}/dbus-1/services/org.freedesktop.Notifications.service)" = "/usr/share/dbus-1/services/org.xfce.xfce4-notifyd.Notifications.service" ]; then
 	icon=""
@@ -35,7 +36,7 @@ atualiza() {
 				if xset q &>/dev/null; then
 					# ls /usr/share/sounds/freedesktop/stereo/
 					DISPLAY=:0 canberra-gtk-play -i complete 2>&1
-					dbus-launch notify-send "Git Cron" "Repo <b>$(basename $1)</b> atualizado."
+					dbus-launch notify-send -i $icone "Git Cron" "Repo <b>$(basename $1)</b> atualizado."
 				fi
 			fi
 		fi
