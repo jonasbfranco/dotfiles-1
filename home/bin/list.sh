@@ -29,7 +29,7 @@ if [ "$1" == "-a" ]; then
 	DISPLAY=:0 canberra-gtk-play -i $som 2>&1
 	dbus-launch notify-send -i $icone "Batch Downloader" "$url adicionada a /tmp/lista.txt"
 elif [ "$1" == "-d" ]; then
-	[ -f $lista ] && rm $lista
+	[ -f /tmp/lista.txt ] && rm /tmp/lista.txt
 	DISPLAY=:0 canberra-gtk-play -i 'trash-empty' 2>&1
 	dbus-launch notify-send -i $icone "Batch Downloader" "/tmp/lista.txt apagada."
 elif [ "$1" == "-x" ]; then
