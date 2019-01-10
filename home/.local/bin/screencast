@@ -9,6 +9,14 @@
 # Criado em: 09/06/2017 23:26:41
 # Última Atualização: 31/10/2018 12:35:15
 
+apps=( "xrandr" )
+
+for app in ${apps[@]}
+do
+	command -v $app >/dev/null 2>&1 || { echo >&2 "O aplicativo $app não está instalado. Abortando."; exit 1; }
+done
+
+
 preset="ultrafast" # ultrafast,superfast,veryfast,faster,fast,medium,slow,slower,veryslow,placebo
 #cor=$(awk -F# '/destaque/{print $2;exit}' ${HOME}/.config/polybar/config)
 cor="bf616a"
