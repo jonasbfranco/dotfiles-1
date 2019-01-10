@@ -27,7 +27,7 @@ som="complete" # /usr/share/sounds/freedesktop/stereo/
 if [ "$1" == "-dl" ]; then
 	cd $pasta
 	dbus-launch notify-send -i $icone "Batch Downloader" "O download de $url foi iniciado."
-	[ "$2" == "-a" ] && youtube-dl --extract-audio --audio-format mp3 $url || youtube-dl $url
+	[ "$2" == "-a" ] && youtube-dl --extract-audio --audio-format mp3 "$url" || youtube-dl "$url"
 	DISPLAY=:0 canberra-gtk-play -i $som 2>&1
 	dbus-launch notify-send -i $icone "Batch Downloader" "Transfêrencias de $url finalizada."
 elif [ "$1" == "-a" ]; then
