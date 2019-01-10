@@ -36,11 +36,11 @@ if [ ! -f "${legenda}" ]; then
 	fi
 	legenda=""
 else
-	legenda="--subtitles ${legenda}"
+	legenda="${legenda}"
 fi
 
 #echo "$opts" $legenda \"$arquivo\"
 #/usr/bin/castnow $opts "${legenda}" "${arquivo}"
 echo /usr/bin/castnow ${legenda} ${arquivo}
 
-/usr/bin/castnow ${arquivo} ${legenda}
+/usr/bin/castnow "${arquivo}" --subtitles "${legenda}"
