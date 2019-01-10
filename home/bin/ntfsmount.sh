@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+icone="${HOME}/.local/share/icons/elementary/video-display.png"
+
 function contem() {
     local n=$#
     local valor=${!n}
