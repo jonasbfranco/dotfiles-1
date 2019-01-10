@@ -40,4 +40,4 @@ else
 fi
 
 #echo "$opts" $legenda \"$arquivo\"
-echo /usr/bin/castnow ${arquivo}
+/usr/bin/castnow "${arquivo}"
