@@ -108,4 +108,16 @@ objects = [
         method:"post",
         color:"#555" //Not used yet
     },
+    Wikipedia = {
+        links: [ 
+            link1 = {name:"Wikipedia",url:"https://pt.wikipedia.org"}, 
+        ],
+        icon:"fa-wikipedia-w",
+        url:"https://pt.wikipedia.org/w/index.php",
+        query:"?search=",
+        ph:"Pesquisa Wikipedia",
+        name:"wikipedia",
+        method:"post",
+        color:"#555" //Not used yet
+    },
 ];
