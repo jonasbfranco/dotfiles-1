@@ -39,4 +39,5 @@ else
 	legenda="--subtitles $legenda"
 fi
 
-/usr/bin/castnow "$opts" "$legenda" "$arquivo"
+echo "$opts" \"$legenda\" \"$arquivo\"
+#/usr/bin/castnow "$opts" "$legenda" "$arquivo"
