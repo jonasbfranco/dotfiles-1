@@ -36,7 +36,7 @@ if [ ! -f "$legenda" ]; then
 	fi
 	legenda=""
 else
-	legenda="--subtitles "${legenda}
+	legenda=--subtitles ${legenda}
 fi
 
 #echo "$opts" $legenda \"$arquivo\"
