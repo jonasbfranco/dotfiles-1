@@ -6,6 +6,8 @@
 #
 # Criado em: 10/01/2019 02:36:19
 # Última Atualização: 10/01/2019 02:36:24
+#
+# https://github.com/xat/castnow
 
 [ ! "$1" ] && exit 1
 
