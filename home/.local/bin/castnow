@@ -1,0 +1,24 @@
+#!/bin/bash
+
+[ ! $1 ] && exit 1
+
+arquivo="$1"
+legenda=${arquivo%.*}.png
+
+if [ ! -f $arquivo ]; then
+	if xset q &>/dev/null; then
+		#DISPLAY=:0 canberra-gtk-play -i complete 2>&1
+		canberra-gtk-play -i complete 2>&1
+		dbus-launch notify-send -i $icone "Git Cron" "Repo <b>$(basename $1)</b> atualizado."
+	fi
+	exit
+fi
+
+if [ ! -f $legenda ]; then
+	if xset q &>/dev/null; then
+		canberra-gtk-play -i complete 2>&1
+		dbus-launch notify-send -i $icone "Git Cron" "Repo <b>$(basename $1)</b> atualizado."
+	fi
+fi
+
+/usr/bin/castnow
