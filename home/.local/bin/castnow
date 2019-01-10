@@ -1,4 +1,11 @@
-#!/bin/bash
+#!/usr/bin/env bash
+#
+# castnow.sh
+#
+# Desenvolvido por Lucas Saliés Brum <lucas@archlinux.com.br>
+#
+# Criado em: 10/01/2019 02:36:19
+# Última Atualização: 10/01/2019 02:36:24
 
 [ ! "$1" ] && exit 1
 
@@ -30,6 +37,4 @@ else
 	legenda="--subtitles $legenda"
 fi
 
-echo "Filme: $arquivo"
-echo "Legenda: $legenda"
-/usr/bin/castnow $opts "$legenda" "$arquivo"
+/usr/bin/castnow "$opts" "$legenda" "$arquivo"
