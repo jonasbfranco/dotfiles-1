@@ -32,4 +32,4 @@ fi
 
 echo "Filme: $arquivo"
 echo "Legenda: $legenda"
-#/usr/bin/castnow $opts "$legenda" "$arquivo"
+/usr/bin/castnow $opts "$legenda" "$arquivo"
