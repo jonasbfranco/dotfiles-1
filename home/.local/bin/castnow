@@ -4,12 +4,14 @@
 
 arquivo="$1"
 legenda=${arquivo%.*}.png
+icone="${HOME}/.local/share/icons/elementary/preferences-system-network.png"
 
 if [ ! -f $arquivo ]; then
 	if xset q &>/dev/null; then
-		#DISPLAY=:0 canberra-gtk-play -i complete 2>&1
 		canberra-gtk-play -i complete 2>&1
-		dbus-launch notify-send -i $icone "Git Cron" "Repo <b>$(basename $1)</b> atualizado."
+		dbus-launch notify-send -i $icone "CastNow" "O arquivo: $arquivo não existe."
+	else
+		echo "CastNow: O arquivo: $arquivo não existe."
 	fi
 	exit
 fi
@@ -17,7 +19,9 @@ fi
 if [ ! -f $legenda ]; then
 	if xset q &>/dev/null; then
 		canberra-gtk-play -i complete 2>&1
-		dbus-launch notify-send -i $icone "Git Cron" "Repo <b>$(basename $1)</b> atualizado."
+		dbus-launch notify-send -i $icone "CastNow" "A legenda: $legenda não existe."
+	else
+		echo "CastNow: A legenda: $legenda não existe."
 	fi
 fi
 
