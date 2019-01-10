@@ -40,4 +40,5 @@ else
 fi
 
 #echo "$opts" $legenda \"$arquivo\"
-/usr/bin/castnow $opts "${legenda}" "${arquivo}"
+#/usr/bin/castnow $opts "${legenda}" "${arquivo}"
+/usr/bin/castnow "${legenda}" "${arquivo}"
