@@ -11,8 +11,8 @@
 
 [ ! "$1" ] && exit 1
 
-arquivo=$1
-legenda=${arquivo%.*}.srt
+arquivo="$1"
+legenda="${arquivo%.*}.srt"
 ip=$(ip route get 1 | awk '{print $7;exit}')
 opts="--myip ${ip}"
 icone="${HOME}/.local/share/icons/elementary/preferences-system-network.png"
@@ -41,6 +41,6 @@ fi
 
 #echo "$opts" $legenda \"$arquivo\"
 #/usr/bin/castnow $opts "${legenda}" "${arquivo}"
-echo /usr/bin/castnow "${legenda}" "${arquivo}"
+echo /usr/bin/castnow ${legenda} ${arquivo}
 
-/usr/bin/castnow "${legenda}" "${arquivo}"
+/usr/bin/castnow ${legenda} ${arquivo}
