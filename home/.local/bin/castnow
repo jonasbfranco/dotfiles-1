@@ -1,12 +1,14 @@
 #!/bin/bash
 
-[ ! $1 ] && exit 1
+[ ! "$1" ] && exit 1
 
 arquivo="$1"
-legenda=${arquivo%.*}.png
+legenda="${arquivo%.*}.srt"
+ip=$(ip route get 1 | awk '{print $7;exit}')
+opts="--myip $ip"
 icone="${HOME}/.local/share/icons/elementary/preferences-system-network.png"
 
-if [ ! -f $arquivo ]; then
+if [ ! -f "$arquivo" ]; then
 	if xset q &>/dev/null; then
 		canberra-gtk-play -i complete 2>&1
 		dbus-launch notify-send -i $icone "CastNow" "O arquivo: $arquivo não existe."
@@ -16,13 +18,16 @@ if [ ! -f $arquivo ]; then
 	exit
 fi
 
-if [ ! -f $legenda ]; then
+if [ ! -f "$legenda" ]; then
 	if xset q &>/dev/null; then
 		canberra-gtk-play -i complete 2>&1
 		dbus-launch notify-send -i $icone "CastNow" "A legenda: $legenda não existe."
 	else
 		echo "CastNow: A legenda: $legenda não existe."
 	fi
+	legenda=""
+else
+	legenda="--subtitles $legenda"
 fi
 
-/usr/bin/castnow
+/usr/bin/castnow $opts $legenda $arquivo
