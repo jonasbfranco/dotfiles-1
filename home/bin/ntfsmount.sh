@@ -1,6 +1,13 @@
 #!/usr/bin/env bash
+#
+# Arquivo: ntfsmount.sh
+#
+# Feito por Lucas Saliés Brum a.k.a. sistematico, <lucas@archlinux.com.br>
+#
+# Criado em: 16-03-2018 16:35:20
+# Última alteração: 08/01/2019 21:15:26
 
-icone="${HOME}/.local/share/icons/elementary/video-display.png"
+icone="${HOME}/.local/share/icons/elementary/drive-harddisk.png"
 
 function contem() {
     local n=$#
@@ -23,6 +30,6 @@ for d in /dev/sda*; do
 	if [ "$tipo" == "ntfs" ] && [ $(contem "${excl[@]}" $d) == "n" ] && [ "$montagem" == "" ]; then
 		udisksctl mount -b $d
 		montagem=$(udisksctl info -b $d | grep MountPoints | awk '{print $2}')
-		notify-send "AutoMount" "$d montado em $montagem"
+		notify-send -i $icone "AutoMount" "$d montado em $montagem"
 	fi
 done
