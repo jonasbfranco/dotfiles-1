@@ -111,6 +111,8 @@ objects = [
     Wikipedia = {
         links: [ 
             link1 = {name:"Wikipedia",url:"https://pt.wikipedia.org"}, 
+            link2 = {name:"Neste Dia",url:"https://pt.wikipedia.org/wiki/Portal:Hist%C3%B3ria/Neste_dia"}, 
+            link3 = {name:"Imagem em Destaque",url:"https://pt.wikipedia.org/wiki/Wikip%C3%A9dia:Imagem_em_destaque"},             
         ],
         icon:"fa-wikipedia-w",
         url:"https://pt.wikipedia.org/w/index.php",
