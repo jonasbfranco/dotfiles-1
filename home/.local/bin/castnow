@@ -30,4 +30,6 @@ else
 	legenda="--subtitles $legenda"
 fi
 
-/usr/bin/castnow $opts $legenda $arquivo
+echo "Filme: $arquivo"
+echo "Legenda: $legenda"
+#/usr/bin/castnow $opts "$legenda" "$arquivo"
