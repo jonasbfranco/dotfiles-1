@@ -5,7 +5,7 @@
 # Desenvolvido por Lucas Saliés Brum <lucas@archlinux.com.br>
 #
 # Criado em: 10/01/2019 02:36:19
-# Última Atualização: 10/01/2019 02:36:24
+# Última Atualização: 10/01/2019 23:23:50
 #
 # https://github.com/xat/castnow
 
@@ -38,9 +38,5 @@ if [ ! -f "${legenda}" ]; then
 else
 	legenda='--subtitles '${legenda}
 fi
-
-#echo "$opts" $legenda \"$arquivo\"
-#/usr/bin/castnow $opts "${legenda}" "${arquivo}"
-echo /usr/bin/castnow ${legenda} ${arquivo}
 
 /usr/bin/castnow "${arquivo}" "${legenda}"
