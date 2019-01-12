@@ -53,5 +53,5 @@ else
 		echo "CastNow: Stream do parada."
 	fi
 	/usr/bin/castnow --command "s,q"
-	kill -9 $(ps -ef | awk '$NF~"bluetooth" {print $2}')
+	kill -9 $(ps -ef | grep castnow | awk '{print $2; exit}')
 fi
