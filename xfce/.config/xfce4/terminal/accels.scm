@@ -54,3 +54,6 @@
 ; (gtk_accel_path "<Actions>/terminal-window/zoom-menu" "")
 ; (gtk_accel_path "<Actions>/terminal-window/reset" "")
 ; (gtk_accel_path "<Actions>/terminal-window/terminal-menu" "")
+
+(gtk_accel_path "<Actions>/terminal-window/fullscreen" "")
+(gtk_accel_path "<Actions>/terminal-window/contents" "")
