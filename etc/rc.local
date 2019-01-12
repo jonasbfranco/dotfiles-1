@@ -1,0 +1,10 @@
+#!/bin/sh -e
+#
+# rc.local - executed at the end of each multiuser runlevel
+#
+# Make sure that the script will "exit 0" on success or any other
+# value on error.
+
+ln -sf $(find /home/lucas/img/wallpapers/unsplash/ -type f | shuf -n1) /usr/share/backgrounds/default
+
+exit 0

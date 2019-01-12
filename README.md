@@ -13,7 +13,7 @@
 - Web Browser: `chromium` [link](http://www.chromium.org/Home)
 - Dotfiles: `stow` [link](https://www.gnu.org/software/stow/)
 
-## Instalação Manual
+## Instalação Manual(user)
 
 1. Instale o `stow`
 2. `cd ~`
@@ -21,6 +21,7 @@
 4. `cd .dotfiles`
 5. `stow i3`
 5. `stow polybar`
+6. `sudo stow -t /etc etc`
 
 ## Instalação Automática
 
