@@ -5,7 +5,7 @@
 # Desenvolvido por Lucas Saliés Brum <lucas@archlinux.com.br>
 #
 # Criado em: 10/01/2019 02:36:19
-# Última Atualização: 10/01/2019 23:23:50
+# Última Atualização: 12/01/2019 16:53:00
 #
 # https://github.com/xat/castnow
 
@@ -28,21 +28,29 @@ if [ ! -f "${arquivo}" ] && [ "${arquivo}" != "-q" ]; then
 fi
 
 if [ ! -f "${legenda}" ]; then
-	#if xset q &>/dev/null; then
-	#	canberra-gtk-play -i complete 2>&1
-	#	dbus-launch notify-send -i $icone "CastNow" "A legenda: $legenda não existe."
-	#else
-	#	echo "CastNow: A legenda: $legenda não existe."
-	#fi
+	if xset q &>/dev/null; then
+		canberra-gtk-play -i complete 2>&1
+		dbus-launch notify-send -i $icone "CastNow" "A legenda: $legenda não existe."
+	else
+		echo "CastNow: A legenda: $legenda não existe."
+	fi
 	legenda=""
 else
 	legenda='--subtitles '${legenda}
 fi
 
 if [ "${arquivo}" != "-q" ]; then
-	dbus-launch notify-send -i $icone "CastNow" "Stream do arquivo: $arquivo iniciada.\nDigite <b>F4</b> para parar."
+	if xset q &>/dev/null; then
+		dbus-launch notify-send -i $icone "CastNow" "Stream do arquivo: $arquivo iniciada.\nDigite <b>F4</b> para parar."
+	else
+		echo "CastNow: Stream do arquivo: $arquivo iniciada. Digite F4 para parar."
+	fi
 	/usr/bin/castnow "${arquivo}" "${legenda}"
 else
-	dbus-launch notify-send -i $icone "CastNow" "Stream do parada."
+	if xset q &>/dev/null; then
+		dbus-launch notify-send -i $icone "CastNow" "Stream do parada."
+	else
+		echo "CastNow: Stream do parada."
+	fi
 	/usr/bin/castnow --command s,q
 fi
