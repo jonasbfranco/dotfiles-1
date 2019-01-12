@@ -56,5 +56,12 @@ else
 	sleep 1
 	/usr/bin/castnow --command "q" --exit
 	sleep 1
-	kill -9 $(ps -ef | grep castnow | egrep -v grep | awk '{print $2; exit}')
+	
+	ppid=$(ps -ef | grep castnow | egrep -v grep | awk '{print $2; exit}')
+
+	while $ppid >/dev/null; do 
+		kill -9 $ppid
+		sleep 2
+	done
+	
 fi
