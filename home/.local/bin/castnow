@@ -58,7 +58,7 @@ else
 	sleep 1
 
 	while true;	do 
-		ppid=$(ps -ef | grep '/usr/bin/castnow' | egrep -v grep | awk '{print $2; exit}' | egrep -vi )
+		ppid=$(ps -ef | grep 'castnow' | egrep -v grep | awk '{print $2; exit}' | egrep -vi "$0")
     	if [ "$ppid" ]; then
            	kill -9 $ppid
            	sleep 2
