@@ -59,8 +59,9 @@ else
 
 	while true;	do 
 		ppid=$(ps -ef | grep castnow | egrep -v grep | awk '{print $2; exit}')
-    	if [[ ! -z $ppid ]]; then
+    	if [[ ! -n $ppid ]]; then
            	kill -9 $ppid
+           	sleep 2
     	else
          	break
     	fi
