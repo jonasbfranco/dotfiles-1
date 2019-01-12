@@ -39,4 +39,8 @@ else
 	legenda='--subtitles '${legenda}
 fi
 
-/usr/bin/castnow "${arquivo}" "${legenda}"
+if [ "${arquivo}" != "-q" ]; then
+	/usr/bin/castnow "${arquivo}" "${legenda}"
+else
+	/usr/bin/castnow --command s,q
+fi
