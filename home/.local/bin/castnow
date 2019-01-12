@@ -54,18 +54,18 @@ else
 	fi
 
 	echo stage 1
-	#/usr/bin/castnow --command s >/dev/null 2>&1
-	#sleep 1
+	/usr/bin/castnow --command s >/dev/null 2>&1
+	sleep 1
 
 	echo stage 2
-	#/usr/bin/castnow --command q >/dev/null 2>&1
-	#sleep 1
+	/usr/bin/castnow --command q >/dev/null 2>&1
+	sleep 1
 
 	echo stage 3
 	while true;	
 	do 
 		echo stage 4
-		ppid=$(ps -ef | grep 'castnow' | egrep -v grep | awk '{print $2; exit}' | egrep -vi "$0" 2> /dev/null)
+		ppid=$(ps -ef | grep 'castnow' | egrep -v grep | awk '{print $2; exit}' | egrep -vi "$0")
 		echo $ppid
     	if [[ ! -z "$ppid" ]]; then
     		echo "Existe uma instancia."
