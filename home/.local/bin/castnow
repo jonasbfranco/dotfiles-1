@@ -40,8 +40,9 @@ else
 fi
 
 if [ "${arquivo}" != "-q" ]; then
-	dbus-launch notify-send -i $icone "CastNow" "Stream do arquivo: $arquivo iniciada.<br>Digite <b>F4</b> para parar."
+	dbus-launch notify-send -i $icone "CastNow" "Stream do arquivo: $arquivo iniciada.\nDigite <b>F4</b> para parar."
 	/usr/bin/castnow "${arquivo}" "${legenda}"
 else
+	dbus-launch notify-send -i $icone "CastNow" "Stream do parada."
 	/usr/bin/castnow --command s,q
 fi
