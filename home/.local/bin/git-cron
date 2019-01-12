@@ -35,7 +35,7 @@ atualiza() {
 				#if [ "$DESKTOP_SESSION" == "i3" ]; then
 				if xset q &>/dev/null; then
 					# ls /usr/share/sounds/freedesktop/stereo/
-					DISPLAY=:0 canberra-gtk-play -i complete 2>&1
+					dbus-launch canberra-gtk-play -i complete 2>&1
 					dbus-launch notify-send -i $icone "Git Cron" "Repo <b>$(basename $1)</b> atualizado."
 				fi
 			fi
