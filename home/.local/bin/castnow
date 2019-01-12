@@ -28,12 +28,12 @@ if [ ! -f "${arquivo}" ] && [ "${arquivo}" != "-q" ]; then
 fi
 
 if [ ! -f "${legenda}" ] && [ "${arquivo}" != "-q" ]; then
-	if xset q &>/dev/null; then
-		canberra-gtk-play -i complete 2>&1
-		dbus-launch notify-send -i $icone "CastNow" "A legenda: $legenda não existe."
-	else
-		echo "CastNow: A legenda: $legenda não existe."
-	fi
+	# if xset q &>/dev/null; then
+	# 	canberra-gtk-play -i complete 2>&1
+	# 	dbus-launch notify-send -i $icone "CastNow" "A legenda: $legenda não existe."
+	# else
+	# 	echo "CastNow: A legenda: $legenda não existe."
+	# fi
 	legenda=""
 else
 	legenda='--subtitles '${legenda}
