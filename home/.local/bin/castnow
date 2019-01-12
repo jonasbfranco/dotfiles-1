@@ -61,6 +61,8 @@ else
 	/usr/bin/castnow --command 'q' --exit &
 	sleep 1
 
+	echo $0
+
 	echo stage 3
 	while true;	
 	do 
