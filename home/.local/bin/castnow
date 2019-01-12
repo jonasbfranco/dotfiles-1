@@ -68,11 +68,9 @@ else
 		ppid=$(ps -ef | grep 'castnow' | egrep -v grep | awk '{print $2; exit}' | egrep -vi "$0")
 		echo $ppid
     	if [[ ! -z "$ppid" ]]; then
-    		echo "Existe uma instancia."
            	kill -9 $ppid
            	sleep 2
     	else
-    		echo "Todas as instancias acabaram."
          	break;
     	fi
 	done
