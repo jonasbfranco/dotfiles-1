@@ -27,7 +27,7 @@ if [ ! -f "${arquivo}" ] && [ "${arquivo}" != "-q" ]; then
 	exit
 fi
 
-if [ ! -f "${legenda}" ]; then
+if [ ! -f "${legenda}" ] && [ "${arquivo}" != "-q" ]; then
 	if xset q &>/dev/null; then
 		canberra-gtk-play -i complete 2>&1
 		dbus-launch notify-send -i $icone "CastNow" "A legenda: $legenda não existe."
