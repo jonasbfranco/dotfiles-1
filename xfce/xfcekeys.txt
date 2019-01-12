@@ -1,3 +1,4 @@
+bash -c "${HOME}/bin/center.sh"			Shift+Ctrl+C
 bash -c "${HOME}/bin/dl.sh -a"			F9
 bash -c "${HOME}/bin/dl.sh -d"			F10
 bash -c "${HOME}/bin/dl.sh -dl"			F8
