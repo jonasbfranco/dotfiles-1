@@ -13,7 +13,7 @@ ext="jpg"  		# Separadas por virgula.
 pasta="$(pwd)" 	# Diretório para salvar os arquivos.
 min='300' 		# Em pixels verticais
 lixeira="${HOME}/.local/share/Trash"
-pasta="${HOME}/tmp/$$"
+pasta="${HOME}/desk/$$"
 turl="$(xclip -o)"
 icone="${HOME}/.local/share/icons/elementary/camera-photo.png"
 # /usr/share/sounds/freedesktop/stereo/
