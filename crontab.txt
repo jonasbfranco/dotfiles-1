@@ -41,6 +41,6 @@
 25 6 * * * export DISPLAY=:0 ; canberra-gtk-play -i phone-incoming-call 2>&1
 
 # Git Cron(add, commit, push automático)
-#*/5 * * * * export DISPLAY=:0 ; sh -c "~/.local/bin/git-cron" > /dev/null 2>&1
+*/1 * * * * export DISPLAY=:0 ; sh -c "~/.local/bin/git-cron" > /dev/null 2>&1
 #*/1 * * * * sh -c "~/.local/bin/git-cron" > /dev/null 2>&1
-*/1 * * * * sh -c "~/.local/bin/git-cron" 2>&1
+#*/1 * * * * sh -c "~/.local/bin/git-cron" 2>&1
