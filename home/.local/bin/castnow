@@ -54,11 +54,11 @@ else
 	fi
 
 	echo stage 1
-	/usr/bin/castnow --command s
+	/usr/bin/castnow --command s 2>&1
 	sleep 1
 
 	echo stage 2
-	/usr/bin/castnow --command q
+	/usr/bin/castnow --command q 2>&1
 	sleep 1
 
 	echo stage 3
