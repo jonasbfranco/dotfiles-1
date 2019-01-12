@@ -60,6 +60,7 @@ else
 	while true;	
 	do 
 		ppid=$(ps -ef | grep 'castnow' | egrep -v grep | awk '{print $2; exit}' | egrep -vi "$0" 2> /dev/null)
+		echo $ppid
     	if [[ ! -z "$ppid" ]]; then
     		echo "Existe uma instancia."
            	kill -9 $ppid
