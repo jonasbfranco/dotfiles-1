@@ -52,5 +52,6 @@ else
 	else
 		echo "CastNow: Stream do parada."
 	fi
-	/usr/bin/castnow --command s,q
+	/usr/bin/castnow --command s
+	killall castnow
 fi
