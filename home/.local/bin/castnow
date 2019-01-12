@@ -52,14 +52,14 @@ else
 	else
 		echo "CastNow: Stream do parada."
 	fi
-	/usr/bin/castnow --command "s" --exit
+	/usr/bin/castnow --command s --exit
 	sleep 1
-	/usr/bin/castnow --command "q" --exit
+	/usr/bin/castnow --command q --exit
 	sleep 1
 
 	while true;	do 
 		ppid=$(ps -ef | grep 'castnow' | egrep -v grep | awk '{print $2; exit}' | egrep -vi "$0")
-    	if [ "$ppid" ]; then
+    	if [ ! -n "$ppid" ]; then
            	kill -9 $ppid
            	sleep 2
     	else
