@@ -1,4 +1,11 @@
-#!/bin/bash
+#!/usr/bin/env bash
+#
+# Arquivo: autogit.sh
+#
+# Feito por Lucas Saliés Brum a.k.a. sistematico, <lucas@archlinux.com.br>
+#
+# Criado em: 13-01-2019 17:03:46
+# Última alteração: 13-01-2019 17:03:50
 
 ARQUIVO="$(pwd)/.git/config"
 
