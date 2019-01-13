@@ -1,4 +1,20 @@
 objects = [
+    Favs = {
+        links: [ 
+            link1 = {name:"Google",url:"https://www.google.com.br"},
+            link2 = {name:"Fotos",url:"https://www.google.com/photos/"},
+            link3 = {name:"Gmail",url:"https://www.google.com/gmail/"},
+            link4 = {name:"Drive",url:"https://www.google.com/drive/"}, 
+            link5 = {name:"Maps",url:"https://www.google.com/maps"},  
+        ],
+        icon:"fa-link",
+        url:"https://google.com.br/search",
+        query:"?q=",
+        ph:"Pesquisa Google",
+        name:"favs",
+        method:"post",
+        color:"#555" //Not used yet
+    },
     Google = {
         links: [ 
             link1 = {name:"Google",url:"https://www.google.com.br"},
