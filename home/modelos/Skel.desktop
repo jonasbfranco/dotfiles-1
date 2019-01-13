@@ -2,7 +2,8 @@
 Encoding=UTF-8
 Version=1.0
 Type=Application
-Terminal=false
+Name=Meu App
+Comment=Um comentário sobre o app
 Exec=$HOME/MyApp
-Name=My Application
 Icon=$HOME/Icons/MyIcon.png
+Terminal=false
