@@ -18,7 +18,7 @@ function setEngine(obj) {
       }
   }
   
-  if (currEng != Links) {
+  if (currEng != Favs) {
     form.style.display="block";
   //form.action = currEng.url;
   //console.log(form.action);
