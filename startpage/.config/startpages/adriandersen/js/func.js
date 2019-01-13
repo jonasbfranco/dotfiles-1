@@ -31,6 +31,8 @@ function setEngine(obj) {
   }
   
   logo.remove(oldEng.icon);
+  logo.remove(oldEng.preicon);
+  logo.add(currEng.preicon);
   logo.add(currEng.icon);
   //DEBUG
   //console.log("OBJ SET: " + oldEng.name + " -> " + currEng.name + " ~~ " + i + "/" + currEng.links.length + " buttons added.");
