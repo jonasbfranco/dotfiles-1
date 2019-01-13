@@ -35,11 +35,7 @@ objects = [
     },
     Code = {
         links: [ 
-            link1 = {name:"Google",url:"https://www.google.com.br"},
-            link2 = {name:"Fotos",url:"https://www.google.com/photos/"},
-            link3 = {name:"Gmail",url:"https://www.google.com/gmail/"},
-            link4 = {name:"Drive",url:"https://www.google.com/drive/"}, 
-            link5 = {name:"Maps",url:"https://www.google.com/maps"},  
+            link1 = {name:"Basic HTML Skel",url:"https://www.taniarascia.com/basic-html5-file/"}
         ],
         preicon:"fas",
         icon:"fa-code",
