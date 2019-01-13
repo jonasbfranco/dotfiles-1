@@ -18,12 +18,17 @@ function setEngine(obj) {
       }
   }
   
+  if (currEng != Links) {
+    form.style.display="block";
   //form.action = currEng.url;
-  console.log(form.action);
+  //console.log(form.action);
   input.placeholder = currEng.ph;  
   //window.location. = "?engine=" + currEng.name;
   input.name = currEng.query;
   form.method = currEng.method;
+  } else {
+    form.style.display="none";
+  }
   
   logo.remove(oldEng.icon);
   logo.add(currEng.icon);
