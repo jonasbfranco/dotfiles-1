@@ -6,4 +6,4 @@ Terminal=false
 StartupWMClass=whatsdesk
 Exec=whatsdesk
 Name=WhatsDesk
-Icon=whatsdesk
+Icon=whatsapp
