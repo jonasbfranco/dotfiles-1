@@ -48,11 +48,8 @@ objects = [
     },
     Stackoverflow = {
         links: [ 
-            link1 = {name:"Google",url:"https://www.google.com.br"},
-            link2 = {name:"Fotos",url:"https://www.google.com/photos/"},
-            link3 = {name:"Gmail",url:"https://www.google.com/gmail/"},
-            link4 = {name:"Drive",url:"https://www.google.com/drive/"}, 
-            link5 = {name:"Maps",url:"https://www.google.com/maps"},  
+            link1 = {name:"StackOverflow",url:"https://stackoverflow.com"},
+            link2 = {name:"StackOverflow PT",url:"https://pt.stackoverflow.com"}
         ],
         preicon:"fab",
         icon:"fa-stack-overflow",
