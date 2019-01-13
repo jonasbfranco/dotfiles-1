@@ -1,5 +1,11 @@
-
 #!/usr/bin/env bash
+#
+# Arquivo: audioredux.sh
+#
+# Feito por Lucas Saliés Brum a.k.a. sistematico, <lucas@archlinux.com.br>
+#
+# Criado em: 13-01-2019 17:00:43
+# Última alteração: 13-01-2019 17:00:48
 
 titulo="Audio Redux"
 [ $1 ] && dir="$1" || dir="$(pwd)"
