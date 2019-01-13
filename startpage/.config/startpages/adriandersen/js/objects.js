@@ -15,6 +15,38 @@ objects = [
         method:"post",
         color:"#555" //Not used yet
     },
+    Code = {
+        links: [ 
+            link1 = {name:"Google",url:"https://www.google.com.br"},
+            link2 = {name:"Fotos",url:"https://www.google.com/photos/"},
+            link3 = {name:"Gmail",url:"https://www.google.com/gmail/"},
+            link4 = {name:"Drive",url:"https://www.google.com/drive/"}, 
+            link5 = {name:"Maps",url:"https://www.google.com/maps"},  
+        ],
+        icon:"fa-code",
+        url:"https://google.com.br/search",
+        query:"?q=",
+        ph:"Código",
+        name:"code",
+        method:"post",
+        color:"#555" //Not used yet
+    },
+    Stackoverflow = {
+        links: [ 
+            link1 = {name:"Google",url:"https://www.google.com.br"},
+            link2 = {name:"Fotos",url:"https://www.google.com/photos/"},
+            link3 = {name:"Gmail",url:"https://www.google.com/gmail/"},
+            link4 = {name:"Drive",url:"https://www.google.com/drive/"}, 
+            link5 = {name:"Maps",url:"https://www.google.com/maps"},  
+        ],
+        icon:"fa-stack-overflow",
+        url:"https://google.com.br/search",
+        query:"?q=",
+        ph:"Pesquisa Stackoverflow",
+        name:"stackoverflow",
+        method:"post",
+        color:"#555" //Not used yet
+    },
     Reddit = {
         links: [ 
             link1 = {name:"Reddit",url:"https://reddit.com"}, 
