@@ -40,9 +40,9 @@ objects = [
             link5 = {name:"Maps",url:"https://www.google.com/maps"},  
         ],
         icon:"fa-stack-overflow",
-        url:"https://google.com.br/search",
+        url:"https://stackoverflow.com/search",
         query:"?q=",
-        ph:"Pesquisa Stackoverflow",
+        ph:"Pesquisa StackOverflow",
         name:"stackoverflow",
         method:"post",
         color:"#555" //Not used yet
