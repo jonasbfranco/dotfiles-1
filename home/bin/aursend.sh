@@ -1,12 +1,12 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #
+# Arquivo: aursend.sh
 # Script para o envios de pacotes para o AUR.
 #
-# Desenvolvido por Lucas Saliés Brum <lucas@archlinux.com.br>
+# Feito por Lucas Saliés Brum a.k.a. sistematico, <lucas@archlinux.com.br>
 #
-# Criado em: 16/05/2016
-# Última Atualização: 03/03/2017
-#
+# Criado em: 16-05-2016 13:10:01
+# Última alteração: 13-01-2019 17:02:02
 
 if [ ! "$1" ]; then
 	echo "Parametros insuficientes..."
