@@ -77,3 +77,4 @@ FLUSH PRIVILEGES;
 EOF
 
 cat /tmp/wp.sql | mysql -u $usuario_root -p${senha_root}
+rm /tmp/wp.sql
