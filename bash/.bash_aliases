@@ -24,3 +24,4 @@ alias uue='systemctl --user list-unit-files | grep enabled'
 alias stpshr='systemctl --user stop ngrok dropbox google-drive onedrive yandex && sudo systemctl stop cronie nginx php-fpm sshd ddclient && touch ~/github/majestic/.noup ~/github/sistematico.github.io/.noup'
 alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 alias castnow="castnow --myip 192.168.0.1"
+alias git-cron='~/.local/bin/git-cron'

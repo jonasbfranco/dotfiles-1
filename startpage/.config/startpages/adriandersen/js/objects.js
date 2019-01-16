@@ -1,7 +1,8 @@
 objects = [
     Favs = {
         links: [ 
-            link1 = {name:"Lucas Brum",url:"https://lucasbrum.net"}
+            link1 = {name:"Lucas Brum",url:"https://lucasbrum.net"},
+            link2 = {name:"Brum Informática",url:"https://bruminformatica.com.br"}
         ],
         preicon:"fas",
         icon:"fa-link",
