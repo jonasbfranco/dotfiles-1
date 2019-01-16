@@ -15,7 +15,7 @@
 arquivo="$1"
 legenda="${arquivo%.*}.srt"
 ip=$(ip route get 1 | awk '{print $7;exit}')
-opts="--quiet"
+#opts="--quiet"
 #opts="--myip ${ip} --tomp4"
 #opts="--tomp4 --ffmpeg-vcodec copy --ffmpeg-ac 2"
 icone="${HOME}/.local/share/icons/elementary/preferences-system-network.png"
