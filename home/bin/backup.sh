@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# /usr/local/bin/backup.sh: Um script simples para backup de banco de dados e arquivos de um(ou vários sites).
+# backup.sh: Um script simples para backup de banco de dados e arquivos de um(ou vários sites).
 #
 # Uso: ./backup.sh [clear|sites|mysql|both]
 # * Não se esqueça de alterar as variáveis $USUARIO_MYSQL, $SENHA_MYSQL e $DIR_WEBSERVER!!!
@@ -19,11 +19,14 @@
 # 15 0 * * * sh -c "/usr/local/scripts/backup.sh clear" > /dev/null 2>&1
 #
 # Script criado por Lucas Saliés Brum a.k.a. sistematico, <lucas@archlinux.com.br>
+#
+# Criado em:           06-03-2016 21:15:28
+# Última alteração em: 16-01-2019 12:20:55
 
 DIR_WEBSERVER="/var/www"
 USUARIO_MYSQL="root"
 SENHA_MYSQL="alanjackson1983"
-DIAS=1 # Dias para manter o backup
+DIAS=15 # Dias para manter o backup
 DIR="/var/backup"
 
 BLACKLIST_DB=('mysql' 'performance_schema' 'phpmyadmin' 'information_schema' 'grblog' 'grforum')
