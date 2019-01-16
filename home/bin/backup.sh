@@ -1,87 +1,111 @@
 #!/bin/bash
 #
-# Script de Backup do MySQL e arquivos usando o rsync e mysqldump.
+# /usr/local/bin/backup.sh: Um script simples para backup de banco de dados e arquivos de um(ou vários sites).
 #
-# Desenvolvido por Lucas Saliés Brum <lucas@archlinux.com.br>
+# Uso: ./backup.sh [clear|sites|mysql|both]
+# * Não se esqueça de alterar as variáveis $USUARIO_MYSQL, $SENHA_MYSQL e $DIR_WEBSERVER!!!
+# 
+# Para backups automáticos digite: crontab -e
 #
-# Com base no trabalho de vivek em:
-# http://www.cyberciti.biz/nixcraft/vivek/blogger/2005/01/mysql-backup-script.html
+# Crontab sugerido(uma vez por semana e a cada reboot, limpa uma vez por mês):
 #
-# Criado em: 15/06/2014
-# Última Atualização: 03/12/2014
+# @weekly sh -c "/usr/local/scripts/backup.sh both" > /dev/null 2>&1
+# @reboot sh -c "/usr/local/scripts/backup.sh both" > /dev/null 2>&1
+# @monthly sh -c "/usr/local/scripts/backup.sh clear" > /dev/null 2>&1
 #
-USUARIO="root"
-SENHA="SENHA"
-ORIGEM="/var/www"
-DESTINO="/var/backup"
-EXCLUIR="arquivos/ *.mp3 *.mp4 *.avi *.m4v *.mkv *.wav *.ogg *.oga"
+# ou (meia-noite faz backup e meia-noite e 15 minutos limpa backups antigos.)
+#
+# 0 0 * * * sh -c "/usr/local/scripts/backup.sh both" > /dev/null 2>&1
+# 15 0 * * * sh -c "/usr/local/scripts/backup.sh clear" > /dev/null 2>&1
+#
+# Script criado por Lucas Saliés Brum a.k.a. sistematico, <lucas@archlinux.com.br>
 
-RSYNC="$(which rsync)"
-MYSQL="$(which mysql)"
-MYSQLDUMP="$(which mysqldump)"
-CHOWN="$(which chown)"
-CHMOD="$(which chmod)"
-GZIP="$(which gzip)"
+DIR_WEBSERVER="/var/www"
+USUARIO_MYSQL="root"
+SENHA_MYSQL="alanjackson1983"
+DIAS=1 # Dias para manter o backup
+DIR="/var/backup"
 
-ANO="$(date +"%Y")"
-MES="$(date +"%m")"
-DIA="$(date +"%d")"
+BLACKLIST_DB=('mysql' 'performance_schema' 'phpmyadmin' 'information_schema' 'grblog' 'grforum')
+BLACKLIST_SITES=('old')
 
-DESTINO_RSYNC="$DESTINO/site/$ANO/$MES/$DIA"
-DESTINO_MYSQL="$DESTINO/banco/$ANO/$MES/$DIA"
+DIR_DB="$DIR/dbs/$(date +'%Y')/$(date +'%m')/$(date +'%d')"
+DIR_SITES="$DIR/site/$(date +'%Y')/$(date +'%m')/$(date +'%d')"
 
-TIMESTAMP=$(date +"%Y-%m-%d_%H-%M-%S")
+backupMysql() {
+	if [ ! -d $DIR_DB ]; then
+		mkdir -p $DIR_DB
+	else
+		rm -f "$DIR_DB/*gz" > /dev/null 2>&1
+	fi
 
-if [ -d $DESTINO_RSYNC ]; then
-	DESTINO_FINAL=${DESTINO_RSYNC}.${TIMESTAMP}
-else
-	DESTINO_FINAL=${DESTINO_RSYNC}
-fi
+	databases=$(mysql -u $USUARIO_MYSQL -p$SENHA_MYSQL -e "SHOW DATABASES;" | tr -d "| " | egrep -v "Database")
 
-FILE=""
-DBS=""
-
-if [ "$EXCLUIR" != "" ];
-then
-	for exc in $EXCLUIR
-	do
-    	EXCL=${EXCL}"--exclude=${exc} "
+	for db in $databases; do
+		if ! echo ${BLACKLIST_DB[@]} | grep -q -w "$db"; then
+			banco="$(date +%Y%m%d).$db.sql"
+        	mysqldump -u $USUARIO_MYSQL -p$SENHA_MYSQL --databases $db > $DIR_DB/$banco
+      		gzip --force $DIR_DB/$banco
+    	fi
 	done
-fi
+}
 
-[ ! -d $DESTINO ] && mkdir -p $DESTINO || :
-[ ! -d $DESTINO_MYSQL ] && mkdir -p $DESTINO_MYSQL || :
-#[ ! -d $DESTINO_RSYNC ] && mkdir -p $DESTINO_RSYNC || :
-[ ! -d $DESTINO_FINAL ] && mkdir -p $DESTINO_FINAL || :
+backupSites() {
+	SITES=$(ls -1 $DIR_WEBSERVER)
 
-#$CHOWN 0.0 -R $DEST_MYSQL
-#$CHMOD 0600 $DEST_MYSQL
+	if [ ! -d $DIR_SITES ]; then
+        mkdir -p $DIR_SITES
+	else
+		rm -f "$DIR_SITES/*gz" > /dev/null 2>&1
+    fi
 
-IGGY="test mysql information_schema"
-DBS="$($MYSQL -u$USUARIO -p$SENHA -Bse 'show databases')"
+    OLDPATH=$(pwd)
+    cd $DIR_SITES
 
-for db in $DBS
-do
-	skipdb=-1
-	if [ "$IGGY" != "" ];
-	then
-		for i in $IGGY
-		do
-			[ "$db" == "$i" ] && skipdb=1 || :
-		done
-	fi
-
-	if [ "$skipdb" == "-1" ] ; then
-		FILE="$DESTINO_MYSQL/$db.sql"
-		if [ -f $FILE ]; then
-			$MYSQLDUMP -u$USUARIO -p$SENHA $db | $GZIP -9 > ${FILE}.${TIMESTAMP}
-		else
-			$MYSQLDUMP -u$USUARIO -p$SENHA $db | $GZIP -9 > $FILE
+	for site in $SITES; do
+		if ! echo ${BLACKLIST_SITES[@]} | grep -q -w "$site"; then
+			if [[ "$site" != "storage" ]] && [[ "$site" != "test" ]]; then
+				/usr/bin/rsync -a $DIR_WEBSERVER/$site $DIR_SITES/ --delete >/dev/null 2>&1
+				tar -zcf $site.tar.gz $site
+				rm -rf $site
+			fi
 		fi
+	done
+
+	cd $OLDPATH
+}
+
+if [ "$1" == "mysql" ]; then
+	echo -e "[\e[34m*\e[0m] Backup do \e[34mMySQL\e[0m"
+	backupMysql
+elif [ "$1" == "sites" ]; then
+	echo -e "[*] Backup dos \e[34mArquivos\e[0m"
+	backupSites
+elif [ "$1" == "both" ]; then
+	echo -e "[\e[34m*\e[0m] Backup do \e[34mMySQL\e[0m"
+	backupMysql
+	echo -e "[\e[34m*\e[0m] Backup dos \e[34mArquivos\e[0m"
+	backupSites
+elif [ "$1" == "clear" ]; then
+	echo -e "[\e[31m*\e[0m] Limpando backups mais antigos que $DIAS dias"
+	if [ -d $DIR ]; then
+		arquivos=$(find $DIR -mtime +$DIAS)
+	else
+		echo -e "[\e[31m*\e[0m] Diretório \e[31m$DIR\e[0m inexistente."
+		exit 1
 	fi
-done
-
-$RSYNC -avq ${ORIGEM}/ ${DESTINO_FINAL}/ $EXCL
-
-echo "Backup efetuado em: $(date)" >> /var/log/backup.log
-echo "-------------------------------------------------------" >> /var/log/backup.log
+	echo "Os arquivos:"
+	echo
+	echo -e "\e[33m $arquivos \e[0m"
+	echo "Serão apagados."
+	echo
+	read -p "Você tem certeza? [s/N]: " resposta
+	if [[ "$resposta" = *[sS]* ]]; then
+		echo "A resposta foi sim."
+		echo "Apagando em 10 segundos, CTRL+c para cancelar..."
+		sleep 10
+		find $DIR -mtime +$DIAS | xargs rm -rf
+	else
+		echo "A resposta foi não.."
+	fi
+fi
