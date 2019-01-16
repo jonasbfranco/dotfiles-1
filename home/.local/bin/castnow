@@ -20,7 +20,7 @@ ip=$(ip route get 1 | awk '{print $7;exit}')
 #opts="--tomp4 --ffmpeg-vcodec copy --ffmpeg-ac 2"
 icone="${HOME}/.local/share/icons/elementary/preferences-system-network.png"
 
-[ ! -n "$seek" ] && opts="$opts --seek $2"
+[ -n "$seek" ] && opts="$opts --seek $2"
 
 if [ ! -f "${arquivo}" ] && [ "${arquivo}" != "-q" ]; then
 	if xset q &>/dev/null; then
@@ -64,8 +64,8 @@ else
 	/usr/bin/castnow --command q --exit &
 	sleep 1
 
-	while true;	
-	do 
+	while true;
+	do
 		echo stage 4
 		ppid=$(ps -ef | grep 'castnow' | egrep -vi "$0" | egrep -v grep | awk '{print $2; exit}')
 		echo $ppid
