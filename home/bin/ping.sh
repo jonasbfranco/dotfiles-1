@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 #
 # Arquivo: alarme.sh
 #
@@ -18,7 +18,7 @@ host=${1:-"8.8.8.8"}			# Host
 tentativas=1					# Tentativas por vez
 intervalo=10					# Em segundos, entre tentativas
 repeticao="sim"					# Loop infinito
-processo=$(ps x | egrep -v grep | grep ping.sh | awk '{print $1}')
+processo=$(ps x | egrep -v grep | grep ping.sh | egrep -v $$ | awk '{print $1}')
 
 function pingar {
 	ping -q -c$tentativas $host > /dev/null 2> /dev/null
@@ -44,7 +44,7 @@ function pingar {
 	fi
 }
 
-if [[ ! -z "$processo" ]]; then
+if [ -n "$processo" ]; then
 	dbus-launch notify-send -i $icone "Ping" "Processo parado."
 	kill -9 $processo
 	exit

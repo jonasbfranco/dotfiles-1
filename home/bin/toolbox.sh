@@ -1,5 +1,5 @@
 #!/bin/bash
 
-teste="123"
+processo=$(ps x | egrep -v grep | grep toolbox.sh | awk '{print $1}')
 
-[ -n "$teste" ] && echo ok
+[ -n "$processo" ] && echo $$
