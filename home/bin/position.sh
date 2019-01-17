@@ -5,9 +5,9 @@
 # Feito por Lucas Saliés Brum a.k.a. sistematico, <lucas@archlinux.com.br>
 #
 # Criado em: 16-03-2018 16:35:20
-# Última alteração: 17/01/2019 02:50:37
+# Última alteração: 17/01/2019 03:15:11
 
-barra=59 # Altura da barra do DE/WM
+barra=50 # Altura da barra do DE/WM
 
 IFS='x' read larguraTela alturaTela < <(xdpyinfo | grep dimensions | grep -o '[0-9x]*' | head -n1)
 
@@ -21,8 +21,6 @@ topo=0
 baixo=$((alturaTela-altura))
 esquerda=0
 right=$((larguraTela-largura))
-
-notify-send "$right $baixo"
 
 if [ "$1" == "-tl" ]; then
 	xdotool getactivewindow windowmove "$esquerda" "$topo"
