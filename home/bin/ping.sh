@@ -18,7 +18,8 @@ host=${1:-"8.8.8.8"}			# Host
 tentativas=1					# Tentativas por vez
 intervalo=10					# Em segundos, entre tentativas
 repeticao="sim"					# Loop infinito
-processo=$(ps x | egrep -v grep | grep ping.sh | egrep -v $$ | awk '{print $1}')
+pid="$$"
+processo=$(ps x | egrep -v "grep|$pid" | grep ping.sh | egrep -v $$ | awk '{print $1}')
 
 function pingar {
 	ping -q -c$tentativas $host > /dev/null 2> /dev/null
