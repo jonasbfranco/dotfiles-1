@@ -44,7 +44,7 @@ function pingar {
 	fi
 }
 
-if [ $(pgrep -f "ping.sh" > /dev/null) ]; then
+if [ $(pgrep -f ping.sh) ]; then
  	dbus-launch notify-send -i $icone "Ping" "Processo parado."
  	kill -9 $(pgrep -fn "ping.sh")
  	exit 1
@@ -60,6 +60,8 @@ if [ "$repeticao" == "sim" ]; then
 else
 	pingar
 fi
+
+exit 0
 
 # if [ $(ping -q -c3 google.com > /dev/null 2> /dev/null) ]; then
 # 	echo "Conexão: OK"
