@@ -16,7 +16,8 @@ offline="phone-outgoing-busy"
 
 host=${1:-"8.8.8.8"}			# Host
 tentativas=1					# Tentativas
-repeticao=1						# Loop infinito
+repeticao="sim"					# Loop infinito
+processo=$(ps x | egrep -v grep | grep ping.sh | awk '{print $1}')
 
 function pingar {
 	ping -q -c$tentativas $host > /dev/null 2> /dev/null
@@ -42,10 +43,18 @@ function pingar {
 	fi
 }
 
-if [ $repeticao = 1 ]; then
+if [[ ! -n "$processo" ]]; then
+	dbus-launch notify-send -i $icone "Ping" "Processo parado."
+	kill -9 $processo
+	exit
+else
+	dbus-launch notify-send -i $icone "Ping" "Processo iniciado.\n\nHost: $host\nIntervalo: $intervalo\nTentativas: $tentativas\nRepetição: $repeticao"
+fi
+
+if [ "$repeticao" == "sim" ]; then
 	while true; do
 		pingar
-		sleep 3
+		sleep $intervalo
 	done
 else
 	pingar
