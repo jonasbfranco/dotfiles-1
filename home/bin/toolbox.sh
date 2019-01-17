@@ -1,6 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-pid="$$"
-processo=$(pgrep -fla ping.sh | awk '{print $3; exit}')
+processo="$(pgrep -f toolbox.sh)"
 
-[ -n "$procsso" ] && echo $$
+[ -n "$processo" ] && echo $$
