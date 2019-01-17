@@ -1,6 +1,6 @@
 #!/bin/bash
 
 pid="$$"
-processo=$(ps x | egrep -v "$pid" | egrep -v grep | grep toolbox.sh  | awk '{print $1}')
+processo=$(pgrep -fla ping.sh | awk '{print $3; exit}')
 
-[ -n "$processo" ] && echo $$
+[ -n "$procsso" ] && echo $$
