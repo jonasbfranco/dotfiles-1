@@ -27,19 +27,17 @@ atualiza() {
 			cd $1
 			status=$(git add . -n)
 			if [ ! -z "$status" ]; then
-			c=$(echo $(git add . -n | tr '\r\n' ' '))
-			m="Autocommit por Git-Cron: alterações: $c"
-			git add .
-			git commit -m "$m"
-			git push
-				#if [ "$DESKTOP_SESSION" == "i3" ]; then
+				c=$(echo $(git add . -n | tr '\r\n' ' '))
+				m="Autocommit por Git-Cron: alterações: $c"
+				git add .
+				git commit -m "$m"
+				git push
 				if xset q &>/dev/null; then
 					# ls /usr/share/sounds/freedesktop/stereo/
-					#dbus-launch canberra-gtk-play -i complete 2>&1
-					#DISPLAY=:0 ; canberra-gtk-play -i complete 2>&1
 					DISPLAY=:0.0 canberra-gtk-play -i complete
 					dbus-launch notify-send -i $icone "Git Cron" "Repo <b>$(basename $1)</b> atualizado."
 				fi
+			
 			fi
 		fi
 	fi
