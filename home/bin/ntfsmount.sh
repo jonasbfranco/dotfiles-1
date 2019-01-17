@@ -5,7 +5,7 @@
 # Feito por Lucas Saliés Brum a.k.a. sistematico, <lucas@archlinux.com.br>
 #
 # Criado em: 16-03-2018 16:35:20
-# Última alteração: 08/01/2019 21:15:26
+# Última alteração: 17/01/2019 00:07:54
 
 icone="${HOME}/.local/share/icons/elementary/drive-harddisk.png"
 
