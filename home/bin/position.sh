@@ -16,14 +16,14 @@ centroX=$((larguraTela/2-largura/2))
 centroY=$((alturaTela/2-altura/2))
 
 top=0
-bottom=$((altura))
+bottom=$((alturaTela+altura/2))
 left=0
-right=$((largura))
+right=$((larguraTela-673))
 
 notify-send "$right $bottom"
 
 if [ "$1" == "-tl" ]; then
-	xdotool getactivewindow windowmove "$top" "$left"
+	xdotool getactivewindow windowmove "$right" "$left"
 elif [ "$1" == "-tr" ]; then
 	xdotool getactivewindow windowmove "$top" "$right"
 elif [ "$1" == "-bl" ]; then
