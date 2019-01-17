@@ -18,11 +18,10 @@ host=${1:-"8.8.8.8"}			# Host
 tentativas=1					# Tentativas por vez
 intervalo=10					# Em segundos, entre tentativas
 repeticao="sim"					# Loop infinito
-#processo=$(pgrep -fla ping.sh | awk '{print $3; exit}')
 processo="$(pgrep -f ping.sh)"
 
 function pingar {
-	ping -q -c$tentativas $host > /dev/null 2> /dev/null
+	ping -q -c $tentativas $host > /dev/null 2> /dev/null
 	if [ $? -eq 0 ]; then
 		# Polybar
 		# if [ "$1" == "-v" ]; then
@@ -45,9 +44,9 @@ function pingar {
 	fi
 }
 
-if [ $processo -gt 0 ]; then
+if [ "$processo" != "" ]; then
 	dbus-launch notify-send -i $icone "Ping" "Processo parado."
-	kill -9 $processo
+	#kill -9 $processo
 	exit
 else
 	dbus-launch notify-send -i $icone "Ping" "Processo iniciado.\n\nHost: $host\nIntervalo: $intervalo\nTentativas: $tentativas\nRepetição: $repeticao"
