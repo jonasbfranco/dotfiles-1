@@ -41,10 +41,14 @@ atualiza() {
 				git push
 				if [ "$?" == 0 ]; then
 					detectax "Git Cron" "Repo <b>$(basename $1)</b> atualizado."
+					[ -f /tmp/git-cron.error ] && rm /tmp/git-cron.error
 				else
-					icone="${HOME}/.local/share/icons/elementary/network-error.png"
-					som="dialog-warning"
-					detectax "Git Cron" "Erro ao atualizar <b>$(basename $1)</b>."
+					if [ ! -f /tmp/git-cron.error ]; then
+						icone="${HOME}/.local/share/icons/elementary/network-error.png"
+						som="dialog-warning"
+						detectax "Git Cron" "Erro ao atualizar <b>$(basename $1)</b>."
+						touch /tmp/git-cron.error
+					fi
 				fi			
 			fi
 		fi
