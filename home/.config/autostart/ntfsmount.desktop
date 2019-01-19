@@ -5,3 +5,4 @@ Name=NTFS Mount
 Comment=Mount NTFS Automatically
 Exec=~/bin/ntfsmount.sh
 Terminal=false
+

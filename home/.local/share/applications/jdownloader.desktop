@@ -2,9 +2,12 @@
 Type=Application
 Name=JDownloader
 #Icon=jdownloader-beta
-Icon=org.jdownloader.JDownloader
+Icon=jdownloader
 TryExec=JDownloader
 Exec=JDownloader
 Terminal=false
 Categories=Application;Network;
 StartupWMClass=JDownloader
+Comment=
+Path=
+StartupNotify=false
