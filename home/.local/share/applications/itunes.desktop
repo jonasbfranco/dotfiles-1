@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=iTunes
+Comment=
+Exec=wine '/home/lucas/.wine/drive_c/Program Files/iTunes/iTunes.exe'
+Icon=itunes
+Terminal=false
+Categories=AudioVideo;
