@@ -1,4 +1,12 @@
-#!/bin/sh
+#!/usr/bin/env bash
+#
+# Arquivo: videoconvert.sh
+# Descrição: Script para converter arquivos de vídeo.
+#
+# Feito por Lucas Saliés Brum, a.k.a. sistematico <lucas@archlinux.com.br>
+#
+# Criado em:        20/01/2019 06:38:47
+# Última alteração: 20/01/2019 06:38:51
 
 codec="mpeg4"
 acodec="libmp3lame"
