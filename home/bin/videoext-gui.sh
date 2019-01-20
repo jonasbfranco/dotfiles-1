@@ -57,7 +57,7 @@ eval $(yad --title "$titulo" --width=400 --form --field="Arquivo\::SFL" --field=
 (ffmpeg -i "$entrada" "${saida}.${extensao}"  2>&1 | yad --title "$titulo" --progress --pulsate --auto-close --progress-text "Convertendo...")
 
 if [ $? -eq 0 ]; then
-    yad --info --title "$titulo" --text "Video: $(basename ${saida}) cortado com sucesso." --button=gtk-ok:1
+    yad --info --title "$titulo" --text "Video: $(basename ${saida}) modificado com sucesso." --button=gtk-ok:1
 else
-    yad --error --title "$titulo" --text "Falha no corte de: $(basename ${saida})." --button=gtk-ok:1
+    yad --error --title "$titulo" --text "Falha em modificar o vídeo: $(basename ${saida})." --button=gtk-ok:1
 fi
