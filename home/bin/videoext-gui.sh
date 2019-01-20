@@ -6,7 +6,7 @@
 # Feito por Lucas Saliés Brum, a.k.a. sistematico <lucas@archlinux.com.br>
 #
 # Criado em:        2018-07-22 18:44:41
-# Última alteração: 2018-07-23 18:55:20
+# Última alteração: 20/01/2019 06:45:21
 
 # ~/.config/Thunar/uca.xml
 #<action>
@@ -43,10 +43,11 @@ exts() {
 if [ "$1" ]; then
     novo=$(dirname "${1}")/$(nome "$1" "cut")
 #	nome=$(nome "$1" "novo")
+    extnovo=${novo##*.}
 
     for e in ${extensoes[@]}; do
         if [ "$e" != "$(exts $1)" ]; then
-            ext+="${e}!"
+            [ "$extnovo" != "$e" ] && ext+="${e}!"
         fi
     done
 fi
