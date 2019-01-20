@@ -5,15 +5,15 @@
 #
 # Feito por Lucas Saliés Brum, a.k.a. sistematico <lucas@archlinux.com.br>
 #
-# Criado em:        2018-07-22 18:44:41
-# Última alteração: 20/01/2019 06:45:21
+# Criado em:        22/07/2018 18:44:41
+# Última alteração: 20/01/2019 06:51:34
 
 # ~/.config/Thunar/uca.xml
 #<action>
 #	<icon>camera-video</icon>
-#	<name>Video Ext</name>
+#	<name>VideoExt</name>
 #	<unique-id>1528543845224954-1</unique-id>
-#	<command>videoext-gui.sh %F</command>
+#	<command>videoext-gui.sh %f</command>
 #	<description></description>
 #	<patterns>*</patterns>
 #	<video-files/>
