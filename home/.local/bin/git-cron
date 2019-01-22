@@ -12,7 +12,7 @@
 # Última Atualização: 17/01/2019 00:34:03
 
 dir="${HOME}/github"
-repos=('majestic' 'sistematico.github.io' 'oc-cli' 'cabron-bot' 'pollen' 'agressive' 'spamsentrybot' 'docker-arma3-exile')
+repos=('magico' 'majestic' 'sistematico.github.io' 'oc-cli' 'cabron-bot' 'pollen' 'agressive' 'spamsentrybot' 'docker-arma3-exile')
 remoto="nginx@hera"
 dotfiles=1
 icone="${HOME}/.local/share/icons/elementary/preferences-system-network.png"
