@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-[ ! -f $HOME/.envs ] && echo "WALLPAPERS=${HOME}/img" > $HOME/.envs
+[ ! -f $HOME/.envs ] && echo "WALLPAPERS=\"${HOME}/img\"" > $HOME/.envs
 source $HOME/.envs
 wallpaper=$(find "$WALLPAPERS" -type f | shuf -n 1)
 default="${HOME}/img/unsplash/alan-labisch-1279974-unsplash.jpg"
