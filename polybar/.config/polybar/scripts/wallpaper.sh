@@ -2,10 +2,10 @@
 
 [ -f ~/.config/user-dirs.dirs ] && source ~/.config/user-dirs.dirs
 
-#dir="${XDG_PICTURES_DIR:-${HOME}/img}"
-dir="${HOME}/gitlab/lnxpcs"
+dir="${XDG_PICTURES_DIR:-${HOME}/img}"
+#dir="${HOME}/gitlab/lnxpcs"
 unsplash_dir="${XDG_PICTURES_DIR:-${HOME}/img}/unsplash"
-default="$dir/wallpapers/linux/iptables.jpg"
+default="$dir/wallpapers/default.jpg"
 ultima="/home/lucas/gitlab/lnxpcs/arch-explore-1920x1080.png"
 modo="--bg-fill"
 indice=0
