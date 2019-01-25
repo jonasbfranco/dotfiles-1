@@ -28,6 +28,7 @@ else
 fi
 
 [ ! -d $unsplash_dir ] && mkdir -p $unsplash_dir
+[ ! -d $(dirname $default) ] && mkdir -p $(dirname $default)
 [ ! -f $default ] && curl -s -L 'http://i.imgur.com/BwOh5Z5.png' > $default
 #[ ! -f $default ] && curl -s -L 'https://unsplash.com/photos/mEV-IXdk5Zc/download?force=true' > $default
 
