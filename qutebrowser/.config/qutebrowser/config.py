@@ -17,7 +17,7 @@ def read_xresources(prefix):
 
 xresources = read_xresources('*')
 
-startpage = 'file:///home/lucas/.config/startpage/index.html'
+startpage = 'file:///home/lucas/.dotfiles/startpage/.config/startpages/adriandersen/index.html?darkmode=true&engine=favs'
 
 ## This is here so configs done via the GUI are still loaded.
 ## Remove it to not load settings done via the GUI.
