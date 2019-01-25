@@ -12,7 +12,7 @@
 dir="${XDG_PICTURES_DIR:-${HOME}/img}"
 unsplash_dir="${XDG_PICTURES_DIR:-${HOME}/img}/unsplash"
 default="$dir/wallpapers/default.jpg"
-ultima="/home/lucas/img/unsplash/vincent-delegge-1280562-unsplash.jpg"
+ultima="/home/lucas/img/unsplash/trent-haaland-1279809-unsplash.jpg"
 modo="--bg-fill"
 indice=0
 i=0
@@ -23,6 +23,7 @@ icone="${HOME}/.local/share/icons/elementary/camera-photo.png"
 ajustar() {
 	if [ -f "$1" ]; then
 		sed -i "s|^ultima=.*|ultima=\"${1}\"|g" $0
+		command -v feh >/dev/null 2>&1 || { notify-send -i $icone "Erro" "O aplicativo feh não está instalado." ; exit 1; }
 		feh --bg-fill "$1"
 		echo "$1" > ~/.wall
 	fi
