@@ -1,4 +1,11 @@
 #!/usr/bin/env bash
+#
+# wallpaper.sh - Um programa para alterar o papel de parede no i3 para ser usado em conjunto com a polybar.
+#
+# Criador por Lucas Saliés Brum a.k.a. sistematico, <lucas at archlinux dot com dot br>
+#
+# Criado em: 15/03/2018 18:15:04
+# Última alteração: 25/01/2019 11:17:14
 
 [ -f ~/.config/user-dirs.dirs ] && source ~/.config/user-dirs.dirs
 
@@ -62,6 +69,7 @@ elif [ "$1" == "dd" ]; then
 	if [ "$apagar" == "Sim" ]; then
 		rm $(cat ~/.wall)
 		notify-send "Sucesso" "Imagem <b>$(basename $(cat ~/.wall))</b> apagada."
+		command -v hsetroot >/dev/null 2>&1 || { echo >&2 "O aplicativo hsetroot não está instalado. Abortando."; exit 1; }
 		hsetroot -solid "#2e3440"
 		echo $default > $HOME/.wall
 	fi
@@ -71,6 +79,7 @@ elif [ "$1" == "rr" ]; then
 	fi
 	img=$default
 elif [ "$1" == "x" ]; then
+	command -v hsetroot >/dev/null 2>&1 || { echo >&2 "O aplicativo hsetroot não está instalado. Abortando."; exit 1; }
 	hsetroot -solid "#2e3440"
 elif [ "$1" == "a" ]; then
 	if [ $indice -gt 0 ]; then
