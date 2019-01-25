@@ -10,15 +10,15 @@
 [ -f ~/.config/user-dirs.dirs ] && source ~/.config/user-dirs.dirs
 
 dir="${XDG_PICTURES_DIR:-${HOME}/img}"
-#dir="${HOME}/gitlab/lnxpcs"
 unsplash_dir="${XDG_PICTURES_DIR:-${HOME}/img}/unsplash"
 default="$dir/wallpapers/default.jpg"
-ultima="/home/lucas/gitlab/lnxpcs/arch-explore-1920x1080.png"
+ultima="/home/lucas/img/unsplash/unsplash-29339.jpg"
 modo="--bg-fill"
 indice=0
 i=0
 x=$(xdpyinfo | grep dimensions | awk '{print $2}' | awk -F'x' '{print $1}')
 y=$(xdpyinfo | grep dimensions | awk '{print $2}' | awk -F'x' '{print $2}')
+icone="${HOME}/.local/share/icons/elementary/camera-photo.png"
 
 ajustar() {
 	if [ -f "$1" ]; then
@@ -63,13 +63,13 @@ if [ ! $1 ]; then
 elif [ "$1" == "d" ]; then
 	img="$unsplash_dir/unsplash-$$.jpg"
 	curl -L -s "https://unsplash.it/${x}/${y}?random" > $img
-	notify-send "Sucesso" "Imagem <b>$img</b> baixada."
+	notify-send -i $icone "Sucesso" "Imagem <b>$img</b> baixada."
 elif [ "$1" == "dd" ]; then
 	apagar=$(echo -e "Sim\nNão" | rofi -p "Apagar $(basename $(cat ~/.wall))?" -dmenu -bw 0 -lines 2 -width 400 -separator-style none -location 0 -hide-scrollbar -padding 5)
 	if [ "$apagar" == "Sim" ]; then
 		rm $(cat ~/.wall)
-		notify-send "Sucesso" "Imagem <b>$(basename $(cat ~/.wall))</b> apagada."
-		command -v hsetroot >/dev/null 2>&1 || { echo >&2 "O aplicativo hsetroot não está instalado. Abortando."; exit 1; }
+		notify-send -i $icone "Sucesso" "Imagem <b>$(basename $(cat ~/.wall))</b> apagada."
+		command -v hsetroot >/dev/null 2>&1 || { notify-send -i $icone "Erro" "O aplicativo hsetroot não está instalado." ; exit 1; }
 		hsetroot -solid "#2e3440"
 		echo $default > $HOME/.wall
 	fi
@@ -79,7 +79,7 @@ elif [ "$1" == "rr" ]; then
 	fi
 	img=$default
 elif [ "$1" == "x" ]; then
-	command -v hsetroot >/dev/null 2>&1 || { echo >&2 "O aplicativo hsetroot não está instalado. Abortando."; exit 1; }
+	command -v hsetroot >/dev/null 2>&1 || { notify-send -i $icone "Erro" "O aplicativo hsetroot não está instalado." ; exit 1; }
 	hsetroot -solid "#2e3440"
 elif [ "$1" == "a" ]; then
 	if [ $indice -gt 0 ]; then
