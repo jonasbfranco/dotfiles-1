@@ -32,7 +32,7 @@ command -v $app >/dev/null 2>&1 || {
 	msg="O aplicativo $app não está instalado. Abortando."
 
 	command -v notify-send >/dev/null 2>&1 && {
-		notify-send "ERRO" "$msg";
+		notify-send -i $icone "ERRO" "$msg";
 	} || {
 		echo $msg;
 	}
