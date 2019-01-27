@@ -11,6 +11,7 @@
 # Criado em: 20/12/2017 19:27:31
 # Última Atualização: 17/01/2019 00:34:03
 
+
 dir="${HOME}/github"
 repos=('magico' 'majestic' 'sistematico.github.io' 'oc-cli' 'cabron-bot' 'pollen' 'agressive' 'spamsentrybot' 'docker-arma3-exile')
 remoto="nginx@hera"
