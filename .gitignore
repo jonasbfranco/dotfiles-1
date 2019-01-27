@@ -15,3 +15,5 @@ src/
 mpd.pid
 mpd.state
 
+.vscode
+

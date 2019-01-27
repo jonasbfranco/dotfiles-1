@@ -1,6 +1,6 @@
 # sistematico dotfiles
 
-![screenshot](https://raw.githubusercontent.com/sistematico/dotfiles/master/screenshot.png)
+![screenshot](https://raw.githubusercontent.com/sistematico/dotfiles/master/screenshot.jpg)
 
 ## Requisitos
 
