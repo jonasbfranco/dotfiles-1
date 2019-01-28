@@ -22,7 +22,7 @@ som="complete"
 detectax() {
 	if xset q &>/dev/null; then
 		# ls /usr/share/sounds/freedesktop/stereo/
-		DISPLAY=:0 canberra-gtk-play -i $som 2>&1
+		dbus-launch canberra-gtk-play -i $som 2>&1
 		#DISPLAY=:0.0 canberra-gtk-play -i $som
 		dbus-launch notify-send -i $icone "$1" "$2"
 	else
