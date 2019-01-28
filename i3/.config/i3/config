@@ -174,6 +174,9 @@ bindcode Mod2+$KP_Add exec --no-startup-id amixer -q -D pulse sset Master 5%+ un
 bindcode Mod2+$KP_Sub exec --no-startup-id amixer -q -D pulse sset Master 5%- unmute
 bindcode Mod2+$KP_Multi exec --no-startup-id mpc ls | mpc add
 
+# Tray
+bindsym $mod+Shift+t exec --no-startup-id $HOME/.config/polybar/scripts/tary.sh
+
 ####################################################################
 ################ A R E A S #########################################
 ####################################################################
