@@ -80,14 +80,14 @@ DIFF=$(($(date +%s --date="$fim")-$(date +%s --date="$inicio")))
 offset="$(show_time $DIFF)"
 
 # Debug
-yad --info --title "$titulo" --text "ffmpeg -ss $inicio -t $offset -i $entrada $saida" --button=gtk-ok:1
-#(ffmpeg -ss "$inicio" -t "$offset" -i "$entrada" "$saida"  2>&1 | yad --title "$titulo" --progress --pulsate --auto-close --progress-text "Convertendo...")
+#yad --info --title "$titulo" --text "ffmpeg -ss $inicio -t $offset -i $entrada $saida" --button=gtk-ok:1
+(ffmpeg -ss "$inicio" -t "$offset" -i "$entrada" "$saida"  2>&1 | yad --title "$titulo" --progress --pulsate --auto-close --progress-text "Convertendo...")
 
 
-#if [ $? -eq 0 ]; then
-#    yad --info --title "$titulo" --text "Video: $(basename ${saida}) cortado com sucesso." --button=gtk-ok:1
-#else
-#    yad --error --title "$titulo" --text "Falha no corte de: $(basename ${saida})." --button=gtk-ok:1
-#fi
+if [ $? -eq 0 ]; then
+    yad --info --title "$titulo" --text "Video: $(basename ${saida}) cortado com sucesso." --button=gtk-ok:1
+else
+    yad --error --title "$titulo" --text "Falha no corte de: $(basename ${saida})." --button=gtk-ok:1
+fi
 
 
