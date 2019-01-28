@@ -9,7 +9,7 @@
 # */15 * * * * sh -c "~/.local/bin/git-cron" > /dev/null 2>&1
 #
 # Criado em: 20/12/2017 19:27:31
-# Última Atualização: 17/01/2019 00:34:03
+# Última Atualização: 28/01/2019 19:41:50
 
 
 dir="${HOME}/github"
@@ -22,7 +22,7 @@ som="complete"
 detectax() {
 	if xset q &>/dev/null; then
 		# ls /usr/share/sounds/freedesktop/stereo/
-		DISPLAY=:0.0 ; canberra-gtk-play -i $som
+		DISPLAY=:0.0 canberra-gtk-play -i $som
 		dbus-launch notify-send -i $icone "$1" "$2"
 	else
 		echo "${1}: $2"

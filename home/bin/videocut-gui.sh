@@ -6,7 +6,7 @@
 # Feito por Lucas Saliés Brum, a.k.a. sistematico <lucas@archlinux.com.br>
 #
 # Criado em:        09/06/2018 19:39:27
-# Última alteração: 28/01/2019 19:34:53
+# Última alteração: 28/01/2019 19:41:58
 
 # ~/.config/Thunar/uca.xml
 #<action>
