@@ -2,8 +2,9 @@
 
 [ ! -f $HOME/.envs ] && echo "WALLPAPERS=\"${HOME}/img\"" > $HOME/.envs
 source $HOME/.envs
-wallpaper=$(find "$WALLPAPERS" -type f | shuf -n 1)
+
 default="${HOME}/img/unsplash/alan-labisch-1279974-unsplash.jpg"
+[ -d $WALLPAPERS ] && wallpaper=$(find "$WALLPAPERS" -type f | shuf -n 1) || wallpaper="$default"
 
 desks=('i3' 'xfce4-session')
 for desk in "${desks[@]}"; do
