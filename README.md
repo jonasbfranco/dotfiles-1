@@ -22,6 +22,7 @@
 5. `stow i3`
 5. `stow polybar`
 6. `sudo stow -t /etc etc`
+7. `sudo stow -t /usr usr`
 
 ## Instalação Automática
 
