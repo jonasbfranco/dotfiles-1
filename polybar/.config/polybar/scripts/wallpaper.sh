@@ -12,7 +12,7 @@
 dir="${XDG_PICTURES_DIR:-${HOME}/img}"
 unsplash_dir="${XDG_PICTURES_DIR:-${HOME}/img}/unsplash"
 default="$dir/wallpapers/default.jpg"
-ultima="/home/lucas/img/unsplash/trent-haaland-1279809-unsplash.jpg"
+ultima="/home/lucas/img/wallpapers/default.jpg"
 modo="--bg-fill"
 indice=0
 i=0
