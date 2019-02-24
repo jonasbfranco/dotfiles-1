@@ -1,27 +1,27 @@
 #!/usr/bin/env bash
 
-COR=$(awk -F# '/alert/{print $2;exit}' ${HOME}/.config/polybar/config)
-TRASH_DIRECTORY="${HOME}/.local/share/Trash"
-TRASH_TEMP="/tmp/lixo"
+cor=$(awk -F# '/alert/{print $2;exit}' ${HOME}/.config/polybar/config)
+trash_dir="${HOME}/.local/share/Trash"
+trash_temp="/tmp/lixo"
 icone="${HOME}/.local/share/icons/elementary/user-trash.png"
 
-if [[ "${TRASH_DIRECTORY}" = "" ]]; then
-  TRASH_DIRECTORY=${XDG_DATA_HOME:-"${HOME}/.local/share/Trash"}
+if [[ "${trash_dir}" = "" ]]; then
+  trash_dir=${XDG_DATA_HOME:-"${HOME}/.local/share/Trash"}
 fi
 
 if [[ "${1}" == "-x" ]]; then
-	if [ ! -d $TRASH_TEMP ]; then
-		mkdir $TRASH_TEMP
+	if [ ! -d $trash_temp ]; then
+		mkdir $trash_temp
 	fi
 
-	cp -rf ${TRASH_DIRECTORY}/files ${TRASH_TEMP}/
-	cp -rf ${TRASH_DIRECTORY}/info ${TRASH_TEMP}/
+	cp -rf ${trash_dir}/files ${trash_temp}/
+	cp -rf ${trash_dir}/info ${trash_temp}/
 
-	rm -rf ${TRASH_DIRECTORY}/files
-	rm -rf ${TRASH_DIRECTORY}/info
+	rm -rf ${trash_dir}/files
+	rm -rf ${trash_dir}/info
 
-	mkdir ${TRASH_DIRECTORY}/files
-	mkdir ${TRASH_DIRECTORY}/info
+	mkdir ${trash_dir}/files
+	mkdir ${trash_dir}/info
 
 	if xset q &>/dev/null; then
 		# ls /usr/share/sounds/freedesktop/stereo/
@@ -29,13 +29,13 @@ if [[ "${1}" == "-x" ]]; then
 		export DISPLAY=:0 ; notify-send -i $icone "Lixeira" "Lixeira limpa!"
 	fi
 elif [[ "${1}" == "-o" ]]; then
-	xdg-open $TRASH_DIRECTORY/files
+	xdg-open $trash_dir/files
 fi
 
-TRASH_COUNT=$(ls -U -1 "${TRASH_DIRECTORY}/files" | wc -l)
+TRASH_COUNT=$(ls -U -1 "${trash_dir}/files" | wc -l)
 
 if [[ ${TRASH_COUNT} -gt 0 ]]; then
-	s="%{F#${COR}}%{F-} ${TRASH_COUNT}"
+	s="%{F#${cor}}%{F-} ${TRASH_COUNT}"
 else
 	s=""
 fi
