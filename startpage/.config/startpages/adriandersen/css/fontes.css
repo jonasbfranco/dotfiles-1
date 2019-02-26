@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'Dosis';
-    src: url('dosis.woff2') format('woff2'),
-         url('dosis.woff') format('woff');
+    src: url('fontes/dosis.woff2') format('woff2'),
+         url('fontes/dosis.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
