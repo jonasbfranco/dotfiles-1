@@ -3,7 +3,10 @@ objects = [
         links: [ 
             link1 = {name:"Lucas Brum",url:"https://lucasbrum.net"},
             link2 = {name:"Brum Informática",url:"https://bruminformatica.com.br"},
-            link3 = {name:"Linux Pictures",url:"https://linux.pictures"}
+            link3 = {name:"Linux Pictures",url:"https://linux.pictures"},
+            link4 = {name:"DevHints",url:"https://devhints.io/"},
+            link5 = {name:"Portainer",url:"http://majestic:8080"},
+            link6 = {name:"Majestic",url:"http://majestic"}            
         ],
         preicon:"fas",
         icon:"fa-link",
@@ -11,6 +14,21 @@ objects = [
         query:"?q=",
         ph:"Pesquisa Google",
         name:"favs",
+        method:"post",
+        color:"#555" //Not used yet
+    },
+    Sheets = {
+        links: [ 
+            link1 = {name:"vim",url:"https://vim.rtorr.com/lang/pt_br/"},
+            link2 = {name:"qutebrowser",url:"https://qutebrowser.org/img/cheatsheet-big.png"},
+            link3 = {name:"ncmpcpp",url:"https://pkgbuild.com/~jelle/ncmpcpp/"}
+        ],
+        preicon:"fas",
+        icon:"fa-stroopwafel",
+        url:"https://google.com.br/search",
+        query:"?q=",
+        ph:"Pesquisa Google",
+        name:"sheets",
         method:"post",
         color:"#555" //Not used yet
     },
@@ -62,7 +80,7 @@ objects = [
         links: [ 
             link1 = {name:"Reddit",url:"https://reddit.com"}, 
             link2 = {name:"Startpages",url:"https://www.reddit.com/r/startpages"},
-            link3 = {name:"Unixporn",url:"https://www.reddit.com/r/unixporn"}, 
+            link3 = {name:"Unixporn",url:"https://www.reddit.com/r/unixporn/search?q=i3-gaps&restrict_sr=1&sort=new"} 
         ],
         preicon:"fab",
         icon:"fa-reddit",
@@ -76,7 +94,8 @@ objects = [
     Youtube = {
         links: [ 
             link1 = {name:"Youtube",url:"https://www.youtube.com"}, 
-            link2 = {name:"Inscrições",url:"https://www.youtube.com/feed/subscriptions"}, 
+            link2 = {name:"Inscrições",url:"https://www.youtube.com/feed/subscriptions"},
+            link3 = {name:"Playlist",url:"https://www.youtube.com/playlist?list=WL&disable_polymer=true"}
         ],
         preicon:"fab",
         icon:"fa-youtube",
@@ -101,6 +120,19 @@ objects = [
         method:"post",
         color:"#555" //Not used yet
     },
+    Twitter = {
+        links: [ 
+            link1 = {name:"Twitter",url:"https://www.twitter.com/"}
+        ],
+        preicon:"fab",
+        icon:"fa-twitter",
+        url:"https://www.facebook.com/search/str/",
+        query:"",
+        ph:"Pesquisa Twitter",
+        name:"twitter",
+        method:"post",
+        color:"#555" //Not used yet
+    },    
     Facebook = {
         links: [ 
             link1 = {name:"Facebook",url:"https://www.facebook.com/"}, 

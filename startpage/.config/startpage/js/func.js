@@ -18,7 +18,7 @@ function setEngine(obj) {
       }
   }
   
-  if (currEng != Favs && currEng != Code) {
+  if (currEng != Favs && currEng != Code && currEng != Sheets) {
     form.style.display="block";
     //form.action = currEng.url;
     //console.log(form.action);
@@ -150,16 +150,10 @@ function darkMode(mode) {
   
   
   if(mode) {
-
     pref.add("dark");
-
   } else {
-
     pref.remove("dark");
-
   }
-
-
 }
 
 //Button-function
