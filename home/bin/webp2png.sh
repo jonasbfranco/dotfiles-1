@@ -1,4 +1,11 @@
 #!/bin/sh
+
+if [ $1 ]; then
+	old=$(pwd)
+	new=$(dirname $1)
+	cd $new
+fi
+
 for arquivo in $(ls *.webp)
 do
 	saida="${arquivo%.*}"
@@ -7,3 +14,5 @@ do
 		mv $arquivo ~/.local/share/Trash/
 	fi
 done
+
+exit
