@@ -18,6 +18,7 @@ remoto="/var/backup/"
 local="${HOME}/backup/${host}/"
 icone="${HOME}/.local/share/icons/elementary/preferences-system-network.png"
 som="complete"
+params="-avz"
 
 alerta() {
 	if xset q &>/dev/null; then
@@ -30,7 +31,7 @@ alerta() {
 
 [ ! -d $local ] && mkdir -p $local
 
-rsync -avzq ${usuario}@${host}:${remoto} $local
+rsync $params ${usuario}@${host}:${remoto} $local
 
 if [ "$?" -eq "0" ]; then
 	alerta "VPS Sync" "A máquina <b>$host</b> foi sincronizada."
