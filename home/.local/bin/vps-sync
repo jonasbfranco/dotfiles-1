@@ -15,7 +15,6 @@
 
 host="$1"
 dir="${HOME}/backup/$host"
-remoto="nginx@hera"
 icone="${HOME}/.local/share/icons/elementary/preferences-system-network.png"
 som="complete"
 
@@ -30,40 +29,9 @@ alerta() {
 
 atualiza() {
 	if [ -d $1 ]; then
-		cd $1
-		status=$(git add . -n)
-		if [ ! -z "$status" ]; then
-			c=$(echo $(git add . -n | tr '\r\n' ' '))
-			m="Autocommit por Git-Cron: alterações: $c"
-			git add .
-			git commit -m "$m"
-			git push
-			if [ "$?" == 0 ]; then
-				alerta "Git Cron" "Repo <b>$(basename $1)</b> atualizado."
-				[ -f /tmp/git-cron.error ] && rm /tmp/git-cron.error
-			else
-				if [ ! -f /tmp/git-cron.error ]; then
-					icone="${HOME}/.local/share/icons/elementary/network-error.png"
-					som="dialog-warning"
-					alerta "Git Cron" "Erro ao atualizar <b>$(basename $1)</b>."
-					touch /tmp/git-cron.error
-				fi
-			fi
-		fi
+	alerta "Git Cron" "Repo <b>$(basename $1)</b> atualizado."
+
 	fi
 }
 
-if [ ! $1 ] || [ "$1" == "-a" ]; then
-	for r in "${repos[@]}";	do
-		caminho="${dir}/${r}"
-		atualiza "$caminho"
-	done
-elif [ ! $2 ]; then
-	atualiza "$1"
-else
-	for r in "$@";	do
-		caminho="${dir}/${r}"
-		atualiza "$caminho"
-	done
-fi
-
+atualiza "$caminho"
