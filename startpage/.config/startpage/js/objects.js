@@ -5,8 +5,9 @@ objects = [
             link2 = {name:"Brum Informática",url:"https://bruminformatica.com.br"},
             link3 = {name:"Linux Pictures",url:"https://linux.pictures"},
             link4 = {name:"DevHints",url:"https://devhints.io/"},
-            link5 = {name:"Portainer",url:"http://majestic:8080"},
-            link6 = {name:"Majestic",url:"http://majestic"}            
+            link5 = {name:"iCloud",url:"https://icloud.com/"},
+            link6 = {name:"Portainer",url:"http://majestic:8080"},
+            link7 = {name:"Majestic",url:"http://majestic"}            
         ],
         preicon:"fas",
         icon:"fa-link",
