@@ -33,6 +33,8 @@
 # Backup
 #0 0 * * * rsync -aAXvz --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found"} root@artemis:/ /home/lucas/vps/artemis/
 #0 0 * * * rsync -aAXvz --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found"} root@hera:/ /home/lucas/vps/hera/
+0 0 * * * DISPLAY=:0 bash -c "~/.local/bin/vps-sync hera" > /dev/null 2>&1
+30 0 * * * DISPLAY=:0 bash -c "~/.local/bin/vps-sync artemis" > /dev/null 2>&1
 
 # Alarme
 #0 6 * * 1,2,3,4,5 export DISPLAY=:0 ; canberra-gtk-play -i phone-incoming-call 2>&1
