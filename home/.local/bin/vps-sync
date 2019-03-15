@@ -28,7 +28,7 @@ alerta() {
 	fi
 }
 
-[ ! -d $local ] && $local
+[ ! -d $local ] && mkdir -p $local
 
 rsync -avzq ${usuario}@${host}:${remoto} $local
 
