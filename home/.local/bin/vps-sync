@@ -1,20 +1,21 @@
 #!/usr/bin/env sh
 #
-# vps-sync
-# LEMBRE-SE DE CONFIGURAR CORRETAMENTE SEU SSH SEM SENHA
+# vps-sync 
 #
 # Desenvolvido por Lucas Saliés Brum <lucas@archlinux.com.br>
 #
 # Sugestão de crontab:
-# */15 * * * * sh -c "~/.local/bin/git-cron" > /dev/null 2>&1
+# 15 0 * * * sh -c "~/.local/bin/vps-sync" > /dev/null 2>&1
 #
-# Criado em: 15-03-2019 11:06:42
-# Última Atualização: 15-03-2019 11:06:57
+# Criado em: 15/03/2019 11:06:42
+# Última Atualização: 15/03/2019 18:01:47
 
 [ ! $1 ] && exit
 
 host="$1"
-dir="${HOME}/backup/$host"
+usuario="nginx"
+remoto="/var/backup/"
+local="${HOME}/backup/$host/"
 icone="${HOME}/.local/share/icons/elementary/preferences-system-network.png"
 som="complete"
 
@@ -27,11 +28,10 @@ alerta() {
 	fi
 }
 
-atualiza() {
-	if [ -d $1 ]; then
-	alerta "Git Cron" "Repo <b>$(basename $1)</b> atualizado."
+rsync -avz @
 
-	fi
-}
-
-atualiza "$caminho"
+if [ "$?" -eq "0" ]; then
+	alerta "VPS Sync" "A máquina <b>$host</b> foi sincronizada."
+else
+	alerta "VPS Sync" "Falha na sincronização de <b>$host</b>."
+fi
