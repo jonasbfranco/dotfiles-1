@@ -15,7 +15,7 @@
 host="$1"
 usuario="nginx"
 remoto="/var/backup/"
-local="${HOME}/backup/$host/"
+local="${HOME}/backup/${host}/"
 icone="${HOME}/.local/share/icons/elementary/preferences-system-network.png"
 som="complete"
 
@@ -28,7 +28,9 @@ alerta() {
 	fi
 }
 
-rsync -avz @
+[ ! -d $local ] && $local
+
+rsync -avzq ${usuario}@${host}:${remoto} $local
 
 if [ "$?" -eq "0" ]; then
 	alerta "VPS Sync" "A máquina <b>$host</b> foi sincronizada."
