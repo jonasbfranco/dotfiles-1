@@ -69,6 +69,8 @@ try:
             CURRENT = "Chuvisco leve"
         elif CURRENT == "Thunderstorm with rain":
             CURRENT = "Trovoada com chuva"
+        elif CURRENT == "Fog":
+            CURRENT = "Neblina"
 
         if ID >= 200 and ID <= 232:
             ICON = ""
