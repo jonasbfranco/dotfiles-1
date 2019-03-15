@@ -19,7 +19,7 @@ try:
     if REQ.status_code == 200:
         CURRENT = REQ.json()["weather"][0]["description"].capitalize()
         VELOCIDADE = REQ.json()["wind"]["speed"]
-        #DIRECAO = REQ.json()["wind"]["deg"]
+        DIRECAO = REQ.json()["wind"]["deg"]
         PRESSAO = REQ.json()["main"]["pressure"]
         #VISIBILIDADE = REQ.json()["visibility"]
         HUMIDADE = REQ.json()["main"]["humidity"]
@@ -30,14 +30,14 @@ try:
         #for k, v in REQ.json().iteritems():
         #    print k, v
 
-        #if DIRECAO > 270 and DIRECAO <= 45:
-        #    DIRECAO = "norte"
-        #elif DIRECAO > 45 and DIRECAO <= 135:
-        #    DIRECAO = "norte"
-        #elif DIRECAO > 135 and DIRECAO <= 225:
-        #    DIRECAO = "sul"
-        #elif DIRECAO > 225 and DIRECAO <= 270:
-        #    DIRECAO = "oeste"
+        if DIRECAO > 270 and DIRECAO <= 45:
+            DIRECAO = "norte"
+        elif DIRECAO > 45 and DIRECAO <= 135:
+            DIRECAO = "norte"
+        elif DIRECAO > 135 and DIRECAO <= 225:
+            DIRECAO = "sul"
+        elif DIRECAO > 225 and DIRECAO <= 270:
+            DIRECAO = "oeste"
 
         if CURRENT == "Shower rain":
             CURRENT = "Chuva torrencial"
@@ -107,6 +107,7 @@ try:
         #print("%%{F#FFF}%s %%{F-}%s  %i°%s  %s%%  %s  %skm/h  %shPa " % (ICON, CURRENT, TEMP, UNIT_KEY, HUMIDADE, DIRECAO, VELOCIDADE, PRESSAO)) # Icon with description
         #print("%%{F#FFF}%s %%{F-}%s  %i°%s  %s%%  %skm/h  %shPa " % (ICON, CURRENT, TEMP, UNIT_KEY, HUMIDADE, VELOCIDADE, PRESSAO)) # Icon with description
         print(" %s %s  %i°%s  %s%%  %skm/h  %shPa " % (ICON, CURRENT, TEMP, UNIT_KEY, HUMIDADE, VELOCIDADE, PRESSAO)) # Icon with description
+        print(" %s %s  %i°%s  %s%%  %s  %skm/h  %shPa " % (ICON, CURRENT, TEMP, UNIT_KEY, HUMIDADE, DIRECAO, VELOCIDADE, PRESSAO)) # Icon with description
 
 except requests.exceptions.RequestException:  # This is the correct syntax
     print("Recuperando condições do clima.") # Icon with description
