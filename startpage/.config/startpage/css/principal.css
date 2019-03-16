@@ -6,13 +6,16 @@ body {
   background-attachment: fixed;
   font-family: "Ubuntu", sans-serif;
 }
+
 body i {
   color: #333;
 }
+
 body .btn {
   color: #000;
   border-color: #333;
 }
+
 body input {
   color: #333;
 }
@@ -24,21 +27,26 @@ body.dark {
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
+
 body.dark i {
   color: #aaa;
 }
+
 body.dark .btn {
   color: #aaa;
   border-color: #555;
 }
+
 body.dark input {
   color: #aaa;
   background-color: #777;
   border-color: #666;
 }
+
 body.dark input:hover {
   background-color: #7a7a7a;
 }
+
 body.dark input::-webkit-input-placeholder {
   color: #aaa;
 }
@@ -84,7 +92,7 @@ div.bottom {
 }
 
 div#buttons {
-  width: 380px;
+  width: 450px;
   line-height: 40px;
   display: block;
   margin-left: auto;
