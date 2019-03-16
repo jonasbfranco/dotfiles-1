@@ -4,10 +4,7 @@ objects = [
             link1 = {name:"Lucas Brum",url:"https://lucasbrum.net"},
             link2 = {name:"Brum Informática",url:"https://bruminformatica.com.br"},
             link3 = {name:"Linux Pictures",url:"https://linux.pictures"},
-            link4 = {name:"DevHints",url:"https://devhints.io/"},
-            link5 = {name:"iCloud",url:"https://icloud.com/"},
-            link6 = {name:"Portainer",url:"http://majestic:8080"},
-            link7 = {name:"Majestic",url:"http://majestic"}            
+            link4 = {name:"iCloud",url:"https://icloud.com/"}
         ],
         preicon:"fas",
         icon:"fa-link",
@@ -18,6 +15,21 @@ objects = [
         method:"post",
         color:"#555" //Not used yet
     },
+    Code = {
+        links: [ 
+            link1 = {name:"Majestic",url:"http://majestic"},
+            link2 = {name:"Basic HTML Skel",url:"https://www.taniarascia.com/basic-html5-file/"},
+            link3 = {name:"DevHints",url:"https://devhints.io/"}
+        ],
+        preicon:"fas",
+        icon:"fa-code",
+        url:"https://google.com.br/search",
+        query:"?q=",
+        ph:"Código",
+        name:"code",
+        method:"post",
+        color:"#555" //Not used yet
+    },    
     Sheets = {
         links: [ 
             link1 = {name:"vim",url:"https://vim.rtorr.com/lang/pt_br/"},
@@ -47,19 +59,6 @@ objects = [
         query:"?q=",
         ph:"Pesquisa Google",
         name:"google",
-        method:"post",
-        color:"#555" //Not used yet
-    },
-    Code = {
-        links: [ 
-            link1 = {name:"Basic HTML Skel",url:"https://www.taniarascia.com/basic-html5-file/"}
-        ],
-        preicon:"fas",
-        icon:"fa-code",
-        url:"https://google.com.br/search",
-        query:"?q=",
-        ph:"Código",
-        name:"code",
         method:"post",
         color:"#555" //Not used yet
     },
