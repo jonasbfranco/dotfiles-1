@@ -17,3 +17,4 @@ mpd.state
 
 .vscode
 
+docker/docker/data
