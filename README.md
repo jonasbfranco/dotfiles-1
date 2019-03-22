@@ -25,6 +25,10 @@
 7. `sudo stow -t /usr usr`
 8. `sudo stow -t /boot boot`
 
+## Bônus!
+
+9. `sudo stow -t / agave`
+
 ## Instalação Automática
 
 `bash <(curl -s https://raw.githubusercontent.com/sistematico/dotfiles/master/install.sh)`
