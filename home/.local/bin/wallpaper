@@ -41,8 +41,7 @@ if [ ! $1 ]; then
 	findWall "$desktop"
 else
 	if [ "$1" == "-d" ]; then
-		wallpaper=$(getWall)
-		#wallpaper=$(/usr/bin/xfconf-query -c xfce4-desktop -p /backdrop/screen0/$monitor/workspace0/last-image)
+		wallpaper=$(/usr/bin/xfconf-query -c xfce4-desktop -p /backdrop/screen0/$monitor/workspace0/last-image)
 		yad --image dialog-question --title 'Atenção' --button=gtk-yes:0 --button=gtk-no:1 --text "Deseja apagar $(basename $wallpaper)?"
 		if [ $? = 0 ]; then
 			mv $wallpaper ~/.local/share/Trash/
