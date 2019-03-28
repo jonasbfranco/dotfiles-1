@@ -1,6 +1,6 @@
 FROM php:7-fpm
 RUN apt-get update
-RUN apt-get install curl -y
+RUN apt-get install curl libpng-dev -y
 RUN rm -rf /var/lib/apt/lists/*
 
 # PDO / MBSTRING
