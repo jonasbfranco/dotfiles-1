@@ -24,14 +24,6 @@ findWall() {
 	fi
 }
 
-getWall() {
-	if [ "$1" == "xfce4-session" ]; then
-		echo $(/usr/bin/xfconf-query -c xfce4-desktop -p /backdrop/screen0/$monitor/workspace0/last-image)
-	else
-		echo $(cat /tmp/.wallpaper)
-	fi
-}
-
 desks=('i3' 'xfce4-session')
 for desk in "${desks[@]}"; do
 	[ $(ps -eo comm | grep $desk) ] && desktop=$desk || desktop='outro'
@@ -41,7 +33,7 @@ if [ ! $1 ]; then
 	findWall "$desktop"
 else
 	if [ "$1" == "-d" ]; then
-		wallpaper=$(/usr/bin/xfconf-query -c xfce4-desktop -p /backdrop/screen0/$monitor/workspace0/last-image)
+		[ "$desktop" == "xfce4-session" ] && wallpaper=$(/usr/bin/xfconf-query -c xfce4-desktop -p /backdrop/screen0/$monitor/workspace0/last-image) || wallpaper="$(cat /tmp/.wallpaper)"
 		yad --image dialog-question --title 'Atenção' --button=gtk-yes:0 --button=gtk-no:1 --text "Deseja apagar $(basename $wallpaper)?"
 		if [ $? = 0 ]; then
 			mv $wallpaper ~/.local/share/Trash/
