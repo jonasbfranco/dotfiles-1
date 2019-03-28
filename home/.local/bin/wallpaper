@@ -26,9 +26,9 @@ findWall() {
 
 getWall() {
 	if [ "$1" == "xfce4-session" ]; then
-		wallpaper=$(/usr/bin/xfconf-query -c xfce4-desktop -p /backdrop/screen0/$monitor/workspace0/last-image)
+		echo $(/usr/bin/xfconf-query -c xfce4-desktop -p /backdrop/screen0/$monitor/workspace0/last-image)
 	else
-		wallpaper=$(cat /tmp/.wallpaper)
+		echo $(cat /tmp/.wallpaper)
 	fi
 }
 
@@ -41,7 +41,7 @@ if [ ! $1 ]; then
 	findWall "$desktop"
 else
 	if [ "$1" == "-d" ]; then
-		getWall
+		wallpaper=$(getWall)
 		#wallpaper=$(/usr/bin/xfconf-query -c xfce4-desktop -p /backdrop/screen0/$monitor/workspace0/last-image)
 		yad --image dialog-question --title 'Atenção' --button=gtk-yes:0 --button=gtk-no:1 --text "Deseja apagar $(basename $wallpaper)?"
 		if [ $? = 0 ]; then
