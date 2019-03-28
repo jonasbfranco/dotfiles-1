@@ -23,7 +23,7 @@
 	<icon>viewnior</icon>
 	<name>Imagens</name>
 	<unique-id>1542629194348820-1</unique-id>
-	<command>~/bin/viewnior.sh</command>
+	<command>~/bin/viewnior.sh %f</command>
 	<description></description>
 	<patterns>*</patterns>
 	<directories/>
