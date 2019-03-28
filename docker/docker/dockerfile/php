@@ -4,7 +4,7 @@ RUN apt-get install curl -y
 RUN rm -rf /var/lib/apt/lists/*
 
 # PDO / MBSTRING
-RUN docker-php-ext-install mbstring pdo pdo_mysql php-gd php-intl
+RUN docker-php-ext-install mbstring pdo pdo_mysql php_gd php_intl
 
 # COMPOSER
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
