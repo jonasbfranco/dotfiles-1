@@ -16,9 +16,9 @@ elif [[ "${1}" == "-u" ]]; then
 		while IFS= read -r site; do
 			titulo="Atualizar o site ${site}?"
 
-			#set "$(printf '...%s\b\b...\n' "$titulo" | col -b)"
-			#largura="$((${#1} - 4))"
-			largura="$(printf '...%s\b\b...\n' "$titulo" | col -b)"
+			l=$(set "$(printf '...%s\b\b...\n' "$titulo" | col -b)")
+			largura="$((${#l} - 4))"
+			#largura="$(printf '...%s\b\b...\n' "$titulo" | col -b)"
 
 	    	confirma=$(echo -e "Sim\nNão" | rofi -p "$titulo $largura" -dmenu -bw 0 -lines 3 -separator-style none -location 0 -width 500 -hide-scrollbar -padding 5)
 	    	if [ "$confirma" == "Sim" ]; then
