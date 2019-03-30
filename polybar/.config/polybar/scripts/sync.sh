@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+backup=1
 editor="subl"
 user="nginx"
 host="hera"
@@ -15,8 +16,13 @@ largura() {
 }
 
 sync() {
+
+	if [ $backup == 1 ]; then
+		rsync -avzq ${user}@${host}:${remoto}/$1/ /tmp/$1-$(date +"%T")
+	fi
+
 	status=0
-	rsync -avz ${local}/$1/ ${user}@${host}:${remoto}/$1/ || status=$?
+	rsync -avzq --delete ${local}/$1/ ${user}@${host}:${remoto}/$1/ || status=$?
 	if (($status != 0)); then
 		dbus-launch notify-send -i $iconeERRO "WebSite Sync" "Erro ao atualizar <b>$1</b> código: ${status}."
 	else
