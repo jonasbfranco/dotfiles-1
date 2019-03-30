@@ -4,7 +4,7 @@ editor="subl"
 user="nginx"
 host="hera"
 local="${HOME}/htdocs"
-remoto="/var/www/htdocs"
+remoto="/var/www"
 config="${HOME}/.config/polybar/configs/sync.conf"
 iconeOK="${HOME}/.local/share/icons/elementary/preferences-system-network.png"
 iconeERRO="${HOME}/.local/share/icons/elementary/network-error.png"
@@ -16,7 +16,7 @@ largura() {
 
 sync() {
 	status=0
-	rsync -avzn ${local}/$1/ ${user}@${host}:${remoto}/$1/ || status=$?
+	rsync -avz ${local}/$1/ ${user}@${host}:${remoto}/$1/ || status=$?
 	if (($status != 0)); then
 		dbus-launch notify-send -i $iconeERRO "WebSite Sync" "Erro ao atualizar <b>$1</b> código: ${status}."
 	else
