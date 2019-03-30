@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-backup=1
+backup=0
 editor="subl"
 user="nginx"
 host="hera"
