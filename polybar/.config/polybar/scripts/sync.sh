@@ -9,7 +9,7 @@ remoto="/var/www"
 config="${HOME}/.config/polybar/configs/sync.conf"
 iconeOK="${HOME}/.local/share/icons/elementary/preferences-system-network.png"
 iconeERRO="${HOME}/.local/share/icons/elementary/network-error.png"
-excluir=('*.mp3')
+excluir=('sftp-config.json' 'sentry/' 'cabron/')
 
 if [ ${#excluir[@]} -gt 0 ]; then
 	for i in ${excluir[@]}; do
