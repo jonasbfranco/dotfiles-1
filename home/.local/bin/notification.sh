@@ -2,7 +2,7 @@
 
 hora=$1
 audio="${HOME}/.alarme.mp3"
-#audio="${HOME}/audio/alarmes/naval/cvn77whistle.wav"
+audio="${HOME}/.local/share/sounds/naval/cvn77whistle.wav"
 audio_web="https://github.com/sistematico/majestic/raw/master/home/lucas/audio/alarme.mp3"
 
 function alarme {
