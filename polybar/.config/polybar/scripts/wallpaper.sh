@@ -12,7 +12,7 @@
 dir="${XDG_PICTURES_DIR:-${HOME}/img/wallpapers/linux}"
 unsplash_dir="${XDG_PICTURES_DIR:-${HOME}/img}/unsplash"
 default="$dir/wallpapers/default.jpg"
-ultima="/home/lucas/img/wallpapers/linux/big-brother-1920x1080.png"
+ultima="/home/lucas/img/wallpapers/linux/falcon-heavy-1920x1080.png"
 modo="--bg-fill"
 indice=0
 i=0
