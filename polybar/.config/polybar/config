@@ -98,7 +98,7 @@ font-1 = feather:size=11;3
 font-2 = Moon Phases:size=10;3
 
 modules-left = moon weather
-modules-center = browser sep terminal sep subl sep thunar sep telegram sep whatsapp sep steam sep deluge
+modules-center = browser sep terminal sep subl sep thunar sep telegram sep whatsapp sep steam sep deluge sep sync
 modules-right = mpd lixo
 
 cursor-click = pointer

@@ -26,8 +26,8 @@ if [[ "${1}" == "-c" ]]; then
 		export DISPLAY=:0 ; canberra-gtk-play -i trash-empty 2>&1
 		export DISPLAY=:0 ; notify-send -i $icone "Lixeira" "Lixeira limpa!"
 	fi
-elif [[ "${1}" == "-o" ]]; then
+elif [[ "${1}" == "-u" ]]; then
 	xdg-open $trash_dir/files
 fi
 
-echo ""
+echo ""
