@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+editor="subl"
 user="nginx"
 host="hera"
 local="${HOME}/htdocs/"
@@ -8,26 +9,19 @@ iconeOK="${HOME}/.local/share/icons/elementary/preferences-system-network.png"
 iconeERRO="${HOME}/.local/share/icons/elementary/network-error.png"
 
 if [[ "${1}" == "-c" ]]; then
-	if [ ! -d $trash_temp ]; then
-		mkdir $trash_temp
-	fi
-
-	cp -rf ${trash_dir}/files ${trash_temp}/
-	cp -rf ${trash_dir}/info ${trash_temp}/
-
-	rm -rf ${trash_dir}/files
-	rm -rf ${trash_dir}/info
-
-	mkdir ${trash_dir}/files
-	mkdir ${trash_dir}/info
-
-	if xset q &>/dev/null; then
-		# ls /usr/share/sounds/freedesktop/stereo/
-		export DISPLAY=:0 ; canberra-gtk-play -i trash-empty 2>&1
-		export DISPLAY=:0 ; notify-send -i $icone "Lixeira" "Lixeira limpa!"
-	fi
+	$editor $config
 elif [[ "${1}" == "-u" ]]; then
-	xdg-open $trash_dir/files
+	if [ -f $config ]; then
+		config=$(cat $config)
+		while IFS= read -r site; do
+	    	confirma=$(echo -e "Deseja enviar seus arquivos para:\n${site}?\nDeseja cancelar?\nSim\nNão" | rofi -p "WebSite Sync: " -dmenu -bw 0 -lines 5 -separator-style none -location 0 -width 400 -hide-scrollbar -padding 5)
+	    	if [ "$confirma" == "Sim" ]; then
+	    		dbus-launch notify-send -i $iconeOK "WebSite Sync" "Site <b>$site</b> atualizado."
+	    	else
+	    		dbus-launch notify-send -i $iconeERRO "WebSite Sync" "Atualização de <b>$site</b> cancelada."
+	    	fi
+		done <<< "$config"
+	fi
 fi
 
 echo ""
