@@ -4,6 +4,7 @@ editor="subl"
 user="nginx"
 host="hera"
 local="${HOME}/htdocs/"
+remoto="/var/www/htdocs"
 config="${HOME}/.config/polybar/configs/sync.conf"
 iconeOK="${HOME}/.local/share/icons/elementary/preferences-system-network.png"
 iconeERRO="${HOME}/.local/share/icons/elementary/network-error.png"
@@ -11,6 +12,14 @@ iconeERRO="${HOME}/.local/share/icons/elementary/network-error.png"
 largura() {
 	set "$(printf '...%s\b\b...\n' "$1" | col -b)"
 	echo "$((${#1} - 4))"
+}
+
+sync() {
+	status=0
+	rsync -avzn ${user}@${host}:${remoto}/$1 || status=$?
+	if (($status != 0)); then
+
+	fi
 }
 
 if [[ "${1}" == "-c" ]]; then
