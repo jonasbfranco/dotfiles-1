@@ -21,7 +21,7 @@ elif [[ "${1}" == "-u" ]]; then
 		while IFS= read -r site; do
 			titulo="Atualizar o site ${site}?"
 			l=$(largura "$titulo")
-	    	confirma=$(echo -e "Sim\nNão" | rofi -p "$titulo" -dmenu -bw 0 -lines 3 -separator-style none -location 0 -width $l -hide-scrollbar -padding 5)
+	    	confirma=$(echo -e "Sim\nNão" | rofi -p "$titulo $l" -dmenu -bw 0 -lines 3 -separator-style none -location 0 -width 31 -hide-scrollbar -padding 5)
 	    	if [ "$confirma" == "Sim" ]; then
 	    		dbus-launch notify-send -i $iconeOK "WebSite Sync" "Site <b>$site</b> atualizado."
 	    	else
