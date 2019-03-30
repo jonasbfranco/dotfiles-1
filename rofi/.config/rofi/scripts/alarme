@@ -23,7 +23,7 @@ do
 done
 
 audio="${HOME}/.erro.mp3"
-audio_web="https://github.com/sistematico/dotfiles/raw/master/home/audio/erro.mp3"
+audio_web="https://github.com/sistematico/dotfiles/raw/master/home/.local/share/sounds/erro.mp3"
 icone="${HOME}/.local/share/icons/elementary/clock.png"
 
 if [ ! -f $audio ]; then
