@@ -9,6 +9,13 @@ remoto="/var/www"
 config="${HOME}/.config/polybar/configs/sync.conf"
 iconeOK="${HOME}/.local/share/icons/elementary/preferences-system-network.png"
 iconeERRO="${HOME}/.local/share/icons/elementary/network-error.png"
+excluir=()
+
+if [ ${#excluir[@]} -gt 0 ]; then
+	for i in ${excluir[@]}; do
+		excl+="--exclude=$i "
+	done
+fi
 
 largura() {
 	set "$(printf '...%s\b\b...\n' "$1" | col -b)"
@@ -18,11 +25,11 @@ largura() {
 sync() {
 
 	if [ $backup == 1 ]; then
-		rsync -avzq ${user}@${host}:${remoto}/$1/ /tmp/$1-$(date +"%T")
+		rsync -avznq ${user}@${host}:${remoto}/$1/ /tmp/$1-$(date +"%T")
 	fi
 
 	status=0
-	rsync -avzq --delete ${local}/$1/ ${user}@${host}:${remoto}/$1/ || status=$?
+	rsync -avznq --delete ${local}/$1/ ${user}@${host}:${remoto}/$1/ $excl || status=$?
 	if (($status != 0)); then
 		dbus-launch notify-send -i $iconeERRO "WebSite Sync" "Erro ao atualizar <b>$1</b> código: ${status}."
 	else
