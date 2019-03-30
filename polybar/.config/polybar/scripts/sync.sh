@@ -9,13 +9,12 @@ remoto="/var/www"
 config="${HOME}/.config/polybar/configs/sync.conf"
 iconeOK="${HOME}/.local/share/icons/elementary/preferences-system-network.png"
 iconeERRO="${HOME}/.local/share/icons/elementary/network-error.png"
-excluir=()
+excluir=('*.mp3')
 
 if [ ${#excluir[@]} -gt 0 ]; then
 	for i in ${excluir[@]}; do
-		excl+="--exclude=$i "
+		excl+="--exclude=\'$i\' "
 	done
-
 else
 	excl="-------"
 fi
