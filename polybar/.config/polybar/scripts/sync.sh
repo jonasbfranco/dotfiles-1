@@ -15,8 +15,6 @@ if [ ${#excluir[@]} -gt 0 ]; then
 	for i in ${excluir[@]}; do
 		excl+="--exclude=\'$i\' "
 	done
-else
-	excl="-------"
 fi
 
 largura() {
@@ -33,9 +31,9 @@ sync() {
 	status=0
 	rsync -avznq --delete ${local}/$1/ ${user}@${host}:${remoto}/$1/ $excl || status=$?
 	if (($status != 0)); then
-		dbus-launch notify-send -i $iconeERRO "WebSite Sync" "Erro ao atualizar <b>$1</b> código: ${status}\n$excl"
+		dbus-launch notify-send -i $iconeERRO "WebSite Sync" "Erro ao atualizar <b>$1</b>\nCódigo: ${status}"
 	else
-		dbus-launch notify-send -i $iconeOK "WebSite Sync" "Site <b>$1</b> atualizado.$excl"
+		dbus-launch notify-send -i $iconeOK "WebSite Sync" "Site <b>$1</b> atualizado.\nExclude: $excl"
 	fi
 }
 
