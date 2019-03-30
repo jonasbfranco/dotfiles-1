@@ -14,7 +14,7 @@ elif [[ "${1}" == "-u" ]]; then
 	if [ -f $config ]; then
 		config=$(cat $config)
 		while IFS= read -r site; do
-	    	confirma=$(echo -e "Deseja enviar seus arquivos para:\n${site}?\nDeseja cancelar?\nSim\nNão" | rofi -p "WebSite Sync: " -dmenu -bw 0 -lines 5 -separator-style none -location 0 -width 400 -hide-scrollbar -padding 5)
+	    	confirma=$(echo -e "Atualizar o site ${site}?\nSim\nNão" | rofi -p "WebSite Sync: " -dmenu -bw 0 -lines 5 -separator-style none -location 0 -width 400 -hide-scrollbar -padding 5)
 	    	if [ "$confirma" == "Sim" ]; then
 	    		dbus-launch notify-send -i $iconeOK "WebSite Sync" "Site <b>$site</b> atualizado."
 	    	else
