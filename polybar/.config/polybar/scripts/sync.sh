@@ -3,7 +3,7 @@
 editor="subl"
 user="nginx"
 host="hera"
-local="${HOME}/htdocs/"
+local="${HOME}/htdocs"
 remoto="/var/www/htdocs"
 config="${HOME}/.config/polybar/configs/sync.conf"
 iconeOK="${HOME}/.local/share/icons/elementary/preferences-system-network.png"
@@ -16,9 +16,11 @@ largura() {
 
 sync() {
 	status=0
-	rsync -avzn ${user}@${host}:${remoto}/$1 || status=$?
+	rsync -avzn ${local}/$1/ ${user}@${host}:${remoto}/$1/ || status=$?
 	if (($status != 0)); then
-
+		dbus-launch notify-send -i $iconeOK "WebSite Sync" "Erro ao atualizar <b>$1</b> código: ${status}."
+	else
+		dbus-launch notify-send -i $iconeOK "WebSite Sync" "Site <b>$1</b> atualizado."
 	fi
 }
 
@@ -33,7 +35,7 @@ elif [[ "${1}" == "-u" ]]; then
 			l=$(echo $titulo | wc -c)
 	    	confirma=$(echo -e "Sim\nNão" | rofi -p "$titulo" -dmenu -bw 0 -lines 3 -separator-style none -location 0 -width $(($l-15)) -hide-scrollbar -padding 5)
 	    	if [ "$confirma" == "Sim" ]; then
-	    		dbus-launch notify-send -i $iconeOK "WebSite Sync" "Site <b>$site</b> atualizado."
+	    		sync $site
 	    	else
 	    		dbus-launch notify-send -i $iconeERRO "WebSite Sync" "Atualização de <b>$site</b> cancelada."
 	    	fi
