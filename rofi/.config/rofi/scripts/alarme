@@ -5,7 +5,7 @@
 # Desenvolvido por Lucas Saliés Brum <lucas@archlinux.com.br>
 #
 # Criado em: 28/12/17 00:52:08
-# Última Atualização: 28/12/17 00:52:16
+# Última Atualização: 30/03/2019 08:45:23
 # Evaluate: ! date +"%d/%m/%y %H:%M:%S"
 
 dependencias=("curl" "rofi" "notify-send" "mpg123")
@@ -24,7 +24,7 @@ done
 
 audio="${HOME}/.alarme.mp3"
 audio_web="https://github.com/sistematico/majestic/raw/master/home/lucas/audio/alarme.mp3"
-icone="/usr/share/icons/Arc/mimetypes/24@2x/stock_calendar.png"
+icone="${HOME}/.local/share/icons/elementary/clock.png"
 
 if [ ! -f $audio ]; then
 	curl -L -s $audio_web > $audio

@@ -4,8 +4,8 @@
 #
 # Desenvolvido por Lucas Saliés Brum <lucas@archlinux.com.br>
 #
-# Criado em: 28/12/17 00:52:08
-# Última Atualização: 28/12/17 00:52:16
+# Criado em: 30/03/2019 08:45:07
+# Última Atualização: 30/03/2019 08:45:12
 # Evaluate: ! date +"%d/%m/%y %H:%M:%S"
 
 dependencias=("curl" "rofi" "notify-send" "mpg123")
