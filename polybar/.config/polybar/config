@@ -401,6 +401,17 @@ interval = 60
 exec = ~/.config/polybar/scripts/weather.py
 
 ;----------------------------------------------------------
+;			 S Y N C
+;----------------------------------------------------------
+[module/sync]
+type = custom/script
+label = %output%
+format = <label>
+click-left = ~/.config/polybar/scripts/sync.sh -u &
+click-right = ~/.config/polybar/scripts/sync.sh -c &
+exec = ~/.config/polybar/scripts/sync.sh
+
+;----------------------------------------------------------
 ;		        M P D
 ;----------------------------------------------------------
 [module/mpd]
@@ -421,7 +432,6 @@ label-song-ellipsis = true
 ;----------------------------------------------------------
 [module/lixo]
 type = custom/script
-;interval = 1
 tail = true
 click-middle = ~/.config/polybar/scripts/trash.sh -o &
 click-right = ~/.config/polybar/scripts/trash.sh -x &
