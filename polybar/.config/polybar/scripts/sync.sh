@@ -1,12 +1,13 @@
 #!/usr/bin/env bash
 
-icone="${HOME}/.local/share/icons/elementary/user-trash.png"
+user="nginx"
+host="hera"
+local="${HOME}/htdocs/"
+config="${HOME}/.config/polybar/configs/sync.conf"
+iconeOK="${HOME}/.local/share/icons/elementary/preferences-system-network.png"
+iconeERRO="${HOME}/.local/share/icons/elementary/network-error.png"
 
-if [[ "${trash_dir}" = "" ]]; then
-  trash_dir=${XDG_DATA_HOME:-"${HOME}/.local/share/Trash"}
-fi
-
-if [[ "${1}" == "-x" ]]; then
+if [[ "${1}" == "-c" ]]; then
 	if [ ! -d $trash_temp ]; then
 		mkdir $trash_temp
 	fi
@@ -29,12 +30,4 @@ elif [[ "${1}" == "-o" ]]; then
 	xdg-open $trash_dir/files
 fi
 
-TRASH_COUNT=$(ls -U -1 "${trash_dir}/files" | wc -l)
-
-if [[ ${TRASH_COUNT} -gt 0 ]]; then
-	s="%{F#${cor}}%{F-} ${TRASH_COUNT}"
-else
-	s=""
-fi
-
-echo "${s}"
+echo ""
