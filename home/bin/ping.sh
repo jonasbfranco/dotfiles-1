@@ -44,7 +44,7 @@ function pingar {
 	fi
 }
 
-if [ $(pgrep -f ping.sh) ]; then
+if [[ $(pgrep -f ping.sh) ]]; then
  	dbus-launch notify-send -i $icone "Ping" "Processo parado."
  	kill -9 $(pgrep -fn "ping.sh")
  	exit 1
