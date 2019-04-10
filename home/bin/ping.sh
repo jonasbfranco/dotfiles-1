@@ -38,7 +38,8 @@ function pingar {
 		# if [ "$1" == "-v" ]; then
 		# 	echo "%{F#bf616a}%{F-}"
 		# fi
-		export DISPLAY=:0 ; canberra-gtk-play -i $offline 2>&1
+		#export DISPLAY=:0 ; canberra-gtk-play -i $offline 2>&1
+		icone="${HOME}/.local/share/icons/elementary/network-error.png"
 		dbus-launch notify-send -i $icone "Ping" "A máquina <b>$(hostname)</b> está offline."
 		[ -f /tmp/online.lock ] && rm /tmp/online.lock
 	fi
