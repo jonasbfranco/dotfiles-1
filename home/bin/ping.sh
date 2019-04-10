@@ -46,7 +46,7 @@ function pingar {
 
 if [[ $(pgrep -f ping.sh) ]]; then
  	dbus-launch notify-send -i $icone "Ping" "Processo parado."
- 	kill -9 $(pgrep -fn "ping.sh")
+ 	kill -9 $(pgrep -fn "ping.sh") 1> /dev/null &
  	exit 1
 else
 	dbus-launch notify-send -i $icone "Ping" "Processo iniciado.\n\nHost: $host\nIntervalo: $intervalo\nTentativas: $tentativas\nRepetição: $repeticao"
