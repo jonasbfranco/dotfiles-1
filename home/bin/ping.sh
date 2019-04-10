@@ -31,6 +31,8 @@ function pingar {
 			export DISPLAY=:0 ; canberra-gtk-play -i $online 2>&1
 			dbus-launch notify-send -i $icone "Ping" "A máquina <b>$(hostname)</b> está online."
 			touch /tmp/online.lock
+		else
+			exit 0
 		fi
 		break
 	else
@@ -63,9 +65,3 @@ else
 fi
 
 exit 0
-
-# if [ $(ping -q -c3 google.com > /dev/null 2> /dev/null) ]; then
-# 	echo "Conexão: OK"
-# else
-# 	echo "Conexão: FALHOU"
-# fi
