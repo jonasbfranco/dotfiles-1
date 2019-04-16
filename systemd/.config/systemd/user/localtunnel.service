@@ -1,5 +1,5 @@
 [Unit]
-Description=Share local port(s) with ngrok
+Description=Share local port(s) with localtunnel
 After=syslog.target network.target
 
 [Service]
