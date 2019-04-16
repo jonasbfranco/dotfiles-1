@@ -9,7 +9,7 @@ Restart=always
 RestartSec=1min
 StandardOutput=null
 StandardError=null
-ExecStart=/usr/bin/lt --port 80 --subdomain subdominio
+ExecStart=/usr/bin/lt --port 80 --subdomain majestic
 ExecStop=/usr/bin/killall lt
 
 [Install]
