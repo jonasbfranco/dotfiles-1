@@ -18,3 +18,5 @@ mpd.state
 .vscode
 
 docker/docker/data
+
+ngrok.yml

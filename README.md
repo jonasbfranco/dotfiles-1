@@ -24,6 +24,7 @@
 6. `sudo stow -t /etc etc`
 7. `sudo stow -t /usr usr`
 8. `sudo stow -t /boot boot`
+9. `sudo stow -t / ngrok`
 
 ## Bônus!
 
