@@ -1,0 +1,5 @@
+authtoken: SEU_TOKEN
+tunnels:
+  ssh:
+    proto: tcp
+    addr: 22
