@@ -1,5 +1,8 @@
-authtoken: SEU_TOKEN
+authtoken: 7gQZJo7JV9HywX7dj8SXL_7iya38NpNEFJR7vyHQ5ej
 tunnels:
+  web:
+    proto: tcp
+    addr: 80
   ssh:
     proto: tcp
     addr: 22
