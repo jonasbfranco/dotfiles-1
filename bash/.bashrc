@@ -65,6 +65,9 @@ fi
 ##################
 ##### Funções ####
 ##################
+if [[ -f ~/.bash_aliases ]]; then
+    source ~/.bash_aliases
+fi
 # function mm() {
 #	params=\"$@\"
 #     mpv --really-quiet --profile=youtube ytdl://ytsearch10:"$params" > /dev/null 2>&1 &
