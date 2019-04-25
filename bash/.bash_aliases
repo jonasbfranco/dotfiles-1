@@ -25,3 +25,9 @@ alias stpshr='systemctl --user stop ngrok dropbox google-drive onedrive yandex &
 alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 alias castnow="castnow --myip 192.168.0.1"
 alias git-cron='~/.local/bin/git-cron'
+
+# Docker
+alias dip='docker inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}"'
+alias dst='docker start'
+alias dsp='docker stop'
+alias drs='docker restart'
