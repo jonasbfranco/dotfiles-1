@@ -66,17 +66,8 @@ fi
 ##### Funções ####
 ##################
 if [[ -f ~/.bash_aliases ]]; then
-    source ~/.bash_aliases
+    source ~/.bash_functions
 fi
-# function mm() {
-#	params=\"$@\"
-#     mpv --really-quiet --profile=youtube ytdl://ytsearch10:"$params" > /dev/null 2>&1 &
-#     i3-msg '[class="mpv"] sticky enable' > /dev/null 2>&1
-# }
-
-function mma() {
-    mpv --no-video --ytdl-format=bestaudio ytdl://ytsearch10:"$@"
-}
 
 ##################
 ##### Prompt #####
