@@ -35,9 +35,12 @@ services:
             - nginxnet
         restart: always
 
-    mysql:
-        container_name: mysql
-        image: mysql:latest
+    #mysql:
+    #    container_name: mysql
+    #    image: mysql:latest
+    mariadb:
+        container_name: mariadb
+        image: mariadb:latest
         command: --default-authentication-plugin=mysql_native_password
         ports:
             - "3306:3306"
