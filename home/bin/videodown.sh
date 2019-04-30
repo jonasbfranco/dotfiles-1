@@ -33,7 +33,7 @@ fi
 cd $pasta
 
 if [ $aria == 1 ]; then
-    youtube-dl $opts -o '%(title)s.%(ext)s' --external-downloader aria2c --external-downloader-args '-c -j 1 -x 1 -s 3 -k 1M' "${turl}"
+    youtube-dl $opts -o '%(title)s.%(ext)s' --external-downloader aria2c --external-downloader-args '-c -j 1 -x 1 -s 5 -k 1M' "${turl}"
 else
     youtube-dl $opts -o '%(title)s.%(ext)s' "${turl}"
 fi
