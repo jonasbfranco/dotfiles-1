@@ -2,6 +2,7 @@ version: "3"
 
 services:
     nginx:
+        container_name: nginx
         image: nginx:latest
         ports:
             - "80:80"
@@ -13,6 +14,7 @@ services:
         restart: unless-stopped
 
     php:
+        container_name: php
         image: php:7.3-fpm
         ports:
             - "9000:9000"
@@ -25,6 +27,7 @@ services:
         restart: unless-stopped
 
     mysql:
+        container_name: mysql
         image: mysql:latest
         command: --default-authentication-plugin=mysql_native_password
         ports:
@@ -37,6 +40,7 @@ services:
         restart: unless-stopped
 
     phpmyadmin:
+        container_name: phpmyadmin
         image: phpmyadmin/phpmyadmin:latest
         depends_on:
             - mysql
