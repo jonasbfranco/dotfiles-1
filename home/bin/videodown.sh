@@ -23,6 +23,7 @@ if [ ! -f $pasta ]; then
 fi
 
 cd $pasta
+
 if [ $aria == 1 ]; then
     youtube-dl -q -o '%(title)s.%(ext)s' --external-downloader aria2c --external-downloader-args '-c -j 3 -x 3 -s 3 -k 1M' "$turl"
 else
@@ -31,6 +32,7 @@ fi
 
 notify-send -i $icone "Video Downloader" "Transferencia $$ finalizada."
 canberra-gtk-play -i $som
+
 cd $old
 
 exit
