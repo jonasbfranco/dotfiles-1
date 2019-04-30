@@ -11,7 +11,7 @@ aria=1
 old="$(pwd)"
 dir="${HOME}/desk"
 url="$(xclip -o)"
-icone="${HOME}/.local/share/icons/elementary/camera-photo.png"
+icone="${HOME}/.local/share/icons/elementary/video-display.png"
 som='complete'
 
 opts='-q --restrict-filenames'
