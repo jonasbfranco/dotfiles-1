@@ -34,9 +34,9 @@ fi
 cd $pasta
 
 if [ $aria == 1 ]; then
-    youtube-dl "$ytopts" -o '%(title)s.%(ext)s' --external-downloader aria2c --external-downloader-args "$aropts" "$turl"
+    youtube-dl $ytopts -o '%(title)s.%(ext)s' --external-downloader aria2c --external-downloader-args $aropts '${turl}'
 else
-    youtube-dl "$ytopts" -o '%(title)s.%(ext)s' "$turl"
+    youtube-dl $ytopts -o '%(title)s.%(ext)s' '${turl}'
 fi
 
 rm 
