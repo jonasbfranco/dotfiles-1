@@ -16,6 +16,14 @@ turl="$(xclip -o)"
 icone="${HOME}/.local/share/icons/elementary/camera-photo.png"
 som='complete'
 
+# -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best'
+# 'bestvideo[height<=480]+bestaudio/best[height<=480]'
+# 'best[filesize<50M]'
+# '(bestvideo+bestaudio/best)[protocol^=http]'
+# 'bestvideo,bestaudio' -o '%(title)s.f%(format_id)s.%(ext)s'
+
+opts='--restrict-filenames'
+
 if [ ! -f $pasta ]; then
 	mkdir -p $pasta
 #else
@@ -27,8 +35,10 @@ cd $pasta
 if [ $aria == 1 ]; then
     youtube-dl -q -o '%(title)s.%(ext)s' --external-downloader aria2c --external-downloader-args '-c -j 3 -x 3 -s 3 -k 1M' "$turl"
 else
-    youtube-dl -q -o '%(title)s.%(ext)s' "$turl"
+    youtube-dl -q $opts -o '%(title)s.%(ext)s' "$turl"
 fi
+
+rm 
 
 notify-send -i $icone "Video Downloader" "Transferencia $$ finalizada."
 canberra-gtk-play -i $som
