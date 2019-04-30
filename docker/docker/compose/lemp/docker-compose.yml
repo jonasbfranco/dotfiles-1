@@ -42,6 +42,8 @@ services:
             - mysql
         ports:
             - "8082:80"
+        volumes:
+            - ~/docker/confs/phpmyadmin.php:/etc/phpmyadmin/config.user.inc.php
         environment:
             - PMA_HOST=mysql
         restart: unless-stopped
