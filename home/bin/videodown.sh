@@ -17,7 +17,7 @@ som='complete'
 opts='-q --restrict-filenames'
 
 [ ! -f $pasta ] && mkdir -p $pasta
-
+[ $1 ] && turl="$1"
 cd $pasta
 
 if [ $aria == 1 ]; then
