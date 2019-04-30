@@ -11,15 +11,15 @@
 
 aria=1
 old="$(pwd)"
-pasta="${HOME}/desk/$$"
+pasta="${HOME}/desk"
 turl="$(xclip -o)"
 icone="${HOME}/.local/share/icons/elementary/camera-photo.png"
 som='complete'
 
 if [ ! -f $pasta ]; then
 	mkdir -p $pasta
-else
-	exit
+#else
+#	exit
 fi
 
 cd $pasta
