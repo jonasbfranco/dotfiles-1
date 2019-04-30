@@ -19,8 +19,7 @@ opts='-q --restrict-filenames'
 [ ! -f $pasta ] && mkdir -p $pasta
 [ $1 ] && turl="$1"
 
-regex='(https?|ftp|file)://[-A-Za-z0-9\+&@#/%?=~_|!:,.;]*[-A-Za-z0-9\+&@#/%=~_|]'
-if ![[ $turl =~ $regex ]]; then 
+if [[ ! $turl =~ '(https?|ftp|file)://[-A-Za-z0-9\+&@#/%?=~_|!:,.;]*[-A-Za-z0-9\+&@#/%=~_|]' ]]; then 
 	echo "Link inválido."
     exit
 fi
