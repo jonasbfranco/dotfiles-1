@@ -16,6 +16,12 @@ services:
         image: php:7.3-fpm
         ports:
             - "9000:9000"
+        build:
+            context: ../../dockerfile/
+            dockerfile: php
+        volumes:
+            - ~/htdocs:/code
+            - ~/docker/confs/phplog.conf:/usr/local/etc/php-fpm.d/log.conf
         restart: unless-stopped
 
     mysql:
