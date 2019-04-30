@@ -38,7 +38,7 @@ else
     youtube-dl $opts -o '%(title)s.%(ext)s' "${turl}"
 fi
 
-rm 
+rm *.aria2 *.ytdl
 
 notify-send -i $icone "Video Downloader" "Transferencia finalizada."
 canberra-gtk-play -i $som
