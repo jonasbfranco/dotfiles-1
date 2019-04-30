@@ -22,8 +22,7 @@ som='complete'
 # '(bestvideo+bestaudio/best)[protocol^=http]'
 # 'bestvideo,bestaudio' -o '%(title)s.f%(format_id)s.%(ext)s'
 
-ytopts='-q --restrict-filenames'
-aropts='-c -j 1 -x 1 -s 3 -k 1M'
+opts='-q --restrict-filenames'
 
 if [ ! -f $pasta ]; then
 	mkdir -p $pasta
@@ -34,9 +33,9 @@ fi
 cd $pasta
 
 if [ $aria == 1 ]; then
-    youtube-dl $ytopts -o '%(title)s.%(ext)s' --external-downloader aria2c --external-downloader-args $aropts '${turl}'
+    youtube-dl $opts -o '%(title)s.%(ext)s' --external-downloader aria2c --external-downloader-args '-c -j 1 -x 1 -s 3 -k 1M' "${turl}"
 else
-    youtube-dl $ytopts -o '%(title)s.%(ext)s' '${turl}'
+    youtube-dl $opts -o '%(title)s.%(ext)s' "${turl}"
 fi
 
 rm 
