@@ -25,7 +25,8 @@ if [[ ! ${url} =~ $padrao ]]; then
     exit
 else
 	titulo=$(curl "$url" -so - | grep -iPo '(?<=<title>)(.*)(?=</title>)')
-	titulo=$(echo "$titulo" | tr -cd '[:alnum:]._-')
+	#titulo=$(echo "$titulo" | tr -cd '[:alnum:]._-')
+	titulo=$(echo $titulo | iconv -f utf8 -t ascii//TRANSLIT)
 fi
 
 echo $titulo
