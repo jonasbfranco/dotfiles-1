@@ -13,6 +13,7 @@ dir="${HOME}/desk"
 url="$(xclip -o)"
 icone="${HOME}/.local/share/icons/elementary/video-display.png"
 som='complete'
+#opts='-q --restrict-filenames'
 opts='-q'
 
 [ ! -f $dir ] && mkdir -p $dir
@@ -23,10 +24,9 @@ if [[ ! ${url} =~ $padrao ]]; then
 	notify-send -i $icone "Video Downloader" "Link inválido!"
     exit
 else
-	titulo=$(curl "$url" -so - | grep -iPo '(?<=<title>)(.*)(?=</title>)')
-	titulo=$(echo "$titulo" | iconv -f utf8 -t ascii//TRANSLIT)
-	#titulo=$(echo "$titulo" | tr -cd '[:alnum:]._-')
-	titulo=$(echo "$titulo" | sed 's/[^[:alnum:]]\+/ /g')
+	titulo=$(curl "$url" -so - | grep -iPo '(?<=<title>)(.*)(?=</title>)' | iconv -f utf8 -t ascii//TRANSLIT | sed 's/[^[:alnum:]]\+/ /g')
+	#titulo=$(echo "$titulo" | iconv -f utf8 -t ascii//TRANSLIT)
+	#titulo=$(echo "$titulo" | sed 's/[^[:alnum:]]\+/ /g')
 fi
 
 cd $dir
