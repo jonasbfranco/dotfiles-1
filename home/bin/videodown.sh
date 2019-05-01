@@ -27,6 +27,8 @@ else
 	titulo=$(curl "$url" -so - | grep -iPo '(?<=<title>)(.*)(?=</title>)')
 	#titulo=$(echo "$titulo" | tr -cd '[:alnum:]._-')
 	titulo=$(echo $titulo | iconv -f utf8 -t ascii//TRANSLIT)
+	echo "$string" | sed -r 's/[xyz]+/_/g'
+	echo $titulo | sed "s|$var1|ZZ|g")
 fi
 
 echo $titulo
