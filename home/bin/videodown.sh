@@ -29,7 +29,7 @@ else
 	titulo=$(echo $titulo | iconv -f utf8 -t ascii//TRANSLIT)
 	#titulo=$(echo "$titulo" | sed -r 's/[xyz]+/_/g')
 	#titulo=$(echo "$titulo" | sed -r 's/[xyz]+/_/g')
-	titulo=$(echo "$titulo" | sed "s/^[:alnum:]/_/g")
+	titulo=$(echo "$titulo" | sed 's/[^[:alnum:]]\+/ /g')
 	#echo $titulo | sed "s|$var1|ZZ|g")
 fi
 
