@@ -177,6 +177,10 @@ bindcode Mod2+$KP_Multi exec --no-startup-id mpc ls | mpc add
 # Tray
 bindsym $mod+Shift+t exec --no-startup-id $HOME/.config/polybar/scripts/tray.sh
 
+# Utils
+bindsym Shift+F5 exec --no-startup-id $HOME/bin/videodown.sh
+
+
 ####################################################################
 ################ A R E A S #########################################
 ####################################################################
