@@ -33,9 +33,9 @@ fi
 cd $dir
 
 if [ $aria == 1 ]; then
-    youtube-dl $opts -o '%(title)s.%(ext)s' --external-downloader aria2c --external-downloader-args '-c -j 1 -x 1 -s 3 -k 1M' "${url}"
+    youtube-dl $opts -o "$titulo"'.%(ext)s' --external-downloader aria2c --external-downloader-args '-c -j 1 -x 1 -s 3 -k 1M' "${url}"
 else
-    youtube-dl $opts -o '%(title)s.%(ext)s' "${url}"
+    youtube-dl $opts -o "$titulo"'.%(ext)s' "${url}"
 fi
 
 find . -type f -name "${titulo}*" -not -name '*mp4' -not -name '*avi' # | xargs rm
