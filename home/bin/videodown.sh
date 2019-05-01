@@ -25,23 +25,20 @@ if [[ ! ${url} =~ $padrao ]]; then
     exit
 else
 	titulo=$(curl "$url" -so - | grep -iPo '(?<=<title>)(.*)(?=</title>)')
-	#titulo=$(echo "$titulo" | tr -cd '[:alnum:]._-')
 	titulo=$(echo $titulo | iconv -f utf8 -t ascii//TRANSLIT)
-	#titulo=$(echo "$titulo" | sed -r 's/[xyz]+/_/g')
-	#titulo=$(echo "$titulo" | sed -r 's/[xyz]+/_/g')
+	#titulo=$(echo "$titulo" | tr -cd '[:alnum:]._-')
 	titulo=$(echo "$titulo" | sed 's/[^[:alnum:]]\+/ /g')
-	#echo $titulo | sed "s|$var1|ZZ|g")
 fi
 
-echo $titulo
+cd $dir
 
-#cd $dir
+if [ $aria == 1 ]; then
+    youtube-dl $opts -o '%(title)s.%(ext)s' --external-downloader aria2c --external-downloader-args '-c -j 1 -x 1 -s 3 -k 1M' "${url}"
+else
+    youtube-dl $opts -o '%(title)s.%(ext)s' "${url}"
+fi
 
-#if [ $aria == 1 ]; then
-#    youtube-dl $opts -o '%(title)s.%(ext)s' --external-downloader aria2c --external-downloader-args '-c -j 1 -x 1 -s 3 -k 1M' "${url}"
-#else
-#    youtube-dl $opts -o '%(title)s.%(ext)s' "${url}"
-#fi
+find . -type f -name "${titulo}*" -not -name '*mp4' -not -name '*avi' # | xargs rm
 
 #rm *.aria2 *.ytdl *.part 2> /dev/null
 
