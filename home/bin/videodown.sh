@@ -5,7 +5,7 @@
 # Feito por Lucas Saliés Brum a.k.a. sistematico, <lucas@archlinux.com.br>
 #
 # Criado em: 30/04/2019 13:55:09
-# Última alteração: 01/05/2019 12:20:03
+# Última alteração: 01/05/2019 14:32:25
 
 aria=1
 old="$(pwd)"
@@ -25,8 +25,6 @@ if [[ ! ${url} =~ $padrao ]]; then
     exit
 else
 	titulo=$(curl "$url" -so - | grep -iPo '(?<=<title>)(.*)(?=</title>)' | iconv -f utf8 -t ascii//TRANSLIT | sed 's/[^[:alnum:]]\+/ /g')
-	#titulo=$(echo "$titulo" | iconv -f utf8 -t ascii//TRANSLIT)
-	#titulo=$(echo "$titulo" | sed 's/[^[:alnum:]]\+/ /g')
 fi
 
 cd $dir
@@ -38,6 +36,5 @@ else
 fi
 
 find . -type f -name "${titulo}*" -not -name '*mp4' -not -name '*avi' | xargs rm
-
 notify-send -i $icone "Video Downloader" "Transferencia de <b>$titulo</b> finalizada."
 canberra-gtk-play -i $som
