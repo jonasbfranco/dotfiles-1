@@ -38,7 +38,7 @@ fi
 arquivos=$(ls ${titulo}* | egrep -vi ".mp4|.avi|.mkv")
 for i in "${arquivos[@]}"
 do
-    mod=$(stat -c "%Y" $i)
+    mod=$(stat -c "%Y" "$i")
     if [[ $mod > $ts ]]; then
         rm -f "$i"
     fi
