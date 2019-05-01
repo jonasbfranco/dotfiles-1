@@ -25,7 +25,7 @@ if [[ ! ${url} =~ $padrao ]]; then
     exit
 else
 	titulo=$(curl "$url" -so - | grep -iPo '(?<=<title>)(.*)(?=</title>)')
-	titulo=$(echo $titulo | iconv -f utf8 -t ascii//TRANSLIT)
+	titulo=$(echo "$titulo" | iconv -f utf8 -t ascii//TRANSLIT)
 	#titulo=$(echo "$titulo" | tr -cd '[:alnum:]._-')
 	titulo=$(echo "$titulo" | sed 's/[^[:alnum:]]\+/ /g')
 fi
@@ -38,7 +38,7 @@ else
     youtube-dl $opts -o "$titulo"'.%(ext)s' "${url}"
 fi
 
-find . -type f -name "${titulo}*" -not -name '*mp4' -not -name '*avi' # | xargs rm
+find . -type f -name "${titulo}*" -not -name '*mp4' -not -name '*avi' | xargs rm
 
 notify-send -i $icone "Video Downloader" "Transferencia de <b>$titulo</b> finalizada."
 canberra-gtk-play -i $som
