@@ -5,7 +5,7 @@
 # Feito por Lucas Saliés Brum a.k.a. sistematico, <lucas@archlinux.com.br>
 #
 # Criado em: 30/04/2019 13:55:09
-# Última alteração: 30/04/2019 14:05:56
+# Última alteração: 01/05/2019 12:20:03
 
 aria=1
 old="$(pwd)"
@@ -40,9 +40,5 @@ fi
 
 find . -type f -name "${titulo}*" -not -name '*mp4' -not -name '*avi' # | xargs rm
 
-#rm *.aria2 *.ytdl *.part 2> /dev/null
-
-#notify-send -i $icone "Video Downloader" "Transferencia finalizada."
-#canberra-gtk-play -i $som
-
-#cd $old
+notify-send -i $icone "Video Downloader" "Transferencia de <b>$titulo</b> finalizada."
+canberra-gtk-play -i $som
