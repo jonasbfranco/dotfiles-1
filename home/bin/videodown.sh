@@ -23,19 +23,24 @@ padrao='(https?|ftp|file)://[-A-Za-z0-9\+&@#/%?=~_|!:,.;]*[-A-Za-z0-9\+&@#/%=~_|
 if [[ ! ${url} =~ $padrao ]]; then 
 	echo "Link inválido."
     exit
-fi
-
-cd $dir
-
-if [ $aria == 1 ]; then
-    youtube-dl $opts -o '%(title)s.%(ext)s' --external-downloader aria2c --external-downloader-args '-c -j 1 -x 1 -s 3 -k 1M' "${url}"
 else
-    youtube-dl $opts -o '%(title)s.%(ext)s' "${url}"
+	titulo=$(curl "$url" -so - | grep -iPo '(?<=<title>)(.*)(?=</title>)')
+	titulo=$(echo "$titulo" | tr -cd '[:alnum:]._-')
 fi
+
+echo $titulo
+
+#cd $dir
+
+#if [ $aria == 1 ]; then
+#    youtube-dl $opts -o '%(title)s.%(ext)s' --external-downloader aria2c --external-downloader-args '-c -j 1 -x 1 -s 3 -k 1M' "${url}"
+#else
+#    youtube-dl $opts -o '%(title)s.%(ext)s' "${url}"
+#fi
 
 #rm *.aria2 *.ytdl *.part 2> /dev/null
 
-notify-send -i $icone "Video Downloader" "Transferencia finalizada."
-canberra-gtk-play -i $som
+#notify-send -i $icone "Video Downloader" "Transferencia finalizada."
+#canberra-gtk-play -i $som
 
-cd $old
+#cd $old
