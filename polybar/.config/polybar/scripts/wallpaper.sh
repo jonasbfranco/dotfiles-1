@@ -12,7 +12,7 @@
 dir="${XDG_PICTURES_DIR:-${HOME}/img/wallpapers/linux}"
 unsplash_dir="${XDG_PICTURES_DIR:-${HOME}/img}/unsplash"
 default="$dir/wallpapers/default.jpg"
-ultima="/home/lucas/img/porn/ts/Rebecca Ferraz/5693/123632_10.jpg"
+ultima="/home/lucas/img/unsplash/unsplash-5141.jpg"
 modo="--bg-fill"
 indice=0
 i=0
