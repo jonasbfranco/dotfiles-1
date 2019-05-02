@@ -41,14 +41,17 @@ if [ "$?" -ne "0" ]; then
     echo "Título: $titulo" >> erro.log
     echo "URL:    $url" >> erro.log
     echo "Código: $erro" >> erro.log
+    exit
 fi
 
-arquivos="$(ls ${titulo}* | egrep -vi '.mp4|.avi|.mkv|.log')"
+arquivos="$(ls ${titulo}* | egrep -vi '.mp4|.avi|.mkv|.log') 2> /dev/null"
 for i in "${arquivos[@]}"
 do
-    mod=$(stat -c "%Y" "$i")
-    if [[ $mod > $ts ]]; then
-        rm -f "$i"
+    if [ -f "$i" ]; then
+        mod=$(stat -c "%Y" "$i")
+        if [[ $mod > $ts ]]; then
+            rm -f "$i"
+        fi
     fi
 done
 
