@@ -13,8 +13,7 @@ dir="${HOME}/desk"
 url="$(xclip -o)"
 icone="${HOME}/.local/share/icons/elementary/video-display.png"
 som='complete'
-#opts='-q --restrict-filenames'
-opts='-q'
+#opts='-q'
 
 [ ! -f $dir ] && mkdir -p $dir
 [ $1 ] && url="$1"
