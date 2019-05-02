@@ -35,15 +35,15 @@ else
     youtube-dl $opts -o "${titulo}.%(ext)s" "${url}" && status=$?
 fi
 
-[ "$log" -eq "1" ] && log=""
-[ "$log" -eq "2" ] && log=">> erro.log"
+[ "$log" -eq "1" ] && logs=""
+[ "$log" -eq "2" ] && logs=">> erro.log"
 
 if [ "$status" -ne "0" ] && [ $log -ne 0 ]; then
-    echo "------------------------------------" $log
-    echo "Erro no download" $log
-    echo "Título: $titulo" $log
-    echo "URL:    $url" >> $log
-    echo "Código: $status" >> $log
+    echo "------------------------------------" $logs
+    echo "Erro no download" $logs
+    echo "Título: $titulo" $logs
+    echo "URL:    $url" >> $logs
+    echo "Código: $status" >> $logs
     #exit
 fi
 
