@@ -35,7 +35,7 @@ else
     youtube-dl $opts -o "$titulo"'.%(ext)s' "${url}"
 fi
 
-arquivos=$(ls ${titulo}* | egrep -vi ".mp4|.avi|.mkv")
+arquivos=$(ls "${titulo}*" | egrep -vi ".mp4|.avi|.mkv")
 for i in "${arquivos[@]}"
 do
     mod=$(stat -c "%Y" "$i")
