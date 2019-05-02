@@ -7,6 +7,7 @@
 # Criado em: 30/04/2019 13:55:09
 # Última alteração: 01/05/2019 14:32:25
 
+log=1 # 0 = Sem log, 1 = Log na tela, 2 = Log no arquivo erro.log
 aria=1
 ts=$(date +"%s")
 dir="${HOME}/desk"
@@ -34,14 +35,17 @@ else
     youtube-dl $opts -o "${titulo}.%(ext)s" "${url}"
 fi
 
-if [ "$?" -ne "0" ]; then
+[ $log == 1 ] && log=""
+[ $log == 2 ] && log=">> erro.log"
+
+if [ "$?" -ne "0" ] && [ $log -ne 0 ]; then
     erro="$?"
     echo "------------------------------------" >> erro.log
     echo "Erro no download" >> erro.log
     echo "Título: $titulo" >> erro.log
     echo "URL:    $url" >> erro.log
     echo "Código: $erro" >> erro.log
-    exit
+    #exit
 fi
 
 arquivos=$(ls "${titulo}"* | egrep -vi '.mp4|.avi|.mkv|.log')
