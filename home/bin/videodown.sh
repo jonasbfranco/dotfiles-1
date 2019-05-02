@@ -42,7 +42,7 @@ if [ "$?" -ne "0" ]; then
     echo "Código: $?" >> erro.log
 fi
 
-arquivos=$(ls "${titulo}*" | egrep -vi ".mp4|.avi|.mkv|.log")
+arquivos="$(ls ${titulo}* | egrep -vi '.mp4|.avi|.mkv|.log')"
 for i in "${arquivos[@]}"
 do
     mod=$(stat -c "%Y" "$i")
