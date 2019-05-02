@@ -30,21 +30,20 @@ fi
 cd $dir
 
 if [ $aria == 1 ]; then
-    youtube-dl $opts -o "${titulo}.%(ext)s" --external-downloader aria2c --external-downloader-args '-m 10 -c -j 1 -x 3 -s 3 -k 2M' "${url}"
+    youtube-dl $opts -o "${titulo}.%(ext)s" --external-downloader aria2c --external-downloader-args '-m 10 -c -j 1 -x 3 -s 3 -k 2M' "${url}" && status=$?
 else
-    youtube-dl $opts -o "${titulo}.%(ext)s" "${url}"
+    youtube-dl $opts -o "${titulo}.%(ext)s" "${url}" && status=$?
 fi
 
 [ $log == 1 ] && log=""
 [ $log == 2 ] && log=">> erro.log"
 
-if [ "$?" -ne "0" ] && [ $log -ne 0 ]; then
-    erro="$?"
-    echo "------------------------------------" >> erro.log
-    echo "Erro no download" >> erro.log
-    echo "Título: $titulo" >> erro.log
-    echo "URL:    $url" >> erro.log
-    echo "Código: $erro" >> erro.log
+if [ "$status" -ne "0" ] && [ $log -ne 0 ]; then
+    echo "------------------------------------" $log
+    echo "Erro no download" $log
+    echo "Título: $titulo" $log
+    echo "URL:    $url" >> $log
+    echo "Código: $status" >> $log
     #exit
 fi
 
