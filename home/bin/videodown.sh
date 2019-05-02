@@ -19,8 +19,8 @@ som='complete'
 [ $1 ] && url="$1"
 
 padrao='(https?|ftp|file)://[-A-Za-z0-9\+&@#/%?=~_|!:,.;]*[-A-Za-z0-9\+&@#/%=~_|]'
-if [[ ! ${url} =~ $padrao ]]; then 
-	notify-send -i $icone "Video Downloader" "Link inválido!"
+if [[ ! ${url} =~ $padrao ]]; then
+	notify-send -i $icone "Video Downloader" "O link $url é inválido!"
     exit
 else
 	titulo=$(curl "$url" -so - | grep -iPo '(?<=<title>)(.*)(?=</title>)' | iconv -f utf8 -t ascii//TRANSLIT | sed 's/[^[:alnum:]]\+/ /g')
