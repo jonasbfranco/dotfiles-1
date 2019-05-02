@@ -29,9 +29,9 @@ fi
 cd $dir
 
 if [ $aria == 1 ]; then
-    youtube-dl $opts -o "$titulo"'.%(ext)s' --external-downloader aria2c --external-downloader-args '-m 10 -c -j 1 -x 1 -s 3 -k 2M' "${url}"
+    youtube-dl $opts -o "${titulo}.%(ext)s" --external-downloader aria2c --external-downloader-args '-m 10 -c -j 1 -x 1 -s 3 -k 2M' "${url}"
 else
-    youtube-dl $opts -o "$titulo"'.%(ext)s' "${url}"
+    youtube-dl $opts -o "${titulo}.%(ext)s" "${url}"
 fi
 
 arquivos=$(ls "${titulo}*" | egrep -vi ".mp4|.avi|.mkv")
