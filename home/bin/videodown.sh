@@ -44,7 +44,6 @@ if [ "$status" -ne "0" ] && [ $log -ne 0 ]; then
     echo "Título: $titulo" $logs
     echo "URL:    $url" >> $logs
     echo "Código: $status" >> $logs
-    #exit
 fi
 
 arquivos=$(ls "${titulo}"* | egrep -vi '.mp4|.avi|.mkv|.log')
