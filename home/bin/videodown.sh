@@ -35,11 +35,12 @@ else
 fi
 
 if [ "$?" -ne "0" ]; then
+    erro="$?"
     echo "------------------------------------" >> erro.log
     echo "Erro no download" >> erro.log
     echo "Título: $titulo" >> erro.log
     echo "URL:    $url" >> erro.log
-    echo "Código: $?" >> erro.log
+    echo "Código: $erro" >> erro.log
 fi
 
 arquivos="$(ls ${titulo}* | egrep -vi '.mp4|.avi|.mkv|.log')"
