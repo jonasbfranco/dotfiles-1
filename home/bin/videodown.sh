@@ -35,8 +35,8 @@ else
     youtube-dl $opts -o "${titulo}.%(ext)s" "${url}" && status=$?
 fi
 
-[ $log == 1 ] && log=""
-[ $log == 2 ] && log=">> erro.log"
+[ $log -eq 1 ] && log=""
+[ $log -eq 2 ] && log=">> erro.log"
 
 if [ "$status" -ne "0" ] && [ $log -ne 0 ]; then
     echo "------------------------------------" $log
