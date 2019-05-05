@@ -15,6 +15,7 @@ url="$(xclip -o)"
 icone="${HOME}/.local/share/icons/elementary/video-display.png"
 som='complete'
 #opts='-q'
+ariaopts='-m 10 -c -j 1 -x 3 -s 3 -k 2M'
 
 [ ! -f $dir ] && mkdir -p $dir
 [ $1 ] && url="$1"
@@ -30,7 +31,7 @@ fi
 cd $dir
 
 if [ $aria == 1 ]; then
-    youtube-dl $opts -o "${titulo}.%(ext)s" --external-downloader aria2c --external-downloader-args '-m 10 -c -j 1 -x 3 -s 3 -k 2M' "${url}" && status=$?
+    youtube-dl $opts -o "${titulo}.%(ext)s" --external-downloader aria2c --external-downloader-args $ariaopts "${url}" && status=$?
 else
     youtube-dl $opts -o "${titulo}.%(ext)s" "${url}" && status=$?
 fi
