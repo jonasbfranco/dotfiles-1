@@ -21,8 +21,11 @@ icone="${HOME}/.local/share/icons/elementary/video-display.png"
 som='complete'
 #opts='-q'
 ariaopts="-m $retries -c -j $md -x $mc_server -s $mc -k $piece"
+dir="$(pwd)"
+tmp="/tmp/videodown"
 
-[ ! -f $dir ] && mkdir -p $dir
+[ ! -d $tmp ] && mkdir -p $tmp
+cd $tmp
 [ $1 ] && url="$1"
 
 padrao='(https?|ftp|file)://[-A-Za-z0-9\+&@#/%?=~_|!:,.;]*[-A-Za-z0-9\+&@#/%=~_|]'
@@ -32,8 +35,6 @@ if [[ ! ${url} =~ $padrao ]]; then
 else
 	titulo=$(curl "$url" -so - | grep -iPo '(?<=<title>)(.*)(?=</title>)' | iconv -f utf8 -t ascii//TRANSLIT | sed 's/[^[:alnum:]]\+/ /g')
 fi
-
-cd $dir
 
 if [ $aria == 1 ]; then
     # -j, --max-concurrent-downloads
@@ -69,6 +70,8 @@ do
         fi
     fi
 done
+
+mv "${titulo}"* "$dir"
 
 notify-send -i $icone "Video Downloader" "Transferencia de <b>$titulo</b> finalizada."
 canberra-gtk-play -i $som
