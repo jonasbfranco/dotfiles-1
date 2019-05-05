@@ -65,7 +65,6 @@ if [ "$status" -eq "0" ]; then
     echo "Sucesso no download" $logs
     echo "Título: $titulo" $logs
     echo "URL:    $url" >> $logs
-    echo "Código: $status" >> $logs
 fi
 
 arquivos=$(ls "${titulo}"* | egrep -vi '.mp4|.avi|.mkv|.log')
