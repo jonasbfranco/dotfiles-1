@@ -74,7 +74,7 @@ if [[ $log -ne 0 ]]; then
     echo "Processos:    $processos" >> "$logs"    
 fi
 
-notify-send -i $icone "Video Downloader" "Transferencia de <b>$titulo</b> iniciada\nInstâncias: $processos."
+notify-send -i $icone "Video Downloader" "Transferencia de: \n\n<b>$titulo</b> iniciada\n\nInstâncias: $processos"
 
 if [ $aria == 1 ]; then
     # -j, --max-concurrent-downloads
@@ -122,15 +122,15 @@ if [[ $status -eq 0 ]] && [[ $log != 0 ]]; then
 
     if [ -f "${titulo}"* ]; then
         mv "${titulo}"* "$dir"
-        notify-send -i $icone "Video Downloader" "Transferencia de <b>$titulo</b> finalizada."
+        notify-send -i $icone "Video Downloader" "Transferencia de:\n\n<b>$titulo</b>\n\nfinalizada."
         canberra-gtk-play -i $som
         cd "$dir" && rm -rf "$tmp"
     else
-        notify-send -i $icone "Video Downloader" "Erro na transferencia de <b>$titulo</b>."
+        notify-send -i $icone "Video Downloader" "Erro na transferencia de:\n\n<b>$titulo</b>."
         canberra-gtk-play -i $erro
     fi        
 else
-    notify-send -i $icone "Video Downloader" "Erro na transferencia de <b>$titulo</b>."
+    notify-send -i $icone "Video Downloader" "Erro na transferencia de:\n\n<b>$titulo</b>."
     canberra-gtk-play -i $erro
 fi
 
