@@ -45,14 +45,14 @@ else
 fi
 
 [ "$log" -eq "1" ] && logs=""
-[ "$log" -eq "2" ] && logs=">> ${dir}/status.log"
+[ "$log" -eq "2" ] && logs="${dir}/status.log"
 
 if [ "$log" -ne "0" ]; then
-    echo "------------------------------------" "$logs"
-    echo "Início do download" "$logs"
-    echo "Título: $titulo" "$logs"
-    echo "URL:    $url" "$logs"
-    echo "Path:   $dir" "$logs"
+    echo "------------------------------------" >> "$logs"
+    echo "Início do download" >> "$logs"
+    echo "Título: $titulo" >> "$logs"
+    echo "URL:    $url" >>"$logs"
+    echo "Path:   $dir" >> "$logs"
 fi
 
 if [ $aria == 1 ]; then
@@ -68,23 +68,21 @@ else
     youtube-dl $opts -o "${titulo}.%(ext)s" "${url}" && status=$?
 fi
 
-if [ "$status" -ne "0" ] && [ "$log" != "0" ]; then
-    echo "------------------------------------" "$logs"
-    echo "Erro no download" "$logs"
-    echo "Título: $titulo" "$logs"
-    echo "URL:    $url" "$logs"
-    echo "Path:   $dir" "$logs"
-    echo "Código: $status" "$logs"
+if [[ $status -ne 0 ]] && [[ "$log" != "0" ]]; then
+    echo "------------------------------------" >> "$logs"
+    echo "Erro no download" >> "$logs"
+    echo "Título: $titulo" >> "$logs"
+    echo "URL:    $url" >> "$logs"
+    echo "Path:   $dir" >> "$logs"
+    echo "Código: $status" >> "$logs"
 fi
 
-if [ "$status" -eq "0" ]; then
-    echo "------------------------------------" "$logs"
-    echo "Sucesso no download" "$logs"
-    echo "Título: $titulo" "$logs"
-    echo "URL:    $url" "$logs"
-    echo "Path:   $dir" "$logs"
-
-
+if [[ $status -eq 0 ]] && [[ "$log" != "0" ]]; then
+    echo "------------------------------------" >> "$logs"
+    echo "Sucesso no download" >> "$logs"
+    echo "Título: $titulo" >> "$logs"
+    echo "URL:    $url" >> "$logs"
+    echo "Path:   $dir" >> "$logs"
 
     arquivos=$(ls "${titulo}"* | egrep -vi '.mp4|.avi|.mkv|.log')
     for i in "${arquivos[@]}"
