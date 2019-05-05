@@ -84,7 +84,7 @@ else
     youtube-dl $opts -o "${titulo}.%(ext)s" "${url}" && status=$?
 fi
 
-if [[ $status -ne 0 ]] && [[ "$log" != "0" ]]; then
+if [[ $status -ne 0 ]] && [[ $log -ne 0 ]]; then
     echo "---------------------------------------------------------------" >> "$logs"
     echo "Status: ERRO" >> "$logs"
     echo "Título: $titulo" >> "$logs"
