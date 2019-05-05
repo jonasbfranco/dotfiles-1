@@ -113,10 +113,14 @@ if [[ $status -eq 0 ]] && [[ "$log" != "0" ]]; then
         fi
     done
 
-    mv "${titulo}"* "$dir"
-    
-    notify-send -i $icone "Video Downloader" "Transferencia de <b>$titulo</b> finalizada."
-    canberra-gtk-play -i $som
+    if [ -f "${titulo}"* ]; then
+        mv "${titulo}"* "$dir"
+        notify-send -i $icone "Video Downloader" "Transferencia de <b>$titulo</b> finalizada."
+        canberra-gtk-play -i $som
+    else
+        notify-send -i $icone "Video Downloader" "Erro na transferencia de <b>$titulo</b>."
+        canberra-gtk-play -i $erro
+    fi        
 else
     notify-send -i $icone "Video Downloader" "Erro na transferencia de <b>$titulo</b>."
     canberra-gtk-play -i $erro
