@@ -7,7 +7,7 @@
 # Criado em: 30/04/2019 13:55:09
 # Última alteração: 01/05/2019 14:32:25
 
-log=1 # 0 = Sem log, 1 = Log na tela, 2 = Log no arquivo erro.log
+log=2 # 0 = Sem log, 1 = Log na tela, 2 = Log no arquivo erro.log
 aria=1
 retries=10 # 0 = inf
 md=1 # Max Downloads
@@ -60,9 +60,9 @@ if [ "$status" -ne "0" ] && [ "$log" -ne "0" ]; then
     echo "Código: $status" >> $logs
 fi
 
-if [ "$log" -eq "2" ]; then
+if [ "$status" -eq "0" ]; then
     echo "------------------------------------" $logs
-    echo "Erro no download" $logs
+    echo "Sucesso no download" $logs
     echo "Título: $titulo" $logs
     echo "URL:    $url" >> $logs
     echo "Código: $status" >> $logs
