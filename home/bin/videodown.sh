@@ -24,6 +24,7 @@ erro='complete'
 ariaopts="-m $retries -c -j $md -x $mc_server -s $mc -k $piece"
 dir="$(pwd)"
 tmp="/tmp/videodown/$$"
+processos=$(ps aux | grep $(basename $0) | egrep -v grep | wc -l)
 
 if [ "$(pwd)" == "${HOME}" ]; then
     if [ $XDG_DESKTOP_DIR ]; then
@@ -39,12 +40,13 @@ else
     notify-send -i $icone "Video Downloader" "Erro na transferencia de <b>$titulo</b>\nA pasta <b>$tmp</b> já existe."
     canberra-gtk-play -i $erro
     echo "---------------------------------------------------------------" >> "$logs"
-    echo "Status: ERRO" >> "$logs"
-    echo "Título: $titulo" >> "$logs"
-    echo "URL:    $url" >> "$logs"
-    echo "Path:   $dir" >> "$logs"
-    echo "Temp:   $tmp" >> "$logs"
-    echo "Código: $status" >> "$logs"
+    echo "Status:       ERRO" >> "$logs"
+    echo "Título:       $titulo" >> "$logs"
+    echo "URL:          $url" >> "$logs"
+    echo "Path:         $dir" >> "$logs"
+    echo "Temp:         $tmp" >> "$logs"
+    echo "Processos:    $processos" >> "$logs"
+    echo "Código:       $status" >> "$logs"
     exit
 fi
 
@@ -64,11 +66,12 @@ fi
 
 if [[ $log -ne 0 ]]; then
     echo "---------------------------------------------------------------" >> "$logs"
-    echo "Status: INICIO" >> "$logs"
-    echo "Título: $titulo" >> "$logs"
-    echo "URL:    $url" >>"$logs"
-    echo "Path:   $dir" >> "$logs"
-    echo "Temp:   $tmp" >> "$logs"
+    echo "Status:       INICIO" >> "$logs"
+    echo "Título:       $titulo" >> "$logs"
+    echo "URL:          $url" >>"$logs"
+    echo "Path:         $dir" >> "$logs"
+    echo "Temp:         $tmp" >> "$logs"
+    echo "Processos:    $processos" >> "$logs"    
 fi
 
 if [ $aria == 1 ]; then
@@ -86,21 +89,23 @@ fi
 
 if [[ $status -ne 0 ]] && [[ $log -ne 0 ]]; then
     echo "---------------------------------------------------------------" >> "$logs"
-    echo "Status: ERRO" >> "$logs"
-    echo "Título: $titulo" >> "$logs"
-    echo "URL:    $url" >> "$logs"
-    echo "Path:   $dir" >> "$logs"
-    echo "Temp:   $tmp" >> "$logs"
-    echo "Código: $status" >> "$logs"
+    echo "Status:       ERRO" >> "$logs"
+    echo "Título:       $titulo" >> "$logs"
+    echo "URL:          $url" >> "$logs"
+    echo "Path:         $dir" >> "$logs"
+    echo "Temp:         $tmp" >> "$logs"
+    echo "Processos:    $processos" >> "$logs"    
+    echo "Código:       $status" >> "$logs"
 fi
 
 if [[ $status -eq 0 ]] && [[ $log != 0 ]]; then
     echo "---------------------------------------------------------------" >> "$logs"
-    echo "Status: SUCESSO" >> "$logs"
-    echo "Título: $titulo" >> "$logs"
-    echo "URL:    $url" >> "$logs"
-    echo "Path:   $dir" >> "$logs"
-    echo "Temp:   $tmp" >> "$logs"
+    echo "Status:       SUCESSO" >> "$logs"
+    echo "Título:       $titulo" >> "$logs"
+    echo "URL:          $url" >> "$logs"
+    echo "Path:         $dir" >> "$logs"
+    echo "Temp:         $tmp" >> "$logs"
+    echo "Processos:    $processos" >> "$logs"
 
     arquivos=$(ls "${titulo}"* | egrep -vi '.mp4|.avi|.mkv|.log')
     for i in "${arquivos[@]}"
