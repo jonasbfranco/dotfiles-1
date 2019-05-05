@@ -36,6 +36,17 @@ else
 	titulo=$(curl "$url" -so - | grep -iPo '(?<=<title>)(.*)(?=</title>)' | iconv -f utf8 -t ascii//TRANSLIT | sed 's/[^[:alnum:]]\+/ /g')
 fi
 
+[ "$log" -eq "1" ] && logs=""
+[ "$log" -eq "2" ] && logs=">> ${dir}/status.log"
+
+if [ "$log" -ne "0" ]; then
+    echo "------------------------------------" $logs
+    echo "Início do download" $logs
+    echo "Título: $titulo" $logs
+    echo "URL:    $url" >> $logs
+    echo "Path:   $dir" >> $logs
+fi
+
 if [ $aria == 1 ]; then
     # -j, --max-concurrent-downloads
     # -x, --max-connection-per-server
@@ -49,14 +60,12 @@ else
     youtube-dl $opts -o "${titulo}.%(ext)s" "${url}" && status=$?
 fi
 
-[ "$log" -eq "1" ] && logs=""
-[ "$log" -eq "2" ] && logs=">> ${dir}/status.log"
-
 if [ "$status" -ne "0" ] && [ "$log" -ne "0" ]; then
     echo "------------------------------------" $logs
     echo "Erro no download" $logs
     echo "Título: $titulo" $logs
     echo "URL:    $url" >> $logs
+    echo "Path:   $dir" >> $logs
     echo "Código: $status" >> $logs
 fi
 
@@ -65,6 +74,7 @@ if [ "$status" -eq "0" ]; then
     echo "Sucesso no download" $logs
     echo "Título: $titulo" $logs
     echo "URL:    $url" >> $logs
+    echo "Path:   $dir" >> $logs
 fi
 
 arquivos=$(ls "${titulo}"* | egrep -vi '.mp4|.avi|.mkv|.log')
