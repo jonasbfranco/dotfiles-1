@@ -62,7 +62,7 @@ fi
 [ "$log" -eq "1" ] && logs=""
 [ "$log" -eq "2" ] && logs="${dir}/status.log"
 
-if [ "$log" -ne "0" ]; then
+if [[ $log -ne 0 ]]; then
     echo "---------------------------------------------------------------" >> "$logs"
     echo "Status: INICIO" >> "$logs"
     echo "Título: $titulo" >> "$logs"
