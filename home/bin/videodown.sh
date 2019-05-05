@@ -94,7 +94,7 @@ if [[ $status -ne 0 ]] && [[ $log -ne 0 ]]; then
     echo "Código: $status" >> "$logs"
 fi
 
-if [[ $status -eq 0 ]] && [[ "$log" != "0" ]]; then
+if [[ $status -eq 0 ]] && [[ $log != 0 ]]; then
     echo "---------------------------------------------------------------" >> "$logs"
     echo "Status: SUCESSO" >> "$logs"
     echo "Título: $titulo" >> "$logs"
