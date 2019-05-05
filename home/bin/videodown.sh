@@ -38,8 +38,8 @@ if [ ! -d $tmp ]; then
 else
     notify-send -i $icone "Video Downloader" "Erro na transferencia de <b>$titulo</b>\nA pasta <b>$tmp</b> já existe."
     canberra-gtk-play -i $erro
-    echo "------------------------------------" >> "$logs"
-    echo "Erro no download" >> "$logs"
+    echo "---------------------------------------------------------------" >> "$logs"
+    echo "Status: ERRO" >> "$logs"
     echo "Título: $titulo" >> "$logs"
     echo "URL:    $url" >> "$logs"
     echo "Path:   $dir" >> "$logs"
@@ -63,8 +63,8 @@ fi
 [ "$log" -eq "2" ] && logs="${dir}/status.log"
 
 if [ "$log" -ne "0" ]; then
-    echo "------------------------------------" >> "$logs"
-    echo "Início do download" >> "$logs"
+    echo "---------------------------------------------------------------" >> "$logs"
+    echo "Status: INICIO" >> "$logs"
     echo "Título: $titulo" >> "$logs"
     echo "URL:    $url" >>"$logs"
     echo "Path:   $dir" >> "$logs"
@@ -85,8 +85,8 @@ else
 fi
 
 if [[ $status -ne 0 ]] && [[ "$log" != "0" ]]; then
-    echo "------------------------------------" >> "$logs"
-    echo "Erro no download" >> "$logs"
+    echo "---------------------------------------------------------------" >> "$logs"
+    echo "Status: ERRO" >> "$logs"
     echo "Título: $titulo" >> "$logs"
     echo "URL:    $url" >> "$logs"
     echo "Path:   $dir" >> "$logs"
@@ -95,8 +95,8 @@ if [[ $status -ne 0 ]] && [[ "$log" != "0" ]]; then
 fi
 
 if [[ $status -eq 0 ]] && [[ "$log" != "0" ]]; then
-    echo "------------------------------------" >> "$logs"
-    echo "Sucesso no download" >> "$logs"
+    echo "---------------------------------------------------------------" >> "$logs"
+    echo "Status: SUCESSO" >> "$logs"
     echo "Título: $titulo" >> "$logs"
     echo "URL:    $url" >> "$logs"
     echo "Path:   $dir" >> "$logs"
