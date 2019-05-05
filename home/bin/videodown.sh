@@ -74,6 +74,8 @@ if [[ $log -ne 0 ]]; then
     echo "Processos:    $processos" >> "$logs"    
 fi
 
+notify-send -i $icone "Video Downloader" "Transferencia de <b>$titulo</b> iniciada\nInstâncias: $processos."
+
 if [ $aria == 1 ]; then
     # -j, --max-concurrent-downloads
     # -x, --max-connection-per-server
