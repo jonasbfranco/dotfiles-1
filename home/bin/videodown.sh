@@ -125,3 +125,5 @@ else
     notify-send -i $icone "Video Downloader" "Erro na transferencia de <b>$titulo</b>."
     canberra-gtk-play -i $erro
 fi
+
+cd "$dir" && rm -rf "$tmp"
