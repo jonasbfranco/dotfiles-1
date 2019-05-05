@@ -40,11 +40,11 @@ fi
 [ "$log" -eq "2" ] && logs=">> ${dir}/status.log"
 
 if [ "$log" -ne "0" ]; then
-    echo "------------------------------------" $logs
-    echo "Início do download" $logs
-    echo "Título: $titulo" $logs
-    echo "URL:    $url" $logs
-    echo "Path:   $dir" $logs
+    echo "------------------------------------" "$logs"
+    echo "Início do download" "$logs"
+    echo "Título: $titulo" "$logs"
+    echo "URL:    $url" "$logs"
+    echo "Path:   $dir" "$logs"
 fi
 
 if [ $aria == 1 ]; then
@@ -61,20 +61,20 @@ else
 fi
 
 if [ "$status" -ne "0" ] && [ "$log" != "0" ]; then
-    echo "------------------------------------" $logs
-    echo "Erro no download" $logs
-    echo "Título: $titulo" $logs
-    echo "URL:    $url" $logs
-    echo "Path:   $dir" $logs
-    echo "Código: $status" $logs
+    echo "------------------------------------" "$logs"
+    echo "Erro no download" "$logs"
+    echo "Título: $titulo" "$logs"
+    echo "URL:    $url" "$logs"
+    echo "Path:   $dir" "$logs"
+    echo "Código: $status" "$logs"
 fi
 
 if [ "$status" -eq "0" ]; then
-    echo "------------------------------------" $logs
-    echo "Sucesso no download" $logs
-    echo "Título: $titulo" $logs
-    echo "URL:    $url" $logs
-    echo "Path:   $dir" $logs
+    echo "------------------------------------" "$logs"
+    echo "Sucesso no download" "$logs"
+    echo "Título: $titulo" "$logs"
+    echo "URL:    $url" "$logs"
+    echo "Path:   $dir" "$logs"
 
 
 
