@@ -38,6 +38,13 @@ if [ ! -d $tmp ]; then
 else
     notify-send -i $icone "Video Downloader" "Erro na transferencia de <b>$titulo</b>\nA pasta <b>$tmp</b> já existe."
     canberra-gtk-play -i $erro
+    echo "------------------------------------" >> "$logs"
+    echo "Erro no download" >> "$logs"
+    echo "Título: $titulo" >> "$logs"
+    echo "URL:    $url" >> "$logs"
+    echo "Path:   $dir" >> "$logs"
+    echo "Temp:   $tmp" >> "$logs"
+    echo "Código: $status" >> "$logs"
     exit
 fi
 
@@ -61,6 +68,7 @@ if [ "$log" -ne "0" ]; then
     echo "Título: $titulo" >> "$logs"
     echo "URL:    $url" >>"$logs"
     echo "Path:   $dir" >> "$logs"
+    echo "Temp:   $tmp" >> "$logs"
 fi
 
 if [ $aria == 1 ]; then
@@ -82,6 +90,7 @@ if [[ $status -ne 0 ]] && [[ "$log" != "0" ]]; then
     echo "Título: $titulo" >> "$logs"
     echo "URL:    $url" >> "$logs"
     echo "Path:   $dir" >> "$logs"
+    echo "Temp:   $tmp" >> "$logs"
     echo "Código: $status" >> "$logs"
 fi
 
@@ -91,6 +100,7 @@ if [[ $status -eq 0 ]] && [[ "$log" != "0" ]]; then
     echo "Título: $titulo" >> "$logs"
     echo "URL:    $url" >> "$logs"
     echo "Path:   $dir" >> "$logs"
+    echo "Temp:   $tmp" >> "$logs"
 
     arquivos=$(ls "${titulo}"* | egrep -vi '.mp4|.avi|.mkv|.log')
     for i in "${arquivos[@]}"
