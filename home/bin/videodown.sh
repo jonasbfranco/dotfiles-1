@@ -50,9 +50,17 @@ else
 fi
 
 [ "$log" -eq "1" ] && logs=""
-[ "$log" -eq "2" ] && logs=">> erro.log"
+[ "$log" -eq "2" ] && logs=">> ${dir}/status.log"
 
-if [ "$status" -ne "0" ] && [ $log -ne 0 ]; then
+if [ "$status" -ne "0" ] && [ "$log" -ne "0" ]; then
+    echo "------------------------------------" $logs
+    echo "Erro no download" $logs
+    echo "Título: $titulo" $logs
+    echo "URL:    $url" >> $logs
+    echo "Código: $status" >> $logs
+fi
+
+if [ "$log" -eq "2" ]; then
     echo "------------------------------------" $logs
     echo "Erro no download" $logs
     echo "Título: $titulo" $logs
@@ -72,6 +80,8 @@ do
 done
 
 mv "${titulo}"* "$dir"
+
+
 
 notify-send -i $icone "Video Downloader" "Transferencia de <b>$titulo</b> finalizada."
 canberra-gtk-play -i $som
