@@ -25,6 +25,8 @@ ariaopts="-m $retries -c -j $md -x $mc_server -s $mc -k $piece"
 dir="$(pwd)"
 tmp="/tmp/videodown/$$"
 
+notify-send -i $icone "Video Downloader" "$(basename $tmp)"
+
 if [ "$(pwd)" == "${HOME}" ]; then
     if [ $XDG_DESKTOP_DIR ]; then
         dir="${XDG_DESKTOP_DIR}"
