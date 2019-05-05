@@ -19,10 +19,11 @@ dir="${HOME}/desk"
 url="$(xclip -o)"
 icone="${HOME}/.local/share/icons/elementary/video-display.png"
 som='complete'
+erro='complete'
 #opts='-q'
 ariaopts="-m $retries -c -j $md -x $mc_server -s $mc -k $piece"
 dir="$(pwd)"
-tmp="/tmp/videodown"
+tmp="/tmp/videodown/$$"
 
 if [ "$(pwd)" == "${HOME}" ]; then
     if [ $XDG_DESKTOP_DIR ]; then
@@ -32,7 +33,14 @@ if [ "$(pwd)" == "${HOME}" ]; then
     fi
 fi
 
-[ ! -d $tmp ] && mkdir -p $tmp
+if [ ! -d $tmp ]; then
+    mkdir -p $tmp
+else
+    notify-send -i $icone "Video Downloader" "Erro na transferencia de <b>$titulo</b>\nA pasta <b>$tmp</b> já existe."
+    canberra-gtk-play -i $erro
+    exit
+fi
+
 cd $tmp
 [ $1 ] && url="$1"
 
@@ -101,5 +109,5 @@ if [[ $status -eq 0 ]] && [[ "$log" != "0" ]]; then
     canberra-gtk-play -i $som
 else
     notify-send -i $icone "Video Downloader" "Erro na transferencia de <b>$titulo</b>."
-    canberra-gtk-play -i $som
+    canberra-gtk-play -i $erro
 fi
