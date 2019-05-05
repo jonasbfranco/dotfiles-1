@@ -128,4 +128,4 @@ else
     canberra-gtk-play -i $erro
 fi
 
-cd "$dir" && rm -rf "$(dirname $tmp)"
+cd "$dir" && rm -rf "$tmp"
