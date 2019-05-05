@@ -30,7 +30,7 @@ cd $tmp
 
 padrao='(https?|ftp|file)://[-A-Za-z0-9\+&@#/%?=~_|!:,.;]*[-A-Za-z0-9\+&@#/%=~_|]'
 if [[ ! ${url} =~ $padrao ]]; then
-	notify-send -i $icone "Video Downloader" "O link $url é inválido!"
+	notify-send -i $icone "Video Downloader" "O link é inválido!"
     exit
 else
 	titulo=$(curl "$url" -so - | grep -iPo '(?<=<title>)(.*)(?=</title>)' | iconv -f utf8 -t ascii//TRANSLIT | sed 's/[^[:alnum:]]\+/ /g')
@@ -75,22 +75,25 @@ if [ "$status" -eq "0" ]; then
     echo "Título: $titulo" $logs
     echo "URL:    $url" $logs
     echo "Path:   $dir" $logs
-fi
 
-arquivos=$(ls "${titulo}"* | egrep -vi '.mp4|.avi|.mkv|.log')
-for i in "${arquivos[@]}"
-do
-    if [ -f "$i" ]; then
-        mod=$(stat -c "%Y" "$i")
-        if [[ $mod > $ts ]]; then
-            rm -f "$i"
+
+
+    arquivos=$(ls "${titulo}"* | egrep -vi '.mp4|.avi|.mkv|.log')
+    for i in "${arquivos[@]}"
+    do
+        if [ -f "$i" ]; then
+            mod=$(stat -c "%Y" "$i")
+            if [[ $mod > $ts ]]; then
+                rm -f "$i"
+            fi
         fi
-    fi
-done
+    done
 
-mv "${titulo}"* "$dir"
-
-
-
-notify-send -i $icone "Video Downloader" "Transferencia de <b>$titulo</b> finalizada."
-canberra-gtk-play -i $som
+    mv "${titulo}"* "$dir"
+    
+    notify-send -i $icone "Video Downloader" "Transferencia de <b>$titulo</b> finalizada."
+    canberra-gtk-play -i $som
+else
+    notify-send -i $icone "Video Downloader" "Erro na transferencia de <b>$titulo</b>."
+    canberra-gtk-play -i $som
+fi
