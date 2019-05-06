@@ -11,7 +11,7 @@
 # Criado em: 20/12/2017 19:27:31
 # Última Atualização: 06/05/2019 12:51:21
 
-
+nome="GitHub.sh"
 dir="${HOME}/github"
 repos=('magico' 'majestic' 'sistematico.github.io' 'oc-cli' 'cabron-bot' 'pollen' 'agressive' 'spamsentrybot' 'docker-arma3-exile')
 remoto="nginx@hera"
@@ -39,18 +39,18 @@ atualiza() {
 			status=$(git add . -n)
 			if [ ! -z "$status" ]; then
 				c=$(echo $(git add . -n | tr '\r\n' ' '))
-				m="Autocommit por GitHub.sh: alterações: $c"
+				m="Autocommit por ${nome}: alterações: $c"
 				git add .
 				git commit -m "$m"
 				git push
 				if [ "$?" == 0 ]; then
-					detectax "GitHub.sh" "Repo <b>$(basename $1)</b> atualizado."
+					detectax $nome "Repo <b>$(basename $1)</b> atualizado."
 					[ -f /tmp/git-cron.error ] && rm /tmp/git-cron.error
 				else
 					if [ ! -f /tmp/git-cron.error ]; then
 						icone="${HOME}/.local/share/icons/elementary/network-error.png"
 						som="dialog-warning"
-						detectax "GitHub.sh" "Erro ao atualizar <b>$(basename $1)</b>."
+						detectax $nome "Erro ao atualizar <b>$(basename $1)</b>."
 						touch /tmp/git-cron.error
 					fi
 				fi

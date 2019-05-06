@@ -39,7 +39,7 @@ atualiza() {
 			status=$(git add . -n)
 			if [ ! -z "$status" ]; then
 				c=$(echo $(git add . -n | tr '\r\n' ' '))
-				m="Autocommit por GitLab.sh: alterações: $c"
+				m="Autocommit por ${nome}: alterações: $c"
 				git add .
 				git commit -m "$m"
 				git push
