@@ -11,7 +11,7 @@
 # Criado em: 20/12/2017 19:27:31
 # Última Atualização: 06/05/2019 12:50:34
 
-
+nome="GitLab.sh"
 dir="${HOME}/htdocs"
 repos=('php-mvc-sqlite-crud' 'agressive')
 remoto="nginx@hera"
@@ -44,13 +44,13 @@ atualiza() {
 				git commit -m "$m"
 				git push
 				if [ "$?" == 0 ]; then
-					detectax "GitLab.sh" "Repo <b>$(basename $1)</b> atualizado."
+					detectax $nome "Repo <b>$(basename $1)</b> atualizado."
 					[ -f /tmp/git-cron.error ] && rm /tmp/git-cron.error
 				else
 					if [ ! -f /tmp/git-cron.error ]; then
 						icone="${HOME}/.local/share/icons/elementary/network-error.png"
 						som="dialog-warning"
-						detectax "GitLab.sh" "Erro ao atualizar <b>$(basename $1)</b>."
+						detectax $nome "Erro ao atualizar <b>$(basename $1)</b>."
 						touch /tmp/git-cron.error
 					fi
 				fi
