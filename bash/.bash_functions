@@ -3,6 +3,14 @@ dlg () {
   docker exec -it $1 bash
 }
 
+dbl () {
+    docker build -t $1 .
+}
+
+dru () {
+    docker run --name $1 -itd $2
+}
+
 # mpv
 function mm() {
   params=\"$@\"

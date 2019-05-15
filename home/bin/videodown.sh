@@ -98,11 +98,17 @@ if [[ $status -eq 0 ]]; then
         fi
     done
 
+    processos=$((processos-1))
+
     if ls "${titulo}"* 1> /dev/null 2>&1; then
-        mv "${titulo}"* "$dir"
-        notify-send -i $icone "Video Downloader" "Transferencia de:\n\n<b>$titulo</b>\n\nfinalizada.\n\nInstâncias: $processos"
-        canberra-gtk-play -i $som
-        cd $dir && rm -rf $tmp
+            if ls "${dir}/${titulo}"* 1> /dev/null 2>&1; then
+            notify-send -i $icone "Video Downloader" "Já existe um arquivo:\n\n<b>$titulo</b>\n\nEm:\n\n$dir\n\nInstâncias: $processos"
+            canberra-gtk-play -i $som
+        else
+            notify-send -i $icone "Video Downloader" "Sucesso, vídeo salvo:\n\n<b>$titulo</b>\n\nEm:\n\n$dir\n\nInstâncias: $processos"
+            mv "${titulo}"* "$dir"
+            cd $dir && rm -rf $tmp
+        fi
     else
         notify-send -i $icone "Video Downloader" "Erro na transferencia de:\n\n<b>${tmp}/${titulo}*</b>.\n\nInstâncias: $processos"
         canberra-gtk-play -i $erro
