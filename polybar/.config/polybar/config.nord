@@ -262,29 +262,16 @@ label-warn = %temperature-c%
 label-warn-foreground = ${colors.secondary}
 
 ;-------------------------------------------------------------------------
-;                                       A L S A
-;-------------------------------------------------------------------------
-[module/alsa]
-type = internal/alsa
-
-format-volume-prefix = 
-format-volume-prefix-foreground = ${colors.secondary}
-
-format-volume = <label-volume>
-label-volume =  %percentage%%
-;label-volume-foreground = ${root.foreground}
-
-label-muted = mudo
-;label-muted-foreground = #666
-
-;-------------------------------------------------------------------------
 ;					P U L S E
 ;-------------------------------------------------------------------------
 [module/pulse]
 type = internal/pulseaudio
 
+format-prefix = 
+format-prefix-foreground = ${colors.secondary}
+
 format-volume = <label-volume>
-label-volume =  %percentage%%
+label-volume = %percentage%%
 ;label-volume-foreground = ${root.foreground}
 
 label-muted = mudo
