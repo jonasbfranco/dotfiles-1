@@ -198,13 +198,13 @@ mount-0 = /
 ;fixed-values = true
 ;spacing = 2
 
-format-mounted-prefix = 
+format-mounted-prefix = " "
 format = <label>
 
 format-mounted = <label-mounted>
 
 ;label-mounted = %mountpoint% %percentage_used%%
-label-mounted = %percentage_used:1%%
+label-mounted = %percentage_used%%
 label-unmounted = %mountpoint% não montado
 ;label-unmounted-foreground = ${colors.foreground-alt}
 
