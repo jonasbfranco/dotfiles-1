@@ -354,7 +354,8 @@ mode "$mode_gaps_outer" {
 ################ I N I T ###########################################
 ####################################################################
 exec_always --no-startup-id xrdb -merge $HOME/.Xresources
-exec_always --no-startup-id hsetroot -solid '#3B4252'
+#exec_always --no-startup-id hsetroot -solid '#3B4252'
+exec_always --no-startup-id feh --bg-fill /home/lucas/img/wallpapers/linux/arch-formula-1920x1080.png
 exec --no-startup-id compton -b --respect-prop-shadow
 exec --no-startup-id dunst
 exec --no-startup-id parcellite
