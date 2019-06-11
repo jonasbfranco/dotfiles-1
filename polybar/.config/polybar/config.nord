@@ -30,7 +30,7 @@
 ; Frost:        #8FBCBB #88C0D0 #FFFFFF #5E81AC
 ; Aurora:       #BF616A #D08770 #EBCB8B #A3BE8C #B48EAD
 background = #2E3440
-background-alt = #444
+background-alt = #A3BE8C
 foreground = ${xrdb:foreground:#222}
 foreground-alt = #555
 primary = #A3BE8C
@@ -147,6 +147,7 @@ label-mode-padding = 1
 
 label-focused = %name%
 label-focused-foreground = ${colors.primary}
+label-focused-background = ${colors.background-alt}
 label-focused-padding = 1
 
 label-unfocused = %name%
