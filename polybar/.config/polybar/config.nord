@@ -341,74 +341,74 @@ click-right = firefox &
 
 [module/thunderbird]
 type = custom/text
-content = 
+content = "%{F#000000}%{F-}"
 click-left = thunderbird &
 
 [module/thunar]
 type = custom/text
-content = 
+content = "%{F#000000}%{F-}"
 click-left = thunar &
 
 [module/terminal]
 type = custom/text
-content = 
+content = "%{F#000000}%{F-}"
 click-left = $TERMINAL &
 
 [module/telegram]
 type = custom/text
-content = 
+content = "%{F#000000}%{F-}"
 click-left = telegram-desktop &
 
 [module/whatsapp]
 type = custom/text
-content = 
+content = "%{F#000000}%{F-}"
 ;click-left = whatsdesk &
 click-left = whatsdesk > /dev/null 2> /dev/null &
 
 [module/steam]
 type = custom/text
-content = 
+content = "%{F#000000}%{F-}"
 click-left = /usr/bin/steam > /dev/null 2> /dev/null &
 ;click-left = wal_steam -w
 
 [module/deluge]
 type = custom/text
-content = 
+content = "%{F#000000}%{F-}"
 click-left = deluge &
 
 [module/vbox]
 type = custom/text
-content = 
+content = "%{F#000000}%{F-}"
 click-left = ~/.config/rofi/scripts/virtualbox &
 
 [module/docker]
 type = custom/text
-content = 
+content = "%{F#000000}%{F-}"
 click-left = ~/.config/rofi/scripts/docker &
 
 [module/subl]
 type = custom/text
-content = 
+content = "%{F#000000}%{F-}"
 click-left = subl &
 
 [module/pavu]
 type = custom/text
-content = 
+content = "%{F#000000}%{F-}"
 click-left = pavucontrol &
 
 [module/mpcrebuild]
 type = custom/text
-content = 
+content = "%{F#000000}%{F-}"
 click-left = mpc ls | mpc add &
 
 [module/mpcdel]
 type = custom/text
-content = 
+content = "%{F#000000}%{F-}"
 click-left = mpc del 0 &
 
 [module/fechar]
 type = custom/text
-content = 
+content = "%{F#000000}%{F-}"
 content-foreground = ${colors.branco}
 click-middle = ~/.config/polybar/scripts/janela.sh -c &
 
