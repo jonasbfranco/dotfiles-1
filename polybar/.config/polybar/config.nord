@@ -186,6 +186,44 @@ click-right = ~/.config/polybar/scripts/janela.sh -w
 exec = ~/.config/polybar/scripts/janela.sh
 
 ;-------------------------------------------------------------------------
+;					C P U
+;-------------------------------------------------------------------------
+[module/cpu]
+type = internal/cpu
+interval = 2
+format-prefix = " "
+format-prefix-foreground = ${colors.secondary}
+label = %percentage:1%%
+
+;-------------------------------------------------------------------------
+;					M E M O R I A
+;-------------------------------------------------------------------------
+[module/memory]
+type = internal/memory
+interval = 2
+format-prefix = " "
+format-prefix-foreground = ${colors.secondary}
+label = %percentage_used%%
+
+;-------------------------------------------------------------------------
+;					T E M P
+;-------------------------------------------------------------------------
+[module/temperature]
+type = internal/temperature
+thermal-zone = 0
+warn-temperature = 60
+
+format-prefix = " "
+format-prefix-foreground = ${colors.secondary}
+
+format = <label>
+format-warn = <label-warn>
+
+label = %temperature-c%
+label-warn = %temperature-c%
+label-warn-foreground = ${colors.secondary}
+
+;-------------------------------------------------------------------------
 ;					D I S C O
 ;-------------------------------------------------------------------------
 [module/filesystem]
@@ -208,61 +246,6 @@ format-mounted = <label-mounted>
 label-mounted = %percentage_used%%
 label-unmounted = %mountpoint% não montado
 ;label-unmounted-foreground = ${colors.foreground-alt}
-
-;-------------------------------------------------------------------------
-;					C P U
-;-------------------------------------------------------------------------
-[module/cpu]
-type = internal/cpu
-interval = 2
-format-prefix = " "
-format-prefix-foreground = ${colors.secondary}
-label = %percentage:1%%
-
-;-------------------------------------------------------------------------
-;					M E M O R I A
-;-------------------------------------------------------------------------
-[module/memory]
-type = internal/memory
-interval = 2
-format-prefix = " "
-format-prefix-foreground = ${colors.secondary}
-label = %percentage_used%%
-
-;-------------------------------------------------------------------------
-;					R E D E
-;-------------------------------------------------------------------------
-[module/eth]
-type = internal/network
-interface = eno1
-interval = 3.0
-
-format-connected-prefix = "net "
-label-connected = %local_ip%
-
-format-disconnected =
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
-
-;-------------------------------------------------------------------------
-;					T E M P
-;-------------------------------------------------------------------------
-[module/temperature]
-type = internal/temperature
-thermal-zone = 0
-warn-temperature = 60
-
-format-prefix = " "
-format-prefix-foreground = ${colors.secondary}
-
-format = <label>
-format-warn = <label-warn>
-
-label = %temperature-c%
-label-warn = %temperature-c%
-label-warn-foreground = ${colors.secondary}
 
 ;-------------------------------------------------------------------------
 ;					P U L S E
@@ -295,18 +278,6 @@ format-prefix = 
 format-prefix-foreground = ${colors.secondary}
 
 label = %date% %time%
-
-;----------------------------------------------------------
-;			    B E A T S
-;----------------------------------------------------------
-[module/beats]
-type = custom/script
-exec =  ~/.config/polybar/scripts/beats.sh
-click-left = ~/.config/rofi/scripts/alarme &
-label = %output%
-format = <label>
-format-prefix = " "
-format-prefix-foreground = ${colors.secondary}
 
 ;----------------------------------------------------------
 ;		       W A L L P A P E R
@@ -349,7 +320,7 @@ scroll-down = ~/.local/bin/screenshot -e &
 ;-------------------------------------------------------------------------
 [module/power]
 type = custom/text
-content = 
+content = "%{F${colors.foreground-alt}}%{F-}"
 click-left = ~/.config/rofi/scripts/power &
 
 ;-------------------------------------------------------------------------
