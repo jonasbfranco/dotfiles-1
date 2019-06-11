@@ -141,7 +141,7 @@
     stack_duplicates = true
 
     # Hide the count of stacked notifications with the same content
-    hide_duplicate_count = false
+    hide_duplicate_count = true
 
     # Display indicators for URLs (U) and actions (A).
     show_indicators = yes
@@ -152,7 +152,7 @@
     icon_position = right
 
     # Scale larger icons down to this size, set to 0 to disable
-    max_icon_size = 32
+    max_icon_size = 48
 
     # Paths to default icons.
     icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
