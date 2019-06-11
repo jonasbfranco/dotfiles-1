@@ -267,15 +267,13 @@ label-warn-foreground = ${colors.secondary}
 [module/pulse]
 type = internal/pulseaudio
 
-format-prefix = 
-format-prefix-foreground = ${colors.secondary}
+format-volume-prefix = " "
+format-volume-prefix-foreground = ${colors.secondary}
 
 format-volume = <label-volume>
 label-volume = %percentage%%
-;label-volume-foreground = ${root.foreground}
 
 label-muted = mudo
-;label-muted-foreground = #666
 
 ;-------------------------------------------------------------------------
 ;					D A T A
@@ -291,6 +289,7 @@ time = %H:%M
 time-alt = %H:%M:%S
 
 format-prefix = 
+format-prefix-foreground = ${colors.secondary}
 
 label = %date% %time%
 
