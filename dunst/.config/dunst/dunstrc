@@ -16,12 +16,12 @@
     # If this option is set to mouse or keyboard, the monitor option
     # will be ignored.
     follow = mouse
-	geometry = "250x5-10-40"
+	geometry = "350x5-10-40"
     indicate_hidden = yes
 
     # Shrink window if it's smaller than the width.  Will be ignored if
     # width is 0.
-    shrink = no
+    shrink = yes
 
     # The transparency of the window.  Range: [0; 100].
     # This option will only work if a compositing window manager is
