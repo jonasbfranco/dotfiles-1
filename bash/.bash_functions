@@ -8,7 +8,7 @@ dbl () {
 }
 
 dru () {
-    docker run --name $1 -itd $2
+    docker run --name $1 --network host -itd $2
 }
 
 # mpv

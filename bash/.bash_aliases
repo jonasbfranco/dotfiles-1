@@ -1,3 +1,5 @@
+# Main
+alias rehash='source ~/.bashrc && source ~/.bash_aliases && source ~/.bash_functions'
 alias lixo='dd if=/dev/zero of=file.txt count=1024 bs=1048576'
 alias rm='rm -Iv'
 alias mv='mv -iv'
@@ -25,9 +27,11 @@ alias stpshr='systemctl --user stop ngrok dropbox google-drive onedrive yandex &
 alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 alias castnow="castnow --myip 192.168.0.1"
 alias git-cron='~/.local/bin/git-cron'
+alias tmux='tmux a'
 
 # Docker
 alias dip='docker inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}"'
 alias dst='docker start'
 alias dsp='docker stop'
 alias drs='docker restart'
+alias dps='docker ps -a'

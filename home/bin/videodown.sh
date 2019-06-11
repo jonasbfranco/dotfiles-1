@@ -7,6 +7,8 @@
 # Criado em: 30/04/2019 13:55:09
 # Última alteração: 01/05/2019 14:32:25
 
+#xclip -out -selection primary | xclip -in -selection clipboard
+
 log=0 # 0 = Sem log, 1 = Log no arquivo erro.log
 aria=1
 ts=$(date +"%s")
@@ -19,9 +21,7 @@ dir="${HOME}/desk"
 tmp="/tmp/videodown/$$"
 proc=$(ps aux | grep $(basename $0) | egrep -v grep | wc -l)
 processos=$((proc-1))
-
-[ "$log" -eq "1" ] || [ "$log" -eq "0" ] && logs="${tmp}/status.log"
-[ "$log" -eq "2" ] && logs="${dir}/status.log"
+logs="${dir}/status.log"
 
 if [ ! -d $tmp ]; then
     mkdir -p $tmp
@@ -59,14 +59,14 @@ if [ $aria == 1 ]; then
     # -s, --split restricted by --max-connection-per-server 
     # -t, --timeout
 
-    youtube-dl $opts -o "${titulo}.%(ext)s" --external-downloader aria2c --external-downloader-args '-m 10 -c -j 1 -x 5 -s 5 -k 2M' "${url}"
+    youtube-dl $opts -o "${titulo}.%(ext)s" --external-downloader aria2c --external-downloader-args '-m 20 -c -j 1 -x 5 -s 5 -k 3M' "${url}"
     status="$?"
 else
     youtube-dl $opts -o "${titulo}.%(ext)s" "${url}" 
     status="$?"
 fi
 
-if [[ $status -ne 0 ]] && [[ $log -ne 0 ]]; then
+if [[ $status -ne 0 ]]; then
     echo "---------------------------------------------------------------" >> "$logs"
     echo "Status:       ERRO" >> "$logs"
     echo "Título:       $titulo" >> "$logs"
@@ -75,6 +75,8 @@ if [[ $status -ne 0 ]] && [[ $log -ne 0 ]]; then
     echo "Temp:         $tmp" >> "$logs"
     echo "Processos:    $processos" >> "$logs"    
     echo "Código:       $status" >> "$logs"
+    notify-send -i $icone "Video Downloader" "Erro na transferencia de:\n\n<b>${titulo}*</b>.\n\nInstâncias: $processos"
+    canberra-gtk-play -i $erro
 fi
 
 if [[ $status -eq 0 ]]; then
@@ -98,7 +100,7 @@ if [[ $status -eq 0 ]]; then
         fi
     done
 
-    processos=$((processos-1))
+    #processos=$((processos-1))
 
     if ls "${titulo}"* 1> /dev/null 2>&1; then
             if ls "${dir}/${titulo}"* 1> /dev/null 2>&1; then
