@@ -49,7 +49,8 @@
     frame_width = 3
 
     # Defines color of the frame around the notification window.
-    frame_color = "#282a36"
+    #frame_color = "#282a36"
+    frame_color = "#4C566A"
 
     # Define a color for the separator.
     # possible values are:
@@ -58,7 +59,7 @@
     #  * frame: use the same color as the frame;
     #  * anything else will be interpreted as a X color.
     #separator_color = frame
-    separator_color = "#282a36"
+    separator_color = "#4C566A"
 
     # Sort messages by urgency.
     sort = yes
