@@ -162,22 +162,13 @@ label-urgent-background = ${colors.alert}
 label-urgent-padding = 1
 
 ;----------------------------------------------------------
-;		        P I N G
-;----------------------------------------------------------
-[module/ping]
-type = custom/script
-interval = 60
-label = %output%
-exec = ~/.config/polybar/scripts/ping.sh -v
-tail = true
-
-;----------------------------------------------------------
 ;		        W I N D O W
 ;----------------------------------------------------------
 [module/window]
 type = custom/script
 interval = 1
 format-prefix = " "
+format-prefix-foreground = ${colors.secondary}
 ;label = %output:0:45:...%  %{B- -o -u}
 label = %output:0:40:...%
 click-left = ~/.config/polybar/scripts/janela.sh -i
