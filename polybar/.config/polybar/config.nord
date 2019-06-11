@@ -251,11 +251,12 @@ type = internal/temperature
 thermal-zone = 0
 warn-temperature = 60
 
+format-prefix = " "
 format = <label>
 format-warn = <label-warn>
 
-label =  %temperature-c%
-label-warn =  %temperature-c%
+label = %temperature-c%
+label-warn = %temperature-c%
 label-warn-foreground = ${colors.secondary}
 
 ;-------------------------------------------------------------------------
