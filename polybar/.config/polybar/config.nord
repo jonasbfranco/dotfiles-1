@@ -50,7 +50,7 @@ background = ${colors.background}
 foreground = ${colors.foreground}
 
 line-size = 3
-line-color = #f00
+line-color = ${colors.alert}
 
 padding-left = 0
 padding-right = 1
