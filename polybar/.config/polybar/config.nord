@@ -33,9 +33,9 @@ background = #2E3440
 background-alt = #444
 foreground = ${xrdb:foreground:#222}
 foreground-alt = #555
-primary = #ffb52a
-secondary = #e60053
-alert = #bd2c40
+primary = #A3BE8C
+secondary = #D08770
+alert = #BF616A
 
 ;----------------------------------------------------------
 ;		        B A R R A ( T O P )
@@ -134,7 +134,7 @@ label-mode-foreground = #000
 label-mode-padding = 1
 
 label-focused = %name%
-label-focused-foreground = ${colors.alert}
+label-focused-foreground = ${colors.primary}
 label-focused-padding = 1
 
 label-unfocused = %name%
