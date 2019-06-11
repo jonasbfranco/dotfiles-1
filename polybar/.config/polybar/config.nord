@@ -252,6 +252,8 @@ thermal-zone = 0
 warn-temperature = 60
 
 format-prefix = " "
+format-prefix-foreground = ${colors.secondary}
+
 format = <label>
 format-warn = <label-warn>
 
@@ -264,6 +266,9 @@ label-warn-foreground = ${colors.secondary}
 ;-------------------------------------------------------------------------
 [module/alsa]
 type = internal/alsa
+
+format-prefix = 
+format-prefix-foreground = ${colors.secondary}
 
 format-volume = <label-volume>
 label-volume =  %percentage%%
