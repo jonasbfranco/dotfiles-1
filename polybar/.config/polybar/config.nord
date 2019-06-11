@@ -320,7 +320,7 @@ scroll-down = ~/.local/bin/screenshot -e &
 ;-------------------------------------------------------------------------
 [module/power]
 type = custom/text
-content = "%{F${colors.foreground-alt}}%{F-}"
+content = "%{F#BF616A}%{F-}"
 click-left = ~/.config/rofi/scripts/power &
 
 ;-------------------------------------------------------------------------
@@ -334,6 +334,7 @@ type = custom/menu
 format-spacing = 1
 
 label-open = 
+label-open-foreground = #BF616A
 label-close = " "
 label-close-foreground = ${colors.secondary}
 label-separator = |
