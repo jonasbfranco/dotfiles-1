@@ -332,9 +332,14 @@ content = 
 type = custom/text
 content = 
 
+;Polar Night:  #2E3440 #3B4252 #434C5E #4C566A
+;Snow Storm:   #D8DEE9 #E5E9F0 #ECEFF4 #FFFFFF
+;Frost:        #8FBCBB #88C0D0 #FFFFFF #5E81AC
+;Aurora:       #BF616A #D08770 #EBCB8B #A3BE8C #B48EAD
+
 [module/browser]
 type = custom/text
-content = "%{F#000000}%{F-}"
+content = "%{F#BF616A}%{F-}"
 click-left = qutebrowser &
 click-middle = chromium &
 click-right = firefox &
@@ -346,12 +351,12 @@ click-left = thunderbird &
 
 [module/thunar]
 type = custom/text
-content = "%{F#000000}%{F-}"
+content = "%{F#EBCB8B}%{F-}"
 click-left = thunar &
 
 [module/terminal]
 type = custom/text
-content = "%{F#000000}%{F-}"
+content = "%{F#5E81AC}%{F-}"
 click-left = $TERMINAL &
 
 [module/telegram]
@@ -388,7 +393,7 @@ click-left = ~/.config/rofi/scripts/docker &
 
 [module/subl]
 type = custom/text
-content = "%{F#000000}%{F-}"
+content = "%{F#D08770}%{F-}"
 click-left = subl &
 
 [module/pavu]
