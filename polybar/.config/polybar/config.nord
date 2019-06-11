@@ -62,7 +62,7 @@ module-margin-right = 1
 font-0 = Fantasque Sans Mono:style=Regular:pixelsize=11;2
 font-1 = feather:size=11;3
 
-modules-left = i3
+modules-left = i3 sep browser sep terminal sep subl sep thunar sep telegram sep whatsapp sep steam sep deluge sep sync
 modules-center = window
 modules-right = filesystem cpu memory temperature pulse data beats wallpaper screencast screenshot powermenu
 
