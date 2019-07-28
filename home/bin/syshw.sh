@@ -43,9 +43,11 @@ cpu () {
   if [[ "$arm" != "" ]]; then
     cpu=$(grep -m1 -i 'Processor' /proc/cpuinfo | awk -F ' ' '{print $1 $2 $3}')
   else
-    cpu=$(grep -m1 -i 'model name' /proc/cpuinfo | awk '{print $6}')
+    #cpu=$(grep -m1 -i 'model name' /proc/cpuinfo | awk '{print $6}')
+    cpu=$(grep -m1 -i 'model name' /proc/cpuinfo | awk -F: '{print $2}' | sed -e 's/^[[:space:]]*//')
   fi
-  cor-echo 'CP' "${cpu#*: }" # everything after colon is processor name
+  #cor-echo 'CP' "${cpu#*: }" # everything after colon is processor name
+  cor-echo 'CP' "$cpu"
 }
 
 gpu () {
@@ -76,6 +78,10 @@ distro () {
   fi
 }
 
+res () {
+  cor-echo "RE" "$(xdpyinfo | grep dimensions | sed -r 's/^[^0-9]*([0-9]+x[0-9]+).*$/\1/')"
+}
+
 cores () {
 	for BG in 40m 41m 42m 43m 44m 45m 46m 47m; do
 		cor=$(echo -en "\033[$BG  \033[0m")
@@ -86,13 +92,15 @@ cores () {
 
 echo
 echo -en "                  |  " && cpu
-echo -en "  █▀▀▀▀▀▀▀▀▀▀▀█   |  " && distro
-echo -en "  █           █   |  " && wm
+echo -en "                  |  " && distro
+echo -en "  █▀▀▀▀▀▀▀▀▀▀▀█   |  " && wm
+echo -en "  █           █   |  " && res
 echo -en "  █           █   |  " && uptime
 echo -en "  █   █   █   █   |  " && shell
 echo -en "  █           █   |  " && terminal
 echo -en "  ▀█▄▄▄▄▄▄▄▄▄█▀   |  " && kernel
 echo -en "                  |  " && pacotes
 echo -en "                  |  " && cores
+echo
 echo
 #sleep 10
