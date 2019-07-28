@@ -179,6 +179,7 @@ bindsym $mod+Shift+t exec --no-startup-id $HOME/.config/polybar/scripts/tray.sh
 
 # Utils
 bindsym $mod+F5 exec --no-startup-id $HOME/bin/videodown.sh
+bindsym F5 exec --no-startup-id $HOME/bin/videodown.sh
 
 
 ####################################################################
