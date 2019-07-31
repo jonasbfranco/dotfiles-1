@@ -46,7 +46,7 @@ if [[ $log -ne 0 ]]; then
     echo "URL:          $url" >>"$logs"
     echo "Path:         $dir" >> "$logs"
     echo "Temp:         $tmp" >> "$logs"
-    echo "Processos:    $processos" >> "$logs"    
+    echo "Processos:    $processos" >> "$logs"
 fi
 
 notify-send -i $icone "Video Downloader" "Transferencia de: \n\n<b>$titulo</b> iniciada\n\nInstâncias: $processos"
@@ -56,13 +56,13 @@ if [ $aria == 1 ]; then
     # -x, --max-connection-per-server
     # -m, --max-tries
     # -k, --min-split-size
-    # -s, --split restricted by --max-connection-per-server 
+    # -s, --split restricted by --max-connection-per-server
     # -t, --timeout
 
     youtube-dl $opts -o "${titulo}.%(ext)s" --external-downloader aria2c --external-downloader-args '-m 20 -c -j 1 -x 5 -s 5 -k 3M' "${url}"
     status="$?"
 else
-    youtube-dl $opts -o "${titulo}.%(ext)s" "${url}" 
+    youtube-dl $opts -o "${titulo}.%(ext)s" "${url}"
     status="$?"
 fi
 
@@ -114,7 +114,7 @@ if [[ $status -eq 0 ]]; then
     else
         notify-send -i $icone "Video Downloader" "Erro na transferencia de:\n\n<b>${tmp}/${titulo}*</b>.\n\nInstâncias: $processos"
         canberra-gtk-play -i $erro
-    fi        
+    fi
 else
     notify-send -i $icone "Video Downloader" "Erro na transferencia de:\n\n<b>$titulo</b>\n\nInstâncias: $processos"
     canberra-gtk-play -i $erro
