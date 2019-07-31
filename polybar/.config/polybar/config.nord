@@ -207,7 +207,7 @@ label-unmounted = %mountpoint% não montado
 [module/pulse]
 type = internal/pulseaudio
 
-format-volume-prefix = " "
+format-volume-prefix = "%{Ts}%{T-} "
 format-volume-prefix-foreground = ${colors.secondary}
 
 format-volume = <label-volume>
