@@ -28,9 +28,10 @@ export TERMINAL=termite
 export BROWSER=firefox
 export EDITOR=nano
 
-#export GTK_IM_MODULE=ibus
-#export XMODIFIERS=@im=ibus
-#export QT_IM_MODULE=ibus
+export GTK_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+export QT_IM_MODULE=ibus
+
 #export GPG_AGENT_INFO
 #export GNOME_KEYRING_CONTROL
 #export GNOME_KEYRING_PID
