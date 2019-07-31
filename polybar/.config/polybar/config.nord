@@ -62,7 +62,7 @@ module-margin-right = 1
 font-0 = Fantasque Sans Mono:style=Regular:pixelsize=11;2
 font-1 = feather:size=11;3
 
-modules-left = i3 sep2 browser terminal subl thunar
+modules-left = i3 sep2 browser terminal vscodium thunar
 modules-center = window
 modules-right = cpu memory filesystem temperature data pulse powermenu
 
@@ -358,6 +358,11 @@ click-left = ~/.config/rofi/scripts/docker &
 type = custom/text
 content = "%{F#D08770}%{F-}"
 click-left = subl &
+
+[module/vscodium]
+type = custom/text
+content = "%{F#D08770}%{F-}"
+click-left = vscodium &
 
 [module/pavu]
 type = custom/text
