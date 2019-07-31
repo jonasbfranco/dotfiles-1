@@ -16,16 +16,10 @@ inoremap <C-x> <esc><return>:qa<return>
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'mattn/webapi-vim'
-Plugin 'mattn/gist-vim'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-" Plugin 'scrooloose/nerdtree'
-" Plugin 'arcticicestudio/nord-vim'
-Plugin 'dracula/vim'
-call vundle#end()            " required
+" Plugins
+call plug#begin('~/.vim/plugged')
+Plug 'arcticicestudio/nord-vim'
+call plug#end()
 
 filetype plugin indent on    " required
 
