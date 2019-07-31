@@ -25,7 +25,7 @@ export VAR2='Var setada pelo ~/.xprofile'
 
 # Vars
 export TERMINAL=termite
-export BROWSER=chromium
+export BROWSER=firefox
 export EDITOR=nano
 
 #export GTK_IM_MODULE=ibus
