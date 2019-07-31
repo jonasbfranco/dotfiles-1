@@ -266,7 +266,7 @@ for_window [title="(^Friends List)"] move to workspace $ws6, floating enable, mo
 
 assign [class="^(Chromium|qutebrowser|Epiphany|Firefox|firefox-developer)"] $ws1
 assign [class="(Termite|Tilix|st-256color)"] $ws2
-assign [class="^(code|Pluma|Sublime_text|Atom)"] $ws3
+assign [class="^(vscodium|code|Pluma|Sublime_text|Atom)"] $ws3
 assign [class="(Thunar|Pcmanfm)"] $ws4
 assign [class="(Lxappearance|^Pamac*|Notes|Lxtask|^Mate-disk-usage-analyzer|Dconf-editor|Filezilla|JDownloader)"] $ws5
 assign [class="(^Steam)"] $ws6
