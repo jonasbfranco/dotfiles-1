@@ -60,7 +60,7 @@ module-margin-right = 1
 
 ; fixed:pixelsize=11 / Hack:style=Regular:pixelsize=11 / Iosevka:style=Regular:pixelsize=11
 font-0 = Fantasque Sans Mono:style=Regular:pixelsize=11;2
-font-1 = feather:size=11;3
+font-1 = feather:style=Regular:pixelsize=11;3
 
 modules-left = i3 sep2 browser terminal vscodium thunar
 modules-center = window
@@ -207,7 +207,7 @@ label-unmounted = %mountpoint% não montado
 [module/pulse]
 type = internal/pulseaudio
 
-format-volume-prefix = "%{Ts}%{T-} "
+format-volume-prefix = "%{T2}%{T-} "
 format-volume-prefix-foreground = ${colors.secondary}
 
 format-volume = <label-volume>
