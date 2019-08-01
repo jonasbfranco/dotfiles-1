@@ -332,6 +332,17 @@ menu-3-0 = DESLIGAR?!
 menu-3-0-exec = systemctl poweroff
 
 ;----------------------------------------------------------
+;		       M P D
+;----------------------------------------------------------
+[module/mpd]
+type = internal/mpd
+
+host = 127.0.0.1
+port = 6600
+
+interval = 2
+
+;----------------------------------------------------------
 ;		       L I X E I R A
 ;----------------------------------------------------------
 [module/lixo]
@@ -397,12 +408,6 @@ type = custom/text
 content = 
 content-foreground = ${colors.secondary}
 click-left = ~/.config/rofi/scripts/docker &
-
-[module/subl]
-type = custom/text
-content = ""
-content-foreground = ${colors.secondary}
-click-left = subl &
 
 [module/vscodium]
 type = custom/text
