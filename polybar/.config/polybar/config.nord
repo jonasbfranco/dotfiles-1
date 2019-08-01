@@ -344,7 +344,7 @@ click-left = $TERMINAL &
 
 [module/telegram]
 type = custom/text
-content = "%{F#000000}%{F-}"
+content = "%{F#a3be8c}%{F-}"
 click-left = telegram-desktop &
 
 [module/whatsapp]
