@@ -37,7 +37,7 @@ TRASH_COUNT=$(ls -U -1 "${trash_dir}/files" | wc -l)
 if [[ ${TRASH_COUNT} -gt 0 ]]; then
 	s="%{F#${cor}}%{F-} ${TRASH_COUNT}"
 else
-	s=""
+	s="%{F#${cor}}%{F-}"
 fi
 
 echo "${s}"
