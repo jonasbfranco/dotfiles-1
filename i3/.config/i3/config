@@ -265,7 +265,7 @@ for_window [title="(^DeaDBeeF)"] move to workspace $ws6, floating enable, move p
 for_window [title="(^Friends List)"] move to workspace $ws6, floating enable, move absolute position 1520 px 70 px
 
 assign [class="^([Cc]hromium|[Qq]utebrowser|[Ee]piphany|[Ff]irefox|[Ff]irefox-developer)"] $ws1
-assign [class="(Termite|Tilix|st-256color)"] $ws2
+assign [class="(Termite|Tilix|st-256color|Xfce4-terminal)"] $ws2
 assign [class="^(VSCodium|code|Pluma|Sublime_text|Atom)"] $ws3
 assign [class="(Thunar|Pcmanfm)"] $ws4
 assign [class="(Lxappearance|^Pamac*|Notes|Lxtask|^Mate-disk-usage-analyzer|Dconf-editor|Filezilla|JDownloader)"] $ws5
