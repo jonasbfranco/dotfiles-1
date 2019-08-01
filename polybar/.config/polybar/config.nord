@@ -330,17 +330,8 @@ port = 6600
 
 interval = 2
 
-label-song =  %artist% - %title%
-
-; Available tokens:
-;   %elapsed%
-;   %total%
-; Default: %elapsed% / %total%
-;label-time = %elapsed% / %total%
-
-; Available tokens:
-;   None
-label-offline =  mpd
+label-song = %{F#D08770}%{F-} %artist% - %title%
+label-offline = %{F#D08770}%{F-} mpd
 
 ;----------------------------------------------------------
 ;		       L I X E I R A
