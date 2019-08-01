@@ -91,7 +91,7 @@ pin-workspaces = false
 ;ws-icon-8 = 9;
 ;ws-icon-9 = 10;
 
-ws-icon-0 = 1;
+ws-icon-0 = 1;
 ws-icon-1 = 2;
 ws-icon-2 = 3;
 ws-icon-3 = 4;
@@ -243,7 +243,7 @@ type = custom/menu
 
 format-spacing = 1
 
-label-open = 
+label-open = 
 label-open-foreground = #EBCB8B
 label-close = " "
 label-close-foreground = ${colors.secondary}
