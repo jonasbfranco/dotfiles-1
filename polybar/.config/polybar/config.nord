@@ -202,7 +202,7 @@ tail = true
 ;----------------------------------------------------------
 [module/screenshot]
 type = custom/text
-content = 
+content = 
 content-foreground = ${colors.secondary}
 click-left = ~/.local/bin/screenshot &
 click-middle = ~/.local/bin/screenshot -w &
@@ -407,9 +407,8 @@ content = 
 [module/lock]
 type = custom/text
 content = 
+content-foreground = ${colors.secondary}
 click-left = $HOME/.local/lock/fortune &
-
-
 
 [module/browser]
 type = custom/text
