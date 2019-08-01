@@ -176,7 +176,7 @@ format-prefix-foreground = ${colors.secondary}
 ;----------------------------------------------------------
 [module/wallpaper]
 type = custom/text
-content = 
+content = 
 content-foreground = ${colors.secondary}
 click-left = ~/.config/polybar/scripts/wallpaper.sh x &
 ;click-middle = ~/.config/polybar/scripts/wallpaper.sh dd &
@@ -192,7 +192,6 @@ scroll-down = ~/.config/polybar/scripts/wallpaper.sh a &
 type = custom/script
 interval = 1
 label = %output%
-;label-foreground = ${colors.secondary}
 click-left = termite -e ~/.local/bin/screencast &
 click-right = ~/.local/bin/screencast clear &
 exec = ~/.local/bin/screencast status
