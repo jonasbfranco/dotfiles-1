@@ -313,11 +313,11 @@ exec = ~/.config/polybar/scripts/trash.sh
 ;-------------------------------------------------------------------------
 [module/sep]
 type = custom/text
-content = 
+content = 
 
 [module/sep2]
 type = custom/text
-content = 
+content = 
 
 ;Polar Night:  #2E3440 #3B4252 #434C5E #4C566A
 ;Snow Storm:   #D8DEE9 #E5E9F0 #ECEFF4 #FFFFFF
@@ -403,11 +403,6 @@ type = custom/text
 content = "%{F#000000}%{F-}"
 click-left = mpc del 0 &
 
-[module/fechar]
-type = custom/text
-content = "%{F#000000}%{F-}"
-content-foreground = ${colors.branco}
-click-middle = ~/.config/polybar/scripts/janela.sh -c &
 
 [settings]
 screenchange-reload = true
