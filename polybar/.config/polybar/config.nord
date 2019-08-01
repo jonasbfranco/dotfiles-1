@@ -169,7 +169,7 @@ tail = true
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = " "
+format-prefix = " "
 format-prefix-foreground = ${colors.secondary}
 label = %percentage:1%%
 
