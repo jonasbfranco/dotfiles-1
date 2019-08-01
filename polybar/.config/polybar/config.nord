@@ -62,7 +62,7 @@ module-margin-right = 1
 font-0 = Fantasque Sans Mono:style=Regular:pixelsize=11;2
 font-1 = feather:style=Regular:pixelsize=11;3
 
-modules-left = i3 sep browser terminal vscodium thunar
+modules-left = i3 sep browser terminal vscodium thunar telegram
 modules-center = window
 modules-right = netled netledout hddled sep cpu memory filesystem temperature data pulse powermenu
 
@@ -344,7 +344,7 @@ click-left = $TERMINAL &
 
 [module/telegram]
 type = custom/text
-content = "%{F#000000}%{F-}"
+content = "%{F#000000}%{F-}"
 click-left = telegram-desktop &
 
 [module/whatsapp]
