@@ -237,7 +237,8 @@ format-volume-prefix-foreground = ${colors.secondary}
 format-volume = <label-volume>
 label-volume = %percentage%%
 
-label-muted = mudo
+label-muted = 
+label-muted-foreground = ${colors.secondary}
 
 ;-------------------------------------------------------------------------
 ;					D A T A
