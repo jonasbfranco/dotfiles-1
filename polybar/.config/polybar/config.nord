@@ -85,7 +85,7 @@ foreground = ${colors.foreground}
 line-size = 3
 line-color = ${colors.alert}
 
-padding-left = 0
+padding-left = 1
 padding-right = 1
 
 module-margin-left = 0
@@ -417,7 +417,8 @@ click-left = vscodium &
 
 [module/refresh]
 type = custom/text
-content = "%{F#000000}%{F-}"
+content = 
+content-foreground = ${colors.secondary}
 click-left = i3-msg restart &
 
 
