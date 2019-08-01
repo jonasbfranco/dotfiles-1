@@ -12,7 +12,7 @@
 # Última Atualização: 06/05/2019 12:50:34
 
 nome="GitLab.sh"
-dir="${HOME}/htdocs"
+dir="${HOME}/gitlab"
 repos=('php-mvc-sqlite-crud' 'agressive')
 remoto="nginx@hera"
 dotfiles=1
