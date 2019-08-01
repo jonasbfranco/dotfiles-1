@@ -387,33 +387,38 @@ click-left = whatsdesk > /dev/null 2> /dev/null &
 
 [module/steam]
 type = custom/text
-content = "%{F#000000}%{F-}"
+content = 
+content-foreground = ${colors.secondary}
 click-left = /usr/bin/steam > /dev/null 2> /dev/null &
-;click-left = wal_steam -w
 
 [module/deluge]
 type = custom/text
-content = "%{F#000000}%{F-}"
+content = 
+content-foreground = ${colors.secondary}
 click-left = deluge &
 
 [module/vbox]
 type = custom/text
-content = "%{F#000000}%{F-}"
+content = 
+content-foreground = ${colors.secondary}
 click-left = ~/.config/rofi/scripts/virtualbox &
 
 [module/docker]
 type = custom/text
-content = "%{F#000000}%{F-}"
+content = 
+content-foreground = ${colors.secondary}
 click-left = ~/.config/rofi/scripts/docker &
 
 [module/subl]
 type = custom/text
-content = "%{F#D08770}%{F-}"
+content = ""
+content-foreground = ${colors.secondary}
 click-left = subl &
 
 [module/vscodium]
 type = custom/text
-content = "%{F#D08770}%{F-}"
+content = 
+content-foreground = ${colors.secondary}
 click-left = vscodium &
 
 [module/pavu]
