@@ -214,7 +214,7 @@ mount-0 = /
 ;fixed-values = true
 ;spacing = 2
 
-format-mounted-prefix = " "
+format-mounted-prefix = " "
 format-mounted-prefix-foreground = ${colors.secondary}
 format = <label>
 
