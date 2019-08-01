@@ -1,6 +1,7 @@
 #!/bin/bash
 
 CHECKINTERVAL=0.1
+DEVICE="eno1"
 
 if [ "$1" == "out" ]; then
   ICONE=""
@@ -12,9 +13,9 @@ getNetStat() {
   #cat /proc/vmstat|egrep "pgpgin|pgpgout"
   #cat /proc/net/dev | grep wlp2s0 | cut -d ':' -f 2 | awk '{print $1, $9}'
   if [ "$1" == "out" ]; then
-    cat /proc/net/dev | grep wlp2s0 | cut -d ':' -f 2 | awk '{print $9}'
+    cat /proc/net/dev | grep $DEVICE | cut -d ':' -f 2 | awk '{print $9}'
   else
-    cat /proc/net/dev | grep wlp2s0 | cut -d ':' -f 2 | awk '{print $1}'
+    cat /proc/net/dev | grep $DEVICE | cut -d ':' -f 2 | awk '{print $1}'
   fi
 }
 
