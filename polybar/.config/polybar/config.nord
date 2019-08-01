@@ -160,6 +160,54 @@ click-right = ~/.config/polybar/scripts/janela.sh -w
 exec = ~/.config/polybar/scripts/janela.sh
 
 ;----------------------------------------------------------
+;			    B E A T S
+;----------------------------------------------------------
+[module/beats]
+type = custom/script
+exec =  ~/.config/polybar/scripts/beats.sh
+click-left = ~/.config/rofi/scripts/alarme &
+label = %output%
+format = <label>
+format-prefix = " "
+format-prefix-foreground = ${colors.secondary}
+
+;----------------------------------------------------------
+;		        W A L L P A P E R
+;----------------------------------------------------------
+[module/wallpaper]
+type = custom/text
+content = 
+click-left = ~/.config/polybar/scripts/wallpaper.sh x &
+;click-middle = ~/.config/polybar/scripts/wallpaper.sh dd &
+click-middle = ~/.config/polybar/scripts/wallpaper.sh rr &
+click-right = ~/.config/polybar/scripts/wallpaper.sh d &
+scroll-up = ~/.config/polybar/scripts/wallpaper.sh p &
+scroll-down = ~/.config/polybar/scripts/wallpaper.sh a &
+
+;----------------------------------------------------------
+;			S C R E E N C A S T
+;----------------------------------------------------------
+[module/screencast]
+type = custom/script
+interval = 1
+label = %output%
+click-left = termite -e ~/.local/bin/screencast &
+click-right = ~/.local/bin/screencast clear &
+exec = ~/.local/bin/screencast status
+tail = true
+
+;----------------------------------------------------------
+;			S C R E E N S H O T
+;----------------------------------------------------------
+[module/screenshot]
+type = custom/text
+content = 
+click-left = ~/.local/bin/screenshot &
+click-middle = ~/.local/bin/screenshot -w &
+click-right = ~/.local/bin/screenshot -c &
+scroll-down = ~/.local/bin/screenshot -e &
+
+;----------------------------------------------------------
 ;              N E T L E D IN
 ;----------------------------------------------------------
 [module/netled]
