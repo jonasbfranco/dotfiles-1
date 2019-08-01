@@ -326,7 +326,7 @@ content = 
 
 [module/browser]
 type = custom/text
-content = "%{F#BF616A}%{F-}"
+content = "%{F#BF616A}%{F-}"
 click-left = qutebrowser &
 click-middle = chromium &
 click-right = firefox &
@@ -338,12 +338,12 @@ click-left = thunderbird &
 
 [module/thunar]
 type = custom/text
-content = "%{F#EBCB8B}%{F-}"
+content = "%{F#EBCB8B}%{F-}"
 click-left = thunar &
 
 [module/terminal]
 type = custom/text
-content = "%{F#5E81AC}%{F-}"
+content = "%{F#5E81AC}%{F-}"
 click-left = $TERMINAL &
 
 [module/telegram]
