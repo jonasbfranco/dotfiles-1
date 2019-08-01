@@ -3,9 +3,9 @@
 CHECKINTERVAL=0.1
 
 if [ "$1" == "out" ]; then
-  ICONE=""
+  ICONE=""
 else
-  ICONE=""
+  ICONE=""
 fi
 
 getNetStat() {
