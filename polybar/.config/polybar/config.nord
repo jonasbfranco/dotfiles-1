@@ -404,6 +404,13 @@ content = 
 type = custom/text
 content = 
 
+[module/lock]
+type = custom/text
+content = 
+click-left = $HOME/.local/lock/fortune &
+
+
+
 [module/browser]
 type = custom/text
 content = "%{F#BF616A}%{F-}"
