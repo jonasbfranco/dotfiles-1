@@ -13,11 +13,11 @@ while true; do
   sleep $CHECKINTERVAL
   NEW=$(getVmstat)
   if [ "$NEW" = "$OLD" ]; then
-    echo "%{F#917f56}%{T2}%{T-}%{F-}"
+    echo "%{F#917f56}%{T2}%{T-}%{F-}"
   else
-    echo "%{F#FFFFFF}%{T2}%{T-}%{F-}"
+    echo "%{F#FFFFFF}%{T2}%{T-}%{F-}"
     sleep $CHECKINTERVAL
-    echo "%{F#917f56}%{T2}%{T-}%{F-}"
+    echo "%{F#917f56}%{T2}%{T-}%{F-}"
   fi
   OLD=$NEW
 done
