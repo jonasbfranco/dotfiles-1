@@ -26,11 +26,11 @@ while true; do
   sleep $CHECKINTERVAL
   NEW=$(getNetStat)
   if [ "$NEW" = "$OLD" ]; then
-    echo "%{F#bf616a}%{T4}$ICONE%{T-}%{F-}"
+    echo "%{F#D08770}%{T4}$ICONE%{T-}%{F-}"
   else
     echo "%{F#FFFFFF}%{T4}$ICONE%{T-}%{F-}"
     sleep $CHECKINTERVAL
-    echo "%{F#bf616a}%{T4}$ICONE%{T-}%{F-}"
+    echo "%{F#D08770}%{T4}$ICONE%{T-}%{F-}"
   fi
   OLD=$NEW
 done
