@@ -1,5 +1,9 @@
+file:///home/lucas/htdocs
+file:///home/lucas/devel
 file:///home/lucas/.dotfiles/docker/docker
 file:///home/lucas/dwhelper
-file:///home/lucas/htdocs
 file:///home/lucas/.dotfiles
 file:///home/lucas/img
+sftp://artemis/ artemis
+sftp://nginx@hera:2211/ hera
+sftp://atlas/ atlas
