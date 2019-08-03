@@ -136,7 +136,7 @@ if [ "$res" ]; then
 			elif [ "$stfiles" = "Re-Build" ]; then
 				rm -f ${HOME}/aur/st-scrollback-git/st*.pkg.tar.xz
 				cd ${HOME}/aur/st-scrollback-git/
-				makepkg -i && notify-send "Done!"
+				makepkg -i && DISPLAY=:0 notify-send "Done!"
 			fi
 		;;
 		'crontab') 
