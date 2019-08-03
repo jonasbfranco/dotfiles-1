@@ -425,8 +425,7 @@ click-left = thunar &
 [module/terminal]
 type = custom/text
 content = "%{F#5E81AC}%{F-}"
-;click-left = $TERMINAL &
-click-left = st &
+click-left = $TERMINAL &
 
 [module/telegram]
 type = custom/text
