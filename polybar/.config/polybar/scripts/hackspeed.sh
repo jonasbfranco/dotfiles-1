@@ -59,7 +59,9 @@ while true; do
 	# then divide
 	value=$((lines * multiply_by / divide_by))
 
-	printf "$FORMAT\\n" "$value"
+	#printf "$FORMAT\\n" "$value"
+
+	echo $value
 
 	sleep $INTERVAL
 done
