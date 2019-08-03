@@ -242,7 +242,7 @@ exec = ~/.config/polybar/scripts/hdd.sh
 tail = true
 
 ;-------------------------------------------------------------------------
-;					C P U
+;              C P U
 ;-------------------------------------------------------------------------
 [module/cpu]
 type = internal/cpu
@@ -252,7 +252,7 @@ format-prefix-foreground = ${colors.secondary}
 label = %percentage:1%%
 
 ;-------------------------------------------------------------------------
-;					M E M O R I A
+;              M E M O R I A
 ;-------------------------------------------------------------------------
 [module/memory]
 type = internal/memory
@@ -262,7 +262,7 @@ format-prefix-foreground = ${colors.secondary}
 label = %percentage_used%%
 
 ;-------------------------------------------------------------------------
-;					T E M P
+;              T E M P
 ;-------------------------------------------------------------------------
 [module/temperature]
 type = internal/temperature
@@ -280,7 +280,7 @@ label-warn = %temperature-c%
 label-warn-foreground = ${colors.secondary}
 
 ;-------------------------------------------------------------------------
-;					D I S C O
+;              D I S C O
 ;-------------------------------------------------------------------------
 [module/filesystem]
 type = internal/fs
@@ -304,7 +304,7 @@ label-unmounted = %mountpoint% não montado
 ;label-unmounted-foreground = ${colors.foreground-alt}
 
 ;-------------------------------------------------------------------------
-;					P U L S E
+;              P U L S E
 ;-------------------------------------------------------------------------
 [module/pulse]
 type = internal/pulseaudio
@@ -319,7 +319,7 @@ label-muted = 
 label-muted-foreground = ${colors.secondary}
 
 ;-------------------------------------------------------------------------
-;					D A T A
+;              D A T A
 ;-------------------------------------------------------------------------
 [module/data]
 type = internal/date
@@ -337,7 +337,7 @@ format-prefix-foreground = ${colors.secondary}
 label = %date% %time%
 
 ;-------------------------------------------------------------------------
-;					P O W E R M E N U
+;              P O W E R M E N U
 ;-------------------------------------------------------------------------
 [module/powermenu]
 type = custom/menu
@@ -382,7 +382,7 @@ menu-4-0 = DESLIGAR?!
 menu-4-0-exec = systemctl poweroff
 
 ;----------------------------------------------------------
-;		       M P D
+;              M P D
 ;----------------------------------------------------------
 [module/mpd]
 type = internal/mpd
@@ -396,12 +396,12 @@ label-song = %{F#D08770}%{F-} %artist% - %title%
 label-offline = %{F#D08770}%{F-} mpd
 
 ;----------------------------------------------------------
-;		       P I N G
+;              P I N G
 ;----------------------------------------------------------
 [module/ping]
 type = custom/script
 exec = ~/.config/polybar/scripts/ping2.sh
-interval = 10
+interval = 30
 
 ;----------------------------------------------------------
 ;		       L I X E I R A
