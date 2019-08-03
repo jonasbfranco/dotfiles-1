@@ -129,7 +129,16 @@ if [ "$res" ]; then
 			fi
 		;;
 		'Termite') i3-msg exec $editor ~/.config/termite/config ;;
-		'st') i3-msg exec $editor ~/aur/st-scrollback-git/config.h ;;
+		'st') 
+			stfiles=$(echo "Config;Re-Build" | rofi $tema -sep ";" -dmenu -p "Simple Terminal" -bw 0 -lines 2 -separator-style none -location 0 -width 190 -hide-scrollbar -padding 5)
+			if [ "$stfiles" = "Config" ]; then
+				i3-msg exec $editor ${HOME}/aur/st-scrollback-git/config.h 
+			elif [ "$stfiles" = "Re-Build" ]; then
+				rm -f ${HOME}/aur/st-scrollback-git/st*.pkg.tar.xz
+				cd ${HOME}/aur/st-scrollback-git/
+				makepkg -i
+			fi
+		;;
 		'crontab') 
 			crontab -l > /tmp/cron.txt
 			i3-msg exec $editor /var/spool/cron/$(whoami)
