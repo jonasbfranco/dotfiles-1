@@ -61,7 +61,8 @@ while true; do
 
 	#printf "$FORMAT\\n" "$value"
 
-	echo $value
+	#echo $value
+	echo "%{F#D08770}%{F-} $value $METRIC"
 
 	sleep $INTERVAL
 done
