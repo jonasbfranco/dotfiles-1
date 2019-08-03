@@ -11,22 +11,22 @@ tema="-theme ~/.config/rofi/themes/dark.rasi"
 editor="subl"
 
 configs=(
-'i3'
-'Polybar'
-'i3lock'
-'Conky'
-'LX Appearance'
-'Dunst'
-'Compton'
-'Rofi'
-'LightDM'
-'qutebrowser'
-'ncmpcpp'
-'StartPage'
-'Home'
-'Termite'
-'st'
-'crontab'
+	'i3'
+	'Polybar'
+	'i3lock'
+	'Conky'
+	'LX Appearance'
+	'Dunst'
+	'Compton'
+	'Rofi'
+	'LightDM'
+	'qutebrowser'
+	'ncmpcpp'
+	'StartPage'
+	'Home'
+	'Termite'
+	'st'
+	'crontab'
 )
 
 res=$(printf "%s\n" "${configs[@]}" | rofi $tema -dmenu -p "Rofi Config" -bw 0 -lines "${#configs[@]}" -separator-style none -location 0 -width 180 -hide-scrollbar -padding 5)
