@@ -135,8 +135,7 @@ if [ "$res" ]; then
 				i3-msg exec $editor ${HOME}/aur/st-scrollback-git/config.h 
 			elif [ "$stfiles" = "Re-Build" ]; then
 				rm -f ${HOME}/aur/st-scrollback-git/st*.pkg.tar.xz
-				cd ${HOME}/aur/st-scrollback-git/
-				makepkg -i && dbus-launch notify-send "Completo" "Compilação completa!"
+				$TERMINAL -e "cd ${HOME}/aur/st-scrollback-git/ && makepkg -i && exit" && dbus-launch notify-send "Completo" "Compilação completa!"
 			fi
 		;;
 		'crontab') 
