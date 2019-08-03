@@ -18,7 +18,7 @@ if [ ! -f $LOCK_ICON ]; then
   curl -s -L -o $LOCK_ICON 'https://i.imgur.com/a/DRKow.png'
 fi
 
-if ! fc-list | egrep Nexa 1> /dev/null 2>&1; then 
+if ! fc-list | egrep Nexa 1> /dev/null 2>&1; then
   [ ! -d ${HOME}/.local/share/fonts ] && mkdir -p ${HOME}/.local/share/fonts
   curl -s -L -o ${HOME}/.local/share/fonts/NexaLight.ttf 'https://www.dropbox.com/s/b16nt18oc2s8b16/NexaLight.ttf?dl=1'
   curl -s -L -o ${HOME}/.local/share/fonts/NexaBold.ttf 'https://www.dropbox.com/s/rsai2k5gblmu6ml/NexaBold.ttf?dl=1'
