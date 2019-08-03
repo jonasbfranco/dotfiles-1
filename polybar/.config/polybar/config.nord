@@ -399,15 +399,15 @@ exec = ~/.config/polybar/scripts/trash.sh
 [module/tv]
 type = custom/script
 interval = 5
-click-left = ~/.config/polybar/scripts/trash.sh -x &
-exec = ~/.config/polybar/scripts/trash.sh
+click-left = ~/.config/polybar/scripts/tv.sh -x &
+exec = ~/.config/polybar/scripts/tv.sh
 
 ;----------------------------------------------------------
 ;		       U P T I M E
 ;----------------------------------------------------------
 [module/uptime]
 type = custom/script
-tail = true
+interval = 30
 exec = ~/.config/polybar/scripts/uptime.sh
 
 ;-------------------------------------------------------------------------
