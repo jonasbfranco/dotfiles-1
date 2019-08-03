@@ -7,7 +7,8 @@ KEYBOARD_ID="Virtual core keyboard"
 # cpm: characters per minute
 # wpm: words per minute (1 word = 5 characters)
 METRIC=cpm
-FORMAT="%{F#D08770}%{F-} %d $METRIC"
+#FORMAT="%{F#D08770}%{F-} %d $METRIC"
+FORMAT="# %d $METRIC"
 
 INTERVAL=20
 
