@@ -3,7 +3,7 @@
 downloads=$(ps -A | grep youtube-dl | wc -l)
 
 if [ $downloads -gt 0 ]; then
-	echo " $downloads"
+	echo "%{F#BF616A}%{F-} $downloads"
 else
 	echo ""
 fi
