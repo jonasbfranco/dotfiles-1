@@ -24,7 +24,7 @@ export WIN=/run/media/lucas/426EB5946EB580E9/
 export VAR2='Var setada pelo ~/.xprofile'
 
 # Vars
-export TERMINAL=termite
+export TERMINAL=st
 export BROWSER=firefox
 export EDITOR=nano
 
