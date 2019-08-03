@@ -145,6 +145,14 @@ label-urgent-background = ${colors.alert}
 label-urgent-padding = 1
 
 ;----------------------------------------------------------
+;		        H A C K S P E E D
+;----------------------------------------------------------
+[module/hackspeed]
+type = custom/script
+exec = ~/.config/polybar/scripts/hackspeed.sh
+tail = true
+
+;----------------------------------------------------------
 ;		        W I N D O W
 ;----------------------------------------------------------
 [module/window]
