@@ -399,8 +399,6 @@ exec = ~/.config/polybar/scripts/trash.sh
 [module/tv]
 type = custom/script
 interval = 5
-
-label-prefix = TV
 click-left = ~/.config/polybar/scripts/tv.sh -x &
 exec = ~/.config/polybar/scripts/tv.sh
 
