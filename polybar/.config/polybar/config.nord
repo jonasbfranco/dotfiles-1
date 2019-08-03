@@ -64,7 +64,7 @@ font-1 = feather:style=Regular:pixelsize=11;3
 
 modules-left = i3
 modules-center = window sep tv
-modules-right = cpu memory filesystem temperature ping hackspeed uptime beats data pulse powermenu
+modules-right = cpu memory filesystem temperature hackspeed uptime beats data pulse powermenu
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -95,7 +95,7 @@ font-0 = Fantasque Sans Mono:style=Regular:pixelsize=11;2
 font-1 = feather:style=Regular:pixelsize=11;3
 
 modules-left = browser terminal vscodium thunar telegram
-modules-center = mpd
+modules-center = mpd sep ping downloads
 modules-right = wallpaper screencast screenshot sep netled netledout hddled refresh lixo
 
 cursor-click = pointer
@@ -150,6 +150,14 @@ label-urgent-padding = 1
 [module/hackspeed]
 type = custom/script
 exec = ~/.config/polybar/scripts/hackspeed.sh
+tail = true
+
+;----------------------------------------------------------
+;		        D O W N L O A D S
+;----------------------------------------------------------
+[module/downloads]
+type = custom/script
+exec = ~/.config/polybar/scripts/downloads.sh
 tail = true
 
 ;----------------------------------------------------------
