@@ -19,9 +19,8 @@ som='complete'
 erro='complete'
 dir="${HOME}/desk"
 tmp="/tmp/videodown/$$"
-proc=$(ps aux | grep "bash $0" | egrep -v grep | wc -l)
-processos=$((proc-1))
 logs="${dir}/status.log"
+proc=$(ps aux | grep "bash $0" | egrep -v grep | wc -l)
 
 if [ ! -d $tmp ]; then
     mkdir -p $tmp
@@ -46,10 +45,10 @@ if [[ $log -ne 0 ]]; then
     echo "URL:          $url" >>"$logs"
     echo "Path:         $dir" >> "$logs"
     echo "Temp:         $tmp" >> "$logs"
-    echo "Processos:    $processos" >> "$logs"
+    echo "Processos:    $proc" >> "$logs"
 fi
 
-notify-send -i $icone "Video Downloader" "Transferencia de: \n\n<b>$titulo</b> iniciada\n\nInstâncias: $processos"
+notify-send -i $icone "Video Downloader" "Transferencia de: \n\n<b>$titulo</b> iniciada\n\nInstâncias: $proc"
 
 if [ $aria == 1 ]; then
     # -j, --max-concurrent-downloads
@@ -67,6 +66,7 @@ else
 fi
 
 if [[ $status -ne 0 ]]; then
+	proc=$(ps aux | grep "bash $0" | egrep -v grep | wc -l)
     echo "---------------------------------------------------------------" >> "$logs"
     echo "Status:       ERRO" >> "$logs"
     echo "Título:       $titulo" >> "$logs"
@@ -75,19 +75,20 @@ if [[ $status -ne 0 ]]; then
     echo "Temp:         $tmp" >> "$logs"
     echo "Processos:    $processos" >> "$logs"    
     echo "Código:       $status" >> "$logs"
-    notify-send -i $icone "Video Downloader" "Erro na transferencia de:\n\n<b>${titulo}*</b>.\n\nInstâncias: $processos"
+    notify-send -i $icone "Video Downloader" "Erro na transferencia de:\n\n<b>${titulo}*</b>.\n\nInstâncias: $proc"
     canberra-gtk-play -i $erro
 fi
 
 if [[ $status -eq 0 ]]; then
     if [[ $log -ne 0 ]]; then
+    	proc=$(ps aux | grep "bash $0" | egrep -v grep | wc -l)
         echo "---------------------------------------------------------------" >> "$logs"
         echo "Status:       SUCESSO" >> "$logs"
         echo "Título:       $titulo" >> "$logs"
         echo "URL:          $url" >> "$logs"
         echo "Path:         $dir" >> "$logs"
         echo "Temp:         $tmp" >> "$logs"
-        echo "Processos:    $processos" >> "$logs"
+        echo "Processos:    $proc" >> "$logs"
     fi
     arquivos=$(ls "${titulo}"* | egrep -vi '.mp4|.avi|.mkv|.log')
     for i in "${arquivos[@]}"
@@ -101,22 +102,23 @@ if [[ $status -eq 0 ]]; then
     done
 
     #processos=$((processos-1))
+    proc=$(ps aux | grep "bash $0" | egrep -v grep | wc -l)
 
     if ls "${titulo}"* 1> /dev/null 2>&1; then
-            if ls "${dir}/${titulo}"* 1> /dev/null 2>&1; then
-            notify-send -i $icone "Video Downloader" "Já existe um arquivo:\n\n<b>$titulo</b>\n\nEm:\n\n$dir\n\nInstâncias: $processos"
+        if ls "${dir}/${titulo}"* 1> /dev/null 2>&1; then
+            notify-send -i $icone "Video Downloader" "Já existe um arquivo:\n\n<b>$titulo</b>\n\nEm:\n\n$dir\n\nInstâncias: $proc"
             canberra-gtk-play -i $som
         else
-            notify-send -i $icone "Video Downloader" "Sucesso, vídeo salvo:\n\n<b>$titulo</b>\n\nEm:\n\n$dir\n\nInstâncias: $processos"
+            notify-send -i $icone "Video Downloader" "Sucesso, vídeo salvo:\n\n<b>$titulo</b>\n\nEm:\n\n$dir\n\nInstâncias: $proc"
             mv "${titulo}"* "$dir"
             cd $dir && rm -rf $tmp
         fi
     else
-        notify-send -i $icone "Video Downloader" "Erro na transferencia de:\n\n<b>${tmp}/${titulo}*</b>.\n\nInstâncias: $processos"
+        notify-send -i $icone "Video Downloader" "Erro na transferencia de:\n\n<b>${tmp}/${titulo}*</b>.\n\nInstâncias: $proc"
         canberra-gtk-play -i $erro
     fi
 else
-    notify-send -i $icone "Video Downloader" "Erro na transferencia de:\n\n<b>$titulo</b>\n\nInstâncias: $processos"
+    notify-send -i $icone "Video Downloader" "Erro na transferencia de:\n\n<b>$titulo</b>\n\nInstâncias: $proc"
     canberra-gtk-play -i $erro
 fi
 
