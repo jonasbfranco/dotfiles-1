@@ -73,7 +73,7 @@ if [[ $status -ne 0 ]]; then
     echo "URL:          $url" >> "$logs"
     echo "Path:         $dir" >> "$logs"
     echo "Temp:         $tmp" >> "$logs"
-    echo "Processos:    $processos" >> "$logs"    
+    echo "Processos:    $proc" >> "$logs"    
     echo "Código:       $status" >> "$logs"
     notify-send -i $icone "Video Downloader" "Erro na transferencia de:\n\n<b>${titulo}*</b>.\n\nInstâncias: $proc"
     canberra-gtk-play -i $erro
