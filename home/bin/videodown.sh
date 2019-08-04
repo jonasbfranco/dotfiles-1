@@ -19,7 +19,7 @@ som='complete'
 erro='complete'
 dir="${HOME}/desk"
 tmp="/tmp/videodown/$$"
-proc=$(ps aux | grep $(basename $0) | egrep -v grep | wc -l)
+proc=$(ps aux | grep "bash $0" | egrep -v grep | wc -l)
 processos=$((proc-1))
 logs="${dir}/status.log"
 
