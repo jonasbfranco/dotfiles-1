@@ -8,12 +8,12 @@ if [ $2 ]; then
             systemctl $param stop $2
             echo " $2"
         else
-            echo " $2"
+            echo "%{F#D08770}%{F-} $2"
         fi
     else
         if [ $3 ]; then
             systemctl $param start $2
-            echo " $2"
+            echo "%{F#D08770}%{F-} $2"
         else
             echo " $2"
         fi
