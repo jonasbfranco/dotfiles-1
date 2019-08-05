@@ -344,11 +344,10 @@ ramp-coreload-7-foreground = #ff5555
 [module/memory]
 type = internal/memory
 interval = 0.2
-format = <label> <bar-used>
 
-label = RAM
-label-font = 3
-label-foreground = #99
+format = <bar-used>
+format-prefix = " "
+format-prefix-foreground = ${colors.secondary}
 
 bar-used-width = 30
 bar-used-gradient = true
@@ -357,12 +356,12 @@ bar-used-foreground-1 = #2f8419
 bar-used-foreground-2 = #f5a70a
 bar-used-foreground-3 = #ed5456
 bar-used-indicator = █
-bar-used-indicator-font = 5
+bar-used-indicator-font = 3
 bar-used-indicator-foreground = #fff
 bar-used-fill = █
-bar-used-fill-font = 5
+bar-used-fill-font = 3
 bar-used-empty = █
-bar-used-empty-font = 5
+bar-used-empty-font = 3
 bar-used-empty-foreground = #44
 
 ;-------------------------------------------------------------------------
