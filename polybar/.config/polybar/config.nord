@@ -354,7 +354,7 @@ bar-used-gradient = true
 bar-used-foreground-0 = #449f3d
 bar-used-foreground-1 = #2f8419
 bar-used-foreground-2 = #f5a70a
-bar-used-foreground-3 = #ed5456
+;bar-used-foreground-3 = #ed5456
 bar-used-indicator = █
 bar-used-indicator-font = 3
 bar-used-indicator-foreground = #fff
@@ -364,7 +364,7 @@ bar-used-empty = █
 bar-used-empty-font = 3
 bar-used-empty-foreground = #44
 
-;bar-used-width = 100
+bar-used-width = 50
 
 ;-------------------------------------------------------------------------
 ;              T E M P
