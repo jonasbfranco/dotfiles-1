@@ -61,7 +61,7 @@ module-margin-right = 1
 ; fixed:pixelsize=11 / Hack:style=Regular:pixelsize=11 / Iosevka:style=Regular:pixelsize=11
 font-0 = Fantasque Sans Mono:style=Regular:pixelsize=11;2
 font-1 = feather:style=Regular:pixelsize=11;3
-font-2 = Font Awesome 5 Free:size=8;0
+font-2 = Font Awesome 5 Free:size=6;0
 font-3 = Termsynu:size=7;0
 
 modules-left = i3
@@ -364,7 +364,8 @@ bar-used-empty = █
 bar-used-empty-font = 3
 bar-used-empty-foreground = #44
 
-bar-used-width = 100
+;bar-used-width = 100
+
 ;-------------------------------------------------------------------------
 ;              T E M P
 ;-------------------------------------------------------------------------
