@@ -505,16 +505,16 @@ label-song = %{F#D08770}%{F-} %artist% - %title%
 label-offline = %{F#D08770}%{F-} mpd
 
 ; Only applies if <icon-X> is used
-icon-play = play
-icon-pause = pause
+icon-play = 
+icon-pause = 
 icon-stop = stp
 icon-prev = prev
 icon-next = next
 icon-seekb = seekb
 icon-seekf = seekf
 icon-random = rdm
-icon-repeat = rpt
-icon-repeatone = repeat-one
+icon-repeat = 
+icon-repeatone = ¹
 icon-single = single
 icon-consume = consume
 
