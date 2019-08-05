@@ -347,9 +347,11 @@ ramp-coreload-7-foreground = #ff5555
 type = internal/memory
 interval = 0.2
 
-format = <bar-used>
+format = <label> <bar-used>
 format-prefix = " "
 format-prefix-foreground = ${colors.secondary}
+
+label = %percentage%%
 
 bar-used-width = 8
 bar-used-gradient = true
