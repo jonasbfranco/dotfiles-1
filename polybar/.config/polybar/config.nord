@@ -97,7 +97,7 @@ font-0 = Fantasque Sans Mono:style=Regular:pixelsize=11;2
 font-1 = feather:style=Regular:pixelsize=11;3
 
 modules-left = browser terminal vscodium thunar telegram sep tdocker tmpd
-modules-center = mpd sep downloads
+modules-center = mpd downloads
 modules-right = wallpaper screencast screenshot sep netled netledout hddled refresh lixo
 
 cursor-click = pointer
