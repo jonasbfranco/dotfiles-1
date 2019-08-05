@@ -94,7 +94,7 @@ module-margin-right = 1
 font-0 = Fantasque Sans Mono:style=Regular:pixelsize=11;2
 font-1 = feather:style=Regular:pixelsize=11;3
 
-modules-left = browser terminal vscodium thunar telegram
+modules-left = browser terminal vscodium thunar telegram sep tdocker tmpd
 modules-center = mpd sep downloads
 modules-right = wallpaper screencast screenshot sep netled netledout hddled refresh lixo
 
@@ -437,6 +437,21 @@ exec = ~/.config/polybar/scripts/tv.sh
 type = custom/script
 interval = 30
 exec = ~/.config/polybar/scripts/uptime.sh
+
+;----------------------------------------------------------
+;              T O G G L E S
+;----------------------------------------------------------
+[module/tdocker]
+type = custom/script
+click-left = ~/.config/polybar/scripts/systemd.sh -s docker x
+exec = ~/.config/polybar/scripts/systemd.sh -s docker
+tail = true
+
+[module/tmpd]
+type = custom/script
+click-left = ~/.config/polybar/scripts/systemd.sh -u mpd x
+exec = ~/.config/polybar/scripts/systemd.sh -u mpd
+tail = true
 
 ;-------------------------------------------------------------------------
 ;					O U T R O S
