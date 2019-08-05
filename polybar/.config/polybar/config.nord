@@ -166,7 +166,7 @@ format-packetloss = <label-connected>
 ;   %upspeed%   [wireless+wired]
 ;   %downspeed% [wireless+wired]
 ;   %linkspeed% [wired]
-label-connected = %ifname% %downspeed:9% %upspeed:9%
+label-connected = %ifname% %downspeed:3% %upspeed:3%
 label-disconnected = %ifname% offline
 label-packetloss = %ifname% loss
 
