@@ -331,13 +331,15 @@ ramp-coreload-4-foreground = ${colors.secondary}
 ramp-coreload-5 = ▆
 ramp-coreload-5-font = 3
 ;ramp-coreload-5-foreground = #fba922
-
+ramp-coreload-5-foreground = ${colors.secondary}
 ramp-coreload-6 = ▇
 ramp-coreload-6-font = 3
-ramp-coreload-6-foreground = #ff5555
+;ramp-coreload-6-foreground = #ff5555
+ramp-coreload-6-foreground = ${colors.secondary}
 ramp-coreload-7 = █
 ramp-coreload-7-font = 3
-ramp-coreload-7-foreground = #ff5555
+;ramp-coreload-7-foreground = #ff5555
+ramp-coreload-7-foreground = ${colors.secondary}
 
 ;-------------------------------------------------------------------------
 ;              M E M O R I A
@@ -361,10 +363,14 @@ label = %percentage_used:2%%
 
 bar-used-width = 8
 bar-used-gradient = true
-bar-used-foreground-0 = #449f3d
-bar-used-foreground-1 = #2f8419
-bar-used-foreground-2 = #f5a70a
-bar-used-foreground-3 = #ed5456
+;bar-used-foreground-0 = #449f3d
+;bar-used-foreground-1 = #2f8419
+;bar-used-foreground-2 = #f5a70a
+;bar-used-foreground-3 = #ed5456
+bar-used-foreground-0 = ${colors.secondary}
+bar-used-foreground-1 = ${colors.secondary}
+bar-used-foreground-2 = ${colors.secondary}
+bar-used-foreground-3 = ${colors.secondary}
 bar-used-indicator = █
 bar-used-indicator-font = 3
 bar-used-indicator-foreground = #fff
