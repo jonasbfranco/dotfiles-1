@@ -474,13 +474,11 @@ menu-0-2-exec = menu-open-3
 menu-0-3 = desligar
 menu-0-3-exec = menu-open-4
 
-
-
 menu-1-0 = SAIR?!
 menu-1-0-exec = i3-msg exit
 
 menu-2-0 = SUSPENDER?!
-menu-2-0-exec = i3-msg exit
+menu-2-0-exec = systemctl suspend
 
 menu-3-0 = REINICIAR?!
 menu-3-0-exec = systemctl reboot
