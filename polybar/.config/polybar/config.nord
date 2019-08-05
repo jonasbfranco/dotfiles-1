@@ -349,12 +349,12 @@ format = <bar-used>
 format-prefix = " "
 format-prefix-foreground = ${colors.secondary}
 
-bar-used-width = 30
+bar-used-width = 8
 bar-used-gradient = true
 bar-used-foreground-0 = #449f3d
 bar-used-foreground-1 = #2f8419
 bar-used-foreground-2 = #f5a70a
-;bar-used-foreground-3 = #ed5456
+bar-used-foreground-3 = #ed5456
 bar-used-indicator = █
 bar-used-indicator-font = 3
 bar-used-indicator-foreground = #fff
@@ -363,8 +363,6 @@ bar-used-fill-font = 3
 bar-used-empty = █
 bar-used-empty-font = 3
 bar-used-empty-foreground = #44
-
-bar-used-width = 50
 
 ;-------------------------------------------------------------------------
 ;              T E M P
