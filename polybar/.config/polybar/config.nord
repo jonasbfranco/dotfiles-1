@@ -500,11 +500,25 @@ port = 6600
 interval = 2
 
 ;format-online = <icon-prev> <icon-seekb> <icon-stop> <toggle> <icon-seekf> <icon-next>  <icon-repeat> <icon-random>  <bar-progress> <label-time>  <label-song>
-format-online = <toggle> <label-time> <label-song>
+format-online = <label-song> <toggle> <label-time>
 format-offline = <label-offline>
 
 label-song = %{F#D08770}%{F-} %artist% - %title%
 label-offline = %{F#D08770}%{F-} mpd
+
+; Only applies if <icon-X> is used
+icon-play = play
+icon-pause = pause
+icon-stop = stp
+icon-prev = prev
+icon-next = next
+icon-seekb = seekb
+icon-seekf = seekf
+icon-random = rdm
+icon-repeat = rpt
+icon-repeatone = repeat-one
+icon-single = single
+icon-consume = consume
 
 ;----------------------------------------------------------
 ;              P I N G
