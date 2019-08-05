@@ -304,10 +304,10 @@ format = <label> <ramp-coreload>
 format-prefix = " "
 format-prefix-foreground = ${colors.secondary}
 
-label = %percentage:2%%
+label = %percentage%%
 ;label-foreground = #99
 
-ramp-coreload-width = 5
+ramp-coreload-spacing = 0
 ramp-coreload-0 = ▁
 ramp-coreload-0-font = 3
 ramp-coreload-0-foreground = #aaff77
