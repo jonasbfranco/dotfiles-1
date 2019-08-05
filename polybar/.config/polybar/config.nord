@@ -304,7 +304,7 @@ format = <label> <ramp-coreload>
 format-prefix = " "
 format-prefix-foreground = ${colors.secondary}
 
-label = %percentage%%
+label = %percentage:2%%
 ;label-foreground = #99
 
 ramp-coreload-spacing = 0
@@ -351,7 +351,7 @@ format = <label> <bar-used>
 format-prefix = " "
 format-prefix-foreground = ${colors.secondary}
 
-label = %percentage%%
+label = %percentage_used:2%%
 
 bar-used-width = 8
 bar-used-gradient = true
