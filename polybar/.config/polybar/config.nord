@@ -155,11 +155,16 @@ accumulate-stats = true
 unknown-as-up = true
 
 format-connected = <label-connected>
-format-connected-prefix = 
+format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.secondary}
 
 format-disconnected = <label-disconnected>
+format-disconnected-prefix = " "
+format-disconnected-prefix-foreground = ${colors.secondary}
+
 format-packetloss = <label-connected>
+format-packetloss-prefix = " "
+format-packetloss-prefix-foreground = ${colors.secondary}
 
 ;   %ifname%    [wireless+wired]
 ;   %local_ip%  [wireless+wired]
@@ -169,9 +174,9 @@ format-packetloss = <label-connected>
 ;   %upspeed%   [wireless+wired]
 ;   %downspeed% [wireless+wired]
 ;   %linkspeed% [wired]
-label-connected = %ifname% %downspeed:3% %upspeed:3%
-label-disconnected = %ifname% offline
-label-packetloss = %ifname% loss
+label-connected = %downspeed:3% %upspeed:3%
+label-disconnected = offline
+label-packetloss = loss
 
 ;----------------------------------------------------------
 ;		        H A C K S P E E D
