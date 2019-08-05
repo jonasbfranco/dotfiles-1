@@ -155,6 +155,9 @@ accumulate-stats = true
 unknown-as-up = true
 
 format-connected = <label-connected>
+format-connected-prefix = 
+format-connected-prefix-foreground = ${colors.secondary}
+
 format-disconnected = <label-disconnected>
 format-packetloss = <label-connected>
 
