@@ -300,11 +300,9 @@ tail = true
 type = internal/cpu
 interval = 1.5
 
-format = <label> <ramp-coreload>
-
-label = CPU
-label-font = 3
-label-foreground = #99
+format = <ramp-coreload>
+format-prefix = " "
+format-prefix-foreground = ${colors.secondary}
 
 ramp-coreload-0 = ▁
 ramp-coreload-0-font = 2
