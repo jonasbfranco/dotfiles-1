@@ -1,15 +1,21 @@
 #!/usr/bin/env bash
 
-if [ $1 ]; then
-    if systemctl is-active --quiet $1; then
-        if [ $2 ]; then
-            systemctl stop $1
+if [ $2 ]; then
+    [ "$1" == "-u" ] && param="--user"
+
+    if systemctl $param is-active --quiet $2; then
+        if [ $3 ]; then
+            systemctl $param stop $2
+            echo "$2 parado"
+        else
+            echo "$2 ativo"
         fi
-        echo "$1 ativo"
     else
-        if [ $2 ]; then
-            systemctl start $1
+        if [ $3 ]; then
+            systemctl $param start $2
+            echo "$2 ativo"
+        else
+            echo "$2 parado"
         fi
-        echo "$1 parado"
     fi
 fi
