@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-if [ $(systemctl is-running $1) ]; then
+if [ $(systemctl is-active $1) ]; then
     echo OK
 fi
