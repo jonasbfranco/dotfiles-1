@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-if [[ $(systemctl is-active --quiet $1) -eq 0 ]]; then
+if systemctl is-active --quiet $1; then
     echo OK
 fi
