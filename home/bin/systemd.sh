@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
-if [[ $(systemctl is-active $1) == 0 ]]; then
+ativo=$(systemctl is-active $1)
+
+if [ $ativo = 0 ]; then
     echo OK
 fi
