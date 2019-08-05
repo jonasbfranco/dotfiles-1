@@ -300,13 +300,12 @@ tail = true
 type = internal/cpu
 interval = 1.5
 
-format = <ramp-coreload>
+format = <label> <ramp-coreload>
 format-prefix = " "
 format-prefix-foreground = ${colors.secondary}
 
-label = %percentage%
-label-font = 3
-label-foreground = #99
+label = %percentage:2%%
+;label-foreground = #99
 
 ramp-coreload-width = 5
 ramp-coreload-0 = ▁
