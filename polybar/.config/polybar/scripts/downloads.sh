@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ $1 ]; then
-	$HOME/bin/videodown.sh
+	bash -c "$HOME/bin/videodown.sh"
 fi
 
 downloads=$(ps -A | grep youtube-dl | wc -l)
