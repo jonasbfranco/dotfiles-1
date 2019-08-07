@@ -571,13 +571,13 @@ exec = ~/.config/polybar/scripts/uptime.sh
 ;----------------------------------------------------------
 [module/tdocker]
 type = custom/script
-click-left = ~/.config/polybar/scripts/systemd.sh -s docker x
+click-left = ~/.config/polybar/scripts/systemd.sh -s docker x &
 exec = ~/.config/polybar/scripts/systemd.sh -s docker
 tail = true
 
 [module/tmpd]
 type = custom/script
-click-left = ~/.config/polybar/scripts/systemd.sh -u mpd x
+click-left = ~/.config/polybar/scripts/systemd.sh -u mpd x &
 exec = ~/.config/polybar/scripts/systemd.sh -u mpd
 tail = true
 
