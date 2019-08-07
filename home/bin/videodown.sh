@@ -12,7 +12,8 @@
 log=0 # 0 = Sem log, 1 = Log no arquivo erro.log
 aria=1
 ts=$(date +"%s")
-dir="${HOME}/desk"
+#dir="${HOME}/desk"
+dir="$(ls -t -1 ${HOME}/desk | head -1)"
 url="$(xclip -o)"
 icone="${HOME}/.local/share/icons/elementary/video-display.png"
 som='complete'
@@ -21,6 +22,13 @@ dir="${HOME}/desk"
 tmp="/tmp/videodown/$$"
 logs="${dir}/status.log"
 proc=$(ps aux | grep "bash $0" | egrep -v grep | wc -l)
+
+if [ ! -d $dir ]; then
+	dir="${HOME}/desk"
+	if [ ! -d $dir ]; then
+		mkdir -p $dir
+	fi
+fi
 
 if [ ! -d $tmp ]; then
     mkdir -p $tmp
