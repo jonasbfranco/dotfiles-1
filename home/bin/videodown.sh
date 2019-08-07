@@ -13,7 +13,7 @@ log=0 # 0 = Sem log, 1 = Log no arquivo erro.log
 aria=1
 ts=$(date +"%s")
 #dir="${HOME}/desk"
-dir="$(ls -t -1 ${HOME}/desk | head -1)"
+dir="${HOME}/desk/$(ls -t -1 ${HOME}/desk | head -1)"
 url="$(xclip -o)"
 icone="${HOME}/.local/share/icons/elementary/video-display.png"
 som='complete'
