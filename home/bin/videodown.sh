@@ -5,7 +5,7 @@
 # Feito por Lucas Saliés Brum a.k.a. sistematico, <lucas@archlinux.com.br>
 #
 # Criado em: 30/04/2019 13:55:09
-# Última alteração: 01/05/2019 14:32:25
+# Última alteração: 07/08/2019 16:24:14
 
 #xclip -out -selection primary | xclip -in -selection clipboard
 
