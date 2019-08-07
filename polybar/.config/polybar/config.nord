@@ -193,6 +193,7 @@ tail = true
 ;----------------------------------------------------------
 [module/downloads]
 type = custom/script
+click-left = ~/bin/videodown.sh
 exec = ~/.config/polybar/scripts/downloads.sh
 tail = true
 
