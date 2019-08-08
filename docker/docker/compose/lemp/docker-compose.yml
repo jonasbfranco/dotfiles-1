@@ -34,7 +34,7 @@ services:
         container_name: php-gitlab
         image: php:7.3-fpm
         ports:
-            - "9090:9000"
+            - "9090:9090"
         build:
             context: ../../dockerfile/
             dockerfile: php
