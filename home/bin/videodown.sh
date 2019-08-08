@@ -133,13 +133,13 @@ else
     canberra-gtk-play -i $erro
 fi
 
-if [ -f $procFile ]; then
+if [[ -f $procFile ]]; then
     proc=$(cat $procFile)
 else
     proc=1
 fi
 
-if [ $proc -lt 2 ]; then
+if [[ $proc -lt 2 ]]; then
     rm -f $procFile
 else
     echo $((proc-1)) > $procFile
