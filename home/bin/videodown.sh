@@ -43,10 +43,12 @@ if [ -f $procFile ]; then
     if [[ $(ps aux | grep "$0" | egrep -v grep | wc -l) -lt 2 ]]; then
         rm -f $procFile 
         proc=1
+        echo 1 > $procFile
     else
         proc=$(cat $procFile)
+        ((proc+1))
+        echo $proc > $procFile
     fi
-    echo $((proc+1)) > $procFile
 else
     echo 1 > $procFile
     proc=1
