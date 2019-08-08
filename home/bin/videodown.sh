@@ -25,6 +25,7 @@ procFile="/tmp/videodown.pid"
 
 if [ -f $procFile ]; then
     proc=$(cat $procFile)
+    echo $((proc+1))
 else
     echo 1 > $procFile
     proc=1
