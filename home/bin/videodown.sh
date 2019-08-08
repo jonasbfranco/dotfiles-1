@@ -21,7 +21,14 @@ erro='complete'
 dir="${HOME}/desk"
 tmp="/tmp/videodown/$$"
 logs="${dir}/status.log"
-proc=$(ps aux | grep "bash $0" | egrep -v grep | wc -l)
+procFile="/tmp/videodown.pid"
+
+if [ -f $procFile ]; then
+    proc=$(cat $procFile)
+else
+    echo 1 > $procFile
+    proc=1
+fi
 
 if [ ! -d $dir ]; then
 	dir="${HOME}/desk"
@@ -74,8 +81,6 @@ else
 fi
 
 if [[ $status -ne 0 ]]; then
-	proc=$(ps aux | grep "bash $0" | egrep -v grep | wc -l)
-	proc=$((proc-1))
     echo "---------------------------------------------------------------" >> "$logs"
     echo "Status:       ERRO" >> "$logs"
     echo "Título:       $titulo" >> "$logs"
@@ -111,9 +116,6 @@ if [[ $status -eq 0 ]]; then
         fi
     done
 
-    #processos=$((processos-1))
-    proc=$(ps aux | grep "bash $0" | egrep -v grep | wc -l)
-
     if ls "${titulo}"* 1> /dev/null 2>&1; then
         if ls "${dir}/${titulo}"* 1> /dev/null 2>&1; then
             notify-send -i $icone "Video Downloader" "Já existe um arquivo:\n\n<b>$titulo</b>\n\nEm:\n\n$dir\n\nInstâncias: $proc"
@@ -132,4 +134,15 @@ else
     canberra-gtk-play -i $erro
 fi
 
+if [ -f $procFile ]; then
+    proc=$(cat $procFile)
+else
+    proc=1
+fi
 
+if [ $proc -lt 2 ]; then
+    rm -f $procFile
+else
+    $proc=$((proc-1))
+    echo $proc > $procFile
+fi
