@@ -13,7 +13,7 @@
 
 nome="GitLab.sh"
 dir="${HOME}/gitlab"
-repos=('php-mvc-sqlite-crud' 'agressive')
+repos=('php-mvc-sqlite-crud' 'agressive' 'feriados')
 remoto="nginx@hera"
 dotfiles=1
 icone="${HOME}/.local/share/icons/elementary/gitlab.svg"
