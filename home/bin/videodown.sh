@@ -21,38 +21,7 @@ erro='complete'
 dir="${HOME}/desk"
 tmp="/tmp/videodown/$$"
 logs="${dir}/status.log"
-procFile="/tmp/videodown.pid"
-
-function sair() {
-    if [ -f $procFile ]; then
-        proc=$(cat $procFile)
-    else
-        proc=1
-    fi
-
-    if [[ $proc -lt 2 ]]; then
-        rm -f $procFile
-    else
-        echo $((proc-1)) > $procFile
-    fi
-
-    exit
-}
-
-if [ -f $procFile ]; then
-    if [[ $(ps aux | grep "$0" | egrep -v grep | wc -l) -lt 2 ]]; then
-        rm -f $procFile 
-        proc=1
-        echo 1 > $procFile
-    else
-        proc=$(cat $procFile)
-        ((proc+1))
-        echo $proc > $procFile
-    fi
-else
-    echo 1 > $procFile
-    proc=1
-fi
+proc=$(pgrep -fc "bash $0")
 
 if [ ! -d $dir ]; then
 	dir="${HOME}/desk"
@@ -156,4 +125,3 @@ else
     canberra-gtk-play -i $erro
 fi
 
-sair
