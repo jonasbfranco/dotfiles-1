@@ -34,14 +34,14 @@ services:
         container_name: php-gitlab
         image: php:7.3-fpm
         ports:
-            - "9090:9000"
+            - "9090:9090"
         build:
             context: ../../dockerfile/
             dockerfile: php
         volumes:
             - ~/gitlab:/code
             - ~/docker/confs/phplog.conf:/usr/local/etc/php-fpm.d/log.conf
-            - ~/docker/confs/php.conf:/usr/local/etc/php-fpm.d/php.conf
+            - ~/docker/confs/php-gitlab.conf:/usr/local/etc/php-fpm.d/php.conf
             - ~/docker/confs/php.ini:/usr/local/etc/php/conf.d/php.ini
             - ~/sdm:/opt/musicas
             - /var/log/liquidsoap.log:/var/log/liquidsoap.log
