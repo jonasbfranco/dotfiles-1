@@ -74,10 +74,10 @@ if [ $aria == 1 ]; then
     # -s, --split restricted by --max-connection-per-server
     # -t, --timeout
 
-    youtube-dl $opts -o "${titulo}.%(ext)s" --external-downloader aria2c --external-downloader-args '-m 20 -c -j 1 -x 5 -s 5 -k 3M' "${url}"
+    youtube-dl -o "${titulo}.%(ext)s" --external-downloader aria2c --external-downloader-args '-l /home/lucas/desk/aria.log -m 20 -c -j 1 -x 5 -s 5 -k 3M' "${url}"
     status="$?"
 else
-    youtube-dl $opts -o "${titulo}.%(ext)s" "${url}"
+    youtube-dl -o "${titulo}.%(ext)s" "${url}"
     status="$?"
 fi
 
