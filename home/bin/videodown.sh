@@ -24,7 +24,12 @@ logs="${dir}/status.log"
 procFile="/tmp/videodown.pid"
 
 if [ -f $procFile ]; then
-    proc=$(cat $procFile)
+    if [[ $(ps aux | grep "bash $0" | egrep -v grep | wc -l) -eq 1 ]]; then
+        rm -f $procFile 
+        proc=1
+    else
+        proc=$(cat $procFile)
+    fi
     echo $((proc+1)) > $procFile
 else
     echo 1 > $procFile
