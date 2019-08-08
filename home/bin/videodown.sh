@@ -23,6 +23,22 @@ tmp="/tmp/videodown/$$"
 logs="${dir}/status.log"
 procFile="/tmp/videodown.pid"
 
+function sair() {
+    if [ -f $procFile ]; then
+        proc=$(cat $procFile)
+    else
+        proc=1
+    fi
+
+    if [[ $proc -lt 2 ]]; then
+        rm -f $procFile
+    else
+        echo $((proc-1)) > $procFile
+    fi
+
+    exit
+}
+
 if [ -f $procFile ]; then
     if [[ $(ps aux | grep "$0" | egrep -v grep | wc -l) -lt 2 ]]; then
         rm -f $procFile 
@@ -54,7 +70,7 @@ cd $tmp
 padrao='(https?|ftp|file)://[-A-Za-z0-9\+&@#/%?=~_|!:,.;]*[-A-Za-z0-9\+&@#/%=~_|]'
 if [[ ! ${url} =~ $padrao ]]; then
 	notify-send -i $icone "Video Downloader" "O link é inválido!"
-    exit
+    sair
 else
 	titulo="$(curl "$url" -so - | grep -iPo '(?<=<title>)(.*)(?=</title>)' | iconv -f utf8 -t ascii//TRANSLIT | sed 's/[^[:alnum:]]\+/ /g')"
 fi
@@ -138,14 +154,4 @@ else
     canberra-gtk-play -i $erro
 fi
 
-if [[ -f $procFile ]]; then
-    proc=$(cat $procFile)
-else
-    proc=1
-fi
-
-if [[ $proc -lt 2 ]]; then
-    rm -f $procFile
-else
-    echo $((proc-1)) > $procFile
-fi
+sair
