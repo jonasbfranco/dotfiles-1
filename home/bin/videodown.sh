@@ -95,8 +95,6 @@ fi
 
 if [[ $status -eq 0 ]]; then
     if [[ $log -ne 0 ]]; then
-    	proc=$(ps aux | grep "bash $0" | egrep -v grep | wc -l)
-    	proc=$((proc-1))
         echo "---------------------------------------------------------------" >> "$logs"
         echo "Status:       SUCESSO" >> "$logs"
         echo "Título:       $titulo" >> "$logs"
