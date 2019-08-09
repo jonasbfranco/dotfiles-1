@@ -10,7 +10,7 @@
 #xclip -out -selection primary | xclip -in -selection clipboard
 
 log=0 # 0 = Sem log, 1 = Log no arquivo erro.log
-aria=0
+aria=1
 ts=$(date +"%s")
 #dir="${HOME}/desk"
 dir="${HOME}/desk/$(ls -t -1 ${HOME}/desk | head -1)"
@@ -66,7 +66,7 @@ if [ $aria == 1 ]; then
     # -s, --split restricted by --max-connection-per-server
     # -t, --timeout
 
-    youtube-dl -o "${titulo}.%(ext)s" --external-downloader aria2c --external-downloader-args '-l /home/lucas/desk/aria.log -m 20 -c -j 1 -x 5 -s 5 -k 3M' "${url}"
+    youtube-dl -o "${titulo}.%(ext)s" --external-downloader aria2c --external-downloader-args '-l /home/lucas/desk/aria.log -m 10 -c -j 2 -x 2 -s 4 -k 2M' "${url}"
     status="$?"
 else
     youtube-dl -o "${titulo}.%(ext)s" "${url}"
