@@ -12,11 +12,9 @@
 log=0 # 0 = Sem log, 1 = Log no arquivo erro.log
 aria=1
 ts=$(date +"%s")
-#dir="${HOME}/desk"
 dir="${HOME}/desk/$(ls -t -1 ${HOME}/desk | head -1)"
 icone="${HOME}/.local/share/icons/elementary/video-display.png"
 som='complete'
-erro='complete'
 dir="${HOME}/desk"
 tmp="/tmp/videodown/$$"
 logs="${dir}/status.log"
@@ -61,7 +59,7 @@ if [ $aria == 1 ]; then
     # -s, --split restricted by --max-connection-per-server
     # -t, --timeout
 
-    youtube-dl -o "${titulo}.%(ext)s" --external-downloader aria2c --external-downloader-args '-l /home/lucas/desk/aria.log -m 10 -c -j 2 -x 1 -s 2 -k 2M' "${url}"
+    youtube-dl -o "${titulo}.%(ext)s" --external-downloader aria2c --external-downloader-args '-l /home/lucas/desk/aria.log -t 10 -m 10 -c -j 2 -x 1 -s 2 -k 2M' "${url}"
     status="$?"
 else
     youtube-dl -o "${titulo}.%(ext)s" "${url}"
@@ -78,7 +76,7 @@ if [[ $status -ne 0 ]]; then
     echo "Processos:    $proc" >> "$logs"    
     echo "Código:       $status" >> "$logs"
     notify-send -i $icone "Video Downloader" "Erro na transferencia de:\n\n<b>${titulo}*</b>.\n\nInstâncias: $proc"
-    canberra-gtk-play -i $erro
+    canberra-gtk-play -i $som
     exit
 fi
 
@@ -114,10 +112,10 @@ if [[ $status -eq 0 ]]; then
         fi
     else
         notify-send -i $icone "Video Downloader" "Erro na transferencia de:\n\n<b>${tmp}/${titulo}*</b>.\n\nInstâncias: $proc"
-        canberra-gtk-play -i $erro
+        canberra-gtk-play -i $som
     fi
 else
     notify-send -i $icone "Video Downloader" "Erro na transferencia de:\n\n<b>$titulo</b>\n\nInstâncias: $proc"
-    canberra-gtk-play -i $erro
+    canberra-gtk-play -i $som
 fi
 
