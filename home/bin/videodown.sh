@@ -14,7 +14,6 @@ aria=1
 ts=$(date +"%s")
 #dir="${HOME}/desk"
 dir="${HOME}/desk/$(ls -t -1 ${HOME}/desk | head -1)"
-url="$(xclip -o)"
 icone="${HOME}/.local/share/icons/elementary/video-display.png"
 som='complete'
 erro='complete'
@@ -30,13 +29,9 @@ if [ ! -d $dir ]; then
 	fi
 fi
 
-if [ ! -d $tmp ]; then
-    mkdir -p $tmp
-fi
-
+[ ! -d $tmp ] && mkdir -p $tmp
+[ $1 ] && url="$1" || url="$(xclip -o)"
 cd $tmp
-
-[ $1 ] && url="$1"
 
 padrao='(https?|ftp|file)://[-A-Za-z0-9\+&@#/%?=~_|!:,.;]*[-A-Za-z0-9\+&@#/%=~_|]'
 if [[ ! ${url} =~ $padrao ]]; then
@@ -84,6 +79,7 @@ if [[ $status -ne 0 ]]; then
     echo "Código:       $status" >> "$logs"
     notify-send -i $icone "Video Downloader" "Erro na transferencia de:\n\n<b>${titulo}*</b>.\n\nInstâncias: $proc"
     canberra-gtk-play -i $erro
+    exit
 fi
 
 if [[ $status -eq 0 ]]; then
