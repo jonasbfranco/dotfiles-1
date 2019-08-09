@@ -96,7 +96,7 @@ module-margin-right = 1
 font-0 = Fantasque Sans Mono:style=Regular:pixelsize=11;2
 font-1 = feather:style=Regular:pixelsize=11;3
 
-modules-left = browser terminal vscodium thunar telegram sep tdocker tmpd
+modules-left = browser terminal vscode thunar telegram sep tdocker tmpd
 modules-center = mpd downloads
 modules-right = wallpaper screencast screenshot sep netled netledout hddled refresh lixo
 
@@ -644,11 +644,11 @@ content = 
 content-foreground = ${colors.secondary}
 click-left = ~/.config/rofi/scripts/docker &
 
-[module/vscodium]
+[module/vscode]
 type = custom/text
 content = 
 content-foreground = ${colors.secondary}
-click-left = vscodium &
+click-left = code &
 
 [module/refresh]
 type = custom/text
