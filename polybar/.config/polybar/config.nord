@@ -565,6 +565,20 @@ click-left = ~/.config/polybar/scripts/systemd.sh -u mpd x &
 exec = ~/.config/polybar/scripts/systemd.sh -u mpd
 tail = true
 
+;----------------------------------------------------------
+;		       N O T E S
+;----------------------------------------------------------
+[module/tv]
+type = custom/script
+interval = 5
+click-left = ~/.config/rofi/scripts/notes &
+exec = echo " $(cat ~/.rofi_notes)"
+
+
+content = 
+content-foreground = ${colors.secondary}
+click-left = ~/.config/rofi/scripts/notes &
+
 ;-------------------------------------------------------------------------
 ;					O U T R O S
 ;-------------------------------------------------------------------------
@@ -641,7 +655,7 @@ content = 
 content-foreground = ${colors.secondary}
 click-left = i3-msg restart &
 
-[module/notes]
+[module/notes2]
 type = custom/text
 content = 
 content-foreground = ${colors.secondary}
