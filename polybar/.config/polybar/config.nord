@@ -598,7 +598,7 @@ click-left = $HOME/.local/lock/fortune &
 [module/browser]
 type = custom/text
 content = "%{F#BF616A}%{F-}"
-click-right = left &
+click-left = firefox &
 click-middle = qutebrowser &
 click-right = chromium &
 
