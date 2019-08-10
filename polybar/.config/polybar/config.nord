@@ -568,16 +568,11 @@ tail = true
 ;----------------------------------------------------------
 ;		       N O T E S
 ;----------------------------------------------------------
-[module/tv]
+[module/notes]
 type = custom/script
 interval = 5
 click-left = ~/.config/rofi/scripts/notes &
-exec = echo " $(cat ~/.rofi_notes)"
-
-
-content = 
-content-foreground = ${colors.secondary}
-click-left = ~/.config/rofi/scripts/notes &
+exec = echo " $(cat ~/.rofi_notes | wc -l)"
 
 ;-------------------------------------------------------------------------
 ;					O U T R O S
