@@ -653,6 +653,11 @@ content = 
 content-foreground = ${colors.secondary}
 click-left = i3-msg restart &
 
+[module/notes]
+type = custom/text
+content = 
+content-foreground = ${colors.secondary}
+click-left = ~/.config/rofi/scripts/notes &
 
 [settings]
 screenchange-reload = true
