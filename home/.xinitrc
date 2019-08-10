@@ -18,7 +18,7 @@ fi
 dbus-update-activation-environment --systemd DISPLAY
 
 export DESKTOP_SESSION=i3
-export TERMINAL=xfce4-terminal
+export TERMINAL=st
 export EDITOR=nano
 export BROWSER=firefox
 
