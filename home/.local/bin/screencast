@@ -13,7 +13,7 @@ apps=( "xrandr" )
 
 for app in ${apps[@]}
 do
-	command -v $app >/dev/null 2>&1 || { echo >&2 "O aplicativo $app não está instalado. Abortando."; exit 1; }
+    command -v $app >/dev/null 2>&1 || { echo >&2 "O aplicativo $app não está instalado. Abortando."; exit 1; }
 done
 
 
@@ -60,7 +60,7 @@ else
         #ffmpeg -thread_queue_size 512 -f x11grab -r 30 -s $resolucao -i :0.0 -f pulse -i default -preset $preset -c:v libx264 -c:a aac -b:a 128k $arquivo -probesize 50M
         #ffmpeg -thread_queue_size 512 -f x11grab -r 30 -s $resolucao -i :0.0 -f pulse -ac 2 -i default -preset $preset -c:v libx264 -c:a aac -b:a 128k $arquivo -probesize 50M
         #ffmpeg -thread_queue_size 512 -f x11grab -r 30 -s $resolucao -i :0.0 -f pulse -ac 2 -i default -preset $preset -c:v h264_nvenc -qp 0 -c:a aac -b:a 128k $arquivo -probesize 50M
-    	#ffmpeg -f alsa -i pulse -f x11grab -r 25 -s $resolucao -i :0 -c:a aac -c:v libx264 -threads 0 $arquivo -probesize 50M
+        #ffmpeg -f alsa -i pulse -f x11grab -r 25 -s $resolucao -i :0 -c:a aac -c:v libx264 -threads 0 $arquivo -probesize 50M
         #ffmpeg -f x11grab -r 25 -s $resolucao -i :0 -f pulse -ac 2 -i default -preset $preset -c:v libx264 -c:a aac -b:a 128k $arquivo -probesize 50M
         #ffmpeg -f x11grab -r 25 -s $resolucao -i :0 -f pulse -ac 2 -i default -preset $preset -c:v libx264 -c:a aac -b:a 128k $arquivo
         #ffmpeg -y -i screencast-2018-01-15_06-09-22.mp4 -c:v mpeg4 -b:v 600k -c:a libmp3lame output.avi
@@ -69,20 +69,20 @@ else
         #ffmpeg -f x11grab -s $resolucao -i :0 -f pulse -ac 2 -i default -preset $preset -c:v libx264 -pix_fmt yuv444p -c:a libmp3lame $arquivo
         #ffmpeg -f x11grab -s $resolucao -i :0 -f pulse -ac 2 -i default -preset $preset -c:v mpeg4 -c:a libmp3lame $arquivo
 
-		#ffmpeg -f x11grab -s $resolucao -i :0 -c:v libx264 -crf 23 -profile:v baseline -level 3.0 -pix_fmt yuv420p -c:a aac -ac 2 -strict experimental -b:a 128k -movflags faststart $arquivo
+        #ffmpeg -f x11grab -s $resolucao -i :0 -c:v libx264 -crf 23 -profile:v baseline -level 3.0 -pix_fmt yuv420p -c:a aac -ac 2 -strict experimental -b:a 128k -movflags faststart $arquivo
 
         ffmpeg -async 1 -f x11grab -s $resolucao -i :0 -f pulse -ac 2 -i default -c:v libx264 -crf 23 -profile:v baseline -level 3.0 -pix_fmt yuv420p -c:a aac -ac 2 -strict experimental -b:a 128k -movflags faststart $arquivo
 
     elif [ "$1" == "clear" ]; then
         icone="${HOME}/.local/share/icons/elementary/user-trash.png"
         listagem=(${caminho}*)
-        if [ ${#listagem[@]} -gt 1 ]; then
+        if [ ${#listagem[@]} -gt 0 ]; then
             mv ${caminho}* ${lixeira}/files/
-	    export DISPLAY=:0 ; canberra-gtk-play -i trash-empty 2>&1
-            notify-send -i $icone "ScreenCast" "Pasta de screencasts limpa!"
+            export DISPLAY=:0 ; canberra-gtk-play -i trash-empty 2>&1
+            dbus-launch notify-send -i $icone "ScreenCast" "Pasta de screencasts limpa!"
         else
-	    export DISPLAY=:0 ; canberra-gtk-play -i trash-empty 2>&1
-            notify-send -i $icone "ScreenCast" "Pasta de screencasts já está limpa!"
+            export DISPLAY=:0 ; canberra-gtk-play -i trash-empty 2>&1
+            dbus-launch notify-send -i $icone "ScreenCast" "Pasta de screencasts já está limpa!"
         fi
         exit 0
     fi
