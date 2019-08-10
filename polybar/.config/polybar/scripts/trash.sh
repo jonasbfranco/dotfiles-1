@@ -10,23 +10,28 @@ if [[ "${trash_dir}" = "" ]]; then
 fi
 
 if [[ "${1}" == "-x" ]]; then
-	if [ ! -d $trash_temp ]; then
-		mkdir $trash_temp
-	fi
+	if ls $trash_dir/* 2> /dev/null 1> /dev/null; then
+		if [ ! -d $trash_temp ]; then
+			mkdir $trash_temp
+		fi
 
-	cp -rf ${trash_dir}/files ${trash_temp}/
-	cp -rf ${trash_dir}/info ${trash_temp}/
+		cp -rf ${trash_dir}/files ${trash_temp}/
+		cp -rf ${trash_dir}/info ${trash_temp}/
 
-	rm -rf ${trash_dir}/files
-	rm -rf ${trash_dir}/info
+		rm -rf ${trash_dir}/files
+		rm -rf ${trash_dir}/info
 
-	mkdir ${trash_dir}/files
-	mkdir ${trash_dir}/info
+		mkdir ${trash_dir}/files
+		mkdir ${trash_dir}/info
 
-	if xset q &>/dev/null; then
-		# ls /usr/share/sounds/freedesktop/stereo/
-		export DISPLAY=:0 ; canberra-gtk-play -i trash-empty 2>&1
-		export DISPLAY=:0 ; notify-send -i $icone "Lixeira" "Lixeira limpa!"
+		if xset q &>/dev/null; then
+			export DISPLAY=:0 ; canberra-gtk-play -i trash-empty 2>&1
+			export DISPLAY=:0 ; notify-send -i $icone "Lixeira" "Lixeira limpa!"
+		fi
+	else
+		if xset q &>/dev/null; then
+			export DISPLAY=:0 ; notify-send -i $icone "Lixeira" "Lixeira já vazia!"
+		fi
 	fi
 elif [[ "${1}" == "-o" ]]; then
 	xdg-open $trash_dir/files
