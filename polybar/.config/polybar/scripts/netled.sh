@@ -4,9 +4,11 @@ CHECKINTERVAL=0.1
 DEVICE="eno1"
 
 if [ "$1" == "out" ]; then
+  #ICONE=""
   ICONE=""
 else
-  ICONE=""
+  #ICONE=""
+  ICONE=""
 fi
 
 getNetStat() {
