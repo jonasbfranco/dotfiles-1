@@ -492,14 +492,6 @@ click-right = ~/.local/bin/screenshot -c &
 scroll-down = ~/.local/bin/screenshot -e &
 
 ;----------------------------------------------------------
-;              N E T L E D IN
-;----------------------------------------------------------
-[module/netled]
-type = custom/script
-exec = ~/.config/polybar/scripts/netled.sh
-tail = true
-
-;----------------------------------------------------------
 ;              N E T L E D OUT
 ;----------------------------------------------------------
 [module/netledout]
