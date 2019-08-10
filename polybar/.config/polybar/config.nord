@@ -572,7 +572,7 @@ tail = true
 type = custom/script
 interval = 5
 click-left = ~/.config/rofi/scripts/notes &
-exec = echo " $(cat ~/.rofi_notes | wc -l)"
+exec = echo "%{F#D08770}%{F-} $(cat ~/.rofi_notes | wc -l)"
 
 ;-------------------------------------------------------------------------
 ;					O U T R O S
