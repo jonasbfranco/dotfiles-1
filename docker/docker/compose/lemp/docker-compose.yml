@@ -7,7 +7,7 @@ services:
         ports:
             - "8080:8080"
         depends_on:
-            - php-gitlab
+            - phpgl
         volumes:
             - ~/gitlab:/code
             - ~/docker/confs/nginx-gitlab.conf:/etc/nginx/conf.d/default.conf
