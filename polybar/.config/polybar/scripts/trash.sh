@@ -10,7 +10,7 @@ if [[ "${trash_dir}" = "" ]]; then
 fi
 
 if [[ "${1}" == "-x" ]]; then
-	if ls $trash_dir/* 2> /dev/null 1> /dev/null; then
+	if ls $trash_dir/* 2> /dev/null; then
 		if [ ! -d $trash_temp ]; then
 			mkdir $trash_temp
 		fi
