@@ -62,7 +62,7 @@ font-3 = Termsynu:size=7;0
 
 modules-left = i3
 modules-center = window
-modules-right = cpu memory filesystem hddled temperature network data pulse powermenu
+modules-right = cpu memory filesystem hddled temperature netled network data pulse powermenu
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -301,6 +301,14 @@ format-warn = <label-warn>
 label = %temperature-c%
 label-warn = %temperature-c%
 label-warn-foreground = ${colors.secondary}
+
+;----------------------------------------------------------
+;              N E T L E D IN
+;----------------------------------------------------------
+[module/netled]
+type = custom/script
+exec = ~/.config/polybar/scripts/netled.sh
+tail = true
 
 ;----------------------------------------------------------
 ;		        N E T W O R K
