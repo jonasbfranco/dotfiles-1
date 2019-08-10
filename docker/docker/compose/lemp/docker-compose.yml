@@ -1,8 +1,8 @@
 version: "3"
 
 services:
-    nginx-gitlab:
-        container_name: nginx-gitlab
+    nginxgl:
+        container_name: nginxgl
         image: nginx:latest
         ports:
             - "8080:8080"
@@ -29,8 +29,8 @@ services:
             - /var/log/liquidsoap.log:/var/log/liquidsoap.log
         restart: unless-stopped
 
-    php-gitlab:
-        container_name: php-gitlab
+    phpgl:
+        container_name: phpgl
         image: php:7.3-fpm
         ports:
             - "9090:9090"
