@@ -169,7 +169,7 @@ format = <label>
 format-prefix = " "
 format-prefix-foreground = ${colors.secondary}
 
-label = %percentage:2%%
+label = %percentage%%
 ;label-foreground = #99
 
 ramp-coreload-spacing = 0
@@ -211,7 +211,7 @@ ramp-coreload-7-foreground = ${colors.secondary}
 ;-------------------------------------------------------------------------
 [module/memory]
 type = internal/memory
-interval = 0.2
+interval = 0.5
 
 ;format = <label> <bar-used>
 format = <label>
