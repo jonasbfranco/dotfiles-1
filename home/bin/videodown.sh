@@ -12,8 +12,8 @@
 log=0 # 0 = Sem log, 1 = Log no arquivo erro.log
 aria=0
 ts=$(date +"%s")
-#dir="${HOME}/desk"
-dir="${HOME}/desk/$(ls -t -1 ${HOME}/desk | head -1)"
+dir="${HOME}/desk"
+#dir="${HOME}/desk/$(ls -t -1 ${HOME}/desk | head -1)"
 icone="${HOME}/.local/share/icons/elementary/video-display.png"
 som='complete'
 tmp="/tmp/videodown/$$"
