@@ -1,2 +1,2 @@
 
-[ -z $DISPLAY ] && cdm
+[ -n $DISPLAY ] && cdm
