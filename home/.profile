@@ -1,0 +1,2 @@
+
+[ -n $DISPLAY ] && cdm
