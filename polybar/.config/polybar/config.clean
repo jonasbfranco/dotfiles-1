@@ -31,7 +31,6 @@ padding-right = 1
 module-margin-left = 0
 module-margin-right = 1
 
-; fixed:pixelsize=11 / Hack:style=Regular:pixelsize=11 / Iosevka:style=Regular:pixelsize=11
 font-0 = Fantasque Sans Mono:style=Regular:pixelsize=11;2
 font-1 = feather:style=Regular:pixelsize=11;3
 font-2 = FontAwesome:size=6;2
@@ -39,7 +38,7 @@ font-3 = Termsynu:size=7;0
 
 modules-left = i3 sep browser terminal code thunar telegram
 modules-center = window sep refresh
-modules-right = cpu memory hddled filesystem temperature data pulse powermenu
+modules-right = cpu memory hddled filesystem temperature netled network data pulse powermenu
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -162,31 +161,11 @@ ramp-coreload-7-foreground = ${colors.secondary}
 type = internal/memory
 interval = 0.5
 
-;format = <label> <bar-used>
 format = <label>
 format-prefix = " "
 format-prefix-foreground = ${colors.secondary}
 
 label = %percentage_used:2%%
-
-bar-used-width = 8
-bar-used-gradient = true
-;bar-used-foreground-0 = #449f3d
-;bar-used-foreground-1 = #2f8419
-;bar-used-foreground-2 = #f5a70a
-;bar-used-foreground-3 = #ed5456
-bar-used-foreground-0 = ${colors.secondary}
-bar-used-foreground-1 = ${colors.secondary}
-bar-used-foreground-2 = ${colors.secondary}
-bar-used-foreground-3 = ${colors.secondary}
-bar-used-indicator = █
-bar-used-indicator-font = 3
-bar-used-indicator-foreground = #fff
-bar-used-fill = █
-bar-used-fill-font = 3
-bar-used-empty = █
-bar-used-empty-font = 3
-bar-used-empty-foreground = #44
 
 ;----------------------------------------------------------
 ;              H D D L E D
@@ -203,8 +182,9 @@ tail = true
 type = internal/fs
 interval = 60
 
-mount-0 = /
+;mount-0 = /
 ;mount-1 = /home
+mount-0 = /home
 
 ;fixed-values = true
 ;spacing = 2
@@ -239,7 +219,7 @@ label-warn = %temperature-c%
 label-warn-foreground = ${colors.secondary}
 
 ;----------------------------------------------------------
-;              N E T L E D IN
+;              N E T L E D
 ;----------------------------------------------------------
 [module/netled]
 type = custom/script
@@ -358,38 +338,6 @@ menu-4-0 = DESLIGAR?!
 menu-4-0-exec = systemctl poweroff
 
 ;----------------------------------------------------------
-;              M P D
-;----------------------------------------------------------
-[module/mpd]
-type = internal/mpd
-
-host = 127.0.0.1
-port = 6600
-
-interval = 2
-
-;format-online = <icon-prev> <icon-seekb> <icon-stop> <toggle> <icon-seekf> <icon-next>  <icon-repeat> <icon-random>  <bar-progress> <label-time>  <label-song>
-format-online = <label-song>
-format-offline = <label-offline>
-
-label-song = %{F#D08770}%{F-} %artist% - %title%
-label-offline = %{F#D08770}%{F-} mpd
-
-; Only applies if <icon-X> is used
-icon-play = 
-icon-pause = 
-icon-stop = stp
-icon-prev = prev
-icon-next = next
-icon-seekb = seekb
-icon-seekf = seekf
-icon-random = rdm
-icon-repeat = 
-icon-repeatone = ¹
-icon-single = single
-icon-consume = consume
-
-;----------------------------------------------------------
 ;		        W A L L P A P E R
 ;----------------------------------------------------------
 [module/wallpaper]
@@ -426,31 +374,6 @@ click-left = ~/.local/bin/screenshot &
 click-middle = ~/.local/bin/screenshot -w &
 click-right = ~/.local/bin/screenshot -c &
 scroll-down = ~/.local/bin/screenshot -e &
-
-;----------------------------------------------------------
-;              N E T L E D OUT
-;----------------------------------------------------------
-[module/netledout]
-type = custom/script
-exec = ~/.config/polybar/scripts/netled.sh out
-tail = true
-
-;----------------------------------------------------------
-;		        H A C K S P E E D
-;----------------------------------------------------------
-[module/hackspeed]
-type = custom/script
-exec = ~/.config/polybar/scripts/hackspeed.sh
-tail = true
-
-;----------------------------------------------------------
-;		        D O W N L O A D S
-;----------------------------------------------------------
-[module/downloads]
-type = custom/script
-click-left = ~/.config/polybar/scripts/downloads.sh x
-exec = ~/.config/polybar/scripts/downloads.sh
-tail = true
 
 ;----------------------------------------------------------
 ;			    B E A T S
