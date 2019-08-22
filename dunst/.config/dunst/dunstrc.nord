@@ -16,7 +16,10 @@
     # If this option is set to mouse or keyboard, the monitor option
     # will be ignored.
     follow = mouse
-	geometry = "300x5-10-40"
+	# Duas Barras
+	#geometry = "300x5-10-40"
+	# Uma Barra
+	geometry = "300x5-10-18"
     indicate_hidden = yes
 
     # Shrink window if it's smaller than the width.  Will be ignored if
