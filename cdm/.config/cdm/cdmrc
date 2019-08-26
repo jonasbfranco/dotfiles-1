@@ -2,7 +2,7 @@
 
 binlist=(
    '~/.xinitrc i3'
-   '~/.xinitrc xfce4'
+   '~/.xinitrc xfce'
 )
 namelist=('i3' 'xfce')
 
