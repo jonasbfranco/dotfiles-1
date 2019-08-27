@@ -25,7 +25,7 @@ services:
             - ~/gitlab:/var/www
             - ~/docker/confs/phplog.conf:/usr/local/etc/php-fpm.d/log.conf
             - ~/docker/confs/php.conf:/usr/local/etc/php-fpm.d/php.conf
-            - ~/docker/confs/php.ini:/usr/local/etc/php/conf.d/php.ini
+            - ~/docker/confs/php-alt.ini:/usr/local/etc/php/conf.d/php.ini
             - ~/sdm:/opt/musicas
             - /var/log/liquidsoap.log
         restart: unless-stopped
