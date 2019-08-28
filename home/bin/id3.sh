@@ -37,6 +37,7 @@ if [[ "$resposta" != [Ss]* ]]; then
 	exit 1
 fi
 
+# for d in $(find /path/to/dir -maxdepth 1 -type d)
 for arquivo in ${dir}/*.${extensao}; do
 	nome=$(basename -s .${extensao} "$arquivo")
 	artista=$(echo "$nome" | awk -F'-' '{print $1}' | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//')
