@@ -15,9 +15,9 @@ app="id3"
 # CentOS
 #app="id3v2"
 
-which id3 1> /dev/null 2> /dev/null
+which $app 1> /dev/null 2> /dev/null
 if [ $? != 0 ]; then
-	echo "O aplicativo id3 não foi encontrado. Abortando..."
+	echo "O aplicativo $app não foi encontrado. Abortando..."
     exit 1
 fi
 
@@ -55,13 +55,13 @@ for arquivo in ${dir}/*.${extensao}; do
 	echo "------------------------------------------------------"
 
 	if [ "$faixa" ]; then
-		id3 -t "$faixa" "$arquivo"
+		$app -t "$faixa" "$arquivo"
 	else
 		echo "[[\033[31m!\e[0m]] Impossível determinar título de: \033[31m${arquivo}\e[0m."
 	fi
 
 	if [ "$artista" ]; then
-		id3 -a "$artista" "$arquivo"
+		$app -a "$artista" "$arquivo"
 	else
 		echo "[\033[31m!\e[0m] Impossível determinar artista de: \033[31m${arquivo}\e[0m."
 	fi	
