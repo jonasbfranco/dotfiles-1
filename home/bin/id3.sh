@@ -10,6 +10,11 @@
 #
 # Uso: id3.sh /caminho/para/as/mp3s
 
+# Debian
+app="id3"
+# CentOS
+#app="id3v2"
+
 which id3 1> /dev/null 2> /dev/null
 if [ $? != 0 ]; then
 	echo "O aplicativo id3 não foi encontrado. Abortando..."
