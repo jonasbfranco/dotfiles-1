@@ -33,8 +33,6 @@ else
     caminho="${HOME}/video/screencast/"
 fi
 
-[ ! -d $caminho ] && mkdir -p $caminho
-
 if [ ! $1 ]; then
     data=$(date +%Y-%m-%d_%H-%M-%S)
     arquivo="${caminho}/screencast-${data}.mp4"
@@ -77,7 +75,7 @@ else
 
     elif [ "$1" == "clear" ]; then
         icone="${HOME}/.local/share/icons/elementary/user-trash.png"
-        listagem=(${caminho}*)
+        listagem=(${caminho}* 2> /dev/null)
         if [ ${#listagem[@]} -gt 0 ]; then
             mv ${caminho}* ${lixeira}/files/
             export DISPLAY=:0 ; canberra-gtk-play -i trash-empty 2>&1
