@@ -29,4 +29,3 @@ services:
             - ~/sdm:/opt/musicas
             - /var/log/liquidsoap.log
         restart: unless-stopped
-
