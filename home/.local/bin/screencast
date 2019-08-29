@@ -33,6 +33,8 @@ else
     caminho="${HOME}/video/screencast/"
 fi
 
+[ ! -d $caminho ] && mkdir -p $caminho
+
 if [ ! $1 ]; then
     data=$(date +%Y-%m-%d_%H-%M-%S)
     arquivo="${caminho}/screencast-${data}.mp4"
