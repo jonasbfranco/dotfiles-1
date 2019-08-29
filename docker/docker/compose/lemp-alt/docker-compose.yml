@@ -23,8 +23,8 @@ services:
             dockerfile: php-alt
         volumes:
             - ~/gitlab:/code
-            - ~/docker/confs/phplog.conf:/usr/local/etc/php-fpm.d/log.conf
-            - ~/docker/confs/php.conf:/usr/local/etc/php-fpm.d/php.conf
+            - ~/docker/confs/phplog-alt.conf:/usr/local/etc/php-fpm.d/log.conf
+            - ~/docker/confs/php-alt.conf:/usr/local/etc/php-fpm.d/php.conf
             - ~/docker/confs/php-alt.ini:/usr/local/etc/php/conf.d/php.ini
             - ~/sdm:/opt/musicas
             - /var/log/liquidsoap.log
