@@ -75,8 +75,9 @@ else
 
     elif [ "$1" == "clear" ]; then
         icone="${HOME}/.local/share/icons/elementary/user-trash.png"
-        listagem=(${caminho}* 2> /dev/null)
-        if [ ${#listagem[@]} -gt 0 ]; then
+        #listagem=(${caminho}* 2> /dev/null)
+        #if [ ${#listagem[@]} -gt 0 ]; then
+        if ls ${caminho}* 2> /dev/null; then
             mv ${caminho}* ${lixeira}/files/
             export DISPLAY=:0 ; canberra-gtk-play -i trash-empty 2>&1
             dbus-launch notify-send -i $icone "ScreenCast" "Pasta de screencasts limpa!"
