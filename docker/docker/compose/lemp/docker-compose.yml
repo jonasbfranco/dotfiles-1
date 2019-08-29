@@ -6,8 +6,6 @@ services:
         image: nginx:latest
         ports:
             - "80:80"
-        #depends_on:
-        #    - php
         volumes:
             - ~/htdocs:/code
             - ~/docker/confs/nginx.conf:/etc/nginx/conf.d/default.conf
