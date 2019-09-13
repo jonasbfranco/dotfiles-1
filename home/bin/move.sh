@@ -1,5 +1,11 @@
-#!/bin/bash
-
+#!/usr/bin/env bash
+#
+# Arquivo: move.sh
+#
+# Feito por Lucas Saliés Brum a.k.a. sistematico, <lucas@archlinux.com.br>
+#
+# Criado em: 13/09/2019 09:48:56
+# Última alteração: 13/09/2019 09:49:00
 
 # Debian
 #app="id3"
