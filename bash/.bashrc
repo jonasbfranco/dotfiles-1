@@ -82,6 +82,7 @@ PS1="\[${Purple}\][\[${Color_Off}\]\u@\h \W\[${Purple}\]]\[${Color_Off}\]:\$ "
 fortune brasil
 echo
 
-if [ ! -e /tmp/.esd-${UID} ]; then
+#if [ ! -e /tmp/.esd-${UID} ]; then
+if [ ! -f /tmp/.esd-${UID} ]; then
         ln -s /tmp/.esd /tmp/.esd-${UID}
 fi
