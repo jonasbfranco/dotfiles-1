@@ -79,10 +79,11 @@ fi
 PS1="\[${Purple}\][\[${Color_Off}\]\u@\h \W\[${Purple}\]]\[${Color_Off}\]:\$ "
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
+#if [ ! -e /tmp/.esd-${UID} ]; then
+if [[ ! -L /tmp/.esd-${UID} ]]; then
+        ln -s /tmp/.esd /tmp/.esd-${UID}
+fi
+
 fortune brasil
 echo
 
-#if [ ! -e /tmp/.esd-${UID} ]; then
-if [ ! -f /tmp/.esd-${UID} ]; then
-        ln -s /tmp/.esd /tmp/.esd-${UID}
-fi
