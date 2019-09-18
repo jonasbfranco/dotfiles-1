@@ -5,7 +5,7 @@ services:
         container_name: nginx-alt2
         image: nginx:latest
         ports:
-            - "9090:9090"
+            - "7070:7070"
         volumes:
             - ~/gitlab:/code
             - ~/docker/confs/nginx-alt2.conf:/etc/nginx/conf.d/default.conf
@@ -15,7 +15,8 @@ services:
 
     php-alt2:
         container_name: php-alt2
-        image: php:7.3-fpm
+        #image: php:7.3-fpm
+        image: php:fpm
         ports:
             - "9292:9292"
         build:
