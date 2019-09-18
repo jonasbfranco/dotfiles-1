@@ -9,6 +9,7 @@ Restart=always
 RestartSec=1min
 StandardOutput=null
 StandardError=null
+ExecStart=/usr/bin/ngrok --log %h/.local/share/ngrok/ngrok.log --config %h/.config/ngrok2/ngrok.yml start %i
 #ExecStart=/usr/bin/ngrok --log %h/.local/share/ngrok/ngrok.log --config %h/.config/ngrok/ngrok.conf start %i
 #ExecStart=/usr/bin/ngrok -config %h/.ngrok2/ngrok.yml --all
 #ExecStart=/usr/bin/ngrok http 80
