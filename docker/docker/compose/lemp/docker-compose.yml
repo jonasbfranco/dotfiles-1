@@ -15,7 +15,8 @@ services:
 
     php:
         container_name: php
-        image: php:7.3-fpm
+        #image: php:7.3-fpm
+        image: php:fpm
         ports:
             - "9000:9000"
         build:
