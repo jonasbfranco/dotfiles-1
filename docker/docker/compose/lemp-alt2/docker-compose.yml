@@ -1,8 +1,8 @@
 version: "3"
 
 services:
-    nginx-alt:
-        container_name: nginx-alt
+    nginx-alt2:
+        container_name: nginx-alt2
         image: nginx:latest
         ports:
             - "9090:9090"
@@ -13,8 +13,8 @@ services:
             - /var/log/liquidsoap.log
         restart: unless-stopped
 
-    php-alt:
-        container_name: php-alt
+    php-alt2:
+        container_name: php-alt2
         image: php:7.3-fpm
         ports:
             - "9292:9292"
