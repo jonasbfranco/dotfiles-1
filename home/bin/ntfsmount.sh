@@ -27,7 +27,7 @@ excl=("/dev/sda1" "/dev/sda2")
 for d in /dev/sd*; do
 	tipo=$(udisksctl info -b $d | grep IdType | awk '{print $2}')
 	montagem=$(udisksctl info -b $d | grep MountPoints | awk '{print $2}')
-	if [ "$tipo" == "ntfs" && $(contem "${excl[@]}" $d) == "n" && "$montagem" == "" && $(basename "$montagem") != "Recuperação" ]; then
+	if [[ "$tipo" == "ntfs" ]] && [[ $(contem "${excl[@]}" $d) == "n" ]] && [[ "$montagem" == "" ]] && [[ "$(basename $montagem)" != "Recuperação" ]]; then
 		udisksctl mount -b $d
 		montagem=$(udisksctl info -b $d | grep MountPoints | awk '{print $2}')
 		notify-send -i $icone "AutoMount" "$d montado em $montagem"
