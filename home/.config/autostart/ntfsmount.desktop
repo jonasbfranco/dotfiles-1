@@ -1,8 +1,0 @@
-[Desktop Entry]
-Type=Application
-Version=1.0
-Name=NTFS Mount
-Comment=Mount NTFS Automatically
-Exec=~/bin/ntfsmount.sh
-Terminal=false
-
