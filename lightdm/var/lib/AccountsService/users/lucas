@@ -1,6 +1,11 @@
+[org.freedesktop.DisplayManager.AccountsService]
+BackgroundFile='/usr/share/backgrounds/xfce/xfce-stripes.png'
+
 [User]
-Icon=/var/lib/AccountsService/icons/lucas
 Language=pt_BR.utf8
-#XSession=cinnamon
+Email=lucas@archlinux.com.br
+Session=xfce
+XSession=xfce
+Icon=/var/lib/AccountsService/icons/lucas.png
 SystemAccount=false
 
