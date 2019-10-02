@@ -1,0 +1,6 @@
+[User]
+Icon=/var/lib/AccountsService/icons/lucas
+Language=pt_BR.utf8
+#XSession=cinnamon
+SystemAccount=false
+
