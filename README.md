@@ -20,15 +20,16 @@
 3. `git clone https://github.com/sistematico/dotfiles .dotfiles`
 4. `cd .dotfiles`
 5. `stow i3`
-5. `stow polybar`
-6. `sudo stow -t /etc etc`
-7. `sudo stow -t /usr usr`
-8. `sudo stow -t /boot boot`
-9. `sudo stow -t / ngrok`
+6. `stow polybar`
+7. `sudo stow -t /etc etc`
+8. `sudo stow -t /usr usr`
+9. `sudo stow -t /boot boot`
+10. `sudo stow -t / ngrok`
+11. `sudo stow -t / lightdm`
 
 ## Bônus!
 
-9. `sudo stow -t / agave`
+12. `sudo stow -t / agave`
 
 ## Instalação Automática
 
