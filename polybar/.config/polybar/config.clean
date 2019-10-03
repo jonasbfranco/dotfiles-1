@@ -37,7 +37,7 @@ font-2 = FontAwesome:size=6;2
 font-3 = Termsynu:size=7;0
 
 modules-left = i3 sep browser terminal code thunar telegram
-modules-center = window yt
+modules-center = window dl
 modules-right = cpu memory hddled filesystem temperature netled network data pulse refresh powermenu
 
 cursor-click = pointer
@@ -89,6 +89,15 @@ label-visible-padding = 1
 label-urgent = %name%
 label-urgent-background = ${colors.alert}
 label-urgent-padding = 1
+
+;----------------------------------------------------------
+;				D O W N L O A D S
+;----------------------------------------------------------
+[module/dl]
+type = custom/script
+exec = ps aux | grep youtube-dl | egrep -v grep | wc -l
+interval = 5
+format-prefix = "dl"
 
 ;----------------------------------------------------------
 ;				W I N D O W
