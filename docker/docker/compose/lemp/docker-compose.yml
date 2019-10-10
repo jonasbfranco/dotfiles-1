@@ -57,7 +57,8 @@ services:
 
     php-alt:
         container_name: php-alt
-        image: php:7.3-fpm
+        # image: php:7.3-fpm
+        image: php:fpm
         ports:
             - "9090:9090"
         build:
