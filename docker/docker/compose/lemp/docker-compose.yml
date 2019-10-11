@@ -39,8 +39,8 @@ services:
 
     php:
         container_name: php
-        #image: php:7.3-fpm
-        image: php:fpm
+        image: php:7.3-fpm
+        #image: php:fpm
         ports:
             - "9000:9000"
         build:
@@ -57,8 +57,8 @@ services:
 
     php-alt:
         container_name: php-alt
-        # image: php:7.3-fpm
-        image: php:fpm
+        image: php:7.3-fpm
+        # image: php:fpm
         ports:
             - "9090:9090"
         build:
@@ -75,8 +75,8 @@ services:
 
     php-alt2:
         container_name: php-alt2
-        #image: php:7.3-fpm
-        image: php:fpm
+        image: php:7.3-fpm
+        #image: php:fpm
         ports:
             - "9292:9292"
         build:
