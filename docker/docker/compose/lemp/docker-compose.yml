@@ -38,6 +38,7 @@ services:
             - ~/docker/confs/phplog.conf:/usr/local/etc/php-fpm.d/log.conf
             - ~/docker/confs/php.conf:/usr/local/etc/php-fpm.d/php.conf
             - ~/docker/confs/php.ini:/usr/local/etc/php/conf.d/php.ini
+            - ~/docker/confs/fpm.conf:/usr/local/etc/php-fpm.d/zz-docker.conf
             #- ~/sdm:/opt/musicas
             #- /var/log/liquidsoap.log:/var/log/liquidsoap.log
         restart: unless-stopped
@@ -55,6 +56,7 @@ services:
             - ~/docker/confs/phplog.conf:/usr/local/etc/php-fpm.d/log.conf
             - ~/docker/confs/php.conf:/usr/local/etc/php-fpm.d/php.conf
             - ~/docker/confs/php.ini:/usr/local/etc/php/conf.d/php.ini
+            - ~/docker/confs/fpm2.conf:/usr/local/etc/php-fpm.d/zz-docker.conf
             #- ~/sdm:/opt/musicas
             #- /var/log/liquidsoap.log
         restart: unless-stopped
