@@ -81,7 +81,8 @@ offset="$(show_time $DIFF)"
 
 # Debug
 #yad --info --title "$titulo" --text "ffmpeg -ss $inicio -t $offset -i $entrada $saida" --button=gtk-ok:1
-(ffmpeg -ss "$inicio" -t "$offset" -i "$entrada" "$saida"  2>&1 | yad --title "$titulo" --progress --pulsate --auto-close --progress-text "Convertendo...")
+#(ffmpeg -ss "$inicio" -t "$offset" -i "$entrada" "$saida"  2>&1 | yad --title "$titulo" --progress --pulsate --auto-close --progress-text "Convertendo...")
+ffmpeg -ss "$inicio" -t "$offset" -i "$entrada" "$saida"  2>&1 | yad --title "$titulo" --progress --pulsate --auto-close --progress-text "Convertendo..."
 
 
 if [ $? -eq 0 ]; then
