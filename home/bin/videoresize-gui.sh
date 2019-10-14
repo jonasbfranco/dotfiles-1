@@ -53,7 +53,7 @@ resolucao=$(echo $resolucao | awk -F'!' '{printf "%s", $2}')
 
 # -vf "scale=iw/2:ih/2"
 #(ffmpeg -i "${video}" -filter:v scale=$resolucao:-1 -c:a copy "${saida}" 2>&1 | yad --title "$titulo" --progress --pulsate --auto-close --progress-text "Convertendo...")
-ffmpeg -i "${video}" -filter:v scale=$resolucao:-1 -c:a copy "${saida}" | yad --title "$titulo" --pulsate --progress-text "Convertendo..."
+ffmpeg -i "${video}" -filter:v scale=$resolucao:-1 -c:a copy "${saida}" | yad --title "$titulo" --progress --pulsate --progress-text "Convertendo..."
 
 
 if [ $? = 0 ]; then
