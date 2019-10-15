@@ -273,7 +273,7 @@ assign [class="(^Steam|discord)"] $ws6
 assign [class="(Thunderbird|Deluge)"] $ws7
 assign [class="(whatsdesk|Whatsie|Whatsapp|whatsapp-desktop)"] $ws8
 assign [class="(^Telegram|^Hexchat)"] $ws9
-assign [class="(^Atril)"] $ws10
+assign [class="(^Atril|Postman)"] $ws10
 
 ####################################################################
 ################ G R U P O S #######################################
