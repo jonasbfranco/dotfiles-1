@@ -21,7 +21,6 @@ export SSH_AUTH_SOCK
 # Dirs
 export GH=~/github/majestic
 export WIN=/run/media/lucas/426EB5946EB580E9/
-export VAR2='Var setada pelo ~/.xprofile'
 
 # Vars
 export TERMINAL=st
