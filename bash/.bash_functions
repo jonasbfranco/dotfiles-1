@@ -22,3 +22,7 @@ function mma() {
     mpv --no-video --ytdl-format=bestaudio ytdl://ytsearch10:"$@"
 }
 
+# mp3
+bitrate () {
+    echo `basename "$1"`: `file "$1" | sed 's/.*, \(.*\)kbps.*/\1/' | tr -d " " ` kbps
+}
