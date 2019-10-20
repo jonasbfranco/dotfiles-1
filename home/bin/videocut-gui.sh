@@ -84,7 +84,7 @@ offset="$(show_time $DIFF)"
 #(ffmpeg -ss "$inicio" -t "$offset" -i "$entrada" "$saida"  2>&1 | yad --title "$titulo" --progress --pulsate --auto-close --progress-text "Convertendo...")
 #ffmpeg -ss "$inicio" -t "$offset" -i "$entrada" "$saida"  2>&1 | yad --title "$titulo" --progress --pulsate --auto-close --progress-text "Convertendo..."
 #ffmpeg -ss "$inicio" -t "$offset" -i "$entrada" "$saida" | yad --title "$titulo" --pulsate --auto-close --progress-text "Convertendo..."
-(ffmpeg -ss "$inicio" -t "$offset" -i "$entrada" "$saida"  2>&1 | yad --title "$titulo" --progress --pulsate --auto-close --progress-text "Convertendo...")
+ffmpeg -ss "$inicio" -t "$offset" -i "$entrada" "$saida" | yad --title "$titulo" --progress --pulsate --auto-close --progress-text "Convertendo..."
 
 
 if [ $? -eq 0 ]; then
