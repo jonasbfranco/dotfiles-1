@@ -1,0 +1,24 @@
+{
+	"HTML": {
+		"prefix": "html5",
+		"body": [
+			"<!doctype html>",
+			"<html lang=\"pt-br\">",
+			"<head>",
+			"\t<meta charset=\"utf-8\">",
+			"\t<meta http-equiv=\"x-ua-compatible\" content=\"ie=edge\">",
+			"\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">",
+			"\t<title>${1:titulo}</title>",
+			"\t<link rel=\"stylesheet\" href=\"css/principal.css\">",
+			"\t<link rel=\"icon\" href=\"img/favicon.png\">",
+			"</head>",			
+			"<body>",
+			"\t${2:corpo}",
+			"\t<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js\"></script>",
+			"\t<script src=\"js/scripts.js\"></script>",
+			"</body>",			
+			"</html>"
+		],
+		"description": "Basic HTML Skel"
+	}
+}
