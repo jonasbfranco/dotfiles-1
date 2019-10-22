@@ -29,6 +29,11 @@ alias castnow="castnow --myip 192.168.0.1"
 alias git-cron='~/.local/bin/git-cron'
 alias tmux='tmux a'
 
+# VPS
+alias artemis='ssh root@artemis'
+alias hera='ssh root@hera'
+alias atlas='ssh root@atlas'
+
 # Docker
 alias dip='docker inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}"'
 alias dst='docker start'
