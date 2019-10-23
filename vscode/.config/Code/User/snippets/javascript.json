@@ -1,6 +1,6 @@
 {
 	"XMLHttpRequest": {
-	 	"prefix": "log",
+	 	"prefix": "xhr",
 	 	"body": [
 	 		"let xhr = (url) => {",
 			 "\tif (window.XMLHttpRequest) { // code for IE7+, Firefox, Chrome, Opera, Safari",
