@@ -641,8 +641,8 @@ click-left = ~/.config/rofi/scripts/docker &
 type = custom/text
 content = 
 content-foreground = ${colors.secondary}
-click-left = subl &
-click-right = code &
+click-left = code &
+click-right = subl &
 
 [module/refresh]
 type = custom/text
