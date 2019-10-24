@@ -254,8 +254,9 @@ tail = true
 type = internal/fs
 interval = 60
 
-mount-0 = /
+;mount-0 = /
 ;mount-1 = /home
+mount-0 = /home
 
 ;fixed-values = true
 ;spacing = 2
