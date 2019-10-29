@@ -10,7 +10,7 @@
 			"\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">",
 			"\t<title>${1:titulo}</title>",
 			"\t<link rel=\"stylesheet\" href=\"css/principal.css\">",
-			"\t<link rel=\"icon\" href=\"img/favicon.png\">",
+			"\t<link rel=\"shortcut icon\" href=\"img/favicon.ico\">",
 			"</head>",
 			"<body>",
 			"\t${2:corpo}",
