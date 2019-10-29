@@ -11,12 +11,12 @@
 			"\t<title>${1:titulo}</title>",
 			"\t<link rel=\"stylesheet\" href=\"css/principal.css\">",
 			"\t<link rel=\"icon\" href=\"img/favicon.png\">",
-			"</head>",			
+			"</head>",
 			"<body>",
 			"\t${2:corpo}",
-			"\t<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js\"></script>",
+			"\t<script src=\"https://code.jquery.com/jquery-3.4.1.min.js\"></script>",
 			"\t<script src=\"js/scripts.js\"></script>",
-			"</body>",			
+			"</body>",
 			"</html>"
 		],
 		"description": "Basic HTML Skel"
