@@ -1,12 +1,10 @@
 {
-	"JavaScript Arrow Function": {
-		"scope": "javascript",
-		"prefix": "arrowfunction",
+	"HTML Redirect": {
+		"scope": "html",
+		"prefix": "htmlredirect",
 		"body": [
-			"let ${1:nome} = (${2:parametro}) => {",
-            "\t${3://algum código...}",
-            "}"
+			"<meta http-equiv="refresh" content="${1:0}; URL='http://${2:site.com}'" />"
 		],
-		"description": "Cria uma arrow function"
+		"description": "Redireciona a página"
 	}
 }
