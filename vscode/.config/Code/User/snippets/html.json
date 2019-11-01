@@ -12,5 +12,16 @@
 			""
 	 	],
 	 	"description": "Insere os headers do Open Graph Protocol"
+	},
+
+	"Meta": {
+		"prefix": "metadesc",
+	 	"body": [
+			"",
+			"\t<meta name=\"description\" content=\"Descrição\">",
+			"\t<meta name=\"author\" content=\"Autor do site\">",
+			""
+	 	],
+	 	"description": "Insere os headers meta"
 	}
 }
