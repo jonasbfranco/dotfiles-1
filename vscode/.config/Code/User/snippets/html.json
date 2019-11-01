@@ -3,12 +3,11 @@
 		"prefix": "ogp",
 	 	"body": [
 			"",
-			"<!-- Info: http://ogp.me/ -->",
 			"<meta property=\"og:title\" content=\"${1:titulo}\" />",
 			"<meta property=\"og:description\" content=\"${2:descrição}\" />",
 			"<meta property=\"og:type\" content=\"${3:website}\" />",
 			"<meta property=\"og:url\" content=\"${4:http://site.com}\" />",
-			"<meta property=\"og:image\" content=\"${5:http://site.com/img/logo.png}\" />",
+			"<meta property=\"og:image\" content=\"${5:img/logo.png}\" />",
 			""
 	 	],
 	 	"description": "Insere os headers do Open Graph Protocol"
@@ -18,8 +17,8 @@
 		"prefix": "metadesc",
 	 	"body": [
 			"",
-			"\t<meta name=\"description\" content=\"Descrição\">",
-			"\t<meta name=\"author\" content=\"Autor do site\">",
+			"<meta name=\"description\" content=\"Descrição\">",
+			"<meta name=\"author\" content=\"Autor do site\">",
 			""
 	 	],
 	 	"description": "Insere os headers meta"
