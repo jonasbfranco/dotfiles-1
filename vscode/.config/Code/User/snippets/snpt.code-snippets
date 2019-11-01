@@ -8,6 +8,8 @@
 			"\t<meta charset=\"utf-8\">",
 			"\t<meta http-equiv=\"x-ua-compatible\" content=\"ie=edge\">",
 			"\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">",
+			"\t<meta name=\"description\" content=\"Descrição\">",
+			"\t<meta name=\"author\" content=\"Autor do site\">",
 			"\t<title>${1:titulo}</title>",
 			"\t<meta property=\"og:title\" content=\"${2:titulo}\" />",
 			"\t<meta property=\"og:description\" content=\"${3:descrição}\" />",
