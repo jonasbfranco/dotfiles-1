@@ -5,5 +5,13 @@
 			"header('Location: ' . URL);"
 		],
 		"description": "Header"
+	},
+	"Debug": {
+		"prefix": "phpdebug",
+		"body": [
+			"ini_set('display_errors', 'On');",
+			"error_reporting(E_ALL);"
+		],
+		"description": "PHP Debug"
 	}
 }
