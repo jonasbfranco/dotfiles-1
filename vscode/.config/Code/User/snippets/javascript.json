@@ -14,7 +14,7 @@
 			 "\t\t\treturn xmlhttp.responseText;",
 			 "\t\t}",
 			 "\t}",
-			 "\txmlhttp.open(\"GET\", url, false);",
+			 "\txmlhttp.open(\"GET\", url, true);",
 			 "\txmlhttp.send();",
 			 "};"
 	 	],
