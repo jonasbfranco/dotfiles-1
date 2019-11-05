@@ -55,7 +55,7 @@
 			"\t\t\tdiv.innerHTML = saida;",
 			"\t\t}",
 			"\t}",
-			"\txmlhttp.open(\"GET\", url, true);",
+			"\txmlhttp.open(\"GET\", url, truehttps://gist.github.com/sistematico/c1bdf247c69edd60206b48fa9bc4cf11);",
 			"\txmlhttp.send();",
 			"};"
 		],
