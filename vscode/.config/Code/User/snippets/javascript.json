@@ -41,7 +41,33 @@
 		],
 		"description": "Retrieve data from URL using JavaScript and POST method"
 	},
-
+	"XMLHttpRequest JSON": {
+		"prefix": "xhrjson",
+		"body": [
+			"let xhrjson = (url, div) => {",
+			"\tif (window.XMLHttpRequest) { // code for IE7+, Firefox, Chrome, Opera, Safari",
+			"\t\txmlhttp = new XMLHttpRequest();",
+			"\t} else { // code for IE6, IE5",
+			"\t\txmlhttp = new ActiveXObject(\"Microsoft.XMLHTTP\");",
+			"\t}",
+			"",
+			"\txmlhttp.onreadystatechange = function () {",
+			"\t\tif (xmlhttp.readyState == 4 && xmlhttp.status == 200) {",
+			"\t\t\tlet objetos = JSON.parse(xmlhttp.responseText);",
+			"\t\t\tlet saida = '';",
+			"\t\t\tlet i;",
+			"\t\t\tfor(i = 0; i < objetos.length; i++) {",
+			"\t\t\t\tsaida += '<a href=\"' + objetos[i].id + '\">' + objetos[i].artista + '</a><br>';",
+			"\t\t\t}",
+			"\t\t\tdiv.innerHTML = saida;",
+			"\t\t}",
+			"\t}",
+			"\txmlhttp.open(\"GET\", url, false);",
+			"\txmlhttp.send();",
+			"};"
+		],
+		"description": "Retrieve data from URL using JavaScript and POST method"
+	},
 	"setInterval": {
 		"prefix": "setinterval",
 		"body": [
