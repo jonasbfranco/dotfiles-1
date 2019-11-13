@@ -283,6 +283,9 @@ warn-temperature = 60
 format-prefix = ""
 format-prefix-foreground = ${colors.secondary}
 
+format-warn-prefix = ""
+format-warn-prefix-foreground = ${colors.secondary}
+
 format = <label>
 format-warn = <label-warn>
 
