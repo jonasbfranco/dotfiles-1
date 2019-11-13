@@ -500,8 +500,8 @@ tail = true
 ;----------------------------------------------------------
 [module/dl]
 type = custom/script
-click-left = ~/.config/polybar/scripts/downloads.sh x &
-click-middle = ~/.config/polybar/scripts/downloads.sh c &
+click-left = ~/.config/polybar/scripts/downloads.sh x
+click-middle = ~/.config/polybar/scripts/downloads.sh c
 exec = ~/.config/polybar/scripts/downloads.sh
 tail = true
 
