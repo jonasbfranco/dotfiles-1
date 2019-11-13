@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ "$1" == "-c" ]; then
+if [ "$1" == "c" ]; then
 	killall youtube-dl
 fi
 
