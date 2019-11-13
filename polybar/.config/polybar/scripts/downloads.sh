@@ -1,12 +1,10 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 if [ "$1" == "c" ]; then
-	killall youtube-dl &
-fi
-
-if [ "$1" ]; then
+	killall youtube-dl
+elif [ "$1" == "x" ]; then
 	#bash -c "$HOME/bin/videodown.sh" &
-	$HOME/bin/videodown.sh &
+	$HOME/bin/videodown.sh
 fi
 
 downloads=$(ps -A | grep youtube-dl | wc -l)
