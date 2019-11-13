@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ "$1" == "c" ]; then
-	killall youtube-dl
+	killall youtube-dl &
 fi
 
 if [ "$1" ]; then
