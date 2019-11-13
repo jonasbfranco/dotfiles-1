@@ -39,6 +39,8 @@ else
 	titulo="$(curl "$url" -so - | grep -iPo '(?<=<title>)(.*)(?=</title>)' | iconv -f utf8 -t ascii//TRANSLIT | sed 's/[^[:alnum:]]\+/ /g')"
 fi
 
+echo $titulo
+
 if [[ $log -ne 0 ]]; then
     echo "---------------------------------------------------------------" >> "$logs"
     echo "Status:       INICIO" >> "$logs"
