@@ -2,3 +2,7 @@ vte-terminal {
     padding: 18px;
 }
 
+.mate-panel-menu-bar menuitem {
+    padding: 0;
+}
+
