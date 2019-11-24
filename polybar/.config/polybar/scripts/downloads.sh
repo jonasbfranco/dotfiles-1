@@ -3,7 +3,7 @@
 if [ "$1" == "c" ]; then
 	killall youtube-dl
 elif [ "$1" == "x" ]; then
-	$(which bash) -c "$HOME/bin/videodown.sh" &
+	$(which bash) -c "$HOME/bin/videodown.sh"
 else 
 	downloads=$(ps -A | grep youtube-dl | wc -l)
 	if [ $downloads -gt 0 ]; then
