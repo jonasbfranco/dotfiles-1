@@ -504,8 +504,8 @@ tail = true
 [module/dl]
 type = custom/script
 interval = 5
-click-left = ~/.config/polybar/scripts/downloads.sh x &
-click-middle = ~/.config/polybar/scripts/downloads.sh c &
+click-left = ~/.config/polybar/scripts/downloads.sh x > /dev/null 2> /dev/null &
+click-middle = ~/.config/polybar/scripts/downloads.sh c > /dev/null 2> /dev/null &
 exec = ~/.config/polybar/scripts/downloads.sh
 
 ;----------------------------------------------------------
