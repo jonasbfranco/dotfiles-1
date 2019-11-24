@@ -577,7 +577,8 @@ tail = true
 type = custom/script
 interval = 5
 click-left = ~/.config/rofi/scripts/notes &
-exec = echo "%{F#D08770}%{F-} $(cat ~/.rofi_notes | wc -l)"
+exec = ~/.config/polybar/scripts/notes.sh
+tail = true
 
 ;-------------------------------------------------------------------------
 ;					O U T R O S
