@@ -13,7 +13,7 @@
 
 nome="GitHub.sh"
 dir="${HOME}/github"
-repos=('magico' 'majestic' 'sistematico.github.io' 'oc-cli' 'cabron-bot' 'pollen' 'agressive' 'spamsentrybot' 'docker-arma3-exile')
+repos=('arroba' 'magico' 'majestic' 'sistematico.github.io' 'oc-cli' 'cabron-bot' 'pollen' 'agressive' 'spamsentrybot')
 remoto="nginx@hera"
 dotfiles=1
 icone="${HOME}/.local/share/icons/elementary/github.svg"
