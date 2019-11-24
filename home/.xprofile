@@ -13,6 +13,7 @@ fi
 
 [ -d ${HOME}/bin ] && export PATH=$PATH:$HOME/bin
 [ -d ${HOME}/apps ] && export PATH=${PATH}:${HOME}/apps
+[ -d ${HOME}/.npm/bin ] && export PATH=${PATH}:${HOME}/.npm/bin
 
 dbus-update-activation-environment --systemd DISPLAY
 #eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)

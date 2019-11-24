@@ -13,6 +13,8 @@ fi
 
 [ -d ${HOME}/bin ] && export PATH=$PATH:$HOME/bin
 [ -d ${HOME}/apps ] && export PATH=${PATH}:${HOME}/apps
+[ -d ${HOME}/.npm/bin ] && export PATH=${PATH}:${HOME}/.npm/bin
+
 [ ! -d "${XDG_DATA_HOME:-$HOME/.local/share}/dbus-1/services" ] && mkdir -p "${XDG_DATA_HOME:-$HOME/.local/share}/dbus-1/services"
 
 dbus-update-activation-environment --systemd DISPLAY
