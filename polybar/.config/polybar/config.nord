@@ -463,7 +463,7 @@ scroll-down = ~/.config/polybar/scripts/wallpaper.sh a &
 ;----------------------------------------------------------
 [module/screencast]
 type = custom/script
-interval = 1
+;interval = 1
 label = %output%
 click-left = termite -e ~/.local/bin/screencast &
 click-right = ~/.local/bin/screencast clear &
@@ -578,7 +578,6 @@ type = custom/script
 interval = 5
 click-left = ~/.config/rofi/scripts/notes &
 exec = ~/.config/polybar/scripts/notes.sh
-tail = true
 
 ;-------------------------------------------------------------------------
 ;					O U T R O S
