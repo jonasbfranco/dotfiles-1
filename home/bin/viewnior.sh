@@ -8,5 +8,11 @@
 # Última alteração: 28/03/2019 06:02:03
 
 [ $1 ] && oldpwd="$(pwd)" && cd "$1"
-DISPLAY=:0.0 ; viewnior $(find . -iname '*.jpg')
+
+if [ $2 ]; then
+    DISPLAY=:0.0 ; viewnior $(find . -iname "*${2}*.jpg")
+else
+    DISPLAY=:0.0 ; viewnior $(find . -iname '*.jpg')
+fi
+
 [ $1 ] && cd "$oldpwd"
