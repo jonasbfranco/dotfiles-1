@@ -15,9 +15,12 @@ if [ "$1" == "github" ]; then
         grep -e 'git_url*' |
         cut -d \" -f 4
 else
-    echo ...
     # Gitlab
-    # ID: https://gitlab.com/api/v4/users?username=[apelido]
+    id="$(curl -s https://gitlab.com/api/v4/users?username=$2 | grep -o "\"$PREFIX\":[^ ,]\+" | xargs -L1 basename | awk -F ':' '{print $2}')"
+    projeto="$(curl -s https://gitlab.com/api/v4/users/$id/projects)"
+
+    echo $projeto
+
     # Projetos: https://gitlab.com/api/v4/users/[id]/projects
     #TOKEN="PASTE_YOUR_PRIVATE_TOKEN_HERE";
 
@@ -31,6 +34,3 @@ else
 fi
 
 #curl https://gitlab.com/api/v4/users?username=sistematico | grep -e 'id:*' | cut -d \" -f 3
-
-PREFIX="id"
-curl -s https://gitlab.com/api/v4/users?username=sistematico | grep -o "\"$PREFIX\":[^ ,]\+" | xargs -L1 basename | awk -F ':' '{print $2}'
