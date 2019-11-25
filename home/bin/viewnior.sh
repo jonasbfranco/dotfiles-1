@@ -19,8 +19,9 @@ fi
 if [ $2 ]; then
     DISPLAY=:0.0 ; viewnior $(find . -iname '*'${2}'*.jpg')
 else
+	arquivos=$(find . -type f \( -iname "*.png" -o -iname "*.svg" \))
     #DISPLAY=:0.0 ; viewnior $(find . -iname '*.jpg')
-    DISPLAY=:0.0 ; viewnior $(find . -type f \( -iname \*.png -o -iname \*.svg \))
+    DISPLAY=:0.0 ; viewnior "$arquivos"
     #\( -iname \*.jpg -o -iname \*.png \)
 fi
 
