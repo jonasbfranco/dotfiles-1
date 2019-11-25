@@ -17,7 +17,7 @@ if [ $1 ]; then
 fi
 
 if [ $2 ]; then
-    DISPLAY=:0.0 ; viewnior $(find . -iname "*${2}*.jpg")
+    DISPLAY=:0.0 ; viewnior $(find . -iname '*'${2}'*.jpg')
 else
     DISPLAY=:0.0 ; viewnior $(find . -iname '*.jpg')
 fi
