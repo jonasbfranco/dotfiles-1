@@ -7,10 +7,13 @@
 # Criado em: 16/03/2018 16:35:20
 # Última alteração: 28/03/2019 06:02:03
 
-if [ "$1" && -d "$1" ]; then
-    oldpwd="$(pwd)" && cd "$1"
-else
-    exit
+if [ $1 ]; then
+    if [ -d $1 ]; then
+        oldpwd="$(pwd)" && cd "$1"
+    else
+        echo "$1 não é um diretório."
+        exit
+    fi
 fi
 
 if [ $2 ]; then
