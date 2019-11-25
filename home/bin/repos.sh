@@ -33,4 +33,4 @@ fi
 #curl https://gitlab.com/api/v4/users?username=sistematico | grep -e 'id:*' | cut -d \" -f 3
 
 PREFIX="id"
-curl https://gitlab.com/api/v4/users?username=sistematico | grep -o "\"$PREFIX\"[^ ,]\+" | xargs -L1 basename | awk -F '.' '{print $1}'
+curl -s https://gitlab.com/api/v4/users?username=sistematico | grep -o "\"$PREFIX\":[^ ,]\+" | xargs -L1 basename | awk -F ':' '{print $2}'
