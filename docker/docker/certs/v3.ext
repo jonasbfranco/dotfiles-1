@@ -1,0 +1,14 @@
+[req]
+default_bits = 2048
+prompt = no
+default_md = sha256
+distinguished_name = dn
+
+[dn]
+C=BR
+ST=MS
+L=Campo Grande
+O=Majestic
+OU=
+emailAddress=sistematico@gmail.com
+CN = localhost
