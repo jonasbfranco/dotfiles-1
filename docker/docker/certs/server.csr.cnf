@@ -1,3 +1,4 @@
+distinguished_name = req_distinguished_name
 authorityKeyIdentifier=keyid,issuer
 basicConstraints=CA:FALSE
 keyUsage = digitalSignature, nonRepudiation, keyEncipherment, dataEncipherment
