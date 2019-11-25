@@ -1,10 +1,4 @@
-[req]
-req_extensions = v3_req
-distinguished_name = req_distinguished_name
-
-[req_distinguished_name]
-
-[v3_req]
+[v3]
 authorityKeyIdentifier=keyid,issuer
 basicConstraints=CA:FALSE
 keyUsage = digitalSignature, nonRepudiation, keyEncipherment, dataEncipherment
