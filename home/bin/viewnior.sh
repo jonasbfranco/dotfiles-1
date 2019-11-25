@@ -18,7 +18,7 @@ fi
 
 if [ $2 ]; then
     #DISPLAY=:0.0 ; viewnior $(find . -iname '*'${2}'*.jpg')
-    DISPLAY=:1 ; viewnior $(find . -iname '*'${2}'*.jpg')
+    DISPLAY=:1 ; viewnior $(find . -type f \( -iname "*"${2}"*.png" -o -iname "*"${2}"*.svg" \))
 else
     DISPLAY=:1 viewnior $(find . -type f \( -iname "*.png" -o -iname "*.svg" \) | tail -n 50)
 fi
