@@ -16,8 +16,11 @@ if [ "$1" == "github" ]; then
         cut -d \" -f 4
 else
     # Gitlab
-    id="$(curl -s https://gitlab.com/api/v4/users?username=$2 | grep -o "\"$PREFIX\":[^ ,]\+" | xargs -L1 basename | awk -F ':' '{print $2}')"
-    projeto="$(curl -s https://gitlab.com/api/v4/users/$id/projects)"
+
+    usuario="$1"
+
+    id="$(curl -s https://gitlab.com/api/v4/users?username=$usuario | grep -o "\"$PREFIX\":[^ ,]\+" | xargs -L1 basename | awk -F ':' '{print $2}')"
+    projeto="$(curl -s https://gitlab.com/api/v4/users/${id}/projects)"
 
     echo $projeto
 
