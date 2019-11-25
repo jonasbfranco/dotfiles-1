@@ -1,6 +1,7 @@
 *foreground:   		#ffffff
 *foreground-alt:   	#282a36
 *background:   		#282a36
+*border:   			#D08770
 *color0:       		#6272a4
 *color1:       		#ff5555
 *color2:       		#50fa7b
