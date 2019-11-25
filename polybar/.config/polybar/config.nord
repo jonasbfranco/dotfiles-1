@@ -62,8 +62,8 @@ font-3 = Termsynu:size=7;0
 font-4 = Moon Phases:size=10;3
 
 modules-left = i3 weather moon
-modules-center = window dl
-modules-right = cpu memory hddled filesystem temperature netled network data pulse powermenu
+modules-center = window
+modules-right = cpu memory hddled filesystem temperature netled network hackspeed data pulse powermenu
 
 cursor-click = pointer
 cursor-scroll = ns-resize
