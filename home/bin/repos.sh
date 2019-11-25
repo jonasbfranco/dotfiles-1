@@ -18,7 +18,7 @@ else
     # Gitlab
     id="$(curl -s https://gitlab.com/api/v4/users?username=$2 | grep -o "\"id\":[^ ,]\+" | xargs -L1 basename | awk -F ':' '{print $2}')"
     #projeto="$(curl -s https://gitlab.com/api/v4/users/${id}/projects | grep -o "\"ssh_url_to_repo\":[^ ,]\+" | xargs -L1 basename | awk -F ':' '{print $2}')"
-    projeto="$(curl -s https://gitlab.com/api/v4/users/${id}/projects | grep -o "\"ssh_url_to_repo\":[^ ,]\+")"
+    projeto="$(curl -s https://gitlab.com/api/v4/users/${id}/projects | grep -o "\"ssh_url_to_repo\":[^ ,]\+" | xargs -L1 basename)"
 
     echo $projeto
 
