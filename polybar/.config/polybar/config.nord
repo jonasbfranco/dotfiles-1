@@ -154,7 +154,7 @@ label-urgent-padding = 1
 ;----------------------------------------------------------
 [module/weather]
 type = custom/script
-interval = 30
+interval = 300
 exec = ~/.config/polybar/scripts/weather.py
 
 ;----------------------------------------------------------
