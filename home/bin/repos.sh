@@ -19,7 +19,7 @@ else
 
     usuario="$1"
 
-    id="$(curl -s https://gitlab.com/api/v4/users?username=$usuario | grep -o "\"$PREFIX\":[^ ,]\+" | xargs -L1 basename | awk -F ':' '{print $2}')"
+    id="$(curl -s https://gitlab.com/api/v4/users?username=sistematico | grep -o "\"$PREFIX\":[^ ,]\+" | xargs -L1 basename | awk -F ':' '{print $2}')"
     projeto="$(curl -s https://gitlab.com/api/v4/users/${id}/projects)"
 
     echo $projeto
