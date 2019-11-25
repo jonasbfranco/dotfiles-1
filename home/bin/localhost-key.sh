@@ -1,3 +1,6 @@
+#!/usr/bin/env bash
+# https://letsencrypt.org/pt-br/docs/certificates-for-localhost/
+
 openssl req -x509 -out localhost.crt -keyout localhost.key \
   -newkey rsa:2048 -nodes -sha256 \
   -subj '/CN=localhost' -extensions EXT -config <( \
