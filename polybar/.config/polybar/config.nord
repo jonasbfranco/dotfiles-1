@@ -60,7 +60,7 @@ font-1 = feather:style=Regular:pixelsize=11;3
 font-2 = FontAwesome:size=6;2
 font-3 = Termsynu:size=7;0
 
-modules-left = i3
+modules-left = i3 weather
 modules-center = window dl
 modules-right = cpu memory hddled filesystem temperature netled network data pulse powermenu
 
@@ -147,6 +147,14 @@ label-visible-padding = 1
 label-urgent = %name%
 label-urgent-background = ${colors.alert}
 label-urgent-padding = 1
+
+;----------------------------------------------------------
+;		       W E A T H E R
+;----------------------------------------------------------
+[module/weather]
+type = custom/script
+interval = 60
+exec = ~/.config/polybar/scripts/weather.py
 
 ;----------------------------------------------------------
 ;		        W I N D O W
