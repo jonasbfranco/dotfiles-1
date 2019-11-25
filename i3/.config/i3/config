@@ -49,13 +49,14 @@ focus_on_window_activation focus
 ################ C O R E S #########################################
 ####################################################################
 set_from_resource $bg background
+set_from_resource $bd border
 
 # classe                borda   fundo   texto   ind.    borda filho
-client.focused          $bg     $bg     $bg     $bg     $bg
-client.focused_inactive $bg     $bg     $bg     $bg     $bg
-client.unfocused        $bg     $bg     $bg     $bg     $bg
-client.urgent           $bg     $bg     $bg     $bg     $bg
-client.placeholder      $bg     $bg     $bg     $bg     $bg
+client.focused          $bd     $bg     $bg     $bg     $bg
+client.focused_inactive $bd     $bg     $bg     $bg     $bg
+client.unfocused        $bd     $bg     $bg     $bg     $bg
+client.urgent           $bd     $bg     $bg     $bg     $bg
+client.placeholder      $bd     $bg     $bg     $bg     $bg
 
 client.background       $bg
 
