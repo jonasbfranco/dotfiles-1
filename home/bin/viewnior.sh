@@ -7,7 +7,11 @@
 # Criado em: 16/03/2018 16:35:20
 # Última alteração: 28/03/2019 06:02:03
 
-[ $1 ] && oldpwd="$(pwd)" && cd "$1"
+if [ $1 ] && [ -f $1 ]; then
+    oldpwd="$(pwd)" && cd "$1"
+else
+    exit
+fi
 
 if [ $2 ]; then
     DISPLAY=:0.0 ; viewnior $(find . -iname "*${2}*.jpg")
