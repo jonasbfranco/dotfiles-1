@@ -98,7 +98,7 @@ font-1 = feather:style=Regular:pixelsize=11;3
 
 modules-left = browser terminal code thunar telegram sep tdocker tmpd
 modules-center = mpd
-modules-right = notes wallpaper screencast screenshot refresh lixo
+modules-right = notes wallpaper screencast screenshot refresh tv lixo
 
 cursor-click = pointer
 cursor-scroll = ns-resize
