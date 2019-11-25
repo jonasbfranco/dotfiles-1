@@ -68,7 +68,7 @@ cursor-click = pointer
 cursor-scroll = ns-resize
 
 border-bottom-size = 3
-border-bottom-color = #000000
+border-bottom-color = ${colors.secondary}
 
 ;----------------------------------------------------------
 ;		        B A R R A ( B O T T O M )
@@ -101,6 +101,9 @@ modules-right = notes wallpaper screencast screenshot refresh lixo
 
 cursor-click = pointer
 cursor-scroll = ns-resize
+
+border-top-size = 3
+border-top-color = ${colors.secondary
 
 ;----------------------------------------------------------
 ;		        I 3
