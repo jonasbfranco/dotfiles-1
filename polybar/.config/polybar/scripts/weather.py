@@ -109,7 +109,7 @@ try:
         #print("%%{F#FFF}%s %%{F-}%s  %i°%s  %s%%  %skm/h  %shPa " % (ICON, CURRENT, TEMP, UNIT_KEY, HUMIDADE, VELOCIDADE, PRESSAO)) # Icon with description
         #print(" %s %s  %i°%s  %s%%  %skm/h  %shPa " % (ICON, CURRENT, TEMP, UNIT_KEY, HUMIDADE, VELOCIDADE, PRESSAO)) # Icon with description
         #print(" %s %s  %i°%s  %s%%  %s°  %skm/h  %shPa " % (ICON, CURRENT, TEMP, UNIT_KEY, HUMIDADE, DIRECAO, VELOCIDADE, PRESSAO)) # Icon with description
-        print(" %%{F#D08770}%s%%{F-} %s %%{F#D08770}%%{F-} %i°%s %%{F#D08770}%%{F-} %s%% %%{F#D08770}%%{F-} %s° %%{F#D08770}%%{F-} %skm/h %%{F#D08770}%%{F-} %shPa " % (ICON, CURRENT, TEMP, UNIT_KEY, HUMIDADE, DIRECAO, VELOCIDADE, PRESSAO)) # Icon with description
+        print(" %%{F#D08770}%s %%{F-}%s %%{F#D08770}%%{F-} %i°%s %%{F#D08770}%%{F-} %s%% %%{F#D08770}%%{F-} %s° %%{F#D08770}%%{F-} %skm/h %%{F#D08770}%%{F-} %shPa " % (ICON, CURRENT, TEMP, UNIT_KEY, HUMIDADE, DIRECAO, VELOCIDADE, PRESSAO)) # Icon with description
 
 except requests.exceptions.RequestException:  # This is the correct syntax
     print("Recuperando condições do clima.") # Icon with description
