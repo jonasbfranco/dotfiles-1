@@ -17,9 +17,9 @@ if [ $1 ]; then
 fi
 
 if [ $2 ]; then
-    DISPLAY=:0 viewnior $(find . -iname '*'${2}'*.jpg')
+    viewnior $(find . -iname '*'${2}'*.jpg')
 else
-    DISPLAY=:0 viewnior $(find . -iname '*.jpg')
+    viewnior $(find . -iname '*.jpg')
 fi
 
 [ $1 ] && cd "$oldpwd"
