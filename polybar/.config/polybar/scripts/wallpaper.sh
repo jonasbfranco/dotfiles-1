@@ -12,7 +12,7 @@
 dir="${XDG_PICTURES_DIR:-${HOME}/img/wallpapers/linux}"
 unsplash_dir="${XDG_PICTURES_DIR:-${HOME}/img}/unsplash"
 default="$dir/wallpapers/default.jpg"
-ultima="/home/lucas/img/wallpapers/unsplash/unsplash-29339.jpg"
+ultima="/home/lucas/img/wallpapers/digitalocean/sat.jpg"
 modo="--bg-fill"
 indice=0
 i=0
