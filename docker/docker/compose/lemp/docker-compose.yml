@@ -20,6 +20,7 @@ services:
         image: nginx:latest
         ports:
             - "8080:8080"
+            - "8843:8843"
         volumes:
             - ~/gitlab:/code
             - ~/docker/confs/nginxalt.conf:/etc/nginx/conf.d/default.conf
