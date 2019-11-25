@@ -24,8 +24,8 @@ export TERMINAL=st
 export EDITOR=nano
 export BROWSER=firefox
 
-#session=${1:-i3}
-session=${1:-xfce}
+session=${1:-i3}
+#session=${1:-xfce}
 
 case $session in
 	xfce|xfce4)
