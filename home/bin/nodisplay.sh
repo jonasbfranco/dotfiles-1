@@ -13,6 +13,10 @@ apps=("yad-icon-browser" "gvim" "assistant" "designer" "linguist" "Thunar-bulk-r
 	"munch" "cosmos" "thunar-settings" "qv4l2")
 nd='NoDisplay'
 
+if [[ ! -d ${homedir} ]]; then
+	mkdir -p ${homedir}
+fi
+
 function uso {
 	echo "Uso: $(basename $0) -rsa"
 }
