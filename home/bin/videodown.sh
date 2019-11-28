@@ -9,6 +9,7 @@
 
 #xclip -out -selection primary | xclip -in -selection clipboard
 
+comeco=$(date +%s)
 log=0 # 0 = Sem log, 1 = Log no arquivo erro.log
 aria=0
 ts=$(date +"%s")
@@ -109,6 +110,7 @@ if [[ $status -eq 0 ]]; then
             notify-send -i $icone "Video Downloader" "Já existe um arquivo:\n\n<b>$titulo</b>\n\nEm:\n\n$dir\n\nInstâncias: $proc"
             canberra-gtk-play -i $som
         else
+        	final=$(date +%s)
             notify-send -i $icone "Video Downloader" "Sucesso, vídeo salvo:\n\n<b>$titulo</b>\n\nEm:\n\n$dir\n\nInstâncias: $proc"
             mv "${titulo}"* "$dir"
             cd $dir && rm -rf $tmp
