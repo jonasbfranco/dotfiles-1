@@ -9,7 +9,8 @@
 
 #xclip -out -selection primary | xclip -in -selection clipboard
 
-comeco=$(date +%s)
+SECONDS=0
+comeco=$SECONDS
 log=0 # 0 = Sem log, 1 = Log no arquivo erro.log
 aria=0
 ts=$(date +"%s")
@@ -52,7 +53,7 @@ if [[ $log -ne 0 ]]; then
     echo "Processos:    $proc" >> "$logs"
 fi
 
-notify-send -i $icone "Video Downloader" "Transferencia de: \n\n<b>$titulo</b> iniciada\n\nInstâncias: $proc"
+notify-send -i $icone "Video Downloader" "Transferencia de: \n\n<b>$titulo</b> iniciada."
 
 if [ $aria == 1 ]; then
     # -j, --max-concurrent-downloads
@@ -110,8 +111,9 @@ if [[ $status -eq 0 ]]; then
             notify-send -i $icone "Video Downloader" "Já existe um arquivo:\n\n<b>$titulo</b>\n\nEm:\n\n$dir\n\nInstâncias: $proc"
             canberra-gtk-play -i $som
         else
-        	final=$(date +%s)
-            notify-send -i $icone "Video Downloader" "Sucesso, vídeo salvo:\n\n<b>$titulo</b>\n\nEm:\n\n$dir\n\nInstâncias: $proc"
+        	final=$SECONDS
+        	diff=$(($final-$comeco))
+            notify-send -i $icone "Video Downloader" "Sucesso, vídeo salvo:\n\n<b>$titulo</b>\n\nEm:\n\n$dir\n\nO download demorou: $((diff / 3600)):$((diff / 60)):$((diff % 60))"
             mv "${titulo}"* "$dir"
             cd $dir && rm -rf $tmp
         fi
