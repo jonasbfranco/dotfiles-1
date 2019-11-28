@@ -84,6 +84,6 @@ if [[ ! -L /tmp/.esd-${UID} ]]; then
         ln -s /tmp/.esd /tmp/.esd-${UID}
 fi
 
-fortune brasil
+fortune chucknorris
 echo
 

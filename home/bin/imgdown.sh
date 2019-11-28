@@ -36,5 +36,5 @@ done
 
 rm -rf $pasta/robots.txt*
 
-notify-send -i $icone "IMGdown" "Transferencia $$ finalizada."
+notify-send -i $icone "IMGdown" "Transferencia de $$ finalizada."
 canberra-gtk-play -i $som

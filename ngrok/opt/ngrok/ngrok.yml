@@ -1,8 +1,16 @@
-authtoken: 7gQZJo7JV9HywX7dj8SXL_7iya38NpNEFJR7vyHQ5ej
+authtoken: [TOKEN]
 tunnels:
-  web:
-    proto: tcp
+  http:
+    proto: http
     addr: 80
-  ssh:
+    #bind_tls: true
+    #subdomain: yourNgrokSubdomain
+  vnc:
+    addr: 5900
     proto: tcp
-    addr: 22
+#    host_header: sistematico.dev
+  openssh:
+    addr: 2211
+    proto: tcp
+    #remote_addr: 1.tcp.ngrok.io:12345
+log: /home/lucas/.ngrok2/ngrok.log

@@ -14,7 +14,7 @@ font="/usr/share/fonts/TTF/FantasqueSansMono-Regular.ttf"
 
 # Expand is used to convert the tabs to spaces which
 # are handled better by imageMagick
-fortune=$(expand -t 2 <(fortune -s brasil))
+fortune=$(expand -t 2 <(fortune -s chucknorris))
 gradientColor='#282a36'
 
 # take a screenshot
