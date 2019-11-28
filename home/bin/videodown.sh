@@ -118,8 +118,20 @@ if [[ $status -eq 0 ]]; then
             hora=$(printf "%02d" $((diff / 3600)))
             minuto=$(printf "%02d" $((diff / 60)))
             segundo=$(printf "%02d" $((diff % 60)))
+            tamanho=$(($(stat --printf="%s" $titulo) / 1000))
+            sufixo="KB"
 
-            notify-send -i $icone "Video Downloader" "Sucesso, vídeo salvo:\n\n<b>$titulo</b>\n\nEm:\n\n$dir\n\nO download demorou: ${hora}:${minuto}:${segundo}"
+            tempo=$((tamanho/final))
+
+            if [ $tamanho -gt 1000 ]; then
+                sufixo="MB"
+                tamanho=$((tamanho / 1000))
+            elif [ $tamanho -gt 1000000 ]; then
+                sufixo="GB"
+                tamanho=$((tamanho / 1000 / 1000))
+            fi
+
+            notify-send -i $icone "Video Downloader" "Sucesso, vídeo salvo:\n\n<b>$titulo</b>\n\nEm:\n\n$dir\n\nO download demorou: ${hora}:${minuto}:${segundo} Tamanho: ${tamanho}${sufixo} Taxa: ${tempo}KBps"
             mv "${titulo}"* "$dir"
             cd $dir && rm -rf $tmp
         fi
