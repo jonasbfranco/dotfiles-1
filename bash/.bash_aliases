@@ -27,7 +27,7 @@ alias stpshr='systemctl --user stop ngrok dropbox google-drive onedrive yandex &
 alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 alias castnow="castnow --myip 192.168.0.1"
 alias git-cron='~/.local/bin/git-cron'
-alias tmux='tmux a'
+alias tx='tmux a'
 
 # VPS
 alias artemis='ssh root@artemis'
@@ -40,3 +40,6 @@ alias dst='docker start'
 alias dsp='docker stop'
 alias drs='docker restart'
 alias dps='docker ps -a'
+
+# ncmpcpp
+alias music='\tmux new-session "\tmux source-file ~/.config/ncmpcpp/tmux_session"' # Tmux session with ncmpcpp and cover art
