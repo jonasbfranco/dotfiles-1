@@ -64,7 +64,8 @@ if [ $aria == 1 ]; then
     # -t, --timeout
 
     #youtube-dl -o "${titulo}.%(ext)s" --external-downloader aria2c --external-downloader-args '-l '$dir/aria.log' -t 10 -m 10 -c -j 2 -x 1 -s 2 -k 2M' "${url}"
-	youtube-dl -o "${titulo}.%(ext)s" --external-downloader aria2c "${url}"
+    youtube-dl -o "${titulo}.%(ext)s" --external-downloader aria2c --external-downloader-args '-l '$dir/aria.log' -t 10 -m 10 -c -j 4 -x 2 -s 2 -k 2M' "${url}"
+	#youtube-dl -o "${titulo}.%(ext)s" --external-downloader aria2c "${url}"
     status="$?"
 else
     youtube-dl -o "${titulo}.%(ext)s" "${url}"
@@ -112,8 +113,13 @@ if [[ $status -eq 0 ]]; then
             canberra-gtk-play -i $som
         else
         	final=$SECONDS
-        	diff=$(($final-$comeco))
-            notify-send -i $icone "Video Downloader" "Sucesso, vídeo salvo:\n\n<b>$titulo</b>\n\nEm:\n\n$dir\n\nO download demorou: $((diff / 3600)):$((diff / 60)):$((diff % 60))"
+        	diff=$((final - comeco))
+
+            hora=$(printf "%02d" $((diff / 3600)))
+            minuto=$(printf "%02d" $((diff / 60)))
+            segundo=$(printf "%02d" $((diff % 60)))
+
+            notify-send -i $icone "Video Downloader" "Sucesso, vídeo salvo:\n\n<b>$titulo</b>\n\nEm:\n\n$dir\n\nO download demorou: ${hora}:${minuto}:${segundo}"
             mv "${titulo}"* "$dir"
             cd $dir && rm -rf $tmp
         fi
