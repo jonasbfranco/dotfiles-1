@@ -36,7 +36,7 @@ cd $tmp
 padrao='(https?|ftp|file)://[-A-Za-z0-9\+&@#/%?=~_|!:,.;]*[-A-Za-z0-9\+&@#/%=~_|]'
 if [[ ! ${url} =~ $padrao ]]; then
 	notify-send -i $icone "Video Downloader" "O link é inválido!"
-    sair
+    exit
 else
 	titulo="$(curl "$url" -so - | grep -iPo '(?<=<title>)(.*)(?=</title>)' | iconv -f utf8 -t ascii//TRANSLIT | sed 's/[^[:alnum:]]\+/ /g')"
 fi
@@ -114,24 +114,26 @@ if [[ $status -eq 0 ]]; then
         else
         	final=$SECONDS
         	diff=$((final - comeco))
+            #t=$(stat --printf="%s" "$titulo")
 
             hora=$(printf "%02d" $((diff / 3600)))
             minuto=$(printf "%02d" $((diff / 60)))
             segundo=$(printf "%02d" $((diff % 60)))
-            tamanho=$(($(stat --printf="%s" $titulo) / 1000))
-            sufixo="KB"
+            #tamanho=$((t / 1000)))
+            #sufixo="KB"
 
-            tempo=$((tamanho/final))
+            #tempo=$((tamanho / diff))
 
-            if [ $tamanho -gt 1000 ]; then
-                sufixo="MB"
-                tamanho=$((tamanho / 1000))
-            elif [ $tamanho -gt 1000000 ]; then
-                sufixo="GB"
-                tamanho=$((tamanho / 1000 / 1000))
-            fi
+            #if [ $tamanho -gt 1000 ]; then
+            #    sufixo="MB"
+            #    tamanho=$((tamanho / 1000))
+            #elif [ $tamanho -gt 1000000 ]; then
+            #    sufixo="GB"
+            #    tamanho=$((tamanho / 1000 / 1000))
+            #fi
 
-            notify-send -i $icone "Video Downloader" "Sucesso, vídeo salvo:\n\n<b>$titulo</b>\n\nEm:\n\n$dir\n\nO download demorou: ${hora}:${minuto}:${segundo} Tamanho: ${tamanho}${sufixo} Taxa: ${tempo}KBps"
+            #notify-send -i $icone "Video Downloader" "Sucesso, vídeo salvo:\n\n<b>$titulo</b>\n\nEm:\n\n$dir\n\nO download demorou: ${hora}:${minuto}:${segundo} Tamanho: ${tamanho}${sufixo} Taxa: ${tempo}KBps"
+            notify-send -i $icone "Video Downloader" "Sucesso, vídeo salvo:\n\n<b>$titulo</b>\n\nEm:\n\n$dir\n\nO download demorou: ${hora}:${minuto}:${segundo}"
             mv "${titulo}"* "$dir"
             cd $dir && rm -rf $tmp
         fi
