@@ -7,21 +7,32 @@
 # Criado em: 16/03/2018 16:35:20
 # Última alteração: 29-11-2019 14:50:28
 
-#oldpwd="$(pwd)"
+walk_dir () {    
+    shopt -s nullglob dotglob
+
+    for pathname in "$1"/*; do
+        if [ -d "$pathname" ]; then
+            walk_dir "$pathname"
+        else
+            case "$pathname" in
+                *.jpg|*.png)
+                    #printf '%s\n' "$pathname"
+                    arquivos="${arquivos} '${pathname}'"
+            esac
+        fi
+    done
+}
 
 if [ $1 ]; then
-    dirs="$@"
-    for dir in "${dirs[@]}"
+    for dir in "$@"
     do
-        if [ -d "$dir" ]; then
-            cd "$dir"
-	        DISPLAY=:0 viewnior $(find . -type f \( -iname "*.png" -o -iname "*.svg" -o -iname "*.jpg" \))
-        fi
-    done 
+        walk_dir "$dir"
+    done
 else
-    cd "$(pwd)"
-    #DISPLAY=:0 viewnior $(find "$(pwd)" -type f \( -iname "*.png" -o -iname "*.svg" -o -iname "*.jpg" \))
-    DISPLAY=:0 viewnior $(find "$(pwd)" -type f -iname "*.jpg")
+    walk_dir .
 fi
 
-exit
+if [ -n "$arquivos" ]; then
+    DISPLAY=:0 viewnior $arquivos
+    #echo $arquivos
+fi
