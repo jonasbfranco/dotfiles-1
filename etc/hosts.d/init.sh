@@ -10,8 +10,10 @@ ls -t /etc/hosts.d/backup/*.bkp.* 2> /dev/null | sed -e '1,10d' | xargs -d '\n' 
 url="https://hblock.molinero.dev/hosts"
 curl -s -L "$url" > /etc/hosts.d/hblock.tmp
 sed -i '0,/^# <\/header>$/d' /etc/hosts.d/hblock.tmp
+sed -i '/analytics.google.com/d' /etc/hosts.d/hblock.tmp
+sed -i '/googletagmanager.com/d' /etc/hosts.d/hblock.tmp
 
-if [ -f /etc/hosts.d/02-hblock.conf ]; then
+if [ -f /etc/hosts.d/02-hblock.conf ] && [ -f /etc/hosts.d/hblock.md5 ]; then
 	if md5sum -c /etc/hosts.d/hblock.md5 > /dev/null; then
 		rm /etc/hosts.d/hblock.tmp
 	else
