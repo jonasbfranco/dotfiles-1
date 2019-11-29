@@ -6,15 +6,19 @@
 # Alterado em: 28-11-2019 23:50:45
 
 if [ "$1" == "stop" ]; then
-	docker ps -q | xargs docker stop
+    if [[ "$(docker ps -q)" ]]; then
+	    docker ps -q | xargs docker stop
+    fi
 fi
 
 if [ "$1" == "start" ]; then
-	docker ps -a -q | xargs docker start
+    if [[ "$(docker ps -q -a)" ]]; then
+	    docker ps -a -q | xargs docker start
+    fi
 fi
 
 if [ "$1" == "rm" ]; then
-    read -p "Tem certeza que deseja remover TODOS os containers?" resp
+    read -p "Tem certeza que deseja remover TODOS os containers? [s/N] " resp
     if [[ "$resp" == [sS]* ]]; then
         if [[ "$(docker ps -q -a)" ]]; then
             docker ps -q | xargs docker stop
@@ -24,18 +28,28 @@ if [ "$1" == "rm" ]; then
 fi
 
 if [ "$1" == "rmi" ]; then
-    read -p "Tem certeza que deseja remover TODAS as imagens?" resp
+    read -p "Tem certeza que deseja remover TODAS as imagens? [s/N] " resp
     if [[ "$resp" == [sS]* ]]; then
-        docker ps -q | xargs docker stop
-        docker ps -a -q | xargs docker rmi -v
-        docker images -q | xargs docker rmi
+        if [[ "$(docker ps -q -a)" ]]; then
+            docker ps -q | xargs docker stop
+            docker ps -a -q | xargs docker rm -v
+        fi
+        if [[ "$(docker images -q)" ]]; then
+            docker images -q | xargs docker rmi
+        fi
     fi
 fi
 
 if [ "$1" == "upgrade" ]; then
-    docker ps -a -q | xargs docker stop
-    docker images | grep -v REPOSITORY | awk '{print $1}' | xargs -L1 docker pull 
-    docker ps -a -q | xargs docker start
+    if [[ "$(docker ps -q)" ]]; then
+        docker ps -q | xargs docker stop
+    fi
+    if [[ "$(docker images -q)" ]]; then
+        docker images | grep -v REPOSITORY | awk '{print $1}' | xargs -L1 docker pull 
+    fi
+    if [[ "$(docker ps -a -q)" ]]; then
+        docker ps -a -q | xargs docker start
+    fi
 fi
 
 if [ "$1" == "rebuild" ]; then
