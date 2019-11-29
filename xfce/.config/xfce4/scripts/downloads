@@ -1,3 +1,0 @@
-#!/bin/bash
-
-echo "$(ps -ef | grep youtube-dl | grep -v grep | wc -l) / $(ps -ef | grep 'bash /home/lucas/bin/imgdown.sh' | grep -v grep | wc-l)"
