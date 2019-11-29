@@ -17,7 +17,10 @@ walk_dir () {
             case "$pathname" in
                 *.jpg|*.png)
                     #printf '%s\n' "$pathname"
-                    arquivos="${arquivos} '${pathname}'"
+                    path="$( cd "$(dirname "${pathname}")" )"
+                    #arquivos="${arquivos} \"${path}/${pathname}\""
+                    arquivos="${arquivos} ${path}"
+                    
             esac
         fi
     done
@@ -33,6 +36,7 @@ else
 fi
 
 if [ -n "$arquivos" ]; then
-    DISPLAY=:0 viewnior $arquivos
-    #echo $arquivos
+    #DISPLAY=:0 viewnior $arquivos
+    echo $arquivos
+    #ristretto $arquivos
 fi
