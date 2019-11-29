@@ -7,36 +7,10 @@
 # Criado em: 16/03/2018 16:35:20
 # Última alteração: 29-11-2019 14:50:28
 
-walk_dir () {    
-    shopt -s nullglob dotglob
-
-    for pathname in "$1"/*; do
-        if [ -d "$pathname" ]; then
-            walk_dir "$pathname"
-        else
-            case "$pathname" in
-                *.jpg|*.png)
-                    #printf '%s\n' "$pathname"
-                    path="$( cd "$(dirname "${pathname}")" )"
-                    #arquivos="${arquivos} \"${path}/${pathname}\""
-                    arquivos="${arquivos} ${path}"
-                    
-            esac
-        fi
-    done
-}
+shopt -s globstar dotglob nocaseglob
 
 if [ $1 ]; then
-    for dir in "$@"
-    do
-        walk_dir "$dir"
-    done
+    DISPLAY=:0 viewnior $1/**/*.jpg
 else
-    walk_dir .
-fi
-
-if [ -n "$arquivos" ]; then
-    #DISPLAY=:0 viewnior $arquivos
-    echo $arquivos
-    #ristretto $arquivos
+    DISPLAY=:0 viewnior **/*.jpg
 fi
