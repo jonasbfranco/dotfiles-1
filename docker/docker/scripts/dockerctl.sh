@@ -10,7 +10,7 @@ if [ "$1" == "stop" ]; then
 fi
 
 if [ "$1" == "start" ]; then
-	docker ps -q | xargs docker stop
+	docker ps -a -q | xargs docker start
 fi
 
 if [ "$1" == "rm" ]; then
