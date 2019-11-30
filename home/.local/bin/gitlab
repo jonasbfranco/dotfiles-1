@@ -13,7 +13,7 @@
 
 nome="GitLab.sh"
 dir="${HOME}/gitlab"
-repos=('php-mvc-sqlite-crud' 'agressive' 'feriados' 'meme' 'single-crud' 'gerador-de-senhas' 'gerador-de-hash' 'php-toolbox' 'sqlite-toolbox' 'agro' 'pushstate' 'stream-player' 'stream-player-min' 'sistematico.gitlab.io')
+repos=('php-crud' 'agressive' 'feriados' 'meme' 'single-crud' 'gerador-de-senhas' 'gerador-de-hash' 'php-toolbox' 'sqlite-toolbox' 'agro' 'pushstate' 'stream-player' 'stream-player-min' 'sistematico.gitlab.io')
 remoto="nginx@hera"
 dotfiles=1
 icone="${HOME}/.local/share/icons/elementary/gitlab.svg"
@@ -21,16 +21,12 @@ som="complete"
 
 detectax() {
 	if xset q &>/dev/null; then
-		# ls /usr/share/sounds/freedesktop/stereo/
-		#dbus-launch canberra-gtk-play -i $som 2>&1
-		export DISPLAY=:0 ; canberra-gtk-play -i $som 2>&1
-		#DISPLAY=:0.0 canberra-gtk-play -i $som
+		#export DISPLAY=:0 ; canberra-gtk-play -i $som 2>&1
 		dbus-launch notify-send -i $icone "$1" "$2"
 	else
 		echo "${1}: $2"
 	fi
 }
-
 
 atualiza() {
 	if [ -d $1 ]; then
