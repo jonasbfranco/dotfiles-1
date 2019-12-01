@@ -1,0 +1,23 @@
+[Desktop Entry]
+Version=1.1
+Type=Application
+Name=Firefox
+GenericName=Navegador Web
+NoDisplay=true
+Comment=Navegue na Internet
+Icon=firefox
+Exec=/usr/lib/firefox/firefox %u
+Actions=new-window;new-private-window;
+MimeType=text/html;text/xml;application/xhtml+xml;x-scheme-handler/http;x-scheme-handler/https;application/x-xpinstall;
+Categories=Network;WebBrowser;
+Keywords=Internet;WWW;Browser;Web;Explorador;Navegador;
+StartupNotify=true
+StartupWMClass=firefox
+
+[Desktop Action new-window]
+Name=Nova janela
+Exec=/usr/lib/firefox/firefox --new-window %u
+
+[Desktop Action new-private-window]
+Name=Nova janela privativa
+Exec=/usr/lib/firefox/firefox --private-window %u

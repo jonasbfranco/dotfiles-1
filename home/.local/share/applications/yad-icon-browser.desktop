@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.1
+Type=Application
+Name=Ícone do navegador
+NoDisplay=true
+Comment=Inspecionar ícone tema do GTK
+Icon=yad
+Exec=yad-icon-browser
+Actions=
+Categories=Development;GTK;
+StartupNotify=true
