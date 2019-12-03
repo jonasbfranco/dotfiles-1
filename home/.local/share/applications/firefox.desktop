@@ -3,7 +3,6 @@ Version=1.1
 Type=Application
 Name=Firefox
 GenericName=Navegador Web
-NoDisplay=true
 Comment=Navegue na Internet
 Icon=firefox
 Exec=/usr/lib/firefox/firefox %u
