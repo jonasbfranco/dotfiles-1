@@ -18,8 +18,7 @@ done
 
 
 preset="superfast" # ultrafast,superfast,veryfast,faster,fast,medium,slow,slower,veryslow,placebo
-cor=$(awk -F# '/secondary/{print $2;exit}' ${HOME}/.config/polybar/config)
-#cor="bf616a"
+[ -f ${HOME}/.config/polybar/config ] && cor=$(awk -F# '/secondary/{print $2;exit}' ${HOME}/.config/polybar/config) || cor="bf616a"
 lixeira="${HOME}/.local/share/Trash"
 icone="${HOME}/.local/share/icons/elementary/video-display.png"
 
