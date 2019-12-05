@@ -6,7 +6,7 @@
 # Autor: Lucas Saliés Brum a.k.a. sistematico <lucas@archlinux.com.br>         #
 #                                                                              #
 # Criado em: 30-04-2019 01:55:09 pm                                             #
-# Modificado em: 05-12-2019 3:06:47 am                                         #
+# Modificado em: 05-12-2019 3:39:44 am                                         #
 #                                                                              #
 # Este trabalho está licenciado com uma Licença Creative Commons               #
 # Atribuição 4.0 Internacional                                                 #
@@ -122,7 +122,7 @@ if [[ $status -eq 0 ]]; then
         	final=$SECONDS
         	diff=$((final - comeco))
             tamanho=$(stat --printf="%s" "${titulo}"*)
-            tamanho="$((tamanho / 1000))"
+            tamanho="$((tamanho / 1024))"
 
             hora=$(printf "%02d" $((diff / 3600)))
             minuto=$(printf "%02d" $((diff / 60)))
@@ -130,10 +130,10 @@ if [[ $status -eq 0 ]]; then
 
             tempo=$((tamanho / diff))
 
-            if [ $tamanho -gt 1000 ]; then
-                tamanho="$((tamanho / 1000)) MB"
-            elif [ $tamanho -gt 1000000 ]; then
-                tamanho="$((tamanho / 1000 / 1000)) GB"
+            if [ $tamanho -gt 1024 ]; then
+                tamanho="$((tamanho / 1024)) MB"
+            elif [ $tamanho -gt 1048576 ]; then
+                tamanho="$((tamanho / 1024 / 1024)) GB"
             else 
                 tamanho="${tamanho} KB"
             fi
