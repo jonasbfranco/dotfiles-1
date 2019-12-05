@@ -6,7 +6,7 @@
 # Autor: Lucas Saliés Brum a.k.a. sistematico <lucas@archlinux.com.br>         #
 #                                                                              #
 # Criado em: 05-12-2019 4:25:37 pm                                             #
-# Modificado em: 05-12-2019 4:41:40 pm                                         #
+# Modificado em: 05-12-2019 4:49:06 pm                                         #
 #                                                                              #
 # Este trabalho está licenciado com uma Licença Creative Commons               #
 # Atribuição 4.0 Internacional                                                 #
@@ -52,7 +52,7 @@ if [[ $log -ne 0 ]]; then
 fi
 
 notify-send -i $icone "$nome" "Transferencia de: \n\n<b>$titulo</b> iniciada."
-youtube-dl --extract-audio --audio-format mp3 --output "${titulo}.mp3" "${url}"
+youtube-dl --extract-audio --audio-format mp3 --output "${titulo}.%(ext)s" "${url}"
 status="$?"
 
 if [[ $status -ne 0 ]]; then
