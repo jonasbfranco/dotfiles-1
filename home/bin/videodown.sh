@@ -1,11 +1,18 @@
 #!/usr/bin/env bash
-#
-# Arquivo: videodown.sh
-#
-# Feito por Lucas Saliés Brum a.k.a. sistematico, <lucas@archlinux.com.br>
-#
-# Criado em: 30/04/2019 13:55:09
-# Última alteração: 07/08/2019 16:24:14
+################################################################################
+#                                                                              #
+# videodown.sh                                                                 #
+#                                                                              #
+# Autor: Lucas Saliés Brum a.k.a. sistematico <lucas@archlinux.com.br>         #
+#                                                                              #
+# Criado em: 30-04-2019 01:55:09 pm                                             #
+# Modificado em: 05-12-2019 2:58:36 am                                         #
+#                                                                              #
+# Este trabalho está licenciado com uma Licença Creative Commons               #
+# Atribuição 4.0 Internacional                                                 #
+# http://creativecommons.org/licenses/by/4.0/                                  #
+#                                                                              #
+################################################################################
 
 #xclip -out -selection primary | xclip -in -selection clipboard
 
@@ -114,7 +121,7 @@ if [[ $status -eq 0 ]]; then
         else
         	final=$SECONDS
         	diff=$((final - comeco))
-            #t=$(stat --printf="%s" "$titulo")
+            tamanho=$(stat --printf="%s" "$titulo")
 
             hora=$(printf "%02d" $((diff / 3600)))
             minuto=$(printf "%02d" $((diff / 60)))
@@ -133,7 +140,7 @@ if [[ $status -eq 0 ]]; then
             #fi
 
             #notify-send -i $icone "Video Downloader" "Sucesso, vídeo salvo:\n\n<b>$titulo</b>\n\nEm:\n\n$dir\n\nO download demorou: ${hora}:${minuto}:${segundo} Tamanho: ${tamanho}${sufixo} Taxa: ${tempo}KBps"
-            notify-send -i $icone "Video Downloader" "Sucesso, vídeo salvo:\n\n<b>$titulo</b>\n\nEm:\n\n$dir\n\nO download demorou: ${hora}:${minuto}:${segundo}"
+            notify-send -i $icone "Video Downloader" "Sucesso, vídeo salvo:\n\n<b>$titulo</b>\n\nEm:\n\n$dir\n\nO download demorou: ${hora}:${minuto}:${segundo} Tamanho do arquivo: ${tamanho}"
             mv "${titulo}"* "$dir"
             cd $dir && rm -rf $tmp
         fi
