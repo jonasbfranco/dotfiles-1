@@ -6,7 +6,7 @@
 # Autor: Lucas Saliés Brum a.k.a. sistematico <lucas@archlinux.com.br>         #
 #                                                                              #
 # Criado em: 30-04-2019 01:55:09 pm                                             #
-# Modificado em: 05-12-2019 3:39:44 am                                         #
+# Modificado em: 05-12-2019 4:31:28 pm                                         #
 #                                                                              #
 # Este trabalho está licenciado com uma Licença Creative Commons               #
 # Atribuição 4.0 Internacional                                                 #
@@ -47,8 +47,6 @@ if [[ ! ${url} =~ $padrao ]]; then
 else
 	titulo="$(curl "$url" -so - | grep -iPo '(?<=<title>)(.*)(?=</title>)' | iconv -f utf8 -t ascii//TRANSLIT | sed 's/[^[:alnum:]]\+/ /g')"
 fi
-
-echo $titulo
 
 if [[ $log -ne 0 ]]; then
     echo "---------------------------------------------------------------" >> "$logs"

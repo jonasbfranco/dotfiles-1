@@ -6,7 +6,7 @@
 # Autor: Lucas Saliés Brum a.k.a. sistematico <lucas@archlinux.com.br>         #
 #                                                                              #
 # Criado em: 05-12-2019 4:25:37 pm                                             #
-# Modificado em: 05-12-2019 4:29:36 pm                                         #
+# Modificado em: 05-12-2019 4:41:40 pm                                         #
 #                                                                              #
 # Este trabalho está licenciado com uma Licença Creative Commons               #
 # Atribuição 4.0 Internacional                                                 #
@@ -22,30 +22,24 @@ ts=$(date +"%s")
 dir="${HOME}/desk"
 icone="${HOME}/.local/share/icons/elementary/video-display.png"
 som='complete'
-tmp="/tmp/videodown/$$"
+tmp="/tmp/audiodown/$$"
 logs="${dir}/status.log"
 proc=$(pgrep -fc "bash $0")
 
-if [ ! -d $dir ]; then
-	dir="${HOME}/desk"
-	if [ ! -d $dir ]; then
-		mkdir -p $dir
-	fi
-fi
-
 [ ! -d $tmp ] && mkdir -p $tmp
 [ $1 ] && url="$1" || url="$(xclip -o)"
+
+[ -z "$url" ] && echo "Você precisa especificar a url. Abortando..." && exit
+
 cd $tmp
 
 padrao='(https?|ftp|file)://[-A-Za-z0-9\+&@#/%?=~_|!:,.;]*[-A-Za-z0-9\+&@#/%=~_|]'
 if [[ ! ${url} =~ $padrao ]]; then
-	notify-send -i $icone $nome "O link é inválido!"
+	notify-send -i $icone "$nome" "O link é inválido!"
     exit
 else
 	titulo="$(curl "$url" -so - | grep -iPo '(?<=<title>)(.*)(?=</title>)' | iconv -f utf8 -t ascii//TRANSLIT | sed 's/[^[:alnum:]]\+/ /g')"
 fi
-
-echo $titulo
 
 if [[ $log -ne 0 ]]; then
     echo "---------------------------------------------------------------" >> "$logs"
@@ -57,8 +51,8 @@ if [[ $log -ne 0 ]]; then
     echo "Processos:    $proc" >> "$logs"
 fi
 
-notify-send -i $icone $nome "Transferencia de: \n\n<b>$titulo</b> iniciada."
-youtube-dl --extract-audio --audio-format mp3 -o "${titulo}.%(ext)s" "${url}"
+notify-send -i $icone "$nome" "Transferencia de: \n\n<b>$titulo</b> iniciada."
+youtube-dl --extract-audio --audio-format mp3 --output "${titulo}.mp3" "${url}"
 status="$?"
 
 if [[ $status -ne 0 ]]; then
@@ -70,7 +64,7 @@ if [[ $status -ne 0 ]]; then
     echo "Temp:         $tmp" >> "$logs"
     echo "Processos:    $proc" >> "$logs"    
     echo "Código:       $status" >> "$logs"
-    notify-send -i $icone $nome "Erro na transferencia de:\n\n<b>${titulo}*</b>.\n\nInstâncias: $proc"
+    notify-send -i $icone "$nome" "Erro na transferencia de:\n\n<b>${titulo}*</b>.\n\nInstâncias: $proc"
     canberra-gtk-play -i $som
     exit
 fi
@@ -98,7 +92,7 @@ if [[ $status -eq 0 ]]; then
 
     if ls "${titulo}"* 1> /dev/null 2>&1; then
         if ls "${dir}/${titulo}"* 1> /dev/null 2>&1; then
-            notify-send -i $icone $nome "Já existe um arquivo:\n\n<b>$titulo</b>\n\nEm:\n\n$dir\n\nInstâncias: $proc"
+            notify-send -i $icone "$nome" "Já existe um arquivo:\n\n<b>$titulo</b>\n\nEm:\n\n$dir\n\nInstâncias: $proc"
             canberra-gtk-play -i $som
         else
         	final=$SECONDS
@@ -120,17 +114,17 @@ if [[ $status -eq 0 ]]; then
                 tamanho="${tamanho} KB"
             fi
 
-            notify-send -i $icone $nome \
+            notify-send -i $icone "$nome" \
             "Sucesso, vídeo salvo:\n\n<b>$titulo</b>\n\nEm:\n\n$dir\n\nTempo decorrido: ${hora}:${minuto}:${segundo}\nTamanho do arquivo: ${tamanho}\nVelocidade média: ${tempo}KBps"
             mv "${titulo}"* "$dir"
             cd $dir && rm -rf $tmp
         fi
     else
-        notify-send -i $icone $nome "Erro na transferencia de:\n\n<b>${tmp}/${titulo}*</b>.\n\nInstâncias: $proc"
+        notify-send -i $icone "$nome" "Erro na transferencia de:\n\n<b>${tmp}/${titulo}*</b>."
         canberra-gtk-play -i $som
     fi
 else
-    notify-send -i $icone $nome "Erro na transferencia de:\n\n<b>$titulo</b>\n\nInstâncias: $proc"
+    notify-send -i $icone "$nome" "Erro na transferencia de:\n\n<b>$titulo</b>"
     canberra-gtk-play -i $som
 fi
 
