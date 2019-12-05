@@ -11,7 +11,8 @@ services:
             - ~/gitlab:/code
             - ~/docker/confs/nginx.conf:/etc/nginx/conf.d/default.conf
             - ~/docker/certs:/etc/ssl/nginx
-        restart: unless-stopped
+        #restart: unless-stopped
+        restart: always
 
     php:
         container_name: php
@@ -27,7 +28,8 @@ services:
             - ~/docker/confs/php.conf:/usr/local/etc/php-fpm.d/php.conf
             - ~/docker/confs/php.ini:/usr/local/etc/php/conf.d/php.ini
             - ~/docker/confs/fpm.conf:/usr/local/etc/php-fpm.d/zz-docker.conf
-        restart: unless-stopped
+        #restart: unless-stopped
+        restart: always
 
     nginxalt:
         container_name: nginxalt
@@ -39,7 +41,8 @@ services:
             - ~/sites:/code
             - ~/docker/confs/nginxalt.conf:/etc/nginx/conf.d/default.conf
             - ~/docker/certs:/etc/ssl/nginx
-        restart: unless-stopped
+        #restart: unless-stopped
+        restart: always
 
     phpalt:
         container_name: phpalt
@@ -55,7 +58,8 @@ services:
             - ~/docker/confs/php.conf:/usr/local/etc/php-fpm.d/php.conf
             - ~/docker/confs/php.ini:/usr/local/etc/php/conf.d/php.ini
             - ~/docker/confs/fpm2.conf:/usr/local/etc/php-fpm.d/zz-docker.conf
-        restart: unless-stopped
+        #restart: unless-stopped
+        restart: always
 
     mysql:
         container_name: mysql
@@ -71,7 +75,8 @@ services:
         environment:
             - MYSQL_ROOT_PASSWORD=senha
             - MYSQL_DATABASE=app
-        restart: unless-stopped
+        #restart: unless-stopped
+        restart: always
 
     phpmyadmin:
         container_name: phpmyadmin
@@ -84,4 +89,5 @@ services:
             - ~/docker/confs/phpmyadmin.php:/etc/phpmyadmin/config.user.inc.php
         environment:
             - PMA_HOST=mysql
-        restart: unless-stopped
+        #restart: unless-stopped
+        restart: always
