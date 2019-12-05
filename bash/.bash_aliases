@@ -19,7 +19,7 @@ alias fullsync='rsync -aAXvz --exclude={"var/cache/apt/","*.mp3",".local/share/T
 alias pacman-clean='sudo pacman -Qdtq | pacman -Rs -'
 alias vim="vim -c 'startinsert'"
 alias showip='curl icanhazip.com'
-alias lostfiles='sudo lostfiles strict | egrep -vi "/usr/local/bin|/usr/share/(themes|icons|hplip|fonts|cinnamon|backgrounds|docky|mime|pixmaps|\.mono|nginx|agave)|/var/(default|cache)|/usr/lib/python3\.6|-disabled"'
+alias lostfiles='sudo lostfiles strict | egrep -vi "/etc/systemd/user/sockets.target.wants|/etc/systemd/user/default.target.wants|/usr/local/bin|/usr/share/(themes|icons|hplip|fonts|cinnamon|backgrounds|docky|mime|pixmaps|\.mono|nginx|agave)|/var/(default|cache)|/usr/lib/python3\.8|-disabled"'
 alias yay='yay --noconfirm'
 alias ue='systemctl list-unit-files | grep enabled'
 alias uue='systemctl --user list-unit-files | grep enabled'
