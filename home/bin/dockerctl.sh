@@ -52,7 +52,7 @@ if [ "$1" == "upgrade" ]; then
     fi
 fi
 
-if [ "$1" == "rebuild" ]; then
+if [ "$1" == "rebuild" ] || [ "$1" == "build" ]; then
     if [ -f docker-compose.yml ]; then
         docker-compose up -d --build
     else
