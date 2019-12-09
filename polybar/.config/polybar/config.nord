@@ -96,7 +96,7 @@ module-margin-right = 1
 font-0 = Fantasque Sans Mono:style=Regular:pixelsize=11;2
 font-1 = feather:style=Regular:pixelsize=11;3
 
-modules-left = browser terminal code thunar telegram sep tdocker tmpd
+modules-left = browser terminal subl thunar telegram sep tdocker tmpd
 modules-center = mpd
 modules-right = notes wallpaper screencast screenshot refresh tv lixo
 
@@ -154,7 +154,7 @@ label-urgent-padding = 1
 ;----------------------------------------------------------
 [module/weather]
 type = custom/script
-interval = 900
+interval = 60
 exec = ~/.config/polybar/scripts/weather.py
 
 ;----------------------------------------------------------
@@ -676,6 +676,13 @@ content = 
 content-foreground = ${colors.secondary}
 click-left = code &
 click-right = subl &
+
+[module/subl]
+type = custom/text
+content = 
+content-foreground = ${colors.secondary}
+click-left = subl &
+click-right = code &
 
 [module/refresh]
 type = custom/text
