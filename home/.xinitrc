@@ -20,7 +20,7 @@ fi
 dbus-update-activation-environment --systemd DISPLAY
 
 export DESKTOP_SESSION=i3
-export TERMINAL=st
+export TERMINAL=termite
 export EDITOR=nano
 export BROWSER=firefox
 

@@ -25,7 +25,7 @@ export GL=${HOME}/gitlab
 export DOT=${HOME}/.dotfiles
 
 # Vars
-export TERMINAL=st
+export TERMINAL=termite
 export BROWSER=firefox
 export EDITOR=nano
 
