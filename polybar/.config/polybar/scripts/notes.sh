@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
-notes=$(cat ~/.rofi_notes | wc -l)
+[ ! -f ${HOME}/.rofi_notes ] && touch ${HOME}/.rofi_notes
+
+notes=$(cat ${HOME}/.rofi_notes | wc -l)
 ((notes--))
 
 if [ $notes -gt 0 ]; then
