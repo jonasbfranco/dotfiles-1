@@ -42,6 +42,8 @@ width = 100%
 height = 29
 fixed-center = true
 
+locale = pt_BR.UTF-8 
+
 background = ${colors.background}
 foreground = ${colors.foreground}
 
@@ -80,6 +82,8 @@ width = 100%
 height = 29
 fixed-center = true
 bottom = true
+
+locale = pt_BR.UTF-8
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -191,8 +195,9 @@ exec = ~/.config/polybar/scripts/janela.sh
 type = internal/cpu
 interval = 1.5
 
+format = <ramp-coreload>
 ;format = <label> <ramp-coreload>
-format = <label>
+;format = <label>
 format-prefix = " "
 format-prefix-foreground = ${colors.secondary}
 
@@ -202,36 +207,28 @@ label = %percentage%%
 ramp-coreload-spacing = 0
 ramp-coreload-0 = ▁
 ramp-coreload-0-font = 3
-;ramp-coreload-0-foreground = #aaff77
-ramp-coreload-0-foreground = ${colors.secondary}
+;ramp-coreload-0-foreground = ${colors.secondary}
 ramp-coreload-1 = ▂
 ramp-coreload-1-font = 3
-;ramp-coreload-1-foreground = #aaff77
-ramp-coreload-1-foreground = ${colors.secondary}
+;ramp-coreload-1-foreground = ${colors.secondary}
 ramp-coreload-2 = ▃
 ramp-coreload-2-font = 3
-;ramp-coreload-2-foreground = #aaff77
-ramp-coreload-2-foreground = ${colors.secondary}
+;ramp-coreload-2-foreground = ${colors.secondary}
 ramp-coreload-3 = ▄
 ramp-coreload-3-font = 3
-;ramp-coreload-3-foreground = #aaff77
-ramp-coreload-3-foreground = ${colors.secondary}
+;ramp-coreload-3-foreground = ${colors.secondary}
 ramp-coreload-4 = ▅
 ramp-coreload-4-font = 3
-;ramp-coreload-4-foreground = #fba922
-ramp-coreload-4-foreground = ${colors.secondary}
+;ramp-coreload-4-foreground = ${colors.secondary}
 ramp-coreload-5 = ▆
 ramp-coreload-5-font = 3
-;ramp-coreload-5-foreground = #fba922
-ramp-coreload-5-foreground = ${colors.secondary}
+;ramp-coreload-5-foreground = ${colors.secondary}
 ramp-coreload-6 = ▇
 ramp-coreload-6-font = 3
-;ramp-coreload-6-foreground = #ff5555
-ramp-coreload-6-foreground = ${colors.secondary}
+;ramp-coreload-6-foreground = ${colors.secondary}
 ramp-coreload-7 = █
 ramp-coreload-7-font = 3
-;ramp-coreload-7-foreground = #ff5555
-ramp-coreload-7-foreground = ${colors.secondary}
+;ramp-coreload-7-foreground = ${colors.secondary}
 
 ;-------------------------------------------------------------------------
 ;              M E M O R I A
@@ -240,8 +237,9 @@ ramp-coreload-7-foreground = ${colors.secondary}
 type = internal/memory
 interval = 0.5
 
+format = <bar-used>
 ;format = <label> <bar-used>
-format = <label>
+;format = <label>
 format-prefix = " "
 format-prefix-foreground = ${colors.secondary}
 
@@ -253,13 +251,14 @@ bar-used-gradient = true
 ;bar-used-foreground-1 = #2f8419
 ;bar-used-foreground-2 = #f5a70a
 ;bar-used-foreground-3 = #ed5456
-bar-used-foreground-0 = ${colors.secondary}
-bar-used-foreground-1 = ${colors.secondary}
-bar-used-foreground-2 = ${colors.secondary}
-bar-used-foreground-3 = ${colors.secondary}
+;bar-used-foreground-0 = ${colors.secondary}
+;bar-used-foreground-1 = ${colors.secondary}
+;bar-used-foreground-2 = ${colors.secondary}
+;bar-used-foreground-3 = ${colors.secondary}
 bar-used-indicator = █
 bar-used-indicator-font = 3
-bar-used-indicator-foreground = #fff
+;bar-used-indicator-foreground = #fff
+bar-used-indicator-foreground = ${colors.secondary}
 bar-used-fill = █
 bar-used-fill-font = 3
 bar-used-empty = █
@@ -372,7 +371,7 @@ type = internal/date
 interval = 5
 
 date =
-date-alt = " %d-%m-%Y"
+date-alt = " %a, %d-%m-%Y"
 
 time = %H:%M
 time-alt = %H:%M:%S

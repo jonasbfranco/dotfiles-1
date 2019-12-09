@@ -89,9 +89,9 @@ try:
             ICON = ""
         elif ID >= 801 and ID <= 804:
             if HOUR >= 6 and HOUR <= 19:
-                ICON = ""
+                ICON = ""
             else:
-                ICON = ""
+                ICON = ""
         elif ID >= 900 and ID <= 902 or ID >= 957 and ID <= 962:
             ICON = ""
         elif ID == 903 or ID == 906:
