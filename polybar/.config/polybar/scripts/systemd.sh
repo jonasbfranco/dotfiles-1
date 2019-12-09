@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
+# @Author: Lucas Saliés Brum
+# @Date:   2019-12-09 09:32:52
+# @Last Modified by:   Lucas Saliés Brum
+# @Last Modified time: 2019-12-09 11:28:43
 
 if [ $2 ]; then
     [ "$1" == "-u" ] && param="--user"
