@@ -96,7 +96,7 @@ module-margin-right = 1
 font-0 = Fantasque Sans Mono:style=Regular:pixelsize=11;2
 font-1 = feather:style=Regular:pixelsize=11;3
 
-modules-left = browser terminal subl thunar telegram sep tdocker tmpd
+modules-left = browser terminal subl thunar telegram sep tdocker tmpd tclamav tfreshclam
 modules-center = mpd
 modules-right = notes wallpaper screencast screenshot refresh tv lixo
 
@@ -596,6 +596,18 @@ tail = true
 type = custom/script
 click-left = ~/.config/polybar/scripts/systemd.sh -u mpd x &
 exec = ~/.config/polybar/scripts/systemd.sh -u mpd
+tail = true
+
+[module/tclamav]
+type = custom/script
+click-left = ~/.config/polybar/scripts/systemd.sh -s clamav-daemon x &
+exec = ~/.config/polybar/scripts/systemd.sh -s clamav-daemon
+tail = true
+
+[module/tfreshclam]
+type = custom/script
+click-left = ~/.config/polybar/scripts/systemd.sh -s clamav-freshclam x &
+exec = ~/.config/polybar/scripts/systemd.sh -s clamav-freshclam
 tail = true
 
 ;----------------------------------------------------------
