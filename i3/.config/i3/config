@@ -140,7 +140,7 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 # Rofi
-bindsym $mod+g exec --no-startup-id echo "" | rofi -dmenu -p "Google: " -bw 0 -lines 1 -separator-style none -location 0 -width 250 -hide-scrollbar -padding 5 | xargs -I{} $BROWSER https://www.google.com.br/search?q={}
+bindsym $mod+g exec --no-startup-id echo "" | rofi -dmenu -p "Google: " -bw 0 -lines 0 -separator-style none -location 0 -width 250 -hide-scrollbar -padding 5 | xargs -I{} $BROWSER https://www.google.com.br/search?q={}
 bindsym --release Mod1+g exec --no-startup-id exec $HOME/.config/rofi/scripts/git
 bindsym $mod+Shift+w exec --no-startup-id $HOME/.config/rofi/scripts/janelas
 bindsym $mod+d exec --no-startup-id $HOME/.config/rofi/scripts/drun
@@ -192,7 +192,7 @@ set $ws3 "3:"
 set $ws4 "4:"
 set $ws5 "5:"
 set $ws6 "6:"
-set $ws7 "7:"
+set $ws7 "7:"
 set $ws8 "8:"
 set $ws9 "9:"
 set $ws10 "10:"
@@ -265,16 +265,19 @@ for_window [class="Termite" title="^ncmpcpp"] move to workspace $ws6, floating e
 for_window [title="(^DeaDBeeF)"] move to workspace $ws6, floating enable, move position center
 for_window [title="(^Friends List|^Lista de amigos)"] move to workspace $ws6, floating enable, move absolute position 1520 px 70 px
 
+####################################################################
+################ A S S I G N #######################################
+####################################################################
 assign [class="^([Cc]hromium|[Qq]utebrowser|[Ee]piphany|[Ff]irefox|[Ff]irefox-developer)"] $ws1
 assign [class="(Termite|Tilix|st-256color|Xfce4-terminal)"] $ws2
 assign [class="^(VSCodium|Code|Pluma|Sublime_text|Atom)"] $ws3
 assign [class="(Thunar|Pcmanfm)"] $ws4
 assign [class="(Lxappearance|^Pamac*|Notes|Lxtask|^Mate-disk-usage-analyzer|Dconf-editor|Filezilla|JDownloader)"] $ws5
-assign [class="(^Steam|discord)"] $ws6
-assign [class="(Thunderbird|Deluge)"] $ws7
+assign [class="(Deluge)"] $ws6
+assign [class="(^Steam|discord)"] $ws7
 assign [class="(whatsdesk|Whatsie|Whatsapp|whatsapp-desktop)"] $ws8
 assign [class="(^Telegram|^Hexchat)"] $ws9
-assign [class="(^Atril|Postman)"] $ws10
+assign [class="(^Atril|Postman|Thunderbird)"] $ws10
 
 ####################################################################
 ################ G R U P O S #######################################
