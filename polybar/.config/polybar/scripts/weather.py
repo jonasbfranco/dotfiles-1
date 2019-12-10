@@ -19,7 +19,12 @@ try:
     if REQ.status_code == 200:
         CURRENT = REQ.json()["weather"][0]["description"].capitalize()
         VELOCIDADE = REQ.json()["wind"]["speed"]
-        DIRECAO = REQ.json()["wind"]["deg"]
+
+        if REQ.json()["wind"]["deg"]:
+            DIRECAO = REQ.json()["wind"]["deg"]
+        else:
+            DIRECAO = '?'
+
         PRESSAO = REQ.json()["main"]["pressure"]
         #VISIBILIDADE = REQ.json()["visibility"]
         HUMIDADE = REQ.json()["main"]["humidity"]
