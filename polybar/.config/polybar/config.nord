@@ -63,7 +63,7 @@ font-2 = FontAwesome:size=6;2
 font-3 = Termsynu:size=7;0
 font-4 = Moon Phases:size=10;3
 
-modules-left = i3
+modules-left = i3 sep uptime pkg
 modules-center = window
 modules-right = cpu memory hddled filesystem temperature netled network hackspeed data beats moon pulse powermenu
 
@@ -152,14 +152,6 @@ label-visible-padding = 1
 label-urgent = %name%
 label-urgent-background = ${colors.alert}
 label-urgent-padding = 1
-
-;----------------------------------------------------------
-;		       W E A T H E R
-;----------------------------------------------------------
-[module/weather]
-type = custom/script
-interval = 60
-exec = ~/.config/polybar/scripts/weather.py
 
 ;----------------------------------------------------------
 ;		        W I N D O W
@@ -351,6 +343,14 @@ label-connected = %downspeed:3%
 label-disconnected = offline
 label-packetloss = loss
 
+;----------------------------------------------------------
+;		        H A C K S P E E D
+;----------------------------------------------------------
+[module/hackspeed]
+type = custom/script
+exec = ~/.config/polybar/scripts/hackspeed.sh
+tail = true
+
 ;-------------------------------------------------------------------------
 ;              D A T A
 ;-------------------------------------------------------------------------
@@ -484,6 +484,41 @@ icon-single = single
 icon-consume = consume
 
 ;----------------------------------------------------------
+;              N E T L E D OUT
+;----------------------------------------------------------
+[module/netledout]
+type = custom/script
+exec = ~/.config/polybar/scripts/netled.sh out
+tail = true
+
+;----------------------------------------------------------
+;		       W E A T H E R
+;----------------------------------------------------------
+[module/weather]
+type = custom/script
+interval = 60
+exec = ~/.config/polybar/scripts/weather.py
+
+;----------------------------------------------------------
+;		        D O W N L O A D S
+;----------------------------------------------------------
+[module/dl]
+type = custom/script
+interval = 5
+click-left = ~/.config/polybar/scripts/downloads.sh x > /dev/null 2> /dev/null &
+click-middle = ~/.config/polybar/scripts/downloads.sh c > /dev/null 2> /dev/null &
+click-right = ~/.config/polybar/scripts/downloads.sh i > /dev/null 2> /dev/null &
+exec = ~/.config/polybar/scripts/downloads.sh
+
+;----------------------------------------------------------
+;              P I N G
+;----------------------------------------------------------
+[module/ping]
+type = custom/script
+exec = ~/.config/polybar/scripts/ping2.sh
+interval = 30
+
+;----------------------------------------------------------
 ;		        W A L L P A P E R
 ;----------------------------------------------------------
 [module/wallpaper]
@@ -522,39 +557,13 @@ click-right = ~/.local/bin/screenshot -c &
 scroll-down = ~/.local/bin/screenshot -e &
 
 ;----------------------------------------------------------
-;              N E T L E D OUT
+;		       T V
 ;----------------------------------------------------------
-[module/netledout]
-type = custom/script
-exec = ~/.config/polybar/scripts/netled.sh out
-tail = true
-
-;----------------------------------------------------------
-;		        H A C K S P E E D
-;----------------------------------------------------------
-[module/hackspeed]
-type = custom/script
-exec = ~/.config/polybar/scripts/hackspeed.sh
-tail = true
-
-;----------------------------------------------------------
-;		        D O W N L O A D S
-;----------------------------------------------------------
-[module/dl]
+[module/tv]
 type = custom/script
 interval = 5
-click-left = ~/.config/polybar/scripts/downloads.sh x > /dev/null 2> /dev/null &
-click-middle = ~/.config/polybar/scripts/downloads.sh c > /dev/null 2> /dev/null &
-click-right = ~/.config/polybar/scripts/downloads.sh i > /dev/null 2> /dev/null &
-exec = ~/.config/polybar/scripts/downloads.sh
-
-;----------------------------------------------------------
-;              P I N G
-;----------------------------------------------------------
-[module/ping]
-type = custom/script
-exec = ~/.config/polybar/scripts/ping2.sh
-interval = 30
+click-left = ~/.config/polybar/scripts/tv.sh -x &
+exec = ~/.config/polybar/scripts/tv.sh
 
 ;----------------------------------------------------------
 ;		       L I X E I R A
@@ -565,15 +574,6 @@ tail = true
 click-middle = ~/.config/polybar/scripts/trash.sh -o &
 click-right = ~/.config/polybar/scripts/trash.sh -x &
 exec = ~/.config/polybar/scripts/trash.sh
-
-;----------------------------------------------------------
-;		       T V
-;----------------------------------------------------------
-[module/tv]
-type = custom/script
-interval = 5
-click-left = ~/.config/polybar/scripts/tv.sh -x &
-exec = ~/.config/polybar/scripts/tv.sh
 
 ;----------------------------------------------------------
 ;		       U P T I M E
