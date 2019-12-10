@@ -63,7 +63,7 @@ font-2 = FontAwesome:size=6;2
 font-3 = Termsynu:size=7;0
 font-4 = Moon Phases:size=10;3
 
-modules-left = i3 sep uptime pkg
+modules-left = i3 sep uptime pkg news
 modules-center = window
 modules-right = cpu memory hddled filesystem temperature netled network hackspeed data beats moon pulse powermenu
 
@@ -152,6 +152,38 @@ label-visible-padding = 1
 label-urgent = %name%
 label-urgent-background = ${colors.alert}
 label-urgent-padding = 1
+
+;----------------------------------------------------------
+;		       U P T I M E
+;----------------------------------------------------------
+[module/uptime]
+type = custom/script
+interval = 30
+exec = ~/.config/polybar/scripts/uptime.sh
+
+;----------------------------------------------------------
+;		        P K G
+;----------------------------------------------------------
+[module/pkg]
+type = custom/script
+format-prefix = " "
+format-prefix-foreground = ${colors.secondary}
+exec = ~/.config/polybar/scripts/pkg.sh
+interval = 600
+
+;----------------------------------------------------------
+;		        N E W S
+;----------------------------------------------------------
+[module/news]
+type = custom/script
+format-prefix = " "
+format-prefix-foreground = ${colors.secondary}
+
+format = <label>
+label = %output:0:20:...%
+
+exec = ~/.config/polybar/scripts/anews.py
+interval = 600
 
 ;----------------------------------------------------------
 ;		        W I N D O W
@@ -574,14 +606,6 @@ tail = true
 click-middle = ~/.config/polybar/scripts/trash.sh -o &
 click-right = ~/.config/polybar/scripts/trash.sh -x &
 exec = ~/.config/polybar/scripts/trash.sh
-
-;----------------------------------------------------------
-;		       U P T I M E
-;----------------------------------------------------------
-[module/uptime]
-type = custom/script
-interval = 30
-exec = ~/.config/polybar/scripts/uptime.sh
 
 ;----------------------------------------------------------
 ;              T O G G L E S
