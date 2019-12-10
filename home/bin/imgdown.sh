@@ -6,7 +6,7 @@
 # Autor: Lucas Saliés Brum a.k.a. sistematico <lucas@archlinux.com.br> 
 #
 # Criado em: 16-03-2018 16:35:20
-# Modificado em: 10-12-2019 00:06:46
+# Modificado em: 10-12-2019 00:15:41
 #
 # Este trabalho está licenciado com uma Licença Creative Commons
 # Atribuição 4.0 Internacional
@@ -14,6 +14,7 @@
 #
 # https://gist.github.com/tayfie/6dad43f1a452440fba7ea1c06d1b603a
 ##############################################################################
+
 
 ext="jpg"  		# Separadas por virgula.
 pasta="$(pwd)" 	# Diretório para salvar os arquivos.
