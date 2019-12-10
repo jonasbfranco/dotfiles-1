@@ -26,7 +26,12 @@ try:
             DIRECAO = '?'
 
         PRESSAO = REQ.json()["main"]["pressure"]
-        #VISIBILIDADE = REQ.json()["visibility"]
+
+        if 'visibility' in REQ.json():
+            VISIBILIDADE = REQ.json()["visibility"]
+        else:
+            VISIBILIDADE = 10000
+
         HUMIDADE = REQ.json()["main"]["humidity"]
         ID = int(float(REQ.json()["weather"][0]["id"]))
         TEMP = int(float(REQ.json()["main"]["temp"]))
@@ -110,11 +115,7 @@ try:
                 ICON = ""
             else:
                 ICON = ""
-        #print("%%{F#FFF}%s %%{F-}%s  %i°%s  %s%%  %s  %skm/h  %shPa " % (ICON, CURRENT, TEMP, UNIT_KEY, HUMIDADE, DIRECAO, VELOCIDADE, PRESSAO)) # Icon with description
-        #print("%%{F#FFF}%s %%{F-}%s  %i°%s  %s%%  %skm/h  %shPa " % (ICON, CURRENT, TEMP, UNIT_KEY, HUMIDADE, VELOCIDADE, PRESSAO)) # Icon with description
-        #print(" %s %s  %i°%s  %s%%  %skm/h  %shPa " % (ICON, CURRENT, TEMP, UNIT_KEY, HUMIDADE, VELOCIDADE, PRESSAO)) # Icon with description
-        #print(" %s %s  %i°%s  %s%%  %s°  %skm/h  %shPa " % (ICON, CURRENT, TEMP, UNIT_KEY, HUMIDADE, DIRECAO, VELOCIDADE, PRESSAO)) # Icon with description
-        print(" %%{F#D08770}%s %%{F-}%s %%{F#D08770}%%{F-} %i°%s %%{F#D08770}%%{F-} %s%% %%{F#D08770}%%{F-} %s° %%{F#D08770}%%{F-} %skm/h %%{F#D08770}%%{F-} %shPa " % (ICON, CURRENT, TEMP, UNIT_KEY, HUMIDADE, DIRECAO, VELOCIDADE, PRESSAO)) # Icon with description
+        print(" %%{F#D08770}%s %%{F-}%s %%{F#D08770}%%{F-} %i°%s %%{F#D08770}%%{F-} %s%% %%{F#D08770}%%{F-} %skm/h %%{F#D08770}%%{F-} %s° %%{F#D08770}%%{F-} %i° %%{F#D08770}%%{F-} %shPa " % (ICON, CURRENT, TEMP, UNIT_KEY, HUMIDADE, VELOCIDADE, DIRECAO, VISIBILIDADE, PRESSAO)) # Icon with description
 
-except requests.exceptions.RequestException:  # This is the correct syntax
-    print("Recuperando condições do clima.") # Icon with description
+except requests.exceptions.RequestException:
+    print("Recuperando condições do clima.")
