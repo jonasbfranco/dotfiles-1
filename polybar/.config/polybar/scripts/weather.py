@@ -115,7 +115,7 @@ try:
                 ICON = ""
             else:
                 ICON = ""
-        print(" %%{F#D08770}%s %%{F-}%s %%{F#D08770}%%{F-} %i°%s %%{F#D08770}%%{F-} %s%% %%{F#D08770}%%{F-} %skm/h %%{F#D08770}%%{F-} %s° %%{F#D08770}%%{F-} %i° %%{F#D08770}%%{F-} %shPa " % (ICON, CURRENT, TEMP, UNIT_KEY, HUMIDADE, VELOCIDADE, DIRECAO, VISIBILIDADE, PRESSAO)) # Icon with description
+        print(" %%{F#D08770}%s %%{F-}%s %%{F#D08770}%%{F-} %i°%s %%{F#D08770}%%{F-} %s%% %%{F#D08770}%%{F-} %skm/h %%{F#D08770}%%{F-} %s° %%{F#D08770}%%{F-} %im %%{F#D08770}%%{F-} %shPa " % (ICON, CURRENT, TEMP, UNIT_KEY, HUMIDADE, VELOCIDADE, DIRECAO, VISIBILIDADE, PRESSAO)) # Icon with description
 
 except requests.exceptions.RequestException:
     print("Recuperando condições do clima.")

@@ -63,9 +63,9 @@ font-2 = FontAwesome:size=6;2
 font-3 = Termsynu:size=7;0
 font-4 = Moon Phases:size=10;3
 
-modules-left = i3 weather moon
-modules-center = window dl
-modules-right = cpu memory hddled filesystem temperature netled network hackspeed data beats pulse powermenu
+modules-left = i3
+modules-center = window
+modules-right = cpu memory hddled filesystem temperature netled network hackspeed data beats moon pulse powermenu
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -100,9 +100,9 @@ module-margin-right = 1
 font-0 = Fantasque Sans Mono:style=Regular:pixelsize=11;2
 font-1 = feather:style=Regular:pixelsize=11;3
 
-modules-left = browser terminal subl thunar telegram sep tdocker tmpd tclamav tfreshclam
+modules-left = browser terminal subl thunar telegram sep tdocker tmpd
 modules-center = mpd
-modules-right = notes wallpaper screencast screenshot refresh tv lixo
+modules-right = weather sep dl notes wallpaper screencast screenshot refresh tv lixo
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -160,18 +160,6 @@ label-urgent-padding = 1
 type = custom/script
 interval = 60
 exec = ~/.config/polybar/scripts/weather.py
-
-;----------------------------------------------------------
-;			 M O O N P H A S E
-;----------------------------------------------------------
-[module/moon]
-type = custom/script
-interval = 60.0
-label-font = 5
-exec =  ~/.config/polybar/scripts/moonphase.py
-click-left = notify-send -i ~/.config/dunst/icons/moon.svg "Fases da Lua" "$(python2 ~/.config/polybar/scripts/moonphase.py desc)" &
-label = %output%
-format = <label>
 
 ;----------------------------------------------------------
 ;		        W I N D O W
@@ -381,6 +369,30 @@ format-prefix-foreground = ${colors.secondary}
 
 label = %date% %time%
 
+;----------------------------------------------------------
+;			    B E A T S
+;----------------------------------------------------------
+[module/beats]
+type = custom/script
+exec =  ~/.config/polybar/scripts/beats.sh
+click-left = ~/.config/rofi/scripts/alarme &
+label = %output%
+format = <label>
+format-prefix = " "
+format-prefix-foreground = ${colors.secondary}
+
+;----------------------------------------------------------
+;			 M O O N P H A S E
+;----------------------------------------------------------
+[module/moon]
+type = custom/script
+interval = 60.0
+label-font = 5
+exec =  ~/.config/polybar/scripts/moonphase.py
+click-left = notify-send -i ~/.config/dunst/icons/moon.svg "Fases da Lua" "$(python2 ~/.config/polybar/scripts/moonphase.py desc)" &
+label = %output%
+format = <label>
+
 ;-------------------------------------------------------------------------
 ;              P U L S E
 ;-------------------------------------------------------------------------
@@ -535,18 +547,6 @@ click-left = ~/.config/polybar/scripts/downloads.sh x > /dev/null 2> /dev/null &
 click-middle = ~/.config/polybar/scripts/downloads.sh c > /dev/null 2> /dev/null &
 click-right = ~/.config/polybar/scripts/downloads.sh i > /dev/null 2> /dev/null &
 exec = ~/.config/polybar/scripts/downloads.sh
-
-;----------------------------------------------------------
-;			    B E A T S
-;----------------------------------------------------------
-[module/beats]
-type = custom/script
-exec =  ~/.config/polybar/scripts/beats.sh
-click-left = ~/.config/rofi/scripts/alarme &
-label = %output%
-format = <label>
-format-prefix = " "
-format-prefix-foreground = ${colors.secondary}
 
 ;----------------------------------------------------------
 ;              P I N G
