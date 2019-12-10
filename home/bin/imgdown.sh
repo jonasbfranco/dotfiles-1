@@ -1,13 +1,19 @@
-#!/usr/bin/env bash
-#
-# Arquivo: imgdown.sh
-#
-# Feito por Lucas Saliés Brum a.k.a. sistematico, <lucas@archlinux.com.br>
+#!/bin/bash
+##############################################################################
+#                                
+# imgdown.sh
+#                                
+# Autor: Lucas Saliés Brum a.k.a. sistematico <lucas@archlinux.com.br> 
 #
 # Criado em: 16-03-2018 16:35:20
-# Última alteração: 08/01/2019 21:15:57
+# Modificado em: 10-12-2019 00:06:46
+#
+# Este trabalho está licenciado com uma Licença Creative Commons
+# Atribuição 4.0 Internacional
+# http://creativecommons.org/licenses/by/4.0/
 #
 # https://gist.github.com/tayfie/6dad43f1a452440fba7ea1c06d1b603a
+##############################################################################
 
 ext="jpg"  		# Separadas por virgula.
 pasta="$(pwd)" 	# Diretório para salvar os arquivos.

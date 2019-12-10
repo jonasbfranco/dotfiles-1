@@ -533,6 +533,7 @@ type = custom/script
 interval = 5
 click-left = ~/.config/polybar/scripts/downloads.sh x > /dev/null 2> /dev/null &
 click-middle = ~/.config/polybar/scripts/downloads.sh c > /dev/null 2> /dev/null &
+click-right = ~/.config/polybar/scripts/downloads.sh i > /dev/null 2> /dev/null &
 exec = ~/.config/polybar/scripts/downloads.sh
 
 ;----------------------------------------------------------
