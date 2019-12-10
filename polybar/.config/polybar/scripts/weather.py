@@ -20,7 +20,7 @@ try:
         CURRENT = REQ.json()["weather"][0]["description"].capitalize()
         VELOCIDADE = REQ.json()["wind"]["speed"]
 
-        if REQ.json()["wind"]["deg"]:
+        if 'deg' in REQ.json()["wind"]:
             DIRECAO = REQ.json()["wind"]["deg"]
         else:
             DIRECAO = '?'
