@@ -90,7 +90,7 @@ try:
         elif ID == 501 or ID == 500 or ID == 520:
             ICON = ""
         elif ID == 521:
-            ICON = ""
+            ICON = ""
         elif ID >= 310 and ID <= 531:
             ICON = ""
         elif ID >= 600 and ID <= 622:
