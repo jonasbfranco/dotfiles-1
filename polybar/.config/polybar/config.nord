@@ -32,6 +32,7 @@ foreground-alt = #555
 primary = #A3BE8C
 secondary = #D08770
 alert = #BF616A
+roxo = #b48ead
 
 ;----------------------------------------------------------
 ;		        B A R R A ( T O P )
@@ -100,7 +101,7 @@ module-margin-right = 1
 font-0 = Fantasque Sans Mono:style=Regular:pixelsize=11;2
 font-1 = feather:style=Regular:pixelsize=11;3
 
-modules-left = browser terminal subl thunar telegram sep tdocker tmpd
+modules-left = browser terminal editor thunar docker telegram steam sep tdocker tmpd
 modules-center = mpd
 modules-right = weather sep dl notes wallpaper screencast screenshot refresh tv lixo
 
@@ -181,7 +182,7 @@ format-prefix = " "
 format-prefix-foreground = ${colors.secondary}
 
 format = <label>
-label = %output:0:20:...%
+label = %output:0:30:...%
 
 exec = ~/.config/polybar/scripts/anews.py
 interval = 600
@@ -686,8 +687,8 @@ click-left = telegram-desktop &
 
 [module/steam]
 type = custom/text
-content = 
-content-foreground = ${colors.secondary}
+content = 
+content-foreground = ${colors.roxo}
 click-left = /usr/bin/steam > /dev/null 2> /dev/null &
 
 [module/deluge]
@@ -708,19 +709,12 @@ content = 
 content-foreground = ${colors.secondary}
 click-left = ~/.config/rofi/scripts/docker &
 
-[module/code]
+[module/editor]
 type = custom/text
 content = 
 content-foreground = ${colors.secondary}
 click-left = code &
 click-right = subl &
-
-[module/subl]
-type = custom/text
-content = 
-content-foreground = ${colors.secondary}
-click-left = subl &
-click-right = code &
 
 [module/refresh]
 type = custom/text
