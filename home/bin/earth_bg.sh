@@ -11,5 +11,5 @@
 # 10 */1 * * * /bin/sh /home/lucas/bin/earth_bg.sh
 #
 
-wget -q -U "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1)" http://static.die.net/earth/mercator/1600.jpg -O ${HOME}/.earth_bg.jpg
+wget -q -U "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1)" http://static.die.net/earth/mercator/1920.jpg -O ${HOME}/.earth_bg.jpg
 feh --bg-fill ${HOME}/.earth_bg.jpg
