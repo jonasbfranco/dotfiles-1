@@ -23,7 +23,6 @@ lixeira="${HOME}/.local/share/Trash"
 pasta="${HOME}/desk/$$"
 turl="$(xclip -o)"
 icone="${HOME}/.local/share/icons/elementary/camera-photo.png"
-# /usr/share/sounds/freedesktop/stereo/
 som='complete'
 
 padrao='(https?|ftp|file)://[-A-Za-z0-9\+&@#/%?=~_|!:,.;]*[-A-Za-z0-9\+&@#/%=~_|]'
