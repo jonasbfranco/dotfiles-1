@@ -26,6 +26,13 @@ icone="${HOME}/.local/share/icons/elementary/camera-photo.png"
 # /usr/share/sounds/freedesktop/stereo/
 som='complete'
 
+padrao='(https?|ftp|file)://[-A-Za-z0-9\+&@#/%?=~_|!:,.;]*[-A-Za-z0-9\+&@#/%=~_|]'
+if [[ ! ${turl} =~ $padrao ]]; then
+	notify-send -i $icone "Video Downloader" "O link é inválido!"
+    exit
+fi
+
+
 if [ ! -f $pasta ]; then
 	mkdir -p $pasta
 else
