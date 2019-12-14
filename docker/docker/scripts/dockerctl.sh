@@ -20,9 +20,11 @@ fi
 if [ "$1" == "rm" ]; then
     read -p "Tem certeza que deseja remover TODOS os containers? [s/N] " resp
     if [[ "$resp" == [sS]* ]]; then
-        if [[ "$(docker ps -q -a)" ]]; then
+        if [[ "$(docker ps -q)" ]]; then
             docker ps -q | xargs docker stop
-            docker ps -a -q | xargs docker rm -v
+            if [[ "$(docker ps -q -a)" ]]; then
+                docker ps -a -q | xargs docker rm -v
+            fi
         fi
     fi
 fi
@@ -31,7 +33,9 @@ if [ "$1" == "rmi" ]; then
     read -p "Tem certeza que deseja remover TODAS as imagens? [s/N] " resp
     if [[ "$resp" == [sS]* ]]; then
         if [[ "$(docker ps -q -a)" ]]; then
-            docker ps -q | xargs docker stop
+            if [[ "$(docker ps -q)" ]]; then
+                docker ps -q | xargs docker stop
+            fi
             docker ps -a -q | xargs docker rm -v
         fi
         if [[ "$(docker images -q)" ]]; then

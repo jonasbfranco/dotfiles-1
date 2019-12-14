@@ -12,9 +12,9 @@ services:
             - ~/docker/confs/nginx.conf:/etc/nginx/conf.d/default.conf
             - ~/docker/certs:/etc/ssl/nginx
         #restart: "no"
-        #restart: always
+        restart: always
         #restart: on-failure
-        restart: unless-stopped
+        #restart: unless-stopped
 
     php:
         container_name: php
@@ -31,9 +31,9 @@ services:
             - ~/docker/confs/php.ini:/usr/local/etc/php/conf.d/php.ini
             - ~/docker/confs/fpm.conf:/usr/local/etc/php-fpm.d/zz-docker.conf
         #restart: "no"
-        #restart: always
+        restart: always
         #restart: on-failure
-        restart: unless-stopped
+        #restart: unless-stopped
 
     nginxalt:
         container_name: nginxalt
@@ -46,9 +46,9 @@ services:
             - ~/docker/confs/nginxalt.conf:/etc/nginx/conf.d/default.conf
             - ~/docker/certs:/etc/ssl/nginx
         #restart: "no"
-        #restart: always
+        restart: always
         #restart: on-failure
-        restart: unless-stopped
+        #restart: unless-stopped
 
     phpalt:
         container_name: phpalt
@@ -65,9 +65,9 @@ services:
             - ~/docker/confs/php.ini:/usr/local/etc/php/conf.d/php.ini
             - ~/docker/confs/fpm2.conf:/usr/local/etc/php-fpm.d/zz-docker.conf
         #restart: "no"
-        #restart: always
+        restart: always
         #restart: on-failure
-        restart: unless-stopped
+        #restart: unless-stopped
 
     mysql:
         container_name: mysql
@@ -84,9 +84,9 @@ services:
             - MYSQL_ROOT_PASSWORD=senha
             - MYSQL_DATABASE=app
         #restart: "no"
-        #restart: always
+        restart: always
         #restart: on-failure
-        restart: unless-stopped
+        #restart: unless-stopped
 
     phpmyadmin:
         container_name: phpmyadmin
@@ -100,6 +100,6 @@ services:
         environment:
             - PMA_HOST=mysql
         #restart: "no"
-        #restart: always
+        restart: always
         #restart: on-failure
-        restart: unless-stopped
+        #restart: unless-stopped
