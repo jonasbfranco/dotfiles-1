@@ -1,3 +1,7 @@
 #!/usr/bin/env bash
 
-xfconf-query --channel xfce4-desktop --property /backdrop/screen0/monitor$(xrandr | grep connected | head -n1 | awk '{print $1}')/workspace0/last-image --set "$(find ~/img/ts/ -type f | shuf -n1)"
+if [ "$1" == "-d" ]; then
+	xfconf-query --channel xfce4-desktop --property /backdrop/screen0/monitor$(xrandr | grep connected | head -n1 | awk '{print $1}')/workspace0/last-image --set "$HOME/img/outras/glass-256.png"
+else
+	xfconf-query --channel xfce4-desktop --property /backdrop/screen0/monitor$(xrandr | grep connected | head -n1 | awk '{print $1}')/workspace0/last-image --set "$(find ~/img/ts/ -type f | shuf -n1)"
+fi	
