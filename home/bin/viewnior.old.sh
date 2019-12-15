@@ -19,7 +19,6 @@ if [ $1 ]; then
         fi
     done 
 else
-    cd "$(pwd)"
     #DISPLAY=:0 viewnior $(find "$(pwd)" -type f \( -iname "*.png" -o -iname "*.svg" -o -iname "*.jpg" \))
     DISPLAY=:0 viewnior $(find "$(pwd)" -type f -iname "*.jpg")
 fi

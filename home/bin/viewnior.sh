@@ -17,11 +17,13 @@
 shopt -s globstar dotglob nocaseglob
 
 if [ $1 ]; then
+	[ -d "$1" ] && cd "$1"
+
     if [ $2 ]; then
-        DISPLAY=:0 viewnior $1/**/*${2}*.{jpg,png,svg}
+        DISPLAY=:0 viewnior **/*${2}*.{jpg,png,svg}
     else
-        DISPLAY=:0 viewnior $1/**/*.{jpg,png,svg}
+        DISPLAY=:0 viewnior **/*.{jpg,png,svg}
     fi
 else
-    DISPLAY=:0 viewnior **/*.{jpg,png,svg}
+    DISPLAY=:0 viewnior $(pwd)/**/*.{jpg,png,svg}
 fi
