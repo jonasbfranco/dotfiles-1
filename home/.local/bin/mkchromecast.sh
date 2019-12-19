@@ -8,8 +8,8 @@ sleep 1
 arquivo=${1}
 base=$(echo ${arquivo%.*})
 legenda="${base}.srt"
-params="-i"
+params="--video -i"
 
-[ -f "$legenda" ] && sub="--subtitles ${legenda}"
+[ -f "$legenda" ] && sub="--subtitle ${legenda}"
 #[ -f "$arquivo" ] && mkchromecast $params "$arquivo" $sub > /dev/null 2> /dev/null &
-[ -f "$arquivo" ] && /usr/bin/mkchromecast "$params" \"${arquivo}\" \"${sub}\"
+[ -f "$arquivo" ] && python /usr/bin/mkchromecast "$params" \"${arquivo}\" \"${sub}\"
