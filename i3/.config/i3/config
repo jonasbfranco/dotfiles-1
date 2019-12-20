@@ -361,8 +361,8 @@ mode "$mode_gaps_outer" {
 ####################################################################
 exec_always --no-startup-id xrdb -merge $HOME/.Xresources
 #exec_always --no-startup-id hsetroot -solid '#3B4252'
-exec_always --no-startup-id feh --bg-fill ${HOME}/.local/share/wallpapers/sat.jpg
-#exec_always --no-startup-id $HOME/.config/polybar/scripts/wallpaper.sh r
+#exec_always --no-startup-id feh --bg-fill ${HOME}/.local/share/wallpapers/i3.png
+exec_always --no-startup-id $HOME/.config/polybar/scripts/wallpaper.sh r
 exec --no-startup-id compton -b --respect-prop-shadow
 exec --no-startup-id dunst
 exec --no-startup-id parcellite

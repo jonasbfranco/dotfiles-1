@@ -182,7 +182,7 @@ format-prefix = " "
 format-prefix-foreground = ${colors.secondary}
 
 format = <label>
-label = %output:0:30:...%
+label = %output:0:40:...%
 
 exec = ~/.config/polybar/scripts/anews.py
 interval = 600
