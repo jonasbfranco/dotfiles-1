@@ -9,8 +9,8 @@
 
 [ -f ~/.config/user-dirs.dirs ] && source ~/.config/user-dirs.dirs
 
-dir="${XDG_PICTURES_DIR:-${HOME}/img/wallpapers/linux}"
-unsplash_dir="${XDG_PICTURES_DIR:-${HOME}/img}/unsplash"
+dir="${XDG_PICTURES_DIR:-${HOME}/img/wallpapers/unsplash}"
+unsplash_dir="${XDG_PICTURES_DIR:-${HOME}/img}/wallpapers/unsplash"
 default="$dir/wallpapers/default.jpg"
 ultima="/home/lucas/img/wallpapers/digitalocean/sat.jpg"
 modo="--bg-fill"
@@ -35,20 +35,25 @@ else
 	[ ! -d $dir ] && mkdir -p $dir
 fi
 
+echo $dir
+
 [ ! -d $unsplash_dir ] && mkdir -p $unsplash_dir
 [ ! -d $(dirname $default) ] && mkdir -p $(dirname $default)
 [ ! -f $default ] && curl -s -L 'http://i.imgur.com/BwOh5Z5.png' > $default
-#[ ! -f $default ] && curl -s -L 'https://unsplash.com/photos/mEV-IXdk5Zc/download?force=true' > $default
+[ ! -f $default ] && curl -s -L 'https://unsplash.com/photos/mEV-IXdk5Zc/download?force=true' > $default
 
 while read linha; do
     imagens[$i]="$linha"
     ((i++))
+    echo $linha
 done < <(find "$dir" -type f \( -iname \*.jpg -o -iname \*.png -o -iname \*.jpeg \) )
 
 cont=${#imagens[@]}
-total=$(($cont-1))
+total=$((cont-1))
 
-if [ $total -gt 0 ]; then
+echo $total
+
+if [ $cont -gt 0 ]; then
 	for i in "${!imagens[@]}"; do
    		if [[ "${imagens[$i]}" = "${ultima}" ]]; then
        		indice=${i}
