@@ -14,4 +14,4 @@ try:
         print("%s" % (d.entries[f].title))
         xy = d.entries[f].title
 except:
-    print("Impossível recuperar as notícias")
+    print("Recuperando notícias")

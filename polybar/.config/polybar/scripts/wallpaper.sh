@@ -9,10 +9,10 @@
 
 [ -f ~/.config/user-dirs.dirs ] && source ~/.config/user-dirs.dirs
 
-dir="${XDG_PICTURES_DIR:-${HOME}/img/wallpapers/unsplash}"
+dir="${XDG_PICTURES_DIR:-${HOME}/img/wallpapers}"
 unsplash_dir="${XDG_PICTURES_DIR:-${HOME}/img}/wallpapers/unsplash"
 default="$HOME/.local/share/wallpapers/i3.png"
-ultima="/home/lucas/.local/share/wallpapers/i3.png"
+ultima="/home/lucas/img/wallpapers/unsplash/unsplash-8191.jpg"
 modo="--bg-fill"
 indice=0
 i=0
