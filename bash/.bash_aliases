@@ -28,6 +28,7 @@ alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 alias castnow="castnow --myip 192.168.0.1"
 alias git-cron='~/.local/bin/git-cron'
 alias tx='tmux a'
+alias ranger='VISUAL=vim ranger'
 
 # VPS
 alias artemis='ssh root@artemis'
