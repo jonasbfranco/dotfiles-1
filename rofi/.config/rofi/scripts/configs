@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 #
-# Arquivo: alarme.sh
+# Arquivo: Rofi Configs
 #
 # Feito por Lucas Saliés Brum a.k.a. sistematico, <lucas@archlinux.com.br>
 #
 # Criado em: 10/07/2018 14:25:18
-# Última alteração: 10/07/2018 14:25:27
+# Última alteração: 20/12/2019 21:54:30
 
 tema="-theme ${HOME}/.config/rofi/themes/dark.rasi"
 editor="subl"
@@ -48,15 +48,20 @@ if [ "$res" ]; then
 			fi
 		;;
 		'i3lock')
-			i3lockconfig=$(echo "Config;Apps;Reload" | rofi $tema -sep ";" -dmenu -p "Polybar" -bw 0 -lines 3 -separator-style none -location 0 -width 160 -hide-scrollbar -padding 5)
-			if [ "$i3lockconfig" = "Apps" ]; then
-				app=$( ls "${HOME}/.config/polybar/scripts/" | egrep "\.sh|\.py" | rofi $tema -dmenu -p "Polybar Apps" -bw 0 -lines "$(ls -1 ${HOME}/.config/polybar/scripts/ | egrep "\.sh|\.py" | wc -l)" -separator-style none -location 0 -width 240 -hide-scrollbar -padding 5)
-				if [ $app ]; then
-					i3-msg exec $editor "${HOME}/.config/polybar/scripts/${app}"
+			i3lockconfig=$(echo "Config;Select;Reload;Test" | rofi $tema -sep ";" -dmenu -p "i3lock" -bw 0 -lines 4 -separator-style none -location 0 -width 160 -hide-scrollbar -padding 5)
+			if [ "$i3lockconfig" = "Select" ]; then
+				i3lockapps=$( ls "${HOME}/.local/lock/" | egrep -v "default" | rofi $tema -dmenu -p "i3Lock Lockers" -bw 0 -lines "$(ls -1 ${HOME}/.local/lock/ | egrep -v "default" | wc -l)" -separator-style none -location 0 -width 240 -hide-scrollbar -padding 5)
+				if [ $i3lockapps ]; then
+					ln -sf ${HOME}/.local/lock/${i3lockapps} ${HOME}/.local/lock/default
 				fi
 			elif [ "$i3lockconfig" == "Config" ]; then
 				#i3-msg exec $editor $(grep xautolock ~/.config/i3/config | awk '{print $8}') 
 				i3-msg exec $editor ${HOME}/.local/lock/default
+			elif [ "$i3lockconfig" == "Reload" ]; then
+				killall xautolock
+				xautolock -time 3 -detectsleep -locker $HOME/.local/lock/default > /dev/null 2> /dev/null &
+			elif [ "$i3lockconfig" == "Test" ]; then
+				bash -c "${HOME}/.local/lock/default" &
 			fi
 		;;
 		'Conky') i3-msg exec $editor ~/.config/conky/conky.conf ;;
