@@ -7,7 +7,7 @@
 # Criado em: 10/07/2018 14:25:18
 # Última alteração: 10/07/2018 14:25:27
 
-tema="-theme ~/.config/rofi/themes/dark.rasi"
+tema="-theme ${HOME}/.config/rofi/themes/dark.rasi"
 editor="subl"
 
 configs=(
@@ -77,7 +77,7 @@ if [ "$res" ]; then
 					i3-msg exec $editor "${HOME}/.config/rofi/scripts/${app}"
 				fi
 			elif [ "$roficonfig" = "Themes" ]; then
-				tema=$( ls "${HOME}/.config/rofi/themes/" | rofi $tema -dmenu -p "Rofi Themes" -bw 0 -lines 4 -separator-style none -location 0 -width 250 -hide-scrollbar -padding 5)
+				tema=$( ls "${HOME}/.config/rofi/themes/" | rofi $tema -dmenu -p "Rofi Themes" -bw 0 -lines "$(ls -1 ${HOME}/.config/rofi/themes/ | wc -l)" -separator-style none -location 0 -width 250 -hide-scrollbar -padding 5)
 				if [ $tema ]; then
 					i3-msg exec $editor "${HOME}/.config/rofi/themes/${tema}"
 				fi
