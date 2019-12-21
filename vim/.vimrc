@@ -1,9 +1,12 @@
+" Main
 syntax on
 set nowrap
 set nocompatible              " be iMproved, required
 filetype off                  " required
 set shortmess=F
 
+" Syntax Highlight
+au BufNewFile,BufRead /*.rasi setf css
 
 " Remaps
 nnoremap <F5> "=strftime("%c")<CR>P

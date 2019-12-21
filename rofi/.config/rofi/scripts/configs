@@ -15,7 +15,7 @@ configs=(
 	'Polybar'
 	'i3lock'
 	'Conky'
-	'LX Appearance'
+	#'LX Appearance'
 	'Dunst'
 	'Compton'
 	'Rofi'
@@ -47,7 +47,18 @@ if [ "$res" ]; then
 				i3-msg exec $editor "${HOME}/.config/polybar/config"
 			fi
 		;;
-		'i3lock') i3-msg exec $editor $(grep xautolock ~/.config/i3/config | awk '{print $8}') ;;
+		'i3lock')
+			i3lockconfig=$(echo "Config;Apps;Reload" | rofi $tema -sep ";" -dmenu -p "Polybar" -bw 0 -lines 3 -separator-style none -location 0 -width 160 -hide-scrollbar -padding 5)
+			if [ "$i3lockconfig" = "Apps" ]; then
+				app=$( ls "${HOME}/.config/polybar/scripts/" | egrep "\.sh|\.py" | rofi $tema -dmenu -p "Polybar Apps" -bw 0 -lines "$(ls -1 ${HOME}/.config/polybar/scripts/ | egrep "\.sh|\.py" | wc -l)" -separator-style none -location 0 -width 240 -hide-scrollbar -padding 5)
+				if [ $app ]; then
+					i3-msg exec $editor "${HOME}/.config/polybar/scripts/${app}"
+				fi
+			elif [ "$i3lockconfig" == "Config" ]; then
+				#i3-msg exec $editor $(grep xautolock ~/.config/i3/config | awk '{print $8}') 
+				i3-msg exec $editor ${HOME}/.local/lock/default
+			fi
+		;;
 		'Conky') i3-msg exec $editor ~/.config/conky/conky.conf ;;
 		'LX Appearance') i3-msg exec lxappearance ;;
 		'Dunst')

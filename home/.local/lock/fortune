@@ -12,6 +12,13 @@ font="/usr/share/fonts/TTF/FantasqueSansMono-Regular.ttf"
 [ ! -d $HOME/.local/share/i3lock/ ] && mkdir -p $HOME/.local/share/i3lock/
 [ ! -f $icon ] && curl -s -L 'https://i.imgur.com/XbxRMX7.png' > $icon
 
+# Blank After 15m
+if [ $1 ]; then
+	if [ "$1" == "off" ]; then
+		$(sleep 15m && xset dpms force off) &
+	fi
+fi
+
 # Expand is used to convert the tabs to spaces which
 # are handled better by imageMagick
 fortune=$(expand -t 2 <(fortune -s chucknorris))
