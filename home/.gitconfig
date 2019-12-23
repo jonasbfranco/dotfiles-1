@@ -1,2 +1,5 @@
 [url "ssh://aur@aur.archlinux.org/"]
     insteadOf = "aur:"
+[user]
+	name = Lucas Saliés Brum
+	email = lucas@archlinux.com.br
