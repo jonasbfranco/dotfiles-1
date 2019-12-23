@@ -1,0 +1,2 @@
+[url "ssh://aur@aur.archlinux.org/"]
+    insteadOf = "aur:"
