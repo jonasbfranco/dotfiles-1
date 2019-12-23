@@ -12,7 +12,7 @@
 dir="${XDG_PICTURES_DIR:-${HOME}/img/wallpapers}"
 unsplash_dir="${XDG_PICTURES_DIR:-${HOME}/img}/wallpapers/unsplash"
 default="$HOME/.local/share/wallpapers/i3.png"
-ultima="/home/lucas/img/wallpapers/unsplash/unsplash-8191.jpg"
+ultima="/home/lucas/.local/share/wallpapers/i3.png"
 modo="--bg-fill"
 indice=0
 i=0
