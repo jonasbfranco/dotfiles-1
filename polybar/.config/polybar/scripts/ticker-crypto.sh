@@ -1,8 +1,7 @@
 #!/bin/sh
 
-API="https://api.kraken.com/0/public/Ticker"
-
-quote=$(curl -sf $API?pair=BTCEUR | jq -r ".result.XXBTZEUR.c[0]")
+api="https://www.mercadobitcoin.net/api/BTC/ticker/"
+quote=$(curl -sf $api | jq -r ".ticker.last")
 quote=$(LANG=C printf "%.2f" "$quote")
 
-echo "#1 $quote €"
+echo " $quote"
