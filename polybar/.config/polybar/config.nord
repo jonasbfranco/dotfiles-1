@@ -101,7 +101,7 @@ module-margin-right = 1
 font-0 = Fantasque Sans Mono:style=Regular:pixelsize=11;2
 font-1 = feather:style=Regular:pixelsize=11;3
 
-modules-left = browser terminal editor thunar docker telegram steam sep tdocker tmpd sep btc usd
+modules-left = browser terminal editor thunar docker telegram steam sep tdocker tmpd sep btcusd
 modules-center = mpd
 modules-right = weather sep dl notes wallpaper screencast screenshot refresh tv lixo
 
@@ -157,14 +157,11 @@ label-urgent-padding = 1
 ;----------------------------------------------------------
 ;		       C R Y P T O
 ;----------------------------------------------------------
-[module/btc]
+[module/btcusd]
 type = custom/script
-exec = ~/.config/polybar/scripts/btc.sh
-interval = 300
-
-[module/usd]
-type = custom/script
-exec = ~/.config/polybar/scripts/usd.sh
+format-prefix = " "
+format-prefix-foreground = ${colors.secondary}
+exec = ~/.config/polybar/scripts/btc-usd.sh
 interval = 300
 
 ;----------------------------------------------------------

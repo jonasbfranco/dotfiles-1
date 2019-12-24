@@ -11,4 +11,4 @@ api=$(curl -s -H "X-CMC_PRO_API_KEY: ${coinmarketcap}" -H "Accept: application/j
 quote=$(echo $api | jq -r ".data.quote.BRL.price")
 quote=$(LANG=C printf "%'.2f" "${quote}")
 
-echo "BTC $quote"
+echo " $quote"
