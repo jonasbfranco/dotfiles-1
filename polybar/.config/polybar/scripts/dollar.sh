@@ -7,8 +7,10 @@ else
 	exit
 fi
 
-api=$(curl -s -H "X-CMC_PRO_API_KEY: ${coinmarketcap}" -H "Accept: application/json" -d "id=1" -G https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest)
-quote=$(curl -sf $api | jq -r ".")
-#quote=$(LANG=C printf "%'.4s" ${quote})
-#quote=$(LANG=pt_BR.UTF-8 printf "%'.2f" ${quote})
+#api=$(curl -s -H "X-CMC_PRO_API_KEY: ${coinmarketcap}" -H "Accept: application/json" -d "id=1" -G https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest)
+#api=$(curl -H "X-CMC_PRO_API_KEY: ${coinmarketcap}" -H "Accept: application/json" -d "convert=BRL" -G https://pro-api.coinmarketcap.com/v1/global-metrics/quotes/latest)
+api=$(curl -s -H "X-CMC_PRO_API_KEY: ${coinmarketcap}" -H "Accept: application/json" -d "id=1&amount=1&convert=BRL" -G https://pro-api.coinmarketcap.com/v1/tools/price-conversion)
+quote=$(echo $api | jq -r ".data.quote.BRL.price")
+#quote=$(LANG=C printf "%'.2f" ${quote})
+#quote=$(LANG=pt_BR.UTF-8 printf "%'.2s" ${quote})
 echo " $quote"
