@@ -24,7 +24,9 @@ ts=$(date +"%s")
 dir="${HOME}/desk"
 #dir="${HOME}/desk/$(ls -t -1 ${HOME}/desk | head -1)"
 icone="${HOME}/.local/share/icons/elementary/video-display.png"
-som='complete'
+# pacman -Ql yaru-sound-theme
+success='/usr/share/sounds/Yaru/stereo/message-new-email.oga'
+error='/usr/share/sounds/Yaru/stereo/dialog-error.oga'
 tmp="/tmp/videodown/$$"
 logs="${dir}/status.log"
 proc=$(pgrep -fc "bash $0")
@@ -87,7 +89,8 @@ if [[ $status -ne 0 ]]; then
     echo "Processos:    $proc" >> "$logs"    
     echo "Código:       $status" >> "$logs"
     notify-send -i $icone "Video Downloader" "Erro na transferencia de:\n\n<b>${titulo}*</b>.\n\nInstâncias: $proc"
-    canberra-gtk-play -i $som
+    #canberra-gtk-play -i $som
+    play $error
     exit
 fi
 
@@ -115,7 +118,8 @@ if [[ $status -eq 0 ]]; then
     if ls "${titulo}"* 1> /dev/null 2>&1; then
         if ls "${dir}/${titulo}"* 1> /dev/null 2>&1; then
             notify-send -i $icone "Video Downloader" "Já existe um arquivo:\n\n<b>$titulo</b>\n\nEm:\n\n$dir\n\nInstâncias: $proc"
-            canberra-gtk-play -i $som
+            #canberra-gtk-play -i $som
+            play $error
         else
         	final=$SECONDS
         	diff=$((final - comeco))
@@ -140,13 +144,16 @@ if [[ $status -eq 0 ]]; then
             "Sucesso, vídeo salvo:\n\n<b>$titulo</b>\n\nEm:\n\n$dir\n\nTempo decorrido: ${hora}:${minuto}:${segundo}\nTamanho do arquivo: ${tamanho}\nVelocidade média: ${tempo}KBps"
             mv "${titulo}"* "$dir"
             cd $dir && rm -rf $tmp
+            play $success
         fi
     else
         notify-send -i $icone "Video Downloader" "Erro na transferencia de:\n\n<b>${tmp}/${titulo}*</b>.\n\nInstâncias: $proc"
-        canberra-gtk-play -i $som
+        #canberra-gtk-play -i $som
+        play $error
     fi
 else
     notify-send -i $icone "Video Downloader" "Erro na transferencia de:\n\n<b>$titulo</b>\n\nInstâncias: $proc"
-    canberra-gtk-play -i $som
+    #canberra-gtk-play -i $som
+    play $error
 fi
 
