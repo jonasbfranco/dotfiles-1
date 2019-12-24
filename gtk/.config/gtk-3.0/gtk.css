@@ -1,3 +1,9 @@
-VteTerminal, vte-terminal {
-	padding: 20px;
+vte-terminal {
+    padding: 18px;
 }
+
+.mate-panel-menu-bar menuitem {
+    /* padding: 0; */
+    /*padding: 4px 0px;*/
+}
+
