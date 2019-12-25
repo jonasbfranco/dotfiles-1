@@ -46,7 +46,7 @@ font-1 = feather:style=Regular:pixelsize=11;3
 font-2 = FontAwesome:size=6;2
 font-3 = Termsynu:size=7;0
 
-modules-left = i3
+modules-left = i3 mpd
 modules-center = window
 modules-right = cpu memory temperature data pulse powermenu
 
@@ -94,6 +94,38 @@ label-visible-padding = 1
 label-urgent = %name%
 label-urgent-background = ${colors.alert}
 label-urgent-padding = 1
+
+;----------------------------------------------------------
+;              M P D
+;----------------------------------------------------------
+[module/mpd]
+type = internal/mpd
+
+host = 127.0.0.1
+port = 6600
+
+interval = 2
+
+;format-online = <icon-prev> <icon-seekb> <icon-stop> <toggle> <icon-seekf> <icon-next>  <icon-repeat> <icon-random>  <bar-progress> <label-time>  <label-song>
+format-online = <label-song>
+format-offline = <label-offline>
+
+label-song = %{F#D08770}%{F-} %artist% - %title%
+label-offline = %{F#D08770}%{F-} mpd
+
+; Only applies if <icon-X> is used
+icon-play = 
+icon-pause = 
+icon-stop = stp
+icon-prev = prev
+icon-next = next
+icon-seekb = seekb
+icon-seekf = seekf
+icon-random = rdm
+icon-repeat = 
+icon-repeatone = ¹
+icon-single = single
+icon-consume = consume
 
 ;----------------------------------------------------------
 ;		        W I N D O W
