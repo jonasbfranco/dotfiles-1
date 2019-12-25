@@ -19,6 +19,9 @@ dbus-update-activation-environment --systemd DISPLAY
 #eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 export SSH_AUTH_SOCK
 
+# Tema GTK2
+GTK2_RC_FILES=/usr/share/themes/Canta-dark-compact/gtk-2.0/gtkrc
+
 # Dirs
 export GH=${HOME}/github
 export GL=${HOME}/gitlab

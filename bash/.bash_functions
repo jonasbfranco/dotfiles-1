@@ -18,7 +18,7 @@ function mm() {
 	sleep 1
     #(mpv --really-quiet --profile=youtube ytdl://ytsearch10:"$params") > /dev/null 2>&1 &
 	#(mpv --really-quiet --profile=youtube ytdl://ytsearch10:"$params") > /dev/null 2> /dev/null &
-	(mpv --really-quiet --profile=youtube-cache ytdl://ytsearch10:"$params") > /dev/null 2> /dev/null &
+	(mpv --really-quiet --profile=youtube-cache ytdl://ytsearch:"$params") > /dev/null 2> /dev/null &
 
 	#i3-msg '[class="mpv"] sticky enable' > /dev/null 2> /dev/null &
 

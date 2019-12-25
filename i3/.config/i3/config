@@ -251,7 +251,7 @@ for_window [class="Lxtask" title="Gerenciador de tarefas"] floating enable, resi
 for_window [class="^VirtualBox" title="*Executando*"] floating enable
 
 for_window [title="(.*Reiniciar dispositivo.*|Preferências do Thunderbird|Video Cut|Video Resize)"] floating enable, move position center
-for_window [class="(Engrampa|Galculator|Catfish|Viewnior|File-roller|mpv)"] floating enable, move position center
+for_window [class="(Engrampa|Galculator|Catfish|Viewnior|File-roller)"] floating enable, move position center
 
 for_window [title="(Agave|Biblioteca|Library|About|Amigos|Sobre o Mozilla Firefox|VideoCut|dagor2)"] floating enable, move position center
 
@@ -269,7 +269,7 @@ for_window [title="(^DeaDBeeF)"] move to workspace $ws6, floating enable, move p
 for_window [title="(^Friends List|^Lista de amigos)"] move to workspace $ws6, floating enable, move absolute position 1520 px 70 px
 
 # Sticky
-for_window [class="mpv"] sticky enable
+for_window [class="mpv"] sticky enable, floating enable, move position center
 
 ####################################################################
 ################ A S S I G N #######################################
