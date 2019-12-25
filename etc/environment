@@ -3,6 +3,7 @@
 #
 # Syntax: simple "KEY=VAL" pairs on separate lines
 #
+GTK2_RC_FILES=/usr/share/themes/Canta-dark-compact/gtk-2.0/gtkrc
 EDITOR=nano
 ANDROID_HOME=/opt/android-sdk
 HISTSIZE=10000

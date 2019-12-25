@@ -154,7 +154,7 @@ bindsym $mod+b exec --no-startup-id $HOME/.config/rofi/scripts/ebook
 # Lock
 bindsym $mod+Shift+x exec --no-startup-id $HOME/.local/lock/fortune
 
-# Screenshot & Screencast
+# Screenshot
 bindsym Print exec --no-startup-id $HOME/.local/bin/screenshot
 bindsym Control+Print exec --no-startup-id $HOME/.local/bin/screenshot -w
 bindsym --release Mod1+Sys_Req exec --no-startup-id $HOME/.local/bin/screenshot -s
@@ -163,6 +163,7 @@ bindsym $mod+Shift+Print exec --no-startup-id $HOME/.local/bin/screenshot -e
 
 # ScreenCast
 bindsym --release Control+Mod1+Sys_Req exec --no-startup-id $HOME/.local/bin/screencast
+bindsym --release Control+Shift+Print exec --no-startup-id $HOME/.local/bin/screencast
 
 # MPC
 bindcode Mod2+$KP_0 exec --no-startup-id mpc del 0

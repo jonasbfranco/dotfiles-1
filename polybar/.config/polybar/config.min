@@ -46,7 +46,7 @@ font-1 = feather:style=Regular:pixelsize=11;3
 font-2 = FontAwesome:size=6;2
 font-3 = Termsynu:size=7;0
 
-modules-left = i3 mpd
+modules-left = i3
 modules-center = window
 modules-right = cpu memory temperature data pulse powermenu
 
