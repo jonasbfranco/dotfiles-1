@@ -46,7 +46,7 @@ font-1 = feather:style=Regular:pixelsize=11;3
 font-2 = FontAwesome:size=6;2
 font-3 = Termsynu:size=7;0
 
-modules-left = i3 sep browser thunar terminal
+modules-left = i3
 modules-center = window
 modules-right = cpu memory temperature data pulse powermenu
 
@@ -118,8 +118,8 @@ type = internal/cpu
 interval = 1.5
 
 format = <label>
-format-prefix = " "
-label = %percentage:2%%
+format-prefix = 
+label = %percentage:3%%
 
 ;-------------------------------------------------------------------------
 ;              M E M O R I A
@@ -129,7 +129,7 @@ type = internal/memory
 interval = 0.5
 
 format = <label>
-format-prefix = ""
+format-prefix = 
 label = %percentage_used:3%%
 
 ;-------------------------------------------------------------------------
@@ -161,40 +161,6 @@ label = %temperature-c%
 label-warn = %temperature-c%
 label-warn-foreground = ${colors.secondary}
 
-;----------------------------------------------------------
-;              N E T L E D IN
-;----------------------------------------------------------
-[module/netled]
-type = custom/script
-exec = ~/.config/polybar/scripts/netled.sh
-tail = true
-
-;----------------------------------------------------------
-;		        N E T W O R K
-;----------------------------------------------------------
-[module/network]
-type = internal/network
-interface = eno1
-interval = 3.0
-accumulate-stats = true
-unknown-as-up = true
-
-format-connected = <label-connected>
-;format-connected-prefix = " "
-;format-connected-prefix-foreground = ${colors.secondary}
-
-format-disconnected = <label-disconnected>
-;format-disconnected-prefix = " "
-;format-disconnected-prefix-foreground = ${colors.secondary}
-
-format-packetloss = <label-packetloss>
-;format-packetloss-prefix = " "
-;format-packetloss-prefix-foreground = ${colors.secondary}
-
-label-connected = %downspeed:3%
-label-disconnected = offline
-label-packetloss = loss
-
 ;-------------------------------------------------------------------------
 ;              D A T A
 ;-------------------------------------------------------------------------
@@ -202,16 +168,10 @@ label-packetloss = loss
 type = internal/date
 interval = 5
 
-date =
-date-alt = " %a, %d-%m-%Y"
-
+; 
 time = %H:%M
-time-alt = %H:%M:%S
-
-format-prefix = 
-format-prefix-foreground = ${colors.secondary}
-
-label = %date% %time%
+time-alt = "%A %d-%m-%Y"
+label = %time%
 
 ;-------------------------------------------------------------------------
 ;              P U L S E
@@ -219,14 +179,13 @@ label = %date% %time%
 [module/pulse]
 type = internal/pulseaudio
 
-format-volume-prefix = "%{T2}%{T-} "
-format-volume-prefix-foreground = ${colors.secondary}
-
-format-volume = <label-volume>
-label-volume = %percentage%%
-
 label-muted = 
-label-muted-foreground = ${colors.secondary}
+format-volume = <ramp-volume>
+ramp-volume-0 = %{T2}%{T-}
+ramp-volume-1 = %{T2}%{T-}
+ramp-volume-2 = %{T2}%{T-}
+
+click-right = pavucontrol &
 
 ;-------------------------------------------------------------------------
 ;              P O W E R M E N U
@@ -239,10 +198,10 @@ type = custom/menu
 format-spacing = 1
 
 label-open = 
-label-open-foreground = ${colors.secondary}
+;label-open-foreground = ${colors.secondary}
 
 label-close = " "
-label-close-foreground = ${colors.secondary}
+;label-close-foreground = ${colors.secondary}
 
 label-separator = |
 label-separator-foreground = ${colors.foreground-alt}
