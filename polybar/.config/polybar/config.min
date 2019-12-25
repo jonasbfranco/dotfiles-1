@@ -46,7 +46,7 @@ font-1 = feather:style=Regular:pixelsize=11;3
 font-2 = FontAwesome:size=6;2
 font-3 = Termsynu:size=7;0
 
-modules-left = i3
+modules-left = i3 sep browser thunar terminal
 modules-center = window
 modules-right = cpu memory temperature data pulse powermenu
 
@@ -117,11 +117,40 @@ exec = ~/.config/polybar/scripts/janela.sh
 type = internal/cpu
 interval = 1.5
 
-format = <label>
-format-prefix = ""
+;format = <ramp-coreload>
+format = <ramp-coreload>
+;format = <label>
+format-prefix = " "
 format-prefix-foreground = ${colors.secondary}
 
 label = %percentage:2%%
+;label-foreground = #99
+
+ramp-coreload-spacing = 0
+ramp-coreload-0 = ▁
+ramp-coreload-0-font = 3
+;ramp-coreload-0-foreground = ${colors.secondary}
+ramp-coreload-1 = ▂
+ramp-coreload-1-font = 3
+;ramp-coreload-1-foreground = ${colors.secondary}
+ramp-coreload-2 = ▃
+ramp-coreload-2-font = 3
+;ramp-coreload-2-foreground = ${colors.secondary}
+ramp-coreload-3 = ▄
+ramp-coreload-3-font = 3
+;ramp-coreload-3-foreground = ${colors.secondary}
+ramp-coreload-4 = ▅
+ramp-coreload-4-font = 3
+;ramp-coreload-4-foreground = ${colors.secondary}
+ramp-coreload-5 = ▆
+ramp-coreload-5-font = 3
+;ramp-coreload-5-foreground = ${colors.secondary}
+ramp-coreload-6 = ▇
+ramp-coreload-6-font = 3
+;ramp-coreload-6-foreground = ${colors.secondary}
+ramp-coreload-7 = █
+ramp-coreload-7-font = 3
+;ramp-coreload-7-foreground = ${colors.secondary}
 
 ;-------------------------------------------------------------------------
 ;              M E M O R I A
@@ -382,10 +411,6 @@ click-left = ~/.config/rofi/scripts/notes &
 
 [settings]
 screenchange-reload = true
-;compositing-background = xor
-;compositing-background = screen
-;compositing-foreground = source
-;compositing-border = over
 
 [global/wm]
 margin-top = 5
