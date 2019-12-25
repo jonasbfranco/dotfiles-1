@@ -82,7 +82,7 @@ try:
             CURRENT = "Trovoada com chuva"
         elif CURRENT == "Fog":
             CURRENT = "Neblina"
-
+            
         if ID >= 200 and ID <= 232:
             ICON = ""
         elif ID == 300:
@@ -112,9 +112,9 @@ try:
             ICON = ""
         else:
             if HOUR >= 6 and HOUR <= 19:
-                ICON = ""
+                ICON = ""
             else:
-                ICON = ""
+                ICON = ""
         #print(" %%{F#D08770}%s %%{F-}%s %%{F#D08770}%%{F-} %i°%s %%{F#D08770}%%{F-} %s%% %%{F#D08770}%%{F-} %skm/h %%{F#D08770}%%{F-} %s° %%{F#D08770}%%{F-} %im %%{F#D08770}%%{F-} %shPa" % (ICON, CURRENT, TEMP, UNIT_KEY, HUMIDADE, VELOCIDADE, DIRECAO, VISIBILIDADE, PRESSAO)) # Icon with description
         print(" %%{F#D08770}%s %%{F-}%s %%{F#D08770}%%{F-} %i°%s %%{F#D08770}%%{F-} %s%% %%{F#D08770}%%{F-} %skm/h %%{F#D08770}%%{F-} %s° %%{F#D08770}%%{F-} %shPa" % (ICON, CURRENT, TEMP, UNIT_KEY, HUMIDADE, VELOCIDADE, DIRECAO, PRESSAO))
 
