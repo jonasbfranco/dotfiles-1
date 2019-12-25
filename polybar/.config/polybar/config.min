@@ -168,7 +168,7 @@ label-warn-foreground = ${colors.secondary}
 type = internal/date
 interval = 5
 
-; 
+format-prefix = " "
 time = %H:%M
 time-alt = "%A %d-%m-%Y"
 label = %time%
