@@ -19,10 +19,12 @@ fi
 
 dbus-update-activation-environment --systemd DISPLAY
 
+# Vars
 export DESKTOP_SESSION=i3
 export TERMINAL=termite
 export EDITOR=nano
 export BROWSER=firefox
+export GZIP=-9
 
 session=${1:-i3}
 #session=${1:-xfce}

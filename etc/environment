@@ -5,6 +5,7 @@
 #
 GTK2_RC_FILES=/usr/share/themes/Canta-dark-compact/gtk-2.0/gtkrc
 EDITOR=nano
+GZIP=-9
 ANDROID_HOME=/opt/android-sdk
 HISTSIZE=10000
 HISTFILESIZE=10000
