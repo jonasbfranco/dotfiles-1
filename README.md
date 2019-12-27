@@ -26,6 +26,7 @@
 9. `sudo stow -t /boot boot`
 10. `sudo stow -t / ngrok`
 11. `sudo stow -t / lightdm`
+12. `sudo stow -t / mate`
 
 ## Bônus!
 
