@@ -11,3 +11,4 @@ MimeType=x-scheme-handler/vscode;
 Categories=Development;IDE;TextEditor;Utility;WebDevelopment;
 Keywords=vscode;
 StartupNotify=true
+Hidden=true
