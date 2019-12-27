@@ -81,6 +81,12 @@ set $KP_0 90
 # start a terminal
 bindsym $mod+Return exec --no-startup-id i3-sensible-terminal
 
+# Alt+Tab & Win+Tab
+bindsym $mod+Tab workspace prev
+bindsym $mod+Shift+Tab workspace next 
+bindsym Mod1+Tab workspace prev
+bindsym Mod1+Shift+Tab workspace next 
+
 # kill focused window
 bindsym $mod+Shift+q kill
 bindsym $mod+q kill
