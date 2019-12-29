@@ -153,3 +153,4 @@ StartupNotify=true
 Type=Application
 Categories=System;Utility;
 Path=
+NotShowIn=GNOME;
