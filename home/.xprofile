@@ -32,11 +32,11 @@ export DOT=${HOME}/.dotfiles
 export TERMINAL=termite
 export BROWSER=firefox
 export EDITOR=nano
-export GZIP=-9
 
-export GTK_IM_MODULE=ibus
-export XMODIFIERS=@im=ibus
-export QT_IM_MODULE=ibus
+#export GTK_IM_MODULE=ibus
+#export XMODIFIERS=@im=ibus
+#export XMODIFIERS=@im=ibus
+#export QT_IM_MODULE=ibus
 
 #ibus-daemon -drx
 
