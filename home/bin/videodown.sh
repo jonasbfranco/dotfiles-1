@@ -47,7 +47,8 @@ if [[ ! ${url} =~ $padrao ]]; then
 	notify-send -i $icone "Video Downloader" "O link é inválido!"
     exit
 else
-	titulo="$(curl "$url" -so - | grep -iPo '(?<=<title>)(.*)(?=</title>)' | iconv -f utf8 -t ascii//TRANSLIT | sed 's/[^[:alnum:]]\+/ /g')"
+	#titulo="$(curl "$url" -so - | grep -iPo '(?<=<title>)(.*)(?=</title>)' | iconv -f utf8 -t ascii//TRANSLIT | sed 's/[^[:alnum:]]\+/ /g')"
+	titulo="$(curl "$url" -so - | grep -iPo '(?<=<title>)(.*)(?=</title>)' | sed 's/[^[:alnum:]]\+/ /g')"
 fi
 
 if [[ $log -ne 0 ]]; then
