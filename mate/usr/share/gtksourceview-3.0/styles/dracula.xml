@@ -24,7 +24,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 -->
 
-<style-scheme id="dracula" _name="Dracula" version="1.0">
+<style-scheme id="dracula" name="Dracula" version="1.0">
 	<author>Ricardo Madriz</author>
 	<_description>A dark theme for Gedit</_description>
 

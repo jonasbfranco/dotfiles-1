@@ -5,6 +5,10 @@
     insteadOf = "pkg:"
 [url "ssh://aur@aur.archlinux.org/"]
     insteadOf = "aur:"
+[url "git@github.com:sistematico"]
+    insteadOf = "gh:"
+[url "git@gitlab.com:sistematico"]
+    insteadOf = "gl:"
 [alias]
 	#$ git config --global alias.co checkout
 	#$ git config --global alias.br branch

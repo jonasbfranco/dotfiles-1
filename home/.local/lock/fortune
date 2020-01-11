@@ -15,7 +15,7 @@ font="/usr/share/fonts/TTF/FantasqueSansMono-Regular.ttf"
 # Blank After 15m
 if [ $1 ]; then
 	if [ "$1" == "off" ]; then
-		$(sleep 15m && xset dpms force off) &
+		$(sleep 15m && xset dpms force off && sleep 1h && systemctl suspend) &
 	fi
 fi
 

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=War Thunder
+StartupWMClass=dagor2
+#Path=/mnt/hdd/steam/steamapps/common/War Thunder
+Exec=/mnt/hdd/steam/steamapps/common/War\ Thunder/launcher
+Icon=/usr/share/pixmaps/warthunder.png
+Terminal=false
+Categories=Game;

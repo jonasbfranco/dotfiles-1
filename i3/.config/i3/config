@@ -260,7 +260,8 @@ for_window [class="^VirtualBox" title="*Executando*"] floating enable
 for_window [title="(.*Reiniciar dispositivo.*|Preferências do Thunderbird|Video Cut|Video Resize|Biblioteca|Library|About|Amigos|Sobre o Mozilla Firefox|VideoCut|dagor2)"] floating enable, move position center
 for_window [class="(Agave|Engrampa|Galculator|Catfish|Viewnior|File-roller|Xarchiver)"] floating enable, move position center
 
-for_window [class="dagor2"] move to workspace $ws10, move position center
+for_window [class="dagor2" title="(War Thunder|War Thunder (Configurações))"] move to workspace $ws10, floating enable, move position center, border pixel 2
+#for_window [class="dagor2"] move to workspace $ws10, move position center
 #for_window [class="dagor2" title="(War Thunder|War Thunder (Configurações))"] move to workspace $ws10, floating enable, move position center, border pixel 2
 #for_window [class="dagor2" title="(War Thunder|War Thunder (Configurações))"] move to workspace $ws10
 
@@ -280,7 +281,7 @@ for_window [class="mpv"] sticky enable, floating enable, move position center
 ####################################################################
 ################ A S S I G N #######################################
 ####################################################################
-assign [class="^([Cc]hromium|[Qq]utebrowser|[Ee]piphany|[Ff]irefox|[Ff]irefox-developer)"] $ws1
+assign [class="^(Google-chrome|[Cc]hromium|[Qq]utebrowser|[Ee]piphany|[Ff]irefox|[Ff]irefox-developer)"] $ws1
 assign [class="(Termite|Tilix|st-256color|Xfce4-terminal)"] $ws2
 assign [class="^(VSCodium|Code|Pluma|Sublime_text|Atom)"] $ws3
 assign [class="(Thunar|Pcmanfm)"] $ws4
@@ -374,11 +375,14 @@ exec_always --no-startup-id xrdb -merge $HOME/.Xresources
 #exec_always --no-startup-id hsetroot -solid '#3B4252'
 exec_always --no-startup-id feh --bg-fill ${HOME}/.local/share/wallpapers/i3.png
 #exec_always --no-startup-id $HOME/.config/polybar/scripts/wallpaper.sh r
-exec --no-startup-id compton -b --respect-prop-shadow
+#exec --no-startup-id compton -b --respect-prop-shadow
+#exec --no-startup-id $HOME/.local/bin/timed -f
+exec --no-startup-id picom -b --config $HOME/.config/picom/picom.conf
 exec --no-startup-id dunst
 exec --no-startup-id parcellite
-#exec --no-startup-id numlockx on
+exec --no-startup-id numlockx on
 #exec --no-startup-id megasync
 exec --no-startup-id xautolock -time 3 -detectsleep -locker $HOME/.local/lock/default
 #exec --no-startup-id $HOME/bin/ntfsmount.sh
+exec --no-startup-id thunar --daemon
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh

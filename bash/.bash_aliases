@@ -29,6 +29,7 @@ alias castnow="castnow --myip 192.168.0.1"
 alias git-cron='~/.local/bin/git-cron'
 alias tx='tmux a'
 alias ranger='VISUAL=vim ranger'
+alias heic='mogrify -format jpg *.heic'
 
 # VPS
 alias artemis='ssh root@artemis'
@@ -44,3 +45,4 @@ alias dps='docker ps -a'
 
 # ncmpcpp
 alias music='\tmux new-session "\tmux source-file ~/.config/ncmpcpp/tmux_session"' # Tmux session with ncmpcpp and cover art
+alias tb="nc termbin.com 9999"
