@@ -1,15 +1,14 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 #
-# github - Script para enviar automaticamente mudanças ao Github
-# LEMBRE-SE DE CONFIGURAR CORRETAMENTE SEU GIT SEM SENHA!!!
+# sites - Script para sincronizar automaticamente uma outra máquina
 #
 # Desenvolvido por Lucas Saliés Brum <lucas@archlinux.com.br>
 #
 # Sugestão de crontab:
-# */15 * * * * sh -c "~/.local/bin/github" > /dev/null 2>&1
+# */15 * * * * sh -c "~/.local/bin/sites" > /dev/null 2>&1
 #
-# Criado em: 20/12/2017 19:27:31
-# Última Atualização: 06/05/2019 12:51:21
+# Criado em: 19/01/2020 12:33:00
+# Última Atualização: 19/01/2020 12:33:05
 
 nome="Site Sync"
 dir="${HOME}/github"
@@ -19,10 +18,7 @@ som="complete"
 
 detectax() {
 	if xset q &>/dev/null; then
-		# ls /usr/share/sounds/freedesktop/stereo/
-		#dbus-launch canberra-gtk-play -i $som 2>&1
 		export DISPLAY=:0 ; canberra-gtk-play -i $som 2>&1
-		#DISPLAY=:0.0 canberra-gtk-play -i $som
 		dbus-launch notify-send -i $icone "$1" "$2"
 	else
 		echo "${1}: $2"
@@ -30,24 +26,22 @@ detectax() {
 }
 
 atualiza() {
-	if [ ! -z "$status" ]; then
 	c=$(echo $(git add . -n | tr '\r\n' ' '))
 	m="Autocommit por ${nome}: alterações: $c"
 	git add .
 	git commit -m "$m"
-				git push
-				if [ "$?" == 0 ]; then
-					detectax $nome "Repo <b>$(basename $1)</b> atualizado."
-					[ -f /tmp/git-cron.error ] && rm /tmp/git-cron.error
-				else
-					if [ ! -f /tmp/git-cron.error ]; then
-						icone="${HOME}/.local/share/icons/elementary/network-error.png"
-						som="dialog-warning"
-						detectax $nome "Erro ao atualizar <b>$(basename $1)</b>."
-						touch /tmp/git-cron.error
-					fi
-				fi
-			fi
+	git push
+	if [ "$?" == 0 ]; then
+		detectax $nome "Repo <b>$(basename $1)</b> atualizado."
+		[ -f /tmp/git-cron.error ] && rm /tmp/git-cron.error
+	else
+		if [ ! -f /tmp/git-cron.error ]; then
+			icone="${HOME}/.local/share/icons/elementary/network-error.png"
+			som="dialog-warning"
+			detectax $nome "Erro ao atualizar <b>$(basename $1)</b>."
+			touch /tmp/git-cron.error
+		fi
+	fi
 }
 
 if [ ! $1 ] || [ "$1" == "-a" ]; then
