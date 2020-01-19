@@ -1,10 +1,18 @@
 #!/usr/bin/env bash
 
 icon="${HOME}/.local/share/icons/panel/batt"
+
+if ! sudo /usr/local/bin/headsetcontrol -b 2> /dev/null | grep -q Battery; then
+	echo "<img>${icon}/full.png</img>"
+	exit
+fi
+
 batt=$(sudo /usr/local/bin/headsetcontrol -b | grep Battery | awk '{print $2}')
 batt=${batt%?}
 
-if [ "$batt" -ge 90 ]; then
+if [ "$batt" == "Chargin" ]; then
+	echo "<img>${icon}/full.png</img>"
+elif [ "$batt" -ge 90 ]; then
     echo "<img>${icon}/100.png</img>"
 elif [ "$batt" -ge 75 ]; then
     echo "<img>${icon}/75.png</img>"
