@@ -3,12 +3,23 @@
 icon="${HOME}/.local/share/icons/panel/batt"
 
 if ! sudo /usr/local/bin/headsetcontrol -b 2> /dev/null | grep -q Battery; then
-	echo "<img>${icon}/full.png</img>"
+	#echo "<img>${icon}/full.png</img>"
+	[ $1 ] && echo "??%" || echo "<img>${icon}/full.png</img>"
 	exit
 fi
 
+
 batt=$(sudo /usr/local/bin/headsetcontrol -b | grep Battery | awk '{print $2}')
 batt=${batt%?}
+
+if [ $1 ]; then
+	if [ "$batt" == "Chargin" ]; then
+		echo "Carr."
+	elif [ "$batt" -gt 0 ]; then
+		echo "${batt}%"
+	fi
+	exit
+fi
 
 if [ "$batt" == "Chargin" ]; then
 	echo "<img>${icon}/charging.png</img>"
