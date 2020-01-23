@@ -14,6 +14,8 @@
 #                                                                              #
 ################################################################################
 
+[ -f $HOME/.config/user-dirs.dirs ] && source $HOME/.config/user-dirs.dirs
+
 #xclip -out -selection primary | xclip -in -selection clipboard
 
 SECONDS=0
@@ -21,7 +23,7 @@ comeco=$SECONDS
 log=0 # 0 = Sem log, 1 = Log no arquivo erro.log
 aria=0
 ts=$(date +"%s")
-dir="${HOME}/desk"
+dir="${XDG_DESKTOP_DIR:-${HOME}/desk}"
 #dir="${HOME}/desk/$(ls -t -1 ${HOME}/desk | head -1)"
 icone="${HOME}/.local/share/icons/elementary/video-display.png"
 # pacman -Ql yaru-sound-theme
