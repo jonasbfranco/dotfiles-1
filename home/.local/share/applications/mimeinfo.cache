@@ -285,3 +285,4 @@ x-scheme-handler/http=firefox.desktop;
 x-scheme-handler/https=firefox.desktop;
 x-scheme-handler/steam=steam.desktop;
 x-scheme-handler/tg=telegramdesktop.desktop;
+x-scheme-handler/vsls=vsls-launcher.desktop;

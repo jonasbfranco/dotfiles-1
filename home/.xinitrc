@@ -24,6 +24,7 @@ export DESKTOP_SESSION=i3
 export TERMINAL=termite
 export EDITOR=nano
 export BROWSER=firefox
+export COMPOSER_HOME=${HOME}/.composer
 
 #session=${1:-i3}
 session=${1:-xfce}
