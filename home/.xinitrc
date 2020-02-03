@@ -26,6 +26,13 @@ export EDITOR=nano
 export BROWSER=firefox
 export COMPOSER_HOME=${HOME}/.composer
 
+# iBus
+export GTK_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+export QT_IM_MODULE=ibus
+
+ibus-daemon -drx &
+
 #session=${1:-i3}
 session=${1:-xfce}
 

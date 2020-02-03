@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Popcorn-Time
+Comment=
+StartupWMClass=PopcornTime
+Exec=/opt/popcorntime/Popcorn-Time
+Icon=popcorntime
+Terminal=false
+Categories=AudioVideo;Audio;Video;Player;TV;
+

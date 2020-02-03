@@ -9,5 +9,5 @@ Path=/opt/jmemorise
 Exec=jmemorize
 Icon=jmemorize
 Terminal=false
-Categories=Education;Languages;Java;
+Categories=Education;Languages;Java;AudioVideo;Audio;Video;Player;TV;
 
