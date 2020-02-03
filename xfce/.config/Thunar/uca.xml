@@ -20,6 +20,15 @@
 	<directories/>
 </action>
 <action>
+	<icon>drive-harddisk</icon>
+	<name>Uso</name>
+	<unique-id>1580763352449364-1</unique-id>
+	<command>mate-disk-usage-analyzer %d</command>
+	<description></description>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
 	<icon>viewnior</icon>
 	<name>Imagens</name>
 	<unique-id>1542629194348820-1</unique-id>
