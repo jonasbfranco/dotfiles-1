@@ -42,7 +42,7 @@ fi
 ##################
 ##### Funções ####
 ##################
-if [[ -f ~/.bash_aliases ]]; then
+if [[ -f ~/.bash_functions ]]; then
     source ~/.bash_functions
 fi
 
