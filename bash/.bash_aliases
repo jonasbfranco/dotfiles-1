@@ -2,7 +2,8 @@
 #alias ls='ls --color=always --group-directories-first'
 alias ls='exa'
 alias cat='bat'
-alias find='fd'
+alias find='fd -H'
+alias fd='fd -H'
 
 # Main
 alias rehash='source ~/.bashrc && source ~/.bash_aliases && source ~/.bash_functions'
