@@ -1,10 +1,15 @@
+# Core
+#alias ls='ls --color=always --group-directories-first'
+alias ls='exa'
+alias cat='bat'
+alias find='fd'
+
 # Main
 alias rehash='source ~/.bashrc && source ~/.bash_aliases && source ~/.bash_functions'
 alias lixo='dd if=/dev/zero of=file.txt count=1024 bs=1048576'
 alias rm='rm -Iv'
 alias mv='mv -iv'
 alias cp='cp -iv'
-alias ls='ls --color=always --group-directories-first'
 alias els='els --els-icons=fontawesome'
 alias ufw='sudo ufw'
 alias copiar='xclip -sel clip <'
