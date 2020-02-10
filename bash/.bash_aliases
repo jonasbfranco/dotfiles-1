@@ -1,6 +1,6 @@
 # Core
 #alias ls='ls --color=always --group-directories-first'
-alias ls='exa'
+alias ls='exa --group-directories-first'
 alias cat='bat'
 alias find='fd -H'
 alias fd='fd -H'
