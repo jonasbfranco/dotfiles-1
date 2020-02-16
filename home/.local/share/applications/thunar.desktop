@@ -43,7 +43,7 @@ Name[oc]=Gestionari de Fichièrs Thunar
 Name[pa]=ਥੰਨਰ ਫਾਇਲ ਮੈਨੇਜਰ
 Name[pl]=Menedżer plików Thunar
 Name[pt]=Gestor de ficheiros Thunar
-Name[pt_BR]=Gerenciador de arquivos Thunar
+Name[pt_BR]=Thunar
 Name[ro]=Managerul de fișiere Thunar
 Name[ru]=Файловый менеджер Thunar
 Name[si]=Thunar ගොනු කළමණාකරු
@@ -198,3 +198,4 @@ MimeType=inode/directory;
 NotShowIn=GNOME;
 
 # vi:set encoding=UTF-8:
+Path=
