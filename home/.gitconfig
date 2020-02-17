@@ -5,16 +5,13 @@
     insteadOf = "pkg:"
 [url "ssh://aur@aur.archlinux.org/"]
     insteadOf = "aur:"
-[url "git@github.com:sistematico"]
+[url "git@github.com:sistematico/"]
     insteadOf = "gh:"
-[url "git@gitlab.com:sistematico"]
+[url "git@gitlab.com:sistematico/"]
     insteadOf = "gl:"
 [alias]
-	#$ git config --global alias.co checkout
-	#$ git config --global alias.br branch
-	#$ git config --global alias.ci commit
-	#$ git config --global alias.st status
-	co = checkout
+    cl = clone
+    co = checkout
     br = branch
     ci = commit
     st = status
