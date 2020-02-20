@@ -815,7 +815,7 @@ c.fonts.hints = 'bold 10pt "Noto Sans Mono"'
 ## setting, it's replaced with the fonts listed here.
 ## Type: Font
 # c.fonts.monospace = '"xos4 Terminus", Terminus, Monospace, "DejaVu Sans Mono", Monaco, "Bitstream Vera Sans Mono", "Andale Mono", "Courier New", Courier, "Liberation Mono", monospace, Fixed, Consolas, Terminal'
-c.fonts.monospace = '"Noto Sans Mono","xos4 Terminus", Terminus, Monospace, "DejaVu Sans Mono", Monaco, "Bitstream Vera Sans Mono", "Andale Mono", "Courier New", Courier, "Liberation Mono", monospace, Fixed, Consolas, Terminal' 
+#c.fonts.monospace = '"Noto Sans Mono","xos4 Terminus", Terminus, Monospace, "DejaVu Sans Mono", Monaco, "Bitstream Vera Sans Mono", "Andale Mono", "Courier New", Courier, "Liberation Mono", monospace, Fixed, Consolas, Terminal' 
 
 ## Font used for prompts.
 ## Type: Font

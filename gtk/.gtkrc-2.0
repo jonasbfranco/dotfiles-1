@@ -1,4 +1,5 @@
-gtk-theme-name=Adwaita
+#gtk-theme-name=Adwaita
+gtk-theme-name=Arc-Dark
 gtk-icon-theme-name=elementary-xfce
 #gtk-enable-event-sounds=true
 #gtk-enable-input-feedback-sounds=true

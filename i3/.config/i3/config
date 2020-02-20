@@ -22,7 +22,7 @@
 #                     
 #                     
 #                     
-#               
+#                
 
 ####################################################################
 ################ P R I N C I P A L #################################
@@ -178,8 +178,8 @@ bindcode Mod2+$KP_4 exec --no-startup-id mpc prev
 bindcode Mod2+$KP_5 exec --no-startup-id mpc toggle
 bindcode Mod2+$KP_3 exec --no-startup-id mpc seek +10
 bindcode Mod2+$KP_1 exec --no-startup-id mpc seek -10
-bindcode Mod2+$KP_Add exec --no-startup-id amixer -q -D pulse sset Master 5%+ unmute
-bindcode Mod2+$KP_Sub exec --no-startup-id amixer -q -D pulse sset Master 5%- unmute
+bindcode Mod2+$KP_Add exec --no-startup-id pactl set-sink-volume 0 +10%
+bindcode Mod2+$KP_Sub exec --no-startup-id pactl set-sink-volume 0 -10%
 bindcode Mod2+$KP_Multi exec --no-startup-id mpc ls | mpc add
 
 # Tray
@@ -371,12 +371,13 @@ mode "$mode_gaps_outer" {
 ####################################################################
 ################ I N I T ###########################################
 ####################################################################
-exec_always --no-startup-id xrdb -merge $HOME/.Xresources
 #exec_always --no-startup-id hsetroot -solid '#3B4252'
-exec_always --no-startup-id feh --bg-fill ${HOME}/.local/share/wallpapers/i3.png
+#exec_always --no-startup-id feh --bg-fill ${HOME}/.local/share/wallpapers/i3.png
 #exec_always --no-startup-id $HOME/.config/polybar/scripts/wallpaper.sh r
-#exec --no-startup-id compton -b --respect-prop-shadow
 #exec --no-startup-id $HOME/.local/bin/timed -f
+
+exec_always --no-startup-id feh --bg-fill ${HOME}/img/wallhaven/wallhaven-ey1o28.png
+exec_always --no-startup-id xrdb -merge $HOME/.Xresources
 exec --no-startup-id picom -b --config $HOME/.config/picom/picom.conf
 exec --no-startup-id dunst
 exec --no-startup-id parcellite

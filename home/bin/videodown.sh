@@ -26,9 +26,11 @@ ts=$(date +"%s")
 dir="${XDG_DESKTOP_DIR:-${HOME}/desk}"
 #dir="${HOME}/desk/$(ls -t -1 ${HOME}/desk | head -1)"
 icone="${HOME}/.local/share/icons/elementary/video-display.png"
-# pacman -Ql yaru-sound-theme
-success='/usr/share/sounds/Yaru/stereo/message-new-email.oga'
-error='/usr/share/sounds/Yaru/stereo/dialog-error.oga'
+# trizen -S yaru-sound-theme deepin-sound-theme
+#success='/usr/share/sounds/Yaru/stereo/message-new-email.oga'
+success='/usr/share/sounds/deepin/stereo/complete-copy.wav'
+#error='/usr/share/sounds/Yaru/stereo/dialog-error.oga'
+error='/usr/share/sounds/deepin/stereo/dialog-error.wav'
 tmp="/tmp/videodown/$$"
 logs="${dir}/status.log"
 proc=$(pgrep -fc "bash $0")

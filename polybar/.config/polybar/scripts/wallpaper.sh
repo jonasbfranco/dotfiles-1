@@ -7,12 +7,23 @@
 # Criado em: 15/03/2018 18:15:04
 # Última alteração: 25/01/2019 11:17:14
 
+ajuda() {
+    echo
+    echo "Uso: $(basename $0) [d][dd][r][rr][n][p][a]"
+    echo 
+    exit
+}
+
+if [ "$1" == "-h" ]; then
+	ajuda
+fi
+
 [ -f ~/.config/user-dirs.dirs ] && source ~/.config/user-dirs.dirs
 
-dir="${XDG_PICTURES_DIR:-${HOME}/img/wallpapers/i3}"
+dir="${XDG_PICTURES_DIR:-${HOME}/img/wallhaven}"
 unsplash_dir="${XDG_PICTURES_DIR:-${HOME}/img}/wallpapers/unsplash"
 default="$HOME/.local/share/wallpapers/i3.png"
-ultima="/home/lucas/img/wallpapers/unsplash/unsplash-2317087.jpg"
+ultima="/home/lucas/img/ts/domino/23410/113736_3.jpg"
 modo="--bg-fill"
 indice=0
 i=0

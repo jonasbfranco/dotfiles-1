@@ -317,7 +317,8 @@ format-prefix = " "
 ;----------------------------------------------------------
 [module/wallpaper]
 type = custom/text
-content = 
+content = 
+content-foreground = ${colors.secondary}
 click-left = ~/.config/polybar/scripts/wallpaper.sh x &
 ;click-middle = ~/.config/polybar/scripts/wallpaper.sh dd &
 click-middle = ~/.config/polybar/scripts/wallpaper.sh rr &

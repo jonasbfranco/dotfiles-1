@@ -110,7 +110,7 @@ GenericName[id]=Pengirim Pesan Internet
 GenericName[it]=Internet Messenger
 GenericName[ja]=インターネット・メッセンジャー
 GenericName[km]=កម្មវិធី​ផ្ញើសារ​អ៊ីនធឺណិត
-GenericName[kn]=ಇಂಟರ್ನೆಟ್ ಮೆಸ್ಸೆಂಜರ್ 
+GenericName[kn]=ಇಂಟರ್ನೆಟ್ ಮೆಸ್ಸೆಂಜರ್
 GenericName[ko]=인터넷 메신저
 GenericName[ku]=Peyamnêra înternetê
 GenericName[lt]=Pokalbiai internete
@@ -159,5 +159,6 @@ StartupNotify=true
 Terminal=false
 Type=Application
 Categories=Network;InstantMessaging;
-
 Path=
+Hidden=true
+

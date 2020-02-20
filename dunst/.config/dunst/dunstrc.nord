@@ -17,10 +17,11 @@
     # will be ignored.
     follow = mouse
 	# Duas Barras
-	#geometry = "300x5-10-41"
+	geometry = "300x5-10-41"
 	# Uma Barra
-	geometry = "300x5-10-11"
-    indicate_hidden = yes
+	#geometry = "300x5-10-11"
+    
+	indicate_hidden = yes
 
     # Shrink window if it's smaller than the width.  Will be ignored if
     # width is 0.
