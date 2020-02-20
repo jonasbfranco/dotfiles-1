@@ -34,6 +34,9 @@ export BROWSER=firefox
 export EDITOR=nano
 export COMPOSER_HOME=${HOME}/.composer
 
+export MOZ_DISABLE_CONTENT_SANDBOX=1
+export MOZ_DISABLE_GMP_SANDBOX=1
+
 #export GTK_IM_MODULE=ibus
 #export XMODIFIERS=@im=ibus
 #export QT_IM_MODULE=ibus
