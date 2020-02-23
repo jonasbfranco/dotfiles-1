@@ -5,6 +5,11 @@
 # Criado em: 28-11-2019 23:50:39
 # Alterado em: 28-11-2019 23:50:45
 
+if [ ! $1 ] || [ "$1" == "-h" ] || [ "$1" == "--help" ]; then
+	echo "Uso: $(basename $0) [start|stop|rm|rmi|upgrade|rebuild]"
+	exit 0
+fi
+
 if [ "$1" == "stop" ]; then
     if [[ "$(docker ps -q)" ]]; then
 	    docker ps -q | xargs docker stop
