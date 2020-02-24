@@ -6,11 +6,13 @@ services:
         image: nginx:latest
         ports:
             - "80:80"
+            - "443:443"
         volumes:
             - ~/htdocs:/code
             - ~/docker/confs/nginx.conf:/etc/nginx/conf.d/default.conf
             - ~/sdm:/opt/musicas
             - /var/log/liquidsoap.log:/var/log/liquidsoap.log
+            - ~/docker/certs:/etc/ssl/nginx
         restart: unless-stopped
 
     php:
