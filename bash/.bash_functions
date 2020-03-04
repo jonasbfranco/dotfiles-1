@@ -54,3 +54,11 @@ twitch() {
        -s $OUTRES -preset $QUALITY -tune film -acodec libmp3lame -threads $THREADS -strict normal \
        -bufsize $CBR "rtmp://$SERVER.twitch.tv/app/$STREAM_KEY"
  }
+
+# mpc
+mpcreload () {
+	if [ $1 ]; then
+		mpc rm $1
+		mpc save $1
+	fi
+}

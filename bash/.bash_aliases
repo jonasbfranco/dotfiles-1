@@ -54,4 +54,6 @@ alias dps='docker ps -a'
 
 # ncmpcpp
 alias music='\tmux new-session "\tmux source-file ~/.config/ncmpcpp/tmux_session"' # Tmux session with ncmpcpp and cover art
+
+# pastebin
 alias tb="nc termbin.com 9999"
